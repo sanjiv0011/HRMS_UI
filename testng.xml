@@ -10,7 +10,7 @@
 	    <parameter name="browser" value="chrome"></parameter>
     
     <classes>
-		
+		<!-- <class name="com.hrms.testCases.TC_Login"/> --> 
     <!-- <class name="com.hrms.testCases.TC_Login"/> --> 
 	<class name="com.hrms.testCases.TC_LoginAndLogout"/>    
       
