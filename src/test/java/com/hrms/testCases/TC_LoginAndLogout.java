@@ -20,9 +20,10 @@ public class TC_LoginAndLogout extends TC_Login{
 	
 	PO_HomePage hp;
 	
-	@Test(priority = 0)	// here zero ensures least priority, so that this call happens at the last.
+	@Test(priority = 1)	// here zero ensures least priority, so that this call happens at the last.
 	public void test_Logout() throws InterruptedException
-	{
+	{	// It perform the logout activity
+		
 		hp = new PO_HomePage(driver);
 		
 		hp.Logout();

@@ -10,9 +10,10 @@
 	    <parameter name="browser" value="chrome"></parameter>
     
     <classes>
-		<!-- <class name="com.hrms.testCases.TC_Login"/> --> 
-    <!-- <class name="com.hrms.testCases.TC_Login"/> --> 
-	<class name="com.hrms.testCases.TC_LoginAndLogout"/>    
+     <!-- <class name="com.hrms.testCases.TC_Login"/> -->
+	<!--  <class name="com.hrms.testCases.TC_LoginAndLogout"/>--> 
+	
+	  <class name="com.hrms.testCases.TC_HomePage"/>
       
     </classes>
     

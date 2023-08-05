@@ -7,11 +7,11 @@
   <test thread-count="5" name="HRMS(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.hrms.testCases.TC_Logout">
+      <class name="com.hrms.testCases.TC_HomePage">
         <methods>
-          <include name="test_Logout"/>
+          <include name="test_HomePage"/>
         </methods>
-      </class> <!-- com.hrms.testCases.TC_Logout -->
+      </class> <!-- com.hrms.testCases.TC_HomePage -->
     </classes>
   </test> <!-- HRMS(failed) -->
 </suite> <!-- Failed suite [Suite] -->

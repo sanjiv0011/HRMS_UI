@@ -1,0 +1,403 @@
+00:42:43.497 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+00:42:48.268 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+00:42:56.603 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+00:42:57.798 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+00:42:59.124 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+00:43:06.191 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+00:43:07.462 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+00:47:40.973 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+00:47:43.599 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+00:47:52.355 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+00:47:53.549 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+00:47:54.737 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+00:48:01.819 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+00:48:02.260 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+00:53:37.615 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Base class started...
+00:53:40.311 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Chrome driver selected
+00:53:49.113 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+00:53:50.299 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+00:53:51.464 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+00:53:58.519 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Login success...
+00:53:59.054 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Driver shutdown
+00:55:17.958 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Base class started...
+00:55:22.418 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Chrome driver selected
+00:55:30.960 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+00:55:32.156 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+00:55:33.278 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+00:55:40.342 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Login success...
+00:55:41.832 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Driver shutdown
+01:04:46.464 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Base class started...
+01:04:49.764 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Chrome driver selected
+01:04:58.285 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+01:04:59.504 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+01:05:00.661 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+01:05:07.709 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Login success...
+01:05:08.796 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Driver shutdown
+01:07:03.838 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Base class started...
+01:07:06.709 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Chrome driver selected
+01:07:15.029 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+01:07:16.247 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+01:07:17.405 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+01:07:24.455 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Login success...
+01:07:25.559 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+01:07:26.714 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+01:07:27.836 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+01:07:27.855 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Logout successful...
+01:07:28.962 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Driver shutdown
+01:08:14.747 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+01:08:17.386 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+01:08:25.948 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+01:08:27.157 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+01:08:28.305 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+01:08:35.352 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+01:08:36.626 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+01:15:20.031 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+01:15:23.089 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+01:15:31.750 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+01:15:32.966 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+01:15:34.125 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+01:15:41.248 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+01:15:42.261 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+22:38:06.810 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Base class started...
+22:38:12.609 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Chrome driver selected
+22:38:21.441 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+22:38:22.642 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+22:38:24.071 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+22:38:31.134 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Login success...
+22:38:32.256 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+22:38:33.384 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+22:38:34.513 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+22:38:34.526 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Logout successful...
+22:38:35.729 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Driver shutdown
+22:40:44.031 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+22:40:46.835 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+22:40:55.304 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+22:40:56.517 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+22:40:57.711 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+22:41:04.772 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+22:41:05.829 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+22:53:55.296 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+22:53:58.858 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+22:54:07.501 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+22:54:08.688 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+22:54:09.878 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+22:54:16.946 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+22:54:17.881 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+22:59:57.138 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:00:00.172 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:00:08.662 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:00:09.873 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:00:11.056 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:00:18.115 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+23:00:18.968 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:01:04.960 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Base class started...
+23:01:07.740 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Chrome driver selected
+23:01:16.008 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:01:17.202 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:01:18.396 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:01:25.453 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Login success...
+23:01:26.552 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+23:01:27.657 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+23:01:28.762 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+23:01:28.781 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Logout successful...
+23:01:29.560 [main] INFO  com.hrms.testCases.TC_LoginAndLogout - Driver shutdown
+23:08:53.665 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:08:56.633 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:09:04.718 [main] INFO  com.hrms.testCases.TC_HomePage - Home page constructor started
+23:09:05.143 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:09:06.342 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:09:07.506 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:09:14.572 [main] INFO  com.hrms.testCases.TC_HomePage - Login success...
+23:09:15.369 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:16:08.966 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:16:11.790 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:16:20.088 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:16:21.306 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:16:22.467 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:16:27.571 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:16:29.621 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:16:29.703 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:16:31.767 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:16:31.857 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:16:33.896 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:16:33.973 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:16:36.022 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:16:36.102 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:16:38.171 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:16:38.329 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:16:40.412 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:16:40.497 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:16:42.559 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:16:42.644 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:16:44.708 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:16:44.821 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:16:46.877 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:16:46.963 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:16:48.989 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:16:49.102 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:16:51.139 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:16:51.238 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:16:53.376 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:16:55.407 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:16:55.407 [main] INFO  com.hrms.testCases.TC_HomePage - Home Page testing done
+23:16:56.533 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:24:52.483 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:24:55.301 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:25:03.524 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:25:04.703 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:25:05.878 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:25:10.896 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+23:25:11.003 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:25:13.110 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:25:13.184 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:25:15.233 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:25:15.311 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:25:17.340 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:25:17.405 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:25:19.466 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:25:19.559 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:25:21.586 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:25:21.652 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:25:23.687 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:25:23.757 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:25:25.820 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:25:25.887 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:25:27.938 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:25:28.013 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:25:30.076 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:25:30.159 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:25:32.210 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:25:32.300 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:25:34.330 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:25:34.398 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:25:36.533 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:25:38.597 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:25:40.072 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:33:21.834 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:33:24.762 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:33:33.174 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:33:34.398 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:33:35.581 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:33:40.590 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+23:33:40.685 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:33:42.724 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:33:42.807 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:33:44.864 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:33:44.953 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:33:46.980 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:33:47.082 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:33:49.154 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:33:49.268 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:33:51.315 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:33:51.422 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:33:53.467 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:33:53.535 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:33:55.560 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:33:55.628 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:33:57.663 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:33:57.754 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:33:59.786 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:33:59.855 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:34:01.911 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:34:01.991 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:34:04.048 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:34:04.133 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:34:06.238 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:34:08.299 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:34:08.404 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on the Icon user logged
+23:34:10.413 [main] INFO  com.hrms.testCases.TC_HomePage - Home Page testing done
+23:34:11.827 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:39:39.301 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:39:41.996 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:39:50.454 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:39:51.657 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:39:52.823 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:39:57.834 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+23:39:57.939 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:39:59.995 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:40:00.079 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:40:02.147 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:40:02.235 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:40:04.290 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:40:04.379 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:40:06.447 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:40:06.532 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:40:08.589 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:40:08.694 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:40:10.753 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:40:10.823 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:40:12.886 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:40:12.965 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:40:15.014 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:40:15.105 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:40:17.170 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:40:17.273 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:40:19.316 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:40:19.381 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:40:21.440 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:40:21.560 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:40:23.641 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:40:25.701 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:40:26.822 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:45:52.889 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:45:55.491 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:46:03.778 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:46:04.985 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:46:06.149 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:46:11.160 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+23:46:11.253 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:46:13.299 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:46:13.383 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:46:15.436 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:46:15.536 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:46:17.588 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:46:17.657 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:46:19.742 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:46:19.838 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:46:21.888 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:46:21.995 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:46:24.047 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:46:24.156 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:46:26.198 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:46:26.270 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:46:28.331 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:46:28.425 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:46:30.493 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:46:30.585 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:46:32.619 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:46:32.698 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:46:34.730 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:46:34.807 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:46:36.887 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:46:38.956 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:46:42.013 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:50:38.619 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:50:41.213 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:50:49.533 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:50:50.733 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:50:51.905 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:50:56.911 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+23:50:57.010 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:50:59.059 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:50:59.153 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:51:01.211 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:51:01.285 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:51:03.313 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:51:03.382 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:51:05.426 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:51:05.499 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:51:07.546 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:51:07.658 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:51:09.712 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:51:09.831 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:51:11.912 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:51:12.026 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:51:14.071 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:51:14.159 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:51:16.178 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:51:16.243 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:51:18.291 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:51:18.375 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:51:20.435 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:51:20.536 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:51:22.683 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:51:24.727 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:51:24.816 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on the Icon user logged
+23:51:26.833 [main] INFO  com.hrms.testCases.TC_HomePage - Home Page testing done
+23:51:27.989 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+23:51:29.116 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+23:51:30.191 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+23:51:30.217 [main] INFO  com.hrms.testCases.TC_HomePage - Logout successful...
+23:51:31.382 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:52:23.263 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:52:26.449 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:52:34.696 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:52:35.909 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:52:37.068 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:52:42.073 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+23:52:42.159 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+23:52:44.218 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+23:52:44.303 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+23:52:46.325 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+23:52:46.397 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+23:52:48.461 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+23:52:48.534 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+23:52:50.581 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+23:52:50.706 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+23:52:52.742 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+23:52:52.812 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+23:52:54.850 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+23:52:54.922 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+23:52:56.982 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+23:52:57.060 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:52:59.102 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+23:52:59.188 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+23:53:01.250 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+23:53:01.333 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+23:53:03.382 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+23:53:03.513 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+23:53:05.567 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+23:53:05.677 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+23:53:07.805 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+23:53:09.886 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+23:53:09.983 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on the Icon user logged
+23:53:13.986 [main] INFO  com.hrms.testCases.TC_HomePage - Home Page testing done
+23:53:15.124 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+23:53:16.328 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+23:53:17.450 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+23:53:17.479 [main] INFO  com.hrms.testCases.TC_HomePage - Logout successful...
+23:53:18.223 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
+23:58:06.571 [main] INFO  com.hrms.testCases.TC_Login - Base class started...
+23:58:09.171 [main] INFO  com.hrms.testCases.TC_Login - Chrome driver selected
+23:58:17.495 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+23:58:18.707 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+23:58:19.877 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+23:58:26.929 [main] INFO  com.hrms.testCases.TC_Login - Login success...
+23:58:26.957 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+23:58:28.079 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+23:58:36.899 [main] INFO  com.hrms.testCases.TC_Login - Driver shutdown
+00:02:44.659 [main] INFO  com.hrms.testCases.TC_Login - Base class started...
+00:02:47.328 [main] INFO  com.hrms.testCases.TC_Login - Chrome driver selected
+00:02:55.561 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+00:02:56.756 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+00:02:57.906 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+00:03:04.968 [main] INFO  com.hrms.testCases.TC_Login - Login success...
+00:03:05.914 [main] INFO  com.hrms.testCases.TC_Login - Driver shutdown
+00:05:32.673 [main] INFO  com.hrms.testCases.TC_HomePage - Base class started...
+00:05:35.305 [main] INFO  com.hrms.testCases.TC_HomePage - Chrome driver selected
+00:05:43.831 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+00:05:45.031 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+00:05:46.220 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+00:05:51.235 [main] INFO  com.hrms.testCases.TC_HomePage - Done login
+00:05:51.318 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+00:05:53.362 [main] INFO  com.hrms.pageObject.PO_HomePage - Organization tab working fine
+00:05:53.465 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
+00:05:55.486 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave tab working fine
+00:05:55.570 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabClients button
+00:05:57.639 [main] INFO  com.hrms.pageObject.PO_HomePage - Client tab working fine
+00:05:57.718 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+00:05:59.772 [main] INFO  com.hrms.pageObject.PO_HomePage - User tab working fine
+00:05:59.863 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabProjects button
+00:06:01.924 [main] INFO  com.hrms.pageObject.PO_HomePage - Project tab working fine
+00:06:02.025 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabDailyUpdates button
+00:06:04.088 [main] INFO  com.hrms.pageObject.PO_HomePage - tabDailyUpdates working fine
+00:06:04.164 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+00:06:06.241 [main] INFO  com.hrms.pageObject.PO_HomePage - Asset tab not working fine
+00:06:06.324 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+00:06:08.388 [main] INFO  com.hrms.pageObject.PO_HomePage - Calendar tab working fine
+00:06:08.497 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+00:06:10.545 [main] INFO  com.hrms.pageObject.PO_HomePage - Job Title tab working fine
+00:06:10.616 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+00:06:12.673 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Type tab working fine
+00:06:12.755 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+00:06:14.815 [main] INFO  com.hrms.pageObject.PO_HomePage - Leave Balance tab working fine
+00:06:14.905 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMenu button
+00:06:17.086 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on address HOME button
+00:06:19.154 [main] INFO  com.hrms.pageObject.PO_HomePage - Home address tab working fine
+00:06:19.258 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on the Icon user logged
+00:06:23.266 [main] INFO  com.hrms.testCases.TC_HomePage - Home Page testing done
+00:06:24.394 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+00:06:25.530 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+00:06:26.662 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+00:06:26.691 [main] INFO  com.hrms.testCases.TC_HomePage - Logout successful...
+00:06:27.102 [main] INFO  com.hrms.testCases.TC_HomePage - Driver shutdown
