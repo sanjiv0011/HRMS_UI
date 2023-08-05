@@ -242,6 +242,14 @@ public class PO_HomePage{
 		Thread.sleep(1000);
 		logger.info("Clicked on dropdownLogotYesBtn button");
 		
+		if(driver.getTitle().equals("Login to HRMS")){
+			Assert.assertTrue(true);
+			logger.info("Logout successful...");
+		}else{
+			Assert.assertTrue(false);
+			logger.info("Logout failed!!!");
+		}
+		
 		return new PO_LoginPage(driver);
 	}
 	

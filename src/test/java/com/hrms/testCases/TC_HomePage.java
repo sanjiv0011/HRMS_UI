@@ -30,16 +30,6 @@ public class TC_HomePage extends BaseClass {
 		
 		// To perform logout activity
 		hp.Logout();
-		if(driver.getTitle().equals("Login to HRMS"))
-		{
-			Assert.assertTrue(true);
-			logger.info("Logout successful...");
-		}
-		else
-		{
-			Assert.assertTrue(false);
-			logger.info("Logout failed!!!");
-		}
 	
 	}
 	

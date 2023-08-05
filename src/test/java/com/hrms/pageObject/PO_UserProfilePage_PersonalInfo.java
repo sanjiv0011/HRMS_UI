@@ -1,5 +1,7 @@
 package com.hrms.pageObject;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UserProfilePage_PersonalInfo {
 	
@@ -21,25 +25,25 @@ public class PO_UserProfilePage_PersonalInfo {
 	}
 	
 	//==========START======PERSONAL INFO PAGE OBJECT===============//
-	@FindBy(xpath = "//input[@id=':r2t:']")
+	@FindBy(xpath = "//input[@id=':r0:']")
 	@CacheLookup
 	WebElement textEnterPhoneNumber;
 
-	@FindBy(xpath = "//input[@id=':r2v:']")
+	@FindBy(xpath = "//input[@id=':r1:']")
 	@CacheLookup
-	WebElement textDateOfBirth;
+	WebElement selectDateOfBirth;
 
-	@FindBy(xpath = "//input[@id='gender']")
+	@FindBy(xpath = "//body/div[@id='__next']/div[@class='MuiBox-root css-1k9dio6']/div[@class='miniSidebarWrapper appMainFixedHeader MuiBox-root css-1f8gm9f']/div[@class='mainContent MuiBox-root css-0']/form[@action='#']/div[@class='MuiBox-root css-1c5ij41']/div[@class='MuiBox-root css-1i5nutl']/div[@class='MuiBox-root css-hcwjkm']/div[@class='MuiBox-root css-deejpe']/div[@class='account-tabs-content MuiBox-root css-0']/div/form[@action='#']/div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-isbt42']/div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-grid-md-12 css-roomai']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/*[1]")
 	@CacheLookup
-	WebElement selectGender;
+	List <WebElement> selectGender;
 
 	@FindBy(xpath = "//input[@id='maritalStatus']")
 	@CacheLookup
-	WebElement selectMaritalStatus;
+	List <WebElement> selectMaritalStatus;
 
 	@FindBy(xpath = "//input[@id='employmentStatus']")
 	@CacheLookup
-	WebElement selectEmploymentStatus;
+	List <WebElement> selectEmploymentStatus;
 
 	@FindBy(xpath = "//input[@id=':r3f:']")
 	@CacheLookup
@@ -55,7 +59,7 @@ public class PO_UserProfilePage_PersonalInfo {
 
 	@FindBy(xpath = "//input[@id='jobTitleId']")
 	@CacheLookup
-	WebElement selectJobTitle;
+	List <WebElement> selectJobTitle;
 	
 	@FindBy(xpath = "//div[@class='MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-10yb37c']//*[name()='svg']")
 	@CacheLookup
@@ -79,69 +83,28 @@ public class PO_UserProfilePage_PersonalInfo {
 	
 	public void setDateOfBirth(String dob) 
 	{
-		textDateOfBirth.sendKeys(dob); //dd
-		textDateOfBirth.sendKeys(dob); //mm
-		textDateOfBirth.sendKeys(dob); //yyyy
+		String[] dateofbirth = dob.split("/");
+		selectDateOfBirth.sendKeys(dateofbirth[0]);// mm
+		selectDateOfBirth.sendKeys(dateofbirth[1]);// dd
+		selectDateOfBirth.sendKeys(dateofbirth[2]);// yyyy
 		logger.info("Date of birth entered");
 	}
 	
 	
-	public void setGender(String gnd) 
+	public void setGender(String gnd)
 	{
-		if(gnd == "Male")
-		{
-			selectGender.click();
-		}
-		else if(gnd == "Female")
-		{
-			selectGender.click();
-		}
-		else
-		{
-			System.out.println("Invalid gender key");
-		}
-		logger.info("Gender selected");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectGender,gnd) ;
+		logger.info("Gender selected: "+gnd);
 	}
 	public void selectMaritalStatus(String marri) 
 	{
-		if(marri == "Married")
-		{
-			selectMaritalStatus.click();
-		}
-		else if(marri == "Unmarried")
-		{
-			selectMaritalStatus.click();
-		}
-		else
-		{
-			System.out.println("Invalid marrital status");
-		}
-		logger.info("Selected MaritalStatus");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectMaritalStatus,marri) ;
+		logger.info("Selected MaritalStatus: "+marri);
 	}
 	public void selectEmploymentStatus(String empStatus) 
 	{
-		if(empStatus == "Part Time")
-		{
-			selectEmploymentStatus.click();
-		}
-		else if(empStatus == "Full Time")
-		{
-			selectEmploymentStatus.click();
-		}
-		else if(empStatus == "Contract")
-		{
-			selectEmploymentStatus.click();
-		}
-		else if(empStatus == "Probation")
-		{
-			selectEmploymentStatus.click();
-		}
-		else
-		{
-			System.out.println("Invalid employee status");
-		}
-		
-		logger.info("Selected employmentStatus");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectEmploymentStatus,empStatus) ;
+		logger.info("Selected employmentStatus: "+empStatus);
 	}
 	
 	public void setDepartment(String deparment) 
@@ -157,16 +120,17 @@ public class PO_UserProfilePage_PersonalInfo {
 	}
 	public void selectHireDate(String hireDate) 
 	{
-		selectHireDate.sendKeys(hireDate);// dd
-		selectHireDate.sendKeys(hireDate);// mm
-		selectHireDate.sendKeys(hireDate);// yyyy
+		String[] hitedate = hireDate.split("/");
+		selectHireDate.sendKeys(hitedate[0]);// mm
+		selectHireDate.sendKeys(hitedate[1]);// dd
+		selectHireDate.sendKeys(hitedate[2]);// yyyy
 		logger.info("Hire date entered");
 	}
 	
 	public void selectJobTitle(String jobTitle) 
 	{
-		selectJobTitle.click();
-		logger.info("Selected selectJobTitle");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectJobTitle,jobTitle) ;
+		logger.info("Selected jobTitle: "+jobTitle);
 	}
 	
 	public void selectUserProfileImage()
@@ -185,72 +149,32 @@ public class PO_UserProfilePage_PersonalInfo {
 		logger.info("Clicked on btnNext");
 	}
 	
-	public PO_UserProfilePage fillPersonalInfoDetails(String phoneNumber,String dob, String gnd, String marri, String empStatus, String deparment, String bio, String hireDate , String jobTitle, String btnChoice) throws InterruptedException
+	public PO_UserProfilePage PersonalInfoDetails(String phoneNumber,String dob, String gnd, String marri, String empStatus, String deparment, String bio, String hireDate , String jobTitle, String btnChoice) throws InterruptedException
 	{	
 		textEnterPhoneNumber.sendKeys(phoneNumber);
 		logger.info("Phone number entered");
 		Thread.sleep(500);
 		
-		textDateOfBirth.sendKeys(dob); //dd
-		textDateOfBirth.sendKeys(dob); //mm
-		textDateOfBirth.sendKeys(dob); //yyyy
+
+		String[] dateofbirth = dob.split("/");
+		selectDateOfBirth.sendKeys(dateofbirth[0]);// mm
+		selectDateOfBirth.sendKeys(dateofbirth[1]);// dd
+		selectDateOfBirth.sendKeys(dateofbirth[2]);// yyyy
 		logger.info("Date of birth entered");
 		Thread.sleep(500);
 		
 		// to selecet gender
-		if(gnd == "male")
-		{
-			selectGender.click();
-		}
-		else if(gnd == "female")
-		{
-			selectGender.click();
-		}
-		else
-		{
-			System.out.println("Invalid gender key");
-		}
-		logger.info("Gender selected");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectGender,gnd) ;
+		logger.info("Gender selected: "+gnd);
 		Thread.sleep(1000);
 		
-		// to select marrital status
-		if(marri == "Married")
-		{
-			selectMaritalStatus.click();
-		}
-		else if(marri == "Unmarried")
-		{
-			selectMaritalStatus.click();
-		}
-		else
-		{
-			System.out.println("Invalid marrital status");
-		}
-		logger.info("Selected MaritalStatus");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectMaritalStatus,marri) ;
+		logger.info("Selected MaritalStatus: "+marri);
 		Thread.sleep(1000);
 		
 		// to select employee status
-		if(empStatus == "Part Time")
-		{
-			selectEmploymentStatus.click();
-		}
-		else if(empStatus == "Full Time")
-		{
-			selectEmploymentStatus.click();
-		}
-		else if(empStatus == "Contract")
-		{
-			selectEmploymentStatus.click();
-		}
-		else if(empStatus == "Probation")
-		{
-			selectEmploymentStatus.click();
-		}
-		else
-		{
-			System.out.println("Invalid employee status");
-		}
-		logger.info("Selected employmentStatus");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectEmploymentStatus,empStatus) ;
+		logger.info("Selected employmentStatus: "+empStatus);
 		Thread.sleep(500);
 		
 		textDepartment.sendKeys(deparment);
@@ -261,15 +185,15 @@ public class PO_UserProfilePage_PersonalInfo {
 		logger.info("Bio entered");
 		Thread.sleep(500);
 		
-		
-		selectHireDate.sendKeys(hireDate);// dd
-		selectHireDate.sendKeys(hireDate);// mm
-		selectHireDate.sendKeys(hireDate);// yyyy
+		String[] hitedate = hireDate.split("/");
+		selectHireDate.sendKeys(hitedate[0]);// mm
+		selectHireDate.sendKeys(hitedate[1]);// dd
+		selectHireDate.sendKeys(hitedate[2]);// yyyy
 		logger.info("Hire date entered");
 		Thread.sleep(500);
 		
-		selectJobTitle.click();
-		logger.info("Selected selectJobTitle");
+		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(selectJobTitle,jobTitle) ;
+		logger.info("Selected jobTitle: "+jobTitle);
 		Thread.sleep(500);
 		
 		if(btnChoice == "saveAndHome")
@@ -287,6 +211,8 @@ public class PO_UserProfilePage_PersonalInfo {
 		return new PO_UserProfilePage(driver);
 		
 	}
-	//=====END====Personal info Action Methods============//	
+	//=====END====Personal info Action Methods============//
+	
+	
 
 }

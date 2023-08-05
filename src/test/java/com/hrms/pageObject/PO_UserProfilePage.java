@@ -2,11 +2,13 @@ package com.hrms.pageObject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class PO_UserProfilePage {
 
@@ -80,6 +82,75 @@ public class PO_UserProfilePage {
 	{
 		tabResetPassword.click();
 		logger.info("Clicked on tabResetPassword");
+	}
+	
+	public PO_HomePage UserProfilePageTesting() throws InterruptedException
+	{
+		tabPersonalInfo.click();
+		logger.info("Clicked on tabPersonalInfo");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Phone Number")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
+		tabAddress.click();
+		logger.info("Clicked on tabAddress");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Phone Number")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+
+		tabBankDetails.click();
+		logger.info("Clicked on tabBankDetails");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Address Line 1")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
+		tabOtherInformation.click();
+		logger.info("Clicked on tabOtherInformation");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Bank Name")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
+		tabLeaveHistory.click();
+		logger.info("Clicked on tabLeaveHistory");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Emergency Contact Name")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
+
+		tabLeaveHistory.click();
+		logger.info("Clicked on tabLeaveHistory");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Leave History")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
+		tabResetPassword.click();
+		logger.info("Clicked on tabResetPassword");
+		Thread.sleep(2000);
+		if(driver.getPageSource().contains("Old Password")) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
+		return new PO_HomePage(driver);
 	}
 }
 

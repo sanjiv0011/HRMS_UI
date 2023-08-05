@@ -13,7 +13,11 @@
      <!-- <class name="com.hrms.testCases.TC_Login"/> -->
 	<!--  <class name="com.hrms.testCases.TC_LoginAndLogout"/>--> 
 	
-	  <class name="com.hrms.testCases.TC_HomePage"/>
+	 <!-- <class name="com.hrms.testCases.TC_HomePage"/>-->
+	  
+	  <!--<class name="com.hrms.testCases.TC_UserProfilePage"/>-->
+	  <class name="com.hrms.testCases.TC_PersonalInfoDetails"/>
+	  
       
     </classes>
     

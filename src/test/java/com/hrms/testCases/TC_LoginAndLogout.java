@@ -27,16 +27,5 @@ public class TC_LoginAndLogout extends TC_Login{
 		hp = new PO_HomePage(driver);
 		
 		hp.Logout();
-		
-		if(driver.getTitle().equals("Login to HRMS"))
-		{
-			Assert.assertTrue(true);
-			logger.info("Logout successful...");
-		}
-		else
-		{
-			Assert.assertTrue(false);
-			logger.info("Logout failed!!!");
-		}
 	}
 }
