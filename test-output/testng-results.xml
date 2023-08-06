@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-05T20:04:47 IST" name="Suite" finished-at="2023-08-05T20:05:16 IST" duration-ms="28699">
+  <suite started-at="2023-08-06T18:10:21 IST" name="Suite" finished-at="2023-08-06T18:10:41 IST" duration-ms="20144">
     <groups>
     </groups>
-    <test started-at="2023-08-05T20:04:47 IST" name="HRMS" finished-at="2023-08-05T20:05:16 IST" duration-ms="28699">
-      <class name="com.hrms.testCases.TC_PersonalInfoDetails">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.hrms.testCases.TC_PersonalInfoDetails@5c87bfe2]" started-at="2023-08-05T20:04:47 IST" name="setup" finished-at="2023-08-05T20:04:58 IST" duration-ms="10773" status="PASS">
+    <test started-at="2023-08-06T18:10:21 IST" name="HRMS" finished-at="2023-08-06T18:10:41 IST" duration-ms="20144">
+      <class name="com.hrms.testCases.TC_Assets_CreateAssets">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.hrms.testCases.TC_Assets_CreateAssets@5c87bfe2]" started-at="2023-08-06T18:10:21 IST" name="setup" finished-at="2023-08-06T18:10:32 IST" duration-ms="10784" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,29 +18,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="test_fillPersonalInfoDetails()[pri:1, instance:com.hrms.testCases.TC_PersonalInfoDetails@5c87bfe2]" started-at="2023-08-05T20:04:58 IST" name="test_fillPersonalInfoDetails" finished-at="2023-08-05T20:05:15 IST" duration-ms="16912" status="FAIL">
+        <test-method signature="test_CreateCleint()[pri:1, instance:com.hrms.testCases.TC_Assets_CreateAssets@5c87bfe2]" started-at="2023-08-06T18:10:32 IST" name="test_CreateCleint" finished-at="2023-08-06T18:10:40 IST" duration-ms="8250" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id=':r2t:']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//xpath/for/enterAssetCompanyName"}
   (Session info: chrome=115.0.5790.170)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [eddfe1f51baef19ceea1634c89a2aa8f, findElement {using=xpath, value=//input[@id=':r2t:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55933}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55933/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: eddfe1f51baef19ceea1634c89a2aa8f]]>
+Command: [16b5a1943bdd31e6796f5014d2369871, findElement {using=xpath, value=//xpath/for/enterAssetCompanyName}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60063}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60063/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 16b5a1943bdd31e6796f5014d2369871]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id=':r2t:']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//xpath/for/enterAssetCompanyName"}
   (Session info: chrome=115.0.5790.170)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [eddfe1f51baef19ceea1634c89a2aa8f, findElement {using=xpath, value=//input[@id=':r2t:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55933}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55933/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: eddfe1f51baef19ceea1634c89a2aa8f
+Command: [16b5a1943bdd31e6796f5014d2369871, findElement {using=xpath, value=//xpath/for/enterAssetCompanyName}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60063}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60063/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 16b5a1943bdd31e6796f5014d2369871
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -60,8 +60,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 at jdk.proxy2/jdk.proxy2.$Proxy34.sendKeys(Unknown Source)
-at com.hrms.pageObject.PO_UserProfilePage_PersonalInfo.PersonalInfoDetails(PO_UserProfilePage_PersonalInfo.java:154)
-at com.hrms.testCases.TC_PersonalInfoDetails.test_fillPersonalInfoDetails(TC_PersonalInfoDetails.java:48)
+at com.hrms.pageObject.PO_Assets_CreateAssert.createAssets(PO_Assets_CreateAssert.java:198)
+at com.hrms.testCases.TC_Assets_CreateAssets.test_CreateCleint(TC_Assets_CreateAssets.java:54)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -95,12 +95,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_fillPersonalInfoDetails -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.hrms.testCases.TC_PersonalInfoDetails@5c87bfe2]" started-at="2023-08-05T20:05:15 IST" name="teardown" finished-at="2023-08-05T20:05:16 IST" duration-ms="539" status="PASS">
+        </test-method> <!-- test_CreateCleint -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.hrms.testCases.TC_Assets_CreateAssets@5c87bfe2]" started-at="2023-08-06T18:10:41 IST" name="teardown" finished-at="2023-08-06T18:10:41 IST" duration-ms="528" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.hrms.testCases.TC_PersonalInfoDetails -->
+      </class> <!-- com.hrms.testCases.TC_Assets_CreateAssets -->
     </test> <!-- HRMS -->
   </suite> <!-- Suite -->
 </testng-results>

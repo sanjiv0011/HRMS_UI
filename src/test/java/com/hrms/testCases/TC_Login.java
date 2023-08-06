@@ -25,18 +25,6 @@ public class TC_Login extends BaseClass {
 		lgn = new PO_LoginPage(driver);
 		
 		lgn.login(userName, password);
-		
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("System Manager"))
-		{
-			Assert.assertTrue(true);
-			logger.info("Login success...");
-		}
-		else
-		{
-			Assert.assertTrue(false);
-			logger.info("Login failed!!!");
-		}
 	}
 	
 }

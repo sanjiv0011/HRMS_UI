@@ -7,13 +7,13 @@
   <test thread-count="5" name="HRMS(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.hrms.testCases.TC_PersonalInfoDetails">
+      <class name="com.hrms.testCases.TC_Assets_CreateAssets">
         <methods>
           <include name="setup"/>
+          <include name="test_CreateCleint"/>
           <include name="teardown"/>
-          <include name="test_fillPersonalInfoDetails"/>
         </methods>
-      </class> <!-- com.hrms.testCases.TC_PersonalInfoDetails -->
+      </class> <!-- com.hrms.testCases.TC_Assets_CreateAssets -->
     </classes>
   </test> <!-- HRMS(failed) -->
 </suite> <!-- Failed suite [Suite] -->

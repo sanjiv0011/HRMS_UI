@@ -25,11 +25,11 @@ public class PO_UserProfilePage_PersonalInfo {
 	}
 	
 	//==========START======PERSONAL INFO PAGE OBJECT===============//
-	@FindBy(xpath = "//input[@id=':r0:']")
+	@FindBy(xpath = "//input[@id=':r7:']")
 	@CacheLookup
 	WebElement textEnterPhoneNumber;
 
-	@FindBy(xpath = "//input[@id=':r1:']")
+	@FindBy(xpath = "//input[@id=':r8:']")
 	@CacheLookup
 	WebElement selectDateOfBirth;
 
@@ -83,7 +83,7 @@ public class PO_UserProfilePage_PersonalInfo {
 	
 	public void setDateOfBirth(String dob) 
 	{
-		String[] dateofbirth = dob.split("/");
+		String[] dateofbirth = dob.split("-");
 		selectDateOfBirth.sendKeys(dateofbirth[0]);// mm
 		selectDateOfBirth.sendKeys(dateofbirth[1]);// dd
 		selectDateOfBirth.sendKeys(dateofbirth[2]);// yyyy
@@ -120,7 +120,7 @@ public class PO_UserProfilePage_PersonalInfo {
 	}
 	public void selectHireDate(String hireDate) 
 	{
-		String[] hitedate = hireDate.split("/");
+		String[] hitedate = hireDate.split("-");
 		selectHireDate.sendKeys(hitedate[0]);// mm
 		selectHireDate.sendKeys(hitedate[1]);// dd
 		selectHireDate.sendKeys(hitedate[2]);// yyyy
@@ -156,7 +156,7 @@ public class PO_UserProfilePage_PersonalInfo {
 		Thread.sleep(500);
 		
 
-		String[] dateofbirth = dob.split("/");
+		String[] dateofbirth = dob.split("-");
 		selectDateOfBirth.sendKeys(dateofbirth[0]);// mm
 		selectDateOfBirth.sendKeys(dateofbirth[1]);// dd
 		selectDateOfBirth.sendKeys(dateofbirth[2]);// yyyy

@@ -1,50 +1,154 @@
-13:58:09.691 [main] INFO  com.hrms.testCases.TC_UserProfilePage - Base class started...
-13:58:12.491 [main] INFO  com.hrms.testCases.TC_UserProfilePage - Chrome driver selected
-13:58:20.807 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-13:58:22.001 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-13:58:23.192 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-13:58:28.210 [main] INFO  com.hrms.testCases.TC_UserProfilePage - Done login
-13:58:28.293 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-13:58:28.881 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownMyProfile button
-13:58:30.960 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabPersonalInfo
-13:58:33.204 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabAddress
-13:58:35.347 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabBankDetails
-13:58:37.506 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabOtherInformation
-13:58:39.744 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabLeaveHistory
-13:58:41.850 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabLeaveHistory
-13:58:44.066 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabResetPassword
-13:58:46.136 [main] INFO  com.hrms.testCases.TC_UserProfilePage - User profile testing done
-13:58:47.246 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
-13:58:48.326 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-13:58:49.500 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
-13:58:49.531 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-13:58:50.085 [main] INFO  com.hrms.testCases.TC_UserProfilePage - Driver shutdown
-19:51:12.139 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Base class started...
-19:51:15.295 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Chrome driver selected
-19:51:23.575 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-19:51:24.772 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-19:51:25.880 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-19:51:30.885 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Done login
-19:51:30.966 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-19:51:31.136 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownMyProfile button
-19:51:32.723 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Driver shutdown
-20:03:21.530 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Base class started...
-20:03:24.427 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Chrome driver selected
-20:03:32.942 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-20:03:34.142 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-20:03:35.293 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-20:03:40.312 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Done login
-20:03:40.394 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-20:03:42.468 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownMyProfile button
-20:03:44.599 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabPersonalInfo
-20:03:47.423 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Driver shutdown
-20:04:47.719 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Base class started...
-20:04:50.467 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Chrome driver selected
-20:04:58.692 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-20:04:59.904 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-20:05:01.034 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-20:05:06.041 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Done login
-20:05:06.123 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-20:05:08.202 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownMyProfile button
-20:05:10.319 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabPersonalInfo
-20:05:16.116 [main] INFO  com.hrms.testCases.TC_PersonalInfoDetails - Driver shutdown
+15:03:27.032 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - Base class started...
+15:03:30.092 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - Chrome driver selected
+15:03:38.373 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+15:03:39.554 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+15:03:40.700 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+15:03:45.814 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+15:03:45.818 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - started client page constructor
+15:03:45.819 [main] INFO  com.hrms.pageObject.PO_JobTitles - Entered createCleint Methods
+15:03:47.046 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - Driver shutdown
+15:08:16.931 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - Base class started...
+15:08:19.872 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - Chrome driver selected
+15:08:28.185 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+15:08:29.385 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+15:08:30.539 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+15:08:35.585 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+15:08:35.699 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+15:08:35.711 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - started JobTitle page constructor
+15:08:35.712 [main] INFO  com.hrms.pageObject.PO_JobTitles - Entered create job titles Methods
+15:08:36.355 [main] INFO  com.hrms.pageObject.PO_JobTitles - Click on Create Job title button
+15:08:38.566 [main] INFO  com.hrms.pageObject.PO_JobTitles - Entered job tilte
+15:08:39.850 [main] INFO  com.hrms.pageObject.PO_JobTitles - Enterd job title description
+15:08:41.068 [main] INFO  com.hrms.pageObject.PO_JobTitles - clicked on Create button
+15:08:43.074 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - JobTitle created
+15:08:44.221 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+15:08:45.407 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+15:08:46.518 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+15:08:46.543 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+15:08:47.127 [main] INFO  com.hrms.testCases.TC_CreateJobTitles - Driver shutdown
+15:32:36.052 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Base class started...
+15:32:39.057 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Chrome driver selected
+15:32:47.326 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+15:32:48.542 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+15:32:49.728 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+15:32:54.787 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+15:32:54.895 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+15:32:54.902 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered create leave types Methods
+15:32:56.205 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Driver shutdown
+15:39:46.153 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Base class started...
+15:39:49.186 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Chrome driver selected
+15:39:57.430 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+15:39:58.654 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+15:39:59.787 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+15:40:04.847 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+15:40:05.009 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+15:40:05.021 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered create leave types Methods
+15:40:05.577 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Click on Create leave type button
+15:40:07.797 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
+15:40:09.061 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
+15:40:10.190 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - clicked on Create button
+15:40:12.194 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - JobTitle created
+15:40:13.319 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+15:40:14.432 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+15:40:15.550 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+15:40:15.580 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+15:40:16.193 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Driver shutdown
+16:26:07.857 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Base class started...
+16:26:11.241 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Chrome driver selected
+16:26:19.552 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+16:26:20.751 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+16:26:21.917 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+16:26:26.976 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+16:26:27.098 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+16:26:27.104 [main] INFO  com.hrms.pageObject.PO_LeaveBalance - Entered create leave types Methods
+16:26:27.678 [main] INFO  com.hrms.pageObject.PO_LeaveBalance - Click on Create leave type button
+16:26:30.544 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Driver shutdown
+16:31:38.913 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Base class started...
+16:31:41.820 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Chrome driver selected
+16:31:50.110 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+16:31:51.319 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+16:31:52.485 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+16:31:57.540 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+16:31:57.654 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+16:31:57.662 [main] INFO  com.hrms.pageObject.PO_LeaveBalance - Entered create leave types Methods
+16:31:58.851 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Driver shutdown
+16:33:53.462 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Base class started...
+16:33:56.273 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Chrome driver selected
+16:34:04.544 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+16:34:05.765 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+16:34:06.939 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+16:34:11.989 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+16:34:12.136 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeaveBalances button
+16:34:12.144 [main] INFO  com.hrms.pageObject.PO_LeaveBalance - Entered create leave types Methods
+16:34:12.757 [main] INFO  com.hrms.pageObject.PO_LeaveBalance - Click on Create leave balance button
+16:34:15.571 [main] INFO  com.hrms.testCases.TC_LeaveBalance - Driver shutdown
+17:09:19.778 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Base class started...
+17:09:23.436 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Chrome driver selected
+17:09:31.807 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+17:09:33.003 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+17:09:34.106 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+17:09:39.156 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+17:09:39.258 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+17:09:39.267 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - started assest page constructor
+17:09:39.267 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Entered createCleint Methods
+17:09:39.661 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Click on Create Assert Type button
+17:09:41.796 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Click on Create Assert Type inside button
+17:09:43.064 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Enterd Assert types name
+17:09:44.318 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Enterd assert type code
+17:09:44.532 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Enterd assetTypeDescription
+17:09:44.757 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - clicked on Create button
+17:09:46.764 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Client created
+17:09:47.856 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+17:09:48.973 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+17:09:50.051 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+17:09:50.496 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+17:09:51.189 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Driver shutdown
+17:17:45.080 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Base class started...
+17:17:47.693 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Chrome driver selected
+17:17:55.962 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+17:17:57.180 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+17:17:58.318 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+17:18:03.369 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+17:18:03.487 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+17:18:03.502 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - started assest page constructor
+17:18:03.503 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Entered createCleint Methods
+17:18:04.597 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Driver shutdown
+17:18:43.036 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Base class started...
+17:18:45.658 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Chrome driver selected
+17:18:54.071 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+17:18:55.283 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+17:18:56.439 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+17:19:01.498 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+17:19:01.612 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+17:19:01.615 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - started assest page constructor
+17:19:01.615 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Entered createCleint Methods
+17:19:02.068 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Click on Create Assert Type button
+17:19:04.202 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Click on Create Assert Type inside button
+17:19:05.371 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Enterd Assert types name
+17:19:06.537 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Enterd assert type code
+17:19:06.724 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - Enterd assetTypeDescription
+17:19:06.837 [main] INFO  com.hrms.pageObject.PO_Asserts_CreateAssetsTypes - clicked on Create button
+17:19:08.845 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Client created
+17:19:09.964 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+17:19:11.085 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+17:19:12.205 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+17:19:12.234 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+17:19:12.785 [main] INFO  com.hrms.testCases.TC_CreateAssetsTypes - Driver shutdown
+18:09:39.424 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - Base class started...
+18:09:42.122 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - Chrome driver selected
+18:09:50.398 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:09:51.606 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:09:52.769 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:09:57.834 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:09:57.978 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+18:09:57.982 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - started assest page constructor
+18:09:59.694 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - Driver shutdown
+18:10:21.740 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - Base class started...
+18:10:24.466 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - Chrome driver selected
+18:10:32.771 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:10:33.985 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:10:35.168 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:10:40.230 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:10:40.381 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
+18:10:40.388 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - started assest page constructor
+18:10:41.580 [main] INFO  com.hrms.testCases.TC_Assets_CreateAssets - Driver shutdown

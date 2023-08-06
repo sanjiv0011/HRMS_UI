@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class PO_LoginPage {
 	
@@ -89,6 +90,17 @@ public class PO_LoginPage {
 		btnsubmit.click();
 		logger.info("clicke on login submit button");
 		Thread.sleep(5000);
+	
+		if(driver.getPageSource().contains("System Manager"))
+		{
+			Assert.assertTrue(true);
+			logger.info("Login success...");
+		}
+		else
+		{
+			Assert.assertTrue(false);
+			logger.info("Login failed!!!");
+		}
 		
 		return new PO_HomePage(driver);
 
