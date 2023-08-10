@@ -1,5 +1,6 @@
 package com.hrms.pageObject;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import my_support.DatePicker;
 import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UserProfilePage_PersonalInfo {
@@ -25,31 +27,72 @@ public class PO_UserProfilePage_PersonalInfo {
 	}
 	
 	//==========START======PERSONAL INFO PAGE OBJECT===============//
-	@FindBy(xpath = "//input[@id=':r7:']")
+	@FindBy(xpath = "//input[@name=\"phoneNumber\"]`")
 	@CacheLookup
 	WebElement textEnterPhoneNumber;
 
-	@FindBy(xpath = "//input[@id=':r8:']")
+	
+	//==========START=========SELECTINO DATE OF BIRTH================//
+	
+	//Click on date of birth icon
+	@FindBy(xpath = "(//button[@aria-label='Choose date'])[1]")
 	@CacheLookup
-	WebElement selectDateOfBirth;
-
-	@FindBy(xpath = "//body/div[@id='__next']/div[@class='MuiBox-root css-1k9dio6']/div[@class='miniSidebarWrapper appMainFixedHeader MuiBox-root css-1f8gm9f']/div[@class='mainContent MuiBox-root css-0']/form[@action='#']/div[@class='MuiBox-root css-1c5ij41']/div[@class='MuiBox-root css-1i5nutl']/div[@class='MuiBox-root css-hcwjkm']/div[@class='MuiBox-root css-deejpe']/div[@class='account-tabs-content MuiBox-root css-0']/div/form[@action='#']/div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-isbt42']/div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-grid-md-12 css-roomai']/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/*[1]")
+	WebElement iconDateOfBirth;
+	
+	// to click on toggle button to select date and year
+	@FindBy(xpath = "//button[@aria-label=\"calendar view is open, switch to year view\"]")
+	@CacheLookup
+	WebElement toggleBtnToSelectYearAndDate;
+	
+	// to select the year
+	@FindBy(xpath = "//div[contains(@class, 'MuiYearCalendar-root')]//div")
+	@CacheLookup
+	List <WebElement> selectDateOfBirthYear;
+	
+	// to select the next Month
+	@FindBy(xpath = "//button[@title=\"Next month\"]")
+	@CacheLookup
+	WebElement iconDateOfBirthNextMonth;
+	
+	// to select the Month
+	@FindBy(xpath = "//button[@title=\"Previous month\"]")
+	@CacheLookup
+	WebElement iconDateOfBirthPreviousMonth;
+	
+	// to match exact Month and year
+	//@FindBy(xpath = "//div[contains(@class,'MuiPickersCalendarHeader-label')]"
+	@FindBy(xpath ="//div[contains(text(), 'August')]")
+	@CacheLookup
+	WebElement currentMonthYearDisplayed;
+	
+	// to select the date
+	@FindBy(xpath = "//div[@role='row']//button")
+	@CacheLookup
+	List <WebElement> selectDateOfBirthDate;
+	
+	//==========END=========SELECTINO DATE OF BIRTH================//
+	
+	
+	
+	
+	// to select the gender
+	@FindBy(xpath = "//ul[@id=\"gender-listbox\"]//li")
 	@CacheLookup
 	List <WebElement> selectGender;
 
-	@FindBy(xpath = "//input[@id='maritalStatus']")
+	@FindBy(xpath = "//ul[@id=\"maritalStatus-listbox\"]//li")
 	@CacheLookup
 	List <WebElement> selectMaritalStatus;
 
-	@FindBy(xpath = "//input[@id='employmentStatus']")
+	@FindBy(xpath = "//ul[@id=\"employmentStatus-listbox\"]//li")
 	@CacheLookup
 	List <WebElement> selectEmploymentStatus;
 
-	@FindBy(xpath = "//input[@id=':r3f:']")
+	@FindBy(xpath = "//input[@name=\"department\"]")
 	@CacheLookup
 	WebElement textDepartment;
 
-	@FindBy(xpath = "//input[@id=':r3h:']")
+	@FindBy(xpath = "//input[@name=\"bio\"]")
 	@CacheLookup
 	WebElement textBio;
 
@@ -57,7 +100,7 @@ public class PO_UserProfilePage_PersonalInfo {
 	@CacheLookup
 	WebElement selectHireDate;
 
-	@FindBy(xpath = "//input[@id='jobTitleId']")
+	@FindBy(xpath = "//ul[@id=\"jobTitleId-listbox\"]//li")
 	@CacheLookup
 	List <WebElement> selectJobTitle;
 	
@@ -81,12 +124,10 @@ public class PO_UserProfilePage_PersonalInfo {
 		logger.info("Phone number entered");
 	}
 	
-	public void setDateOfBirth(String dob) 
+	
+	public void selectDateOfBirth(String dob) throws InterruptedException 
 	{
-		String[] dateofbirth = dob.split("-");
-		selectDateOfBirth.sendKeys(dateofbirth[0]);// mm
-		selectDateOfBirth.sendKeys(dateofbirth[1]);// dd
-		selectDateOfBirth.sendKeys(dateofbirth[2]);// yyyy
+		DatePicker.DatePicker_GenericMethod_WithoutDropDown(iconDateOfBirth, toggleBtnToSelectYearAndDate, currentMonthYearDisplayed, iconDateOfBirthNextMonth, iconDateOfBirthPreviousMonth, selectDateOfBirthDate,selectDateOfBirthYear,  dob);
 		logger.info("Date of birth entered");
 	}
 	
@@ -157,9 +198,6 @@ public class PO_UserProfilePage_PersonalInfo {
 		
 
 		String[] dateofbirth = dob.split("-");
-		selectDateOfBirth.sendKeys(dateofbirth[0]);// mm
-		selectDateOfBirth.sendKeys(dateofbirth[1]);// dd
-		selectDateOfBirth.sendKeys(dateofbirth[2]);// yyyy
 		logger.info("Date of birth entered");
 		Thread.sleep(500);
 		

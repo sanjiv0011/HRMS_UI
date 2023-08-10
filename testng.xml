@@ -17,9 +17,9 @@
 	  
 	  <!--<class name="com.hrms.testCases.TC_UserProfilePage"/>-->
 	  
-	 <!-- <class name="com.hrms.testCases.TC_PersonalInfoDetails"/>-->
+	<!--  <class name="com.hrms.testCases.TC_PersonalInfoDetails"/>-->
 	  
-	 <!-- <class name="com.hrms.testCases.TC_CreateOgranization"/>-->
+	 <class name="com.hrms.testCases.TC_CreateOgranization"/>
 	  
 	  <!--<class name="com.hrms.testCases.TC_CreateCleint"/>-->
 	  
@@ -31,7 +31,7 @@
 	
 	<!--<class name="com.hrms.testCases.TC_CreateAssetsTypes"/>-->
 	
-	<class name="com.hrms.testCases.TC_Assets_CreateAssets"/>
+	<!--<class name="com.hrms.testCases.TC_Assets_CreateAssets"/>-->
       
     </classes>
     

@@ -45,7 +45,8 @@ public class TC_PersonalInfoDetails extends BaseClass{
 		
 		// to access user profile page personal info page
 		upppi = new PO_UserProfilePage_PersonalInfo(driver);
-		upppi.PersonalInfoDetails("+911234567890", "01-25-2000", "Male", "Married", "Full Time", "Dev", "Bio", "07/25/2023", "HR", "saveAndHome");
+		upppi.selectDateOfBirth("25 January 1999");
+		//upppi.PersonalInfoDetails("+911234567890", "01-25-2000", "Male", "Married", "Full Time", "Dev", "Bio", "07/25/2023", "HR", "saveAndHome");
 		
 		
 		

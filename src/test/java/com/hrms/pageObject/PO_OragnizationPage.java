@@ -29,47 +29,51 @@ public class PO_OragnizationPage {
 	@CacheLookup
 	WebElement btnCreateOrganization;
 
-	@FindBy(xpath = "//input[@id=':r7:']")
+	@FindBy(xpath = "//input[@name='name']")
 	@CacheLookup
 	WebElement textEnterName;
 
-	@FindBy(xpath = "//input[@id=':r8:']")
+	@FindBy(xpath = "//input[@name='code']")
 	@CacheLookup
 	WebElement textEnterCode;
 
-	@FindBy(xpath = "//input[@id=':r9:']")
+	@FindBy(xpath = "//input[@name='emailAddress']")
 	@CacheLookup
 	WebElement textEnterEmail;
 
-	@FindBy(xpath = "//input[@id=':ra:']")
+	@FindBy(xpath = "//input[@name='phoneNumber']")
 	@CacheLookup
 	WebElement textEnterPhoneNumber;
 	
-	@FindBy(xpath = "//input[@id=':rb:']")
+	@FindBy(xpath = "//input[@name='addressLine1']")
 	@CacheLookup
 	WebElement textEnterAddress;
 	
-	@FindBy(xpath = "//input[@id=':rc:']")
+	@FindBy(xpath = "//input[@name='addressLine2']")
 	@CacheLookup
 	WebElement textEnterArea;
 
-	@FindBy(xpath = "//input[@id=':rd:']")
+	@FindBy(xpath = "//input[@name='city']")
 	@CacheLookup
 	WebElement textEnterCity;
 
-	@FindBy(xpath = "//input[@id=':re:']")
+	@FindBy(xpath = "//input[@name='state']")
 	@CacheLookup
 	WebElement textEnterState;
 
-	@FindBy(xpath = "//input[@id=':rf:']")
+	@FindBy(xpath = "//input[@name='postalCode']")
 	@CacheLookup
 	WebElement textEnterPostalCode;
 
-	@FindBy(xpath = "//input[@id=':rg:']")
+	@FindBy(xpath = "//input[@name='country']")
 	@CacheLookup
 	WebElement textEnterCountry;
 	
-	@FindBy(xpath = "//input[@id='timeZone']")
+	@FindBy(xpath = "//button[@title=\"Open\"]//*[name()=\"svg\"]")
+	@CacheLookup
+	WebElement iconDropdownTimeZone;
+	
+	@FindBy(xpath = "//ul[@id=\"timeZone-listbox\"]//li")
 	@CacheLookup
 	List <WebElement> dropdownTimeZone;
 	
@@ -148,6 +152,12 @@ public class PO_OragnizationPage {
 		logger.info("Enterd org  country");
 	}
 	
+	public void clickOnIconDropdownTimeZone()
+	{
+		iconDropdownTimeZone.click();
+		logger.info("Clicked on the icon drop down for the time zone");
+	}
+	
 	public void selectOrgTimeZone(String orgTimeZone)//"(UTC +05:30) Asia/Kolkata"
 	{
 		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(dropdownTimeZone,orgTimeZone );
@@ -213,14 +223,18 @@ public class PO_OragnizationPage {
 		logger.info("Enterd org  country");
 		Thread.sleep(1000);
 		
+		iconDropdownTimeZone.click();
+		logger.info("Clicked on the icon drop down for the time zone");
+		Thread.sleep(1000);
+		
 		System.out.println(dropdownTimeZone);
 		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(dropdownTimeZone,orgTimeZone );
 		logger.info("Enterd org  time zone");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		btnCreate.click();
 		logger.info("clicked on Create button");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		return new PO_HomePage(driver);
 		
