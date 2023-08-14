@@ -2,24 +2,36 @@ package com.hrms.pageObject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PO_ManageLeaveTypes {
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
+import my_support.Action_Activate;
+import my_support.Action_DeActivate;
+import my_support.Action_Delete;
+
+
+public class PO_ManageLeaveTypes extends ReUseAbleElement{
 	
 	public WebDriver driver = null;
 	public Logger logger = LogManager.getLogger(getClass());
-	
+	public JavascriptExecutor jsExecutor = null; 
+
 	public PO_ManageLeaveTypes(WebDriver driver)
 	{
-		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		super(driver);
+		jsExecutor = (JavascriptExecutor) driver; 
 	}
 	
-
+	
+	
+	
 	//=====START====Organization page and Create organization page object============//
 	@FindBy(xpath = "//p[.='Create Leave Type']")
 	@CacheLookup
@@ -43,32 +55,27 @@ public class PO_ManageLeaveTypes {
 	
 	
 	
-	public void clickOnBtnCreateLeaveTypes()
-	{
+	public void clickOnBtnCreateLeaveTypes(){
 		btnCreateLeaveType.click();
 		logger.info("Click on Create leave type button");
 	}
 	
-	public void setLeaveTypeName(String leaveType)
-	{
+	public void setLeaveTypeName(String leaveType){
 		textEnterLeaveTypeName.sendKeys(leaveType);
 		logger.info("Entered leave type");
 	}
 	
-	public void setLeaveTypeDescription(String leaveDescription)
-	{
+	public void setLeaveTypeDescription(String leaveDescription){
 		textEnterLeaveTypeDescription.sendKeys(leaveDescription);
 		logger.info("Enterd leave types description");
 	}
 	
-	public void clickBtnCreate()
-	{
+	public void clickBtnCreate(){
 		btnCreate.click();
 		logger.info("clicked on Create button");
 	}
 	
-	public void clickBtnCancel()
-	{
+	public void clickBtnCancel(){
 		btnCancel.click();
 		logger.info("Clicked on Cancel button");
 	}
@@ -76,7 +83,7 @@ public class PO_ManageLeaveTypes {
 	public PO_HomePage createLeaveType(String leaveType, String leaveDescription) throws InterruptedException
 	{
 		logger.info("Entered create leave types Methods");
-		
+		Thread.sleep(2000);
 		btnCreateLeaveType.click();
 		logger.info("Click on Create leave type button");
 		Thread.sleep(2000);
@@ -91,12 +98,112 @@ public class PO_ManageLeaveTypes {
 		
 		btnCreate.click();
 		logger.info("clicked on Create button");
+		Thread.sleep(100);
+		return new PO_HomePage(driver);
+	}
+	
+	
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage activateLeaveTypes(String leaveType) throws InterruptedException
+	{
+		logger.info("Activate leave types methods called");
+    	
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+		Action_Activate.activate(leaveType, searchBox, inactiveLabel, btnAction, actionActivate, btnYes, "cofirmMessage");
+     
+//    	 String msg = getArchivedMessage();
+//    	 try {
+//    		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
+//    		 if(msg.contains("Leave Balance Archived Successfully")) {
+//	    		 Assert.assertTrue(true);
+//	    		 logger.info("Leave balance archived passed...");
+//	    	 }else {
+//	    		 Assert.assertTrue(false);
+//	    		 logger.info("Leave balance archived failed!!!");
+//	    	 }
+//    	 }catch(Exception e)
+//    	 {
+//    		 e.getCause();
+//    	 }
+    	 logger.info("Return back inside activateLeaveTypes method");
+    	 return new PO_HomePage(driver);
+	}
+	
+	
+
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage deactivateLeaveTypes(String leaveType) throws InterruptedException
+	{
+		logger.info("De-Activate leave types methods called");
+    	
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+		Action_DeActivate.deactivate(leaveType, searchBox, activeLabel, btnAction, actionDeactivate, btnYes, "cofirmMessage");
+     
+//    	 String msg = getArchivedMessage();
+//    	 try {
+//    		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
+//    		 if(msg.contains("Leave Balance Archived Successfully")) {
+//	    		 Assert.assertTrue(true);
+//	    		 logger.info("Leave balance archived passed...");
+//	    	 }else {
+//	    		 Assert.assertTrue(false);
+//	    		 logger.info("Leave balance archived failed!!!");
+//	    	 }
+//    	 }catch(Exception e)
+//    	 {
+//    		 e.getCause();
+//    	 }
+    	 logger.info("Return back inside deactivateLeaveTypes method");
+    	 return new PO_HomePage(driver);
+	}
+	
+	//USE TO EDIT THE LEAVE TYPES
+	public PO_HomePage editLeaveType(String leaveTypeSearchKey, String leaveDescription, String newLeaveTypes) throws InterruptedException
+	{
+		logger.info("Entered edit leave types Methods");
 		Thread.sleep(2000);
 		
+		searchBox.sendKeys(leaveTypeSearchKey,Keys.ENTER);
+		logger.info("Searched searchKeys");
+		Thread.sleep(2000);
+		
+		btnAction.click();
+		logger.info("Clicked on  button btnAction");
+		Thread.sleep(2000);
+		
+		actionEdit.click();
+		logger.info("Clicked on  button edit");
+		Thread.sleep(2000);
+		
+		//TO CLEAR THE ALREADY WRITTEN TEXT
+		jsExecutor.executeScript("arguments[0].value = '';", textEnterLeaveTypeName);
+		jsExecutor.executeScript("arguments[0].value = '';", textEnterLeaveTypeDescription);
+		
+		textEnterLeaveTypeName.sendKeys(newLeaveTypes);
+		logger.info("Entered leave type");
+		Thread.sleep(1000);
+		
+		textEnterLeaveTypeDescription.sendKeys(leaveDescription);
+		logger.info("Enterd leave types description");
+		Thread.sleep(1000);
+		
+		btnSaveChanges.click();
+		logger.info("clicked on Create button");
+		Thread.sleep(100);
+		
+		return new PO_HomePage(driver);
+	}
+	
+	//TO DELETE THE LEAVE TYPES
+	public PO_HomePage deleteLeaveTypes(String leaveTypeName) throws InterruptedException
+	{
+		logger.info("Entered delete leave types Methods");
+		Thread.sleep(2000);
+		
+		Action_Delete.delete(leaveTypeName, searchBox, btnAction, btnDelete, btnYes, "cofirmMessage");
+		logger.info("Return back delete leave types method");
 		return new PO_HomePage(driver);
 		
-		
 	}
-		
 	
 }

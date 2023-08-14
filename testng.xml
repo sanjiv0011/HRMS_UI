@@ -19,15 +19,15 @@
 	  
 	<!--  <class name="com.hrms.testCases.TC_PersonalInfoDetails"/>-->
 	  
-	 <class name="com.hrms.testCases.TC_CreateOgranization"/>
+	<!--<class name="com.hrms.testCases.TC_CreateOgranization"/>-->
 	  
 	  <!--<class name="com.hrms.testCases.TC_CreateCleint"/>-->
 	  
 	 <!-- <class name="com.hrms.testCases.TC_CreateJobTitles"/>-->
 	 
-	 <!--<class name="com.hrms.testCases.TC_ManageLeaveTypes"/>-->
+	 <class name="com.hrms.testCases.TC_ManageLeaveTypes"/>
 	 
-	<!-- <class name="com.hrms.testCases.TC_LeaveBalance"/>-->
+<!--	<class name="com.hrms.testCases.TC_LeaveBalance"/>-->
 	
 	<!--<class name="com.hrms.testCases.TC_CreateAssetsTypes"/>-->
 	

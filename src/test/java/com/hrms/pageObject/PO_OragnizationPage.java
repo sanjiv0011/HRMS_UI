@@ -25,7 +25,7 @@ public class PO_OragnizationPage {
 	
 
 	//=====START====Organization page and Create organization page object============//
-	@FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-ulqyyo']")
+	@FindBy(xpath = "//button//p[text()='Create Organization']")
 	@CacheLookup
 	WebElement btnCreateOrganization;
 
@@ -227,7 +227,7 @@ public class PO_OragnizationPage {
 		logger.info("Clicked on the icon drop down for the time zone");
 		Thread.sleep(1000);
 		
-		System.out.println(dropdownTimeZone);
+		//System.out.println(dropdownTimeZone);
 		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(dropdownTimeZone,orgTimeZone );
 		logger.info("Enterd org  time zone");
 		Thread.sleep(3000);

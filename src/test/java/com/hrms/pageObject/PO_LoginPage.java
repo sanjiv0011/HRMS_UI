@@ -91,7 +91,7 @@ public class PO_LoginPage {
 		logger.info("clicke on login submit button");
 		Thread.sleep(5000);
 	
-		if(driver.getPageSource().contains("super-admin"))
+		if(driver.getPageSource().contains("Dashboard"))
 		{
 			Assert.assertTrue(true);
 			logger.info("Login success...");

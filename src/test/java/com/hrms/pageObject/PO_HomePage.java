@@ -253,7 +253,7 @@ public class PO_HomePage{
 		return new PO_LoginPage(driver);
 	}
 	
-	public void HomePageTesting() throws InterruptedException
+	public PO_HomePage HomePageTesting() throws InterruptedException
 	{
 		tabOrganizations.click();
 		logger.info("Clicked on tabOrganizations button");
@@ -411,9 +411,7 @@ public class PO_HomePage{
 		iconUserLogged.click();
 		logger.info("Clicked on the Icon user logged");
 		Thread.sleep(4000);
+		
+		return new PO_HomePage(driver);
 	}
-	
-	
-	
-
 }

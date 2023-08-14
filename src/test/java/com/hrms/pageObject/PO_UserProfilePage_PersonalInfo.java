@@ -127,7 +127,8 @@ public class PO_UserProfilePage_PersonalInfo {
 	
 	public void selectDateOfBirth(String dob) throws InterruptedException 
 	{
-		DatePicker.DatePicker_GenericMethod_WithoutDropDown(iconDateOfBirth, toggleBtnToSelectYearAndDate, currentMonthYearDisplayed, iconDateOfBirthNextMonth, iconDateOfBirthPreviousMonth, selectDateOfBirthDate,selectDateOfBirthYear,  dob);
+		iconDateOfBirth.click();
+		DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnToSelectYearAndDate, currentMonthYearDisplayed, iconDateOfBirthNextMonth, iconDateOfBirthPreviousMonth, selectDateOfBirthDate,selectDateOfBirthYear,  dob);
 		logger.info("Date of birth entered");
 	}
 	

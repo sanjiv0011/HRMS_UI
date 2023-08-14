@@ -2,15 +2,17 @@ package my_support;
 
 import java.util.List;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DatePicker {
+public class DatePicker{
+	
+	
 	
 	
 	//======================= this is used when month and year are in the grid format==================//
-		public static void DatePicker_GenericMethod_WithoutDropDown(WebElement path_dateIcon, WebElement path_YearDateToggelBtn, WebElement selectDateOfBirthMonth ,WebElement iconDateOfBirthNextMonth, WebElement iconDateOfBirthPreviousMonth, List <WebElement> path_dateGrid, List <WebElement> path_yearGrid, String yourDate ) throws InterruptedException
+		public static void DatePicker_GenericMethod_WithoutDropDown(WebElement path_YearDateToggelBtn, WebElement selectMonth ,WebElement iconNextMonth, WebElement iconPreviousMonth, List <WebElement> path_dateGrid, List <WebElement> path_yearGrid, String yourDate ) throws InterruptedException
 		{
 			
-			Thread.sleep(1000);
 			// my date setting 
 			String myDate[] = yourDate.split(" ");
 			String year = myDate[2];
@@ -19,29 +21,24 @@ public class DatePicker {
 			System.out.println("Input month: "+month);
 			String date = myDate[0];
 			System.out.println("Input date: "+date);
-			
-			// to click on the date icon , date picker path"path_dateIconSelector"
-			path_dateIcon.click();
-			System.out.println("Clicked on the date picker icon");
-			Thread.sleep(1000);
-			
+				
 			// to click on the toggel button for year and date selection
+			//Thread.sleep(50);
 			path_YearDateToggelBtn.click();
 			System.out.println("Clicked on the toggel button for date and year slection");
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			
 			// to match and pick year
 			List<WebElement> yearGrid = path_yearGrid;
 			//System.out.println(yearGrid);
 			boolean flag = false;
-			Thread.sleep(1000);
 			for(WebElement yearElement : yearGrid)
 			{
 				String yr = yearElement.getText();
 				if(yr.equals(year))
-				{	Thread.sleep(1000);
+				{	Thread.sleep(500);
 					yearElement.click();
-					Thread.sleep(1000);
+					Thread.sleep(500);
 					flag = true;
 					System.out.println("Selected year : "+yr);
 					break;
@@ -55,8 +52,8 @@ public class DatePicker {
 				
 				//System.out.println();
 				// to match month find already present month "path_currentMonthYear"
-				String monthyear = selectDateOfBirthMonth.getText(); 
-				Thread.sleep(1000);
+				Thread.sleep(500);
+				String monthyear = selectMonth.getText(); 
 				System.out.println(monthyear);
 				String arr[] = monthyear.split(" "); // it spit month and year
 				String mon  =arr[0];
@@ -75,20 +72,18 @@ public class DatePicker {
 				}
 				while(displayedMonth>inputmonth)
 				{
-					Thread.sleep(1000);
-					iconDateOfBirthPreviousMonth.click();
+					Thread.sleep(500);
+					iconPreviousMonth.click();
 					displayedMonth = displayedMonth -1;
-					Thread.sleep(1000);
 				}
 				while(displayedMonth<inputmonth)
 				{
-					Thread.sleep(1000);
-					iconDateOfBirthNextMonth.click();
+					Thread.sleep(500);
+					iconNextMonth.click();
 					displayedMonth = displayedMonth +1;
-					Thread.sleep(1000);
 				}
 				if(displayedMonth == inputmonth){
-					System.out.println("Month is selected and name is: "+inputmonth);
+					System.out.println("Month is selected and name is: "+monthAarry[inputmonth]);
 				} else{
 					System.out.println("Month not selected");
 				}
@@ -98,16 +93,16 @@ public class DatePicker {
 			
 			// Date picker  "path_date"
 			List<WebElement> allDates = path_dateGrid;
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			boolean flag2 = false;
 			for(WebElement dateElement : allDates)
 			{
 				String dt = dateElement.getText();
 				if(dt.equals(date))
-				{	Thread.sleep(1000);
+				{	Thread.sleep(500);
 					dateElement.click();
+					Thread.sleep(500);
 					flag2 = true;
-					Thread.sleep(1000);
 					System.out.println("Selected date: "+dt);
 					break;
 				}
@@ -117,7 +112,6 @@ public class DatePicker {
 			}else {
 				System.out.println("Date not selected");
 			}
-			Thread.sleep(1000);
 			
 		}
 	

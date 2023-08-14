@@ -84,12 +84,6 @@ public class ExtentReport extends BaseClass implements ITestListener {
 			e.printStackTrace();
 		} 
 		
-		
-		   // to attach screen shot on the report
-        //String screenshotpath = System.getProperty("user.dir")+"\\Screenshots\\"+result.getName()+"_Screenshots" +".png";
-        //System.out.println("++"+screenshotpath);
-        //File f = new File(screenshotpath);
-		
 		File f = new File(screenshot_path);
         
         
