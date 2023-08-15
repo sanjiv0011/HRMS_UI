@@ -2,21 +2,30 @@ package com.hrms.pageObject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-public class PO_JobTitles {
+import my_support.Action_Archive;
+import my_support.Action_Restore;
+
+public class PO_JobTitles extends ReUseAbleElement{
 	
 	public WebDriver driver = null;
 	public Logger logger = LogManager.getLogger(getClass());
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement rual;
 	
 	public PO_JobTitles(WebDriver driver)
-	{
+	{	
+		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		jsExecutor = (JavascriptExecutor) driver;
+        rual = new ReUseAbleElement(driver);
 	}
 	
 
@@ -43,32 +52,27 @@ public class PO_JobTitles {
 	
 	
 	
-	public void clickOnBtnCreateJobTitle()
-	{
+	public void clickOnBtnCreateJobTitle(){
 		btnCreateJobTitle.click();
 		logger.info("Click on Create Job title button");
 	}
 	
-	public void setJObTitleName(String jobTitleName)
-	{
+	public void setJObTitleName(String jobTitleName){
 		textEnterJobTitleName.sendKeys(jobTitleName);
 		logger.info("Entered job tilte");
 	}
 	
-	public void setJobTitleDescription(String jobtitleDescription)
-	{
+	public void setJobTitleDescription(String jobtitleDescription){
 		textEnterJobTitleDescription.sendKeys(jobtitleDescription);
 		logger.info("Enterd job title description");
 	}
 	
-	public void clickBtnCreate()
-	{
+	public void clickBtnCreate(){
 		btnCreate.click();
 		logger.info("clicked on Create button");
 	}
 	
-	public void clickBtnCancel()
-	{
+	public void clickBtnCancel(){
 		btnCancel.click();
 		logger.info("Clicked on Cancel button");
 	}
@@ -94,9 +98,67 @@ public class PO_JobTitles {
 		Thread.sleep(2000);
 		
 		return new PO_HomePage(driver);
-		
-		
 	}
-		
 	
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage archiveJobTitles(String jobTitle) throws InterruptedException
+	{
+		logger.info("Archive job titles methods called");
+    	
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+		Action_Archive.archive(jobTitle, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
+    	 logger.info("Return back inside archive job titles method");
+    	 return new PO_HomePage(driver);
+	}
+	
+	
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage restoreJobTitles(String jobTitle) throws InterruptedException
+	{
+		logger.info("Restore job titles methods called");
+    	
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+		Action_Restore.restore(jobTitle, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "cofirmMessage");
+    	 logger.info("Return back inside restore job titles method");
+    	 return new PO_HomePage(driver);
+	}
+	
+	//USE TO EDIT THE LEAVE TYPES
+	public PO_HomePage editJobTitles(String jobTitlesSearchKey, String newJobDescription, String newJobTitles) throws InterruptedException
+	{
+		logger.info("Entered edit job titles methods");
+		Thread.sleep(2000);
+		
+		searchBox.sendKeys(jobTitlesSearchKey,Keys.ENTER);
+		logger.info("Searched searchKeys");
+		Thread.sleep(5000);
+		
+		btnAction.click();
+		logger.info("Clicked on  button btnAction");
+		Thread.sleep(2000);
+		
+		actionEdit.click();
+		logger.info("Clicked on  button edit");
+		Thread.sleep(2000);
+		
+		//TO CLEAR THE ALREADY WRITTEN TEXT
+		textEnterJobTitleDescription.clear();
+		Thread.sleep(1000);
+		textEnterJobTitleName.clear();
+		Thread.sleep(1000);
+		
+		textEnterJobTitleName.sendKeys(newJobTitles);
+		logger.info("Entered leave type");
+		Thread.sleep(1000);
+		
+		textEnterJobTitleDescription.sendKeys(newJobDescription);
+		logger.info("Enterd leave types description");
+		Thread.sleep(1000);
+		
+		btnSaveChanges.click();
+		logger.info("clicked on Create button");
+		Thread.sleep(100);
+		
+		return new PO_HomePage(driver);
+	}
 }

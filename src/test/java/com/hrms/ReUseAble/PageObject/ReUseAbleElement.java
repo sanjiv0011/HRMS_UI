@@ -23,13 +23,13 @@ public class ReUseAbleElement {
 		@FindBy(xpath = "//input[@placeholder='Search…']")
 		@CacheLookup
 		public WebElement searchBox;
-		public void searchLeaveBalance_RU(String leaveTypeSearchKey)
+		public void searchBox_RU(String SearchKey)
 		{
-			searchBox.sendKeys(leaveTypeSearchKey,Keys.ENTER);
+			searchBox.sendKeys(SearchKey,Keys.ENTER);
 		}
 	
 		// Action button three dot for
-		@FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]//*[name()='svg']")
+		@FindBy(xpath = "//div[@class='pointer']//*[name()='svg']")
 		@CacheLookup
 		public WebElement btnAction;
 		// Action method to click the Action button
@@ -45,7 +45,7 @@ public class ReUseAbleElement {
 		@CacheLookup
 		public WebElement actionActivate;
 		// Action method to click the Archive action
-	    public void clickArchiveAction_RU() {
+	    public void clickActivateAction_RU() {
 	        actionActivate.click();
 	    }
 		
@@ -54,7 +54,7 @@ public class ReUseAbleElement {
 		@CacheLookup
 		public WebElement actionDeactivate;
 		 // Action method to click the Restore action
-	    public void clickRestoreAction_RU() {
+	    public void clickDeactivateAction_RU() {
 	        actionDeactivate.click();
 	    }
 	    
@@ -62,8 +62,8 @@ public class ReUseAbleElement {
 	 		@FindBy(xpath = "//div[contains(text(),'Leave Type Activated Successfully.')]")
 	 		@CacheLookup
 	 		public WebElement msgActivated;
-	 		 // Action method to get the message after archiving
-	 	    public String getArchivedMessage_RU() {
+	 		 // Action method to get the message after activation
+	 	    public String getActivatedMessage_RU() {
 	 	        return msgActivated.getText();
 	 	    }
 	 		
@@ -71,8 +71,8 @@ public class ReUseAbleElement {
 	  		@FindBy(xpath = "//div[contains(text(),'Leave Deactivated Successfully.')]")
 	  		@CacheLookup
 	  		public WebElement msgDeactivated;
-	 	    // Action method to get the message after restoring
-	 	    public String getRestoredMessage_RU() {
+	 	    // Action method to get the message after deactivation
+	 	    public String getDeactivatedMessage_RU() {
 	 	        return msgDeactivated.getText();
 	 	    }
 	 		
@@ -109,7 +109,7 @@ public class ReUseAbleElement {
 	    //Archive Action => To use this first search list item so that it comes at first position
   		@FindBy(xpath = "(//div[contains(text(),'Archive')])[1]")
   		@CacheLookup
-  		WebElement actionArchive;
+  		public WebElement actionArchive;
   		// Action method to click the Archive action
   	    public void clickArchiveAction() {
   	        actionArchive.click();
@@ -118,7 +118,7 @@ public class ReUseAbleElement {
   		//Restore Action => To use this first search list item so that it comes at first position
   		@FindBy(xpath = "(//div[contains(text(),'Restore')])[1]")
   		@CacheLookup
-  		WebElement actionRestore;
+  		public WebElement actionRestore;
   		 // Action method to click the Restore action
   	    public void clickRestoreAction() {
   	        actionRestore.click();
@@ -127,7 +127,7 @@ public class ReUseAbleElement {
   	    // No button before confirm the action
 		@FindBy(xpath = "//div[contains(text(),'Leave Balance Restored Successfully.')]")
 		@CacheLookup
-		WebElement msgArchived;
+		public WebElement msgArchived;
 		 // Action method to get the message after archiving
 	    public String getArchivedMessage() {
 	        return msgArchived.getText();
@@ -136,7 +136,7 @@ public class ReUseAbleElement {
 	    // No button before confirm the action
  		@FindBy(xpath = "//div[contains(text(),'Leave Balance Archived Successfully.')]")
  		@CacheLookup
- 		WebElement msgRestored;
+ 		public WebElement msgRestored;
 	    // Action method to get the message after restoring
 	    public String getRestoredMessage() {
 	        return msgRestored.getText();
@@ -145,7 +145,7 @@ public class ReUseAbleElement {
 	    //TO CHECK ALLREADY ARCHIVED
 	    @FindBy(xpath="//span[text()='Archived']")
 	    @CacheLookup
-	    WebElement archivedLabel;
+	    public WebElement archivedLabel;
 	    public boolean isAlreadyArchivedDisplayed() {
 	        boolean flag = false;
 	        if (archivedLabel.isDisplayed()) {

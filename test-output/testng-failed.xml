@@ -7,15 +7,15 @@
   <test thread-count="5" name="HRMS(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.hrms.testCases.TC_ManageLeaveTypes">
+      <class name="com.hrms.testCases.TC_CreateAssetsTypes">
         <methods>
           <include name="setup"/>
-          <include name="teardown"/>
-          <include name="test_DeleteLeaveTypes"/>
           <include name="test_Logout"/>
           <include name="test_Login"/>
+          <include name="teardown"/>
+          <include name="test_ArchiveAssetsTypes"/>
         </methods>
-      </class> <!-- com.hrms.testCases.TC_ManageLeaveTypes -->
+      </class> <!-- com.hrms.testCases.TC_CreateAssetsTypes -->
     </classes>
   </test> <!-- HRMS(failed) -->
 </suite> <!-- Failed suite [Suite] -->

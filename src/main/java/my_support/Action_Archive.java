@@ -35,6 +35,21 @@ public class Action_Archive {
         	    Thread.sleep(100);
     		}
     	}
+    	
+//   	 String msg = getArchivedMessage();
+//   	 try {
+//   		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
+//   		 if(msg.contains("Leave Balance Archived Successfully")) {
+//	    		 Assert.assertTrue(true);
+//	    		 logger.info("Leave balance archived passed...");
+//	    	 }else {
+//	    		 Assert.assertTrue(false);
+//	    		 logger.info("Leave balance archived failed!!!");
+//	    	 }
+//   	 }catch(Exception e)
+//   	 {
+//   		 e.getCause();
+//   	 }
 	}
 
 }

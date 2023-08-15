@@ -18,20 +18,20 @@ import my_support.Action_Delete;
 
 
 public class PO_ManageLeaveTypes extends ReUseAbleElement{
-	
-	public WebDriver driver = null;
-	public Logger logger = LogManager.getLogger(getClass());
-	public JavascriptExecutor jsExecutor = null; 
 
-	public PO_ManageLeaveTypes(WebDriver driver)
-	{
-		super(driver);
-		jsExecutor = (JavascriptExecutor) driver; 
-	}
+	public Logger logger = LogManager.getLogger(getClass());
+	public static WebDriver driver;
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement rual;
 	
+	 public PO_ManageLeaveTypes(WebDriver driver) {
+	        super(driver);
+	        this.driver = driver; // Set the driver for the current class
+	        jsExecutor = (JavascriptExecutor) driver;
+	        rual = new ReUseAbleElement(driver); // Pass the driver instance to ReUseAbleElement
+	 }
 	
-	
-	
+
 	//=====START====Organization page and Create organization page object============//
 	@FindBy(xpath = "//p[.='Create Leave Type']")
 	@CacheLookup
@@ -108,23 +108,8 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 	{
 		logger.info("Activate leave types methods called");
     	
-    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+    	//METHODS TO ACTIVATE THE LEAVE BALNACE 
 		Action_Activate.activate(leaveType, searchBox, inactiveLabel, btnAction, actionActivate, btnYes, "cofirmMessage");
-     
-//    	 String msg = getArchivedMessage();
-//    	 try {
-//    		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
-//    		 if(msg.contains("Leave Balance Archived Successfully")) {
-//	    		 Assert.assertTrue(true);
-//	    		 logger.info("Leave balance archived passed...");
-//	    	 }else {
-//	    		 Assert.assertTrue(false);
-//	    		 logger.info("Leave balance archived failed!!!");
-//	    	 }
-//    	 }catch(Exception e)
-//    	 {
-//    		 e.getCause();
-//    	 }
     	 logger.info("Return back inside activateLeaveTypes method");
     	 return new PO_HomePage(driver);
 	}
@@ -136,23 +121,8 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 	{
 		logger.info("De-Activate leave types methods called");
     	
-    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+    	//METHODS TO DEACTIVATE THE LEAVE BALNACE 
 		Action_DeActivate.deactivate(leaveType, searchBox, activeLabel, btnAction, actionDeactivate, btnYes, "cofirmMessage");
-     
-//    	 String msg = getArchivedMessage();
-//    	 try {
-//    		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
-//    		 if(msg.contains("Leave Balance Archived Successfully")) {
-//	    		 Assert.assertTrue(true);
-//	    		 logger.info("Leave balance archived passed...");
-//	    	 }else {
-//	    		 Assert.assertTrue(false);
-//	    		 logger.info("Leave balance archived failed!!!");
-//	    	 }
-//    	 }catch(Exception e)
-//    	 {
-//    		 e.getCause();
-//    	 }
     	 logger.info("Return back inside deactivateLeaveTypes method");
     	 return new PO_HomePage(driver);
 	}

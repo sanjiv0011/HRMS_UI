@@ -2,21 +2,32 @@ package com.hrms.pageObject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PO_Asserts_CreateAssetsTypes {
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
+import my_support.Action_Archive;
+import my_support.Action_Restore;
+
+public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 	
 	public WebDriver driver = null;
 	public Logger logger = LogManager.getLogger(getClass());
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement rual;
 	
 	public PO_Asserts_CreateAssetsTypes(WebDriver driver)
 	{
+		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		jsExecutor = (JavascriptExecutor) driver;
+        rual = new ReUseAbleElement(driver);
 	}
 	
 
@@ -93,8 +104,9 @@ public class PO_Asserts_CreateAssetsTypes {
 		logger.info("Clicked on Cancel button");
 	}
 	
+	//TO CREATE ASSETS TYPES
 	public PO_HomePage createAssetType(String assetTypeName, String assetTypeCode, String assetTypeDescription ) throws InterruptedException
-	{
+	{	Thread.sleep(2000);
 		logger.info("Entered createCleint Methods");
 		
 		btnCreateAssetsType.click();
@@ -107,7 +119,6 @@ public class PO_Asserts_CreateAssetsTypes {
 		
 		textEnterAssetTypeName.sendKeys(assetTypeName);
 		logger.info("Enterd Assert types name");
-		Thread.sleep(1000);
 		
 		textEnterAssetTypeCode.sendKeys(assetTypeCode);
 		logger.info("Enterd assert type code");
@@ -116,13 +127,89 @@ public class PO_Asserts_CreateAssetsTypes {
 		logger.info("Enterd assetTypeDescription");
 		
 		btnCreate.click();
-		logger.info("clicked on Create button");
+		logger.info("clicked on Create button");		
+		return new PO_HomePage(driver);
+	}
+	
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage archiveAssetType(String assetsType) throws InterruptedException
+	{	//TO ARCHIVE THE ASSETS TYPES AND RETURN DRIVER TO HOME PAGE 
+		Thread.sleep(2000);
+		logger.info("Archive assets methods called");
+    	
+		btnCreateAssetsType.click();
+		logger.info("Click on Create Assert Type button");
 		Thread.sleep(2000);
 		
-		return new PO_HomePage(driver);
-		
-		
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+		Action_Archive.archive(assetsType, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
+    	 logger.info("Return back inside archive assets method");
+    	 return new PO_HomePage(driver);
 	}
+	
+	
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage restoreAssetType(String assetsType) throws InterruptedException
+	{	//TO RESTORE THE ASSETS TYPES AND RETURN DRIVER TO HOME PAGE
+		Thread.sleep(2000);
+		logger.info("Restore assets methods called");
+    	
+		btnCreateAssetsType.click();
+		logger.info("Click on Create Assert Type button");
+		Thread.sleep(2000);
 		
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+		Action_Restore.restore(assetsType, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "cofirmMessage");
+    	 logger.info("Return back inside restore assets method");
+    	 return new PO_HomePage(driver);
+	}
+	
+	//USE TO EDIT THE LEAVE TYPES
+	public PO_HomePage editAssetType(String assetTypeSearchKey, String newAssetTypeDescription, String newAssetTypeName, String newAssetTypeCode) throws InterruptedException
+	{	//TO EDIT THE ASSETS TYPES AND RETURN DRIVER TO HOME PAGE
+		Thread.sleep(2000);
+		logger.info("Entered inside edit assets methods");
+		Thread.sleep(2000);
+		
+		btnCreateAssetsType.click();
+		logger.info("Click on Create Assert Type button");
+		Thread.sleep(2000);
+		
+		searchBox.sendKeys(assetTypeSearchKey,Keys.ENTER);
+		logger.info("Searched searchKeys");
+		Thread.sleep(5000);
+		
+		btnAction.click();
+		logger.info("Clicked on  button btnAction");
+		Thread.sleep(2000);
+		
+		actionEdit.click();
+		logger.info("Clicked on  button edit");
+		Thread.sleep(2000);
+		
+		//TO CLEAR THE ALREADY WRITTEN TEXT
+		textEnterAssertTypeDescription.clear();
+		Thread.sleep(1000);
+		textEnterAssetTypeName.clear();
+		Thread.sleep(1000);
+		
+		textEnterAssetTypeName.sendKeys(newAssetTypeName);
+		logger.info("Entered leave type");
+		Thread.sleep(500);
+		
+		textEnterAssetTypeCode.sendKeys(newAssetTypeCode);
+		logger.info("Enterd assert type code");
+		Thread.sleep(500);
+		
+		textEnterAssertTypeDescription.sendKeys(newAssetTypeDescription);
+		logger.info("Enterd leave types description");
+		Thread.sleep(500);
+		
+		btnSaveChanges.click();
+		logger.info("clicked on Create button");
+		Thread.sleep(300);
+		return new PO_HomePage(driver);
+	}
+	
 	
 }

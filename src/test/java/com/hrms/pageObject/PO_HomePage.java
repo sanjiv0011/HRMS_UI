@@ -26,84 +26,84 @@ public class PO_HomePage{
 	//Page objects
 	@FindBy(xpath = "//div[@class='MuiBox-root css-12an206']")
 	@CacheLookup
-	WebElement btnSystemManager;
+	public WebElement btnSystemManager;
 	
 	@FindBy(xpath = "//a[@href=\"/organization\"]")
 	@CacheLookup
-	WebElement tabOrganizations;
+	public WebElement tabOrganizations;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Leave\"]")
 	@CacheLookup
-	WebElement tabLeave;
+	public WebElement tabLeave;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Clients\"]")
 	@CacheLookup
-	WebElement tabClients;
+	public WebElement tabClients;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Users\"]")
 	@CacheLookup
-	WebElement tabUsers;
+	public WebElement tabUsers;
 	
 	@FindBy(xpath = "//a[@href=\"/project\"]")
 	@CacheLookup
-	WebElement tabProjects;
+	public WebElement tabProjects;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Daily Updates\"]")
 	@CacheLookup
-	WebElement tabDailyUpdates;
+	public WebElement tabDailyUpdates;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Assets\"]")
 	@CacheLookup
-	WebElement tabAssets;
+	public WebElement tabAssets;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"My Calender\"]")
 	@CacheLookup
-	WebElement tabMyCalender;
+	public WebElement tabMyCalender;
 	
 	@FindBy(xpath = "//a[@href=\"/job-title\"]")
 	@CacheLookup
-	WebElement tabJobTitle;
+	public WebElement tabJobTitle;
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Manage Leave Types\"]")
 	@CacheLookup
-	WebElement tabManageLeaveTypes;
+	public WebElement tabManageLeaveTypes;
 	
 	
 	@FindBy(xpath = "//span[normalize-space()=\"Leave Balances\"]")
 	@CacheLookup
-	WebElement tabLeaveBalances;
+	public WebElement tabLeaveBalances;
 	
 	@FindBy(xpath = "//button[@aria-label=\"open drawer\"]//*[name()=\"svg\"]")
 	@CacheLookup
-	WebElement tabMenu;
+	public WebElement tabMenu;
 	
 	@FindBy(xpath = "//*[name()='path' and contains(@d,'M3 18h18v-')]")
 	@CacheLookup
-	WebElement iconUserLogged;
+	public WebElement iconUserLogged;
 	
 	@FindBy(xpath = "//img[@alt='Image']")
 	@CacheLookup
-	WebElement iconHomeImage;
+	public WebElement iconHomeImage;
 	
 	@FindBy(xpath = "//li[normalize-space()='My Profile']")
 	@CacheLookup
-	WebElement dropdownMyProfile;
+	public WebElement dropdownMyProfile;
 	
 	@FindBy(xpath = "//li[normalize-space()=\"Logout\"]")
 	@CacheLookup
-	WebElement dropdownLogout;
+	public WebElement dropdownLogout;
 	
 	@FindBy(xpath = "//p[normalize-space()='No']")
 	@CacheLookup
-	WebElement dropdownLogotNoBtn;
+	public WebElement dropdownLogotNoBtn;
 	
 	@FindBy(xpath = "//button[.='Yes']")
 	@CacheLookup
-	WebElement dropdownLogotYesBtn;
+	public WebElement dropdownLogotYesBtn;
 	
 	@FindBy(xpath = "//p[@class=\"MuiTypography-root MuiTypography-body2 deactiveText css-6plnes\"]")
 	@CacheLookup
-	WebElement btnAddressHome;
+	public WebElement btnAddressHome;
 	
 	// ACTION METHODS
 	
@@ -228,7 +228,6 @@ public class PO_HomePage{
 	}
 	
 	public PO_LoginPage Logout() throws InterruptedException
-	
 	{
 		btnSystemManager.click();
 		Thread.sleep(1000);
