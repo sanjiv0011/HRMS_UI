@@ -7,8 +7,8 @@ import com.hrms.pageObject.PO_Asserts_CreateAssetsTypes;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LoginPage;
 
-public class TC_CreateAssetsTypes extends BaseClass {
-	public TC_CreateAssetsTypes() {
+public class TC_AssetsTypes extends BaseClass {
+	public TC_AssetsTypes() {
 		super();
 	}
 	

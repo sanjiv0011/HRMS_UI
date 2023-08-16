@@ -80,6 +80,7 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 		logger.info("Clicked on Cancel button");
 	}
 	
+	// TO CREATE LEAVE TYPES
 	public PO_HomePage createLeaveType(String leaveType, String leaveDescription) throws InterruptedException
 	{
 		logger.info("Entered create leave types Methods");
@@ -102,31 +103,32 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 		return new PO_HomePage(driver);
 	}
 	
-	
+	//TO ACTIVATE LEAVE TYPES
 	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
 	public PO_HomePage activateLeaveTypes(String leaveType) throws InterruptedException
 	{
 		logger.info("Activate leave types methods called");
     	
-    	//METHODS TO ACTIVATE THE LEAVE BALNACE 
+    	//METHODS TO ACTIVATE THE LEAVE TYPES
 		Action_Activate.activate(leaveType, searchBox, inactiveLabel, btnAction, actionActivate, btnYes, "cofirmMessage");
     	 logger.info("Return back inside activateLeaveTypes method");
     	 return new PO_HomePage(driver);
 	}
 	
 	
-
+	//TO DEACTIVATE LEAVE TYPES
 	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
 	public PO_HomePage deactivateLeaveTypes(String leaveType) throws InterruptedException
 	{
 		logger.info("De-Activate leave types methods called");
     	
-    	//METHODS TO DEACTIVATE THE LEAVE BALNACE 
+    	//METHODS TO DEACTIVATE THE LEAVE TYPES
 		Action_DeActivate.deactivate(leaveType, searchBox, activeLabel, btnAction, actionDeactivate, btnYes, "cofirmMessage");
     	 logger.info("Return back inside deactivateLeaveTypes method");
     	 return new PO_HomePage(driver);
 	}
 	
+	//TO EDIT LEAVE TYPES
 	//USE TO EDIT THE LEAVE TYPES
 	public PO_HomePage editLeaveType(String leaveTypeSearchKey, String leaveDescription, String newLeaveTypes) throws InterruptedException
 	{

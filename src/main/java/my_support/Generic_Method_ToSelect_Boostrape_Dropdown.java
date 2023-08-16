@@ -2,11 +2,14 @@ package my_support;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 
 public class Generic_Method_ToSelect_Boostrape_Dropdown 
 {
+	public static final Logger logger = LogManager.getLogger(Generic_Method_ToSelect_Boostrape_Dropdown.class);
 	
     public static void selectOptionFromDropdown(List<WebElement> options, String value)
     {
@@ -24,9 +27,9 @@ public class Generic_Method_ToSelect_Boostrape_Dropdown
     	}
     
     	if(flag == true) {
-    		System.out.println("Option is selected");
+    		logger.info("Option is selected");
     	}else {
-    		System.out.println("Option is not selected");
+    		logger.info("Option is not selected");
     	}
     	
     }

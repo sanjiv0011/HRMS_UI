@@ -192,12 +192,14 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		Thread.sleep(1000);
 		textEnterAssetTypeName.clear();
 		Thread.sleep(1000);
+		textEnterAssetTypeCode.clear();
+		Thread.sleep(1000);
 		
 		textEnterAssetTypeName.sendKeys(newAssetTypeName);
 		logger.info("Entered leave type");
 		Thread.sleep(500);
 		
-		textEnterAssetTypeCode.sendKeys(newAssetTypeCode);
+		//textEnterAssetTypeCode.sendKeys(newAssetTypeCode); //BECAUSE CLEAR FUNCTION NOT WORKING AND IT TAKES ONLY FOR CHARACTER
 		logger.info("Enterd assert type code");
 		Thread.sleep(500);
 		

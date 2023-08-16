@@ -1,0 +1,205 @@
+17:57:50.007 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
+17:57:52.407 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
+17:58:00.690 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+17:58:01.884 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+17:58:03.069 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+17:58:08.092 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+17:58:11.232 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+17:58:14.391 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+17:58:16.484 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the create user button
+17:58:17.590 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the user details page
+17:58:19.716 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered username
+17:58:21.541 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered password
+17:58:23.798 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the dropdown organizations
+17:58:24.861 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is not selected
+17:58:24.861 [main] INFO  com.hrms.pageObject.PO_UsersPage - Organization name selected
+17:58:26.310 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered first name
+17:58:27.920 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered Last name
+17:58:31.009 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered email address
+17:58:32.284 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the User roles dropdown
+17:58:33.380 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is not selected
+17:58:33.380 [main] INFO  com.hrms.pageObject.PO_UsersPage - User roles selected
+17:58:36.518 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
+18:07:55.115 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
+18:07:57.680 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
+18:08:05.912 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:08:07.116 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:08:08.273 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:08:13.300 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:08:16.441 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:08:19.558 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:08:21.667 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the create user button
+18:08:22.769 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the user details page
+18:08:25.453 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered username
+18:08:27.350 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered password
+18:08:29.631 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the dropdown organizations
+18:08:30.690 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is not selected
+18:08:30.691 [main] INFO  com.hrms.pageObject.PO_UsersPage - Organization name selected
+18:08:32.374 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered first name
+18:08:34.148 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered Last name
+18:08:37.322 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered email address
+18:08:38.495 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the User roles dropdown
+18:08:39.777 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
+18:08:39.778 [main] INFO  com.hrms.pageObject.PO_UsersPage - User roles selected
+18:08:41.098 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save and go to home button
+18:08:41.415 [main] INFO  com.hrms.testCases.TC_Users - User created
+18:08:41.496 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:08:45.612 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+18:08:46.731 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+18:08:47.882 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+18:08:47.908 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+18:08:48.433 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
+18:13:22.647 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
+18:13:25.166 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
+18:13:33.408 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:13:34.603 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:13:35.799 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:13:40.821 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:13:43.930 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:13:47.014 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:13:49.136 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the create user button
+18:13:50.242 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the user details page
+18:13:52.143 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered username
+18:13:54.006 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered password
+18:13:56.246 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the dropdown organizations
+18:13:57.298 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is not selected
+18:13:57.298 [main] INFO  com.hrms.pageObject.PO_UsersPage - Organization name selected
+18:13:58.944 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered first name
+18:14:00.928 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered Last name
+18:14:04.125 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered email address
+18:14:05.419 [main] INFO  com.hrms.pageObject.PO_UsersPage - Clicked on the User roles dropdown
+18:14:06.655 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
+18:14:06.655 [main] INFO  com.hrms.pageObject.PO_UsersPage - User roles selected
+18:14:07.953 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save and go to home button
+18:14:08.274 [main] INFO  com.hrms.testCases.TC_Users - User created
+18:14:08.365 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:14:12.514 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+18:14:13.649 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+18:14:14.783 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+18:14:14.795 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+18:14:15.286 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
+18:24:35.252 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
+18:24:37.713 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
+18:24:45.965 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:24:47.164 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:24:48.320 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:24:53.358 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:24:56.513 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:24:59.652 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:25:01.688 [main] INFO  com.hrms.pageObject.PO_UsersPage - Archive user method called
+18:25:01.995 [main] INFO  my_support.Action_Restore - searchKey searched
+18:25:10.039 [main] INFO  my_support.Action_Restore - no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Archived']"}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [93179c8b238bdae3786c7b5829d06556, findElement {using=xpath, value=//span[text()='Archived']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61126}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61126/devtoo..., se:cdpVersion: 115.0.5790.171, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93179c8b238bdae3786c7b5829d06556
+18:25:10.165 [main] INFO  my_support.Action_Restore - Click on the btnAction
+18:25:11.315 [main] INFO  my_support.Action_Restore - Click on the actionArchive
+18:25:12.547 [main] INFO  my_support.Action_Restore - Click on the btnYes
+18:25:12.654 [main] INFO  com.hrms.pageObject.PO_UsersPage - Returned inside archive user method
+18:25:12.656 [main] INFO  com.hrms.testCases.TC_Users - Archive User call done
+18:25:12.782 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:25:15.925 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:25:17.947 [main] INFO  com.hrms.pageObject.PO_UsersPage - Restore user method called
+18:25:18.290 [main] INFO  my_support.Action_Restore - searchKey searched
+18:25:26.401 [main] INFO  my_support.Action_Restore - true
+18:25:26.455 [main] INFO  my_support.Action_Restore - Click on the btnAction
+18:25:28.457 [main] INFO  my_support.Action_Restore - Before actionRestore.click line
+18:25:28.573 [main] INFO  my_support.Action_Restore - Click on the actionRestore
+18:25:29.677 [main] INFO  my_support.Action_Restore - Click on the btnYes
+18:25:29.889 [main] INFO  com.hrms.pageObject.PO_UsersPage - Returned inside restore user method
+18:25:29.891 [main] INFO  com.hrms.testCases.TC_Users - Restore user call done
+18:25:29.968 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:25:34.131 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+18:25:35.269 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+18:25:36.403 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+18:25:36.428 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+18:25:36.922 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
+18:35:17.582 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
+18:35:20.148 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
+18:35:28.413 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:35:29.615 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:35:30.830 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:35:35.853 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:35:39.003 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:35:42.170 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:35:44.188 [main] INFO  com.hrms.pageObject.PO_UsersPage - Activate user methods called
+18:35:44.491 [main] INFO  my_support.Action_Restore - searchKey searched
+18:35:52.497 [main] INFO  my_support.Action_Restore - Try block
+18:35:52.542 [main] INFO  my_support.Action_Restore - Catch block
+18:35:52.543 [main] INFO  my_support.Action_Restore - no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='InActive']"}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [650486df76ce5ca2b16690bb7eb23c0d, findElement {using=xpath, value=//span[normalize-space()='InActive']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61525}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61525/devtoo..., se:cdpVersion: 115.0.5790.171, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 650486df76ce5ca2b16690bb7eb23c0d
+18:35:52.544 [main] INFO  my_support.Action_Restore - Already Activated
+18:35:52.544 [main] INFO  com.hrms.pageObject.PO_UsersPage - Return back inside activate user method
+18:35:52.544 [main] INFO  com.hrms.testCases.TC_Users - Activate user call done
+18:35:52.614 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:35:55.838 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:35:57.859 [main] INFO  com.hrms.pageObject.PO_UsersPage - De-Activate user methods called
+18:35:58.157 [main] INFO  my_support.Action_Restore - searchKey searched
+18:36:06.170 [main] INFO  my_support.Action_Restore - Try block
+18:36:06.336 [main] INFO  my_support.Action_Restore - Click on the btnAction
+18:36:07.391 [main] INFO  my_support.Action_Restore - Catch block
+18:36:07.392 [main] INFO  my_support.Action_Restore - no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'Deactive')])[1]"}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [650486df76ce5ca2b16690bb7eb23c0d, findElement {using=xpath, value=(//div[contains(text(),'Deactive')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61525}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61525/devtoo..., se:cdpVersion: 115.0.5790.171, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 650486df76ce5ca2b16690bb7eb23c0d
+18:36:07.392 [main] INFO  my_support.Action_Restore - Already Deactivated
+18:36:07.393 [main] INFO  com.hrms.pageObject.PO_UsersPage - Return back inside deactivate user method
+18:36:07.395 [main] INFO  com.hrms.testCases.TC_Users - DeActivate user call done
+18:36:09.217 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
+18:52:02.620 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
+18:52:05.125 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
+18:52:13.399 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:52:14.573 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:52:15.739 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:52:20.761 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:52:23.866 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:52:27.045 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:52:29.081 [main] INFO  com.hrms.pageObject.PO_UsersPage - Activate user methods called
+18:52:29.373 [main] INFO  my_support.Action_Restore - searchKey searched
+18:52:37.375 [main] INFO  my_support.Action_Restore - Try block
+18:52:37.426 [main] INFO  my_support.Action_Restore - Catch block
+18:52:37.428 [main] INFO  my_support.Action_Restore - no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='InActive']"}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f20923bb7ab7ff3463788a30b8bc136f, findElement {using=xpath, value=//span[normalize-space()='InActive']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62198}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62198/devtoo..., se:cdpVersion: 115.0.5790.171, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f20923bb7ab7ff3463788a30b8bc136f
+18:52:37.429 [main] INFO  my_support.Action_Restore - Already Activated
+18:52:37.429 [main] INFO  com.hrms.pageObject.PO_UsersPage - Return back inside activate user method
+18:52:37.430 [main] INFO  com.hrms.testCases.TC_Users - Activate user call done
+18:52:37.499 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:52:40.642 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+18:52:42.656 [main] INFO  com.hrms.pageObject.PO_UsersPage - De-Activate user methods called
+18:52:42.930 [main] INFO  my_support.Action_Restore - searchKey searched
+18:52:50.944 [main] INFO  my_support.Action_Restore - Try block
+18:52:51.083 [main] INFO  my_support.Action_Restore - Click on the btnAction
+18:52:52.256 [main] INFO  my_support.Action_Restore - Click on the actionDeactivate
+18:52:53.403 [main] INFO  my_support.Action_Restore - Click on the btnYes
+18:52:53.505 [main] INFO  com.hrms.pageObject.PO_UsersPage - Return back inside deactivate user method
+18:52:53.506 [main] INFO  com.hrms.testCases.TC_Users - DeActivate user call done
+18:52:53.608 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:52:57.740 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+18:52:58.873 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+18:53:00.032 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+18:53:00.041 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+18:53:00.489 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown

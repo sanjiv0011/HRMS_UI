@@ -29,7 +29,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 	}
 	
 
-	//=====START====Organization page and Create organization page object============//
+	//=====START====JOB TITLES PAGE OBJECTS============//
 	@FindBy(xpath = "//p[.=\"Create Job Title\"]")
 	@CacheLookup
 	WebElement btnCreateJobTitle;
@@ -49,9 +49,9 @@ public class PO_JobTitles extends ReUseAbleElement{
 	@FindBy(xpath = "//p[normalize-space()=\"Cancel\"]")
 	@CacheLookup
 	WebElement btnCancel;
+	//=====END====JOB TITLES PAGE OBJECTS============//
 	
-	
-	
+	//=====START====JOB TITLES ACTIONS METHODS ON THE PAGE OBJECTS============//
 	public void clickOnBtnCreateJobTitle(){
 		btnCreateJobTitle.click();
 		logger.info("Click on Create Job title button");
@@ -76,9 +76,11 @@ public class PO_JobTitles extends ReUseAbleElement{
 		btnCancel.click();
 		logger.info("Clicked on Cancel button");
 	}
+	//=====START====JOB TITLES ACTIONS METHODS ON THE PAGE OBJECTS============//
 	
+	// TO CREATE THE JOB TITLES
 	public PO_HomePage createJobTitle(String jobTitleName, String jobtitleDescription) throws InterruptedException
-	{
+	{	// TO CREATE JOB TITLES
 		logger.info("Entered create job titles Methods");
 		
 		btnCreateJobTitle.click();
@@ -105,7 +107,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 	{
 		logger.info("Archive job titles methods called");
     	
-    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+    	//METHODS TO ARCHIVE THE JOB TITLES
 		Action_Archive.archive(jobTitle, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
     	 logger.info("Return back inside archive job titles method");
     	 return new PO_HomePage(driver);
@@ -117,13 +119,13 @@ public class PO_JobTitles extends ReUseAbleElement{
 	{
 		logger.info("Restore job titles methods called");
     	
-    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+    	//METHODS TO RESTORE THE JOB TITLES 
 		Action_Restore.restore(jobTitle, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "cofirmMessage");
     	 logger.info("Return back inside restore job titles method");
     	 return new PO_HomePage(driver);
 	}
 	
-	//USE TO EDIT THE LEAVE TYPES
+	//USE TO EDIT THE JOB TILTES
 	public PO_HomePage editJobTitles(String jobTitlesSearchKey, String newJobDescription, String newJobTitles) throws InterruptedException
 	{
 		logger.info("Entered edit job titles methods");

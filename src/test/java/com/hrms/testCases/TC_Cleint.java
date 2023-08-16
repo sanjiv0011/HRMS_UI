@@ -3,74 +3,74 @@ package com.hrms.testCases;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.pageObject.PO_ClientPage;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_JobTitles;
 import com.hrms.pageObject.PO_LoginPage;
+import com.hrms.pageObject.PO_OragnizationPage;
 
-public class TC_JobTitles extends BaseClass {
-	public TC_JobTitles() {
+public class TC_Cleint extends BaseClass {
+	public TC_Cleint() {
 		super();
 	}
 	
 	public Faker faker = new Faker();
 	public PO_LoginPage lgn;
 	public PO_HomePage hp;
-	public PO_JobTitles jt;
+	public PO_ClientPage cp;
 	
-	String jobTitle = "Senior Retail Executive"; //faker.job().title();
-	String jobDescription = faker.job().position();
-	String jobTitlesSearchKey = jobTitle;
-	String newJobDescription = jobDescription;
-	String newJobTitles = jobTitle;
+	String cleintName = "AMR Reseach";
+	String clientDescription = faker.company().profession();
+	String clientSearchKey = cleintName;
+	String newClientDescription = faker.company().profession();
+	String newCleintName = "AMR";
 	
 	
 	//TO PERFORM THE LOGIN
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException
-	{
-		//to perform login
+	{	//to perform login
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.login(userName, password);
 		Thread.sleep(5000);
 	}
 	
-	//TO CREATE THE  JOB TITLES 
+	//TO CREATE CLIENT
 	@Test(priority =2 , dependsOnMethods = {"test_Login"})
 	public void test_CreateCleint() throws InterruptedException
-	{		
-		jt = callMeBeforePerformAnyAction();
-		hp = jt.createJobTitle(jobTitle, jobDescription);
-		logger.info("JobTitle created");		
+	{	cp = callMeBeforePerformAnyAction();
+		hp = cp.createClient(cleintName, clientDescription);
+		logger.info("Client created");
+	
 	}
 	
-	//ARCHIVE JOB TITLES
+	//ARCHIVE CLINET
 	@Test(priority = 3 , dependsOnMethods = {"test_Login"})
-	public void test_ArchiveJobTitles()throws InterruptedException
+	public void test_ArchiveClient()throws InterruptedException
 	{
-		jt = callMeBeforePerformAnyAction();
-		hp = jt.archiveJobTitles(jobTitle);
-		logger.info("Archive job titles call done");	
+		cp = callMeBeforePerformAnyAction();
+		hp = cp.archiveClient(cleintName);
+		logger.info("Archive client call done");	
 	}
 	
-	//RESTORE JOB TITLES
+	//RESTORE CLINET
 	@Test(priority = 4, dependsOnMethods = {"test_Login"})
-	public void test_RestoreJobTitles()throws InterruptedException
+	public void test_RestoreClient()throws InterruptedException
 	{
-		jt = callMeBeforePerformAnyAction();
-		hp = jt.restoreJobTitles(jobTitle);
-		logger.info("Restore job titles call done");
+		cp = callMeBeforePerformAnyAction();
+		hp = cp.restoreClient(cleintName);
+		logger.info("Restore client call done");
 	}
 		
 	
-	//EDITJOB TITLES
+	//EDIT CLINET
 	@Test(priority = 5 , dependsOnMethods = {"test_Login"})
-	public void test_EditJobTitles()throws InterruptedException
+	public void test_EditClient()throws InterruptedException
 	{
-		jt = callMeBeforePerformAnyAction();
-		hp = jt.editJobTitles(jobTitlesSearchKey,newJobDescription, newJobTitles);
-		Thread.sleep(2000);
+		cp = callMeBeforePerformAnyAction();
+		hp = cp.editClient(clientSearchKey,newClientDescription, newCleintName);
+		logger.info("Edit client call done");
 	}
-	
 	
 	//TO PERFORM THE LOGOUT
 	@Test(priority = 10, dependsOnMethods = {"test_Login"})
@@ -83,17 +83,17 @@ public class TC_JobTitles extends BaseClass {
 	}
 	
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
-	public PO_JobTitles callMeBeforePerformAnyAction() throws InterruptedException
+	public PO_ClientPage callMeBeforePerformAnyAction() throws InterruptedException
 	{	//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 		hp.clickOniconHomeImage();
 		Thread.sleep(3000);
 		
 		//TO ACCESS JOB TITLES TAB
-		hp.clickOntabJobTitle();
+		hp.clickOntabClients();
 		Thread.sleep(2000);
 		
 		//TO ACCESS JOB TITLES PAGE OBJECTS
-		return new PO_JobTitles(driver);	
+		return new PO_ClientPage(driver);	
 	}
 
 

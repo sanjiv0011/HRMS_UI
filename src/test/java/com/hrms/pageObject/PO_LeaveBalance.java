@@ -248,7 +248,7 @@ public class PO_LeaveBalance {
 		}
 		
 		DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  leaveBalanceEndDate);
-		logger.info("Leave balance start date, month and year entered");
+		logger.info("Leave balance end date, month and year entered");
 		Thread.sleep(2000);
 		
 		iconDateStart.click();
