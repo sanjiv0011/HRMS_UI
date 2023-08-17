@@ -21,10 +21,12 @@
 	<!--  <class name="com.hrms.testCases.TC_PersonalInfoDetails"/>-->
 	  
 	<!--<class name="com.hrms.testCases.TC_CreateOgranization"/>-->
+	
+		<class name="com.hrms.testCases.TC_Leave"/>
 	  
 	  <!--<class name="com.hrms.testCases.TC_Cleint"/>-->
 	  
-	  <class name="com.hrms.testCases.TC_Users"/>
+	  <!--<class name="com.hrms.testCases.TC_Users"/>-->
 	  
 	  <!--<class name="com.hrms.testCases.TC_Projects"/>-->
 	  

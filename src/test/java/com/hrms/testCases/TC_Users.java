@@ -29,6 +29,20 @@ public class TC_Users extends BaseClass{
 		String emailAddress= faker.internet().emailAddress();
 		String userRole= "org-admin"; // OR "user" IT CONTAINS ONLY THIS TWO VALUES
 		
+		
+		String newUName = "jhondove";
+		String newOrganizationName = faker.company().name();
+		String NewFirstName = faker.company().name();
+		String newLastName = faker.name().firstName();
+		String newEmailAddress = faker.name().lastName();
+		String newUserRole= userRole;
+		
+		String projectName = "MetaVerseMetaVerse";
+		String userSearchKey = uname;
+		String assignProjectStartDate = "18 August 2023" ;
+		String assignProjectEndDate = "30 August 2023";
+		
+		
 		//TO PERFORM THE LOGIN
 		@Test(priority = 1)
 		public void test_Login() throws InterruptedException {
@@ -62,7 +76,7 @@ public class TC_Users extends BaseClass{
 		}
 		
 		//ACTIVATE USER
-		@Test(priority = 5)
+		//@Test(priority = 5)
 		public void test_ActivateUser()throws InterruptedException
 		{
 			up = callMeBeforePerformAnyAction();
@@ -71,7 +85,7 @@ public class TC_Users extends BaseClass{
 		}
 		
 		//DEACTIVATE USER
-		@Test(priority = 6)
+		//@Test(priority = 6)
 		public void test_DeActivateUser()throws InterruptedException
 		{
 			up = callMeBeforePerformAnyAction();
@@ -80,45 +94,45 @@ public class TC_Users extends BaseClass{
 		}
 				
 			
-	//		//EDIT PROJECT
-	//		//@Test(priority = 5 , dependsOnMethods = {"test_Login"})
-	//		public void test_EditProject()throws InterruptedException {
-	//			pp = callMeBeforePerformAnyAction();
-	//			hp = pp.editProject(projectSearchKey, newProjecName, newProjecDescription, newDomainName, newTechnologyName, newProjectStartDate, newProjectEndDate );
-	//			Thread.sleep(2000);
-	//		}
+		//EDIT USER
+		//@Test(priority = 7, dependsOnMethods = {"test_Login"})
+		public void test_EditUser()throws InterruptedException {
+			up = callMeBeforePerformAnyAction();
+			hp = up.editUser(uname, newUName, newOrganizationName, NewFirstName, newLastName, newEmailAddress, newUserRole );
+			Thread.sleep(2000);
+		}
 			
-	//		//ASSIGN PROJECT TO THE USERS
-	//		@Test(priority = 6 , dependsOnMethods = {"test_Login"})
-	//		public void test_AssignProject()throws InterruptedException {
-	//			pp = callMeBeforePerformAnyAction();
-	//			hp = pp.assignProjectToUser(projectSearchKey, userNameToAssignProject, assignProjectStartDate, assignProjectEndDate);
-	//			Thread.sleep(2000);
-	//		}
+		//ASSIGN PROJECT TO THE USERSNewFirstName
+		@Test(priority = 8, dependsOnMethods = {"test_Login"})
+		public void test_AssignUserToProject()throws InterruptedException {
+			up = callMeBeforePerformAnyAction();
+			hp = up.assignUserToProject(userSearchKey, projectName, assignProjectStartDate, assignProjectEndDate);
+			Thread.sleep(2000);
+		}
 			
 			
-			//TO PERFORM THE LOGOUT
-			@Test(priority = 10, dependsOnMethods = {"test_Login"})
-			public void test_Logout() throws InterruptedException {
-				//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-				hp.clickOniconHomeImage();
-				Thread.sleep(3000);
-				// TO LOGOUT
-				hp.Logout();
-			}
+		//TO PERFORM THE LOGOUT
+		@Test(priority = 10, dependsOnMethods = {"test_Login"})
+		public void test_Logout() throws InterruptedException {
+			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
+			hp.clickOniconHomeImage();
+			Thread.sleep(5000);
+			// TO LOGOUT
+			hp.Logout();
+		}
+		
+		//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
+		public PO_UsersPage callMeBeforePerformAnyAction() throws InterruptedException {
+			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
+			hp.clickOniconHomeImage();
+			Thread.sleep(3000);
 			
-			//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
-			public PO_UsersPage callMeBeforePerformAnyAction() throws InterruptedException {
-				//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-				hp.clickOniconHomeImage();
-				Thread.sleep(3000);
-				
-				//TO ACCESS USERS TAB
-				hp.clickOntabUsers();
-				Thread.sleep(2000);
-				
-				//TO ACCESS USERS PAGE OBJECTS
-				return new PO_UsersPage(driver);	
-			}
+			//TO ACCESS USERS TAB
+			hp.clickOntabUsers();
+			Thread.sleep(2000);
+			
+			//TO ACCESS USERS PAGE OBJECTS
+			return new PO_UsersPage(driver);	
+		}
 
 }

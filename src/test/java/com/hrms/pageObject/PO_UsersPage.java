@@ -16,6 +16,7 @@ import my_support.Action_Activate;
 import my_support.Action_Archive;
 import my_support.Action_DeActivate;
 import my_support.Action_Restore;
+import my_support.DatePicker;
 import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UsersPage extends ReUseAbleElement{
@@ -227,7 +228,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			}
 			
 			//EDIT USERS
-			public PO_HomePage editUser(String uname,String newUName, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException
+			public PO_HomePage editUser(String uname,String newUName, String newOrganizationName, String NewFirstName, String newLastName, String newEmailAddress,String newUserRole) throws InterruptedException
 			{	logger.info("Entered edit user methods");
 			   	Thread.sleep(2000);
 			   	
@@ -235,39 +236,179 @@ public class PO_UsersPage extends ReUseAbleElement{
 			    ruae.searchBox_RU(uname); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 			    ruae.clickOnActionButton_RU();    // TO CLICK ON THE ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
 			    ruae.clickOnEditAction_RU();	//IT WILL CLICK ON THE EDIT ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
-				clickOnBtnCreateUser(); 
-				clickOnTabUserDetails();
-				setUserName(newUName);
-				selectOrganization(organizationName);
-				setFirstName(firstName);
-				setLastName(lastName);
-				setEmailAddress(emailAddress);
-				selectUserRole(userRole);
+				//clickOnTabUserDetails();
+				Thread.sleep(1000);
+			
+				textUserName.clear(); //CLAER FIRST
+				textUserName.sendKeys(newUName);
+		        logger.info("Entered username");
+		        Thread.sleep(1000);
+		        
+		        btnDropdownOrganization.clear(); //CLAER FIRST
+		        Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(orgnizationsList, newOrganizationName);
+			    logger.info("Organization name selected");
+			    Thread.sleep(1000);
+			    
+			    textFirstName.click();
+				setFirstName(NewFirstName);
+				textLastName.clear();
+				setLastName(newLastName);
+				textEmailAddress.clear();
+				setEmailAddress(newEmailAddress);
+				btnDropdownUserRole.click();
+				selectUserRole(newUserRole);
 				ruae.clickOnBtnSaveAndGoToHome_RU();
 				return new PO_HomePage(driver);
 			}
 		
-	    
+	//===========START==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========//
+		   //ASSIGN USER TO THE PROJECT  ADDRESS
+		   @FindBy(xpath="(//p[contains(text(),'Assign Project')])[1]")
+		   @CacheLookup
+		   WebElement btnAssignProject;
+		   public void clickOnAssignProjectBtn() throws InterruptedException{
+			   btnAssignProject.click();
+			   Thread.sleep(1000);
+			   logger.info("Clicked on the assign project button");
+		   }
+		   
+		   //DROPDOWN ICON ADDRESS FOR PROJECTS SELECTION
+		   @FindBy(xpath="//button[@title='Open']//*[name()='svg']")
+		   @CacheLookup
+		   WebElement iconProjectDropdown;
+		   public void clickOnProjectDropdownIcon() throws InterruptedException{
+			   iconProjectDropdown.click();
+			   Thread.sleep(1000);
+			   logger.info("Clicked on the dropdown icon for the project selection");
+		   }
+		   
+		   //PROJECT LIST ADDRESS TO ASSIGN THE PROJECT TO THE USER
+		   @FindBy(xpath="//ul[@id='project-listbox']//li")
+		   @CacheLookup
+		   public List <WebElement> listProjectToAssingUser;
+		   public void selectUserForProjectAssignment(String projectName) throws InterruptedException{
+			   clickOnProjectDropdownIcon(); // IT CLICK ON THE DROPDWON SELECT PROJECT
+			   Thread.sleep(500);
+			   //THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE
+			   Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listProjectToAssingUser, projectName);
+			   Thread.sleep(1000);
+			   logger.info("Project selected to assign the user");
+		   }
+		   
+		 //ASSIGN BUTTON ADDRESS
+		   @FindBy(xpath="//p[normalize-space()='Assign']")
+		   @CacheLookup
+		   WebElement btnAssign;
+		   public void clickOnBtnAssign() throws InterruptedException{
+			   btnAssign.click();
+			   Thread.sleep(1000);
+			   logger.info("Click on the button assign");
+		   }
+		   
+			//START DATE ICON ADDRESS
+			@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[1]")
+			@CacheLookup
+			WebElement iconDateStart;
+			//ACTION METHOD TO CLICK ON THE PROJECT START DATE ICON
+			public void clickOnStartDateIcon() throws InterruptedException {
+				iconDateStart.click();
+			    logger.info("Clicked on the start date icon");
+			    Thread.sleep(1000);
+			}
+			
+			//END DATE ICON ADDRESS
+			@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[2]")
+			@CacheLookup
+			WebElement iconDateEnd;
+			//ACTION METHOD TO CLICK ON THE PROJECT END DATE ICON
+			public void clickEndDateIcon() throws InterruptedException {
+				iconDateEnd.click();
+			    logger.info("Clicked on the end date icon");
+			    Thread.sleep(1000);
+			}
+			
+			//ACTION METHOD TO SELECT THE PROJECT START DATE
+			public void selectStartDate(String projectStartDate) throws InterruptedException {
+				clickOnStartDateIcon(); //IT WILL CLICK ON THE START DATE ICON
+				//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
+			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, projectStartDate);
+			    logger.info("Project start date, month and year entered");
+			    Thread.sleep(2000);
+			}
 
-	    
-
-	    
-
-	   
-
-	   
-
-	    
-
-	    
-
-	   
-
-	    
-
-	   
-
-	    
-
-		
+			//ACTION METHOD TO SELECT PROJECT END DATE
+			public void selectEndDate(String projectEndDate) throws InterruptedException {
+				clickEndDateIcon();	//IT WILL CLICK ON THE END DATE ICON
+				//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
+			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, projectEndDate);
+			    logger.info("Project end date, month and year entered");
+			    Thread.sleep(2000);
+			}
+			
+			
+		 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "PROJECT IS ALREADY ASSIGNED" AND IT WILL THE BOOLEAN VALUES
+		   @FindBy(xpath="//div[contains(text(),'Project is already assigned')]")
+		   @CacheLookup
+		   WebElement msgProjectAdreadyAssigned;
+		   public boolean isProjectAlreadyAssignToUser() throws InterruptedException{
+			   boolean flag = false;
+			   Thread.sleep(300);
+			   try {
+				   msgProjectAdreadyAssigned.isDisplayed();
+				   if(msgProjectAdreadyAssigned.isDisplayed()) {
+					   flag = true;
+				   }
+			   }catch(Exception e) {
+				   e.getMessage();
+			   }
+			   Thread.sleep(1000);
+			   return flag;
+		   }
+		   
+		 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "PROJECT ASSIGNED SUCCESSFULLY" AND IT WILL THE BOOLEAN VALUES
+		   @FindBy(xpath="//div[contains(text(),'Project assigned successfully.')]")
+		   @CacheLookup
+		   WebElement msgPrjectAssignedSuccessfully;
+		   public boolean isProjectAssignToUserSuccessfully() throws InterruptedException{
+			   boolean flag = false;
+			   Thread.sleep(300);
+			   try {
+				   msgPrjectAssignedSuccessfully.isDisplayed();
+				   if(msgPrjectAssignedSuccessfully.isDisplayed()) {
+					   flag = true;
+				   }
+			   }catch(Exception e) {
+				   e.getMessage();
+			   }
+			   Thread.sleep(1000);
+			   return flag;
+		   }
+		   
+		 
+	//===========END==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========// 
+		  //ASSIGN PROJECTS TO THE USER
+		   public PO_HomePage assignUserToProject(String userSearchKey, String projectName, String assignProjectStartDate, String assignProjectEndDate) throws InterruptedException
+		   {	logger.info("Entered edit project methods");
+		   		Thread.sleep(2000);
+		   		
+		   		ruae.searchBox_RU(userSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
+		   		clickOnAssignProjectBtn();	//IT CLICK ON THE ASSIGN USER BUTTON
+		   		selectUserForProjectAssignment(projectName); 	//IT CLICK ON THE USER SELECTION DORPDOWN ICON AND SELECT THE GIVEN USER FROM THE LIST
+		   		selectStartDate(assignProjectStartDate);    //SELECT THE ASSIGN PROJECT START DATE 
+		   		//selectEndDate(assignProjectEndDate);    //SELECT THE ASSIGN PROJECT END DATE 
+		   		clickOnBtnAssign(); //IT CLICK ON THE ON THE ASSGIN BUTTON AFTER FILLING THE DETAILS
+		   		
+		   		//TAKES THE DECISION BASED ON THE CONFIREMATINO MESSAGES
+		   		if(isProjectAlreadyAssignToUser()) {
+		   			logger.info("Project already assigned to the given users");
+		   			Thread.sleep(3000);
+		   			ruae.clickOnCancelButton_RU();
+		   		}else if(isProjectAssignToUserSuccessfully()) {
+		   			logger.info("Project assigned to the users successfully");
+		   		}else {
+		   			logger.info("Not captured any confirmatin message");
+		   		}
+		   		Thread.sleep(3000);
+		   		return new PO_HomePage(driver); // TO RETURN THE DRIVER AT HOME PAGE
+		   }   		
 }

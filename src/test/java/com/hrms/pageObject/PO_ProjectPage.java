@@ -376,11 +376,14 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   		//TAKES THE DECISION BASED ON THE CONFIREMATINO MESSAGES
 	   		if(isProjectAlreadyAssignToUser()) {
 	   			logger.info("Project already assigned to the given users");
+	   			Thread.sleep(3000);
+	   			ruae.clickOnCancelButton_RU();
 	   		}else if(isProjectAssignToUserSuccessfully()) {
 	   			logger.info("Project assigned to the users successfully");
 	   		}else {
 	   			logger.info("Not captured any confirmatin message");
 	   		}
+	   		Thread.sleep(2000);
 	   		return new PO_HomePage(driver); // TO RETURN THE DRIVER AT HOME PAGE
 	   }
 	   
