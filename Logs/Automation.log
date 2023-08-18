@@ -1,290 +1,249 @@
-23:40:19.217 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-23:40:22.095 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-23:40:30.663 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-23:40:31.890 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-23:40:33.005 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-23:40:38.028 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-23:40:41.132 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-23:40:44.339 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-23:40:46.379 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-23:40:46.537 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-23:40:47.708 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-23:40:48.863 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-23:40:49.871 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-23:40:51.020 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-23:40:51.214 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-23:40:52.226 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-23:40:52.226 [main] INFO  my_support.DatePicker - Input year: 2023
-23:40:52.227 [main] INFO  my_support.DatePicker - Input month: August
-23:40:52.227 [main] INFO  my_support.DatePicker - Input date: 18
-23:40:53.420 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-23:40:55.138 [main] INFO  my_support.DatePicker - Selected year: 2023
-23:40:55.138 [main] INFO  my_support.DatePicker - Year selected
-23:40:55.716 [main] INFO  my_support.DatePicker - August 2023
-23:40:55.716 [main] INFO  my_support.DatePicker - Displayed month name: August
-23:40:55.716 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-23:40:57.677 [main] INFO  my_support.DatePicker - Selected date: 18
-23:40:57.678 [main] INFO  my_support.DatePicker - Date selected
-23:40:57.678 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-23:40:59.813 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the end date icon
-23:41:00.822 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-23:41:00.823 [main] INFO  my_support.DatePicker - Input year: 2023
-23:41:00.823 [main] INFO  my_support.DatePicker - Input month: August
-23:41:00.824 [main] INFO  my_support.DatePicker - Input date: 30
-23:41:02.849 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-23:41:34.006 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-23:41:36.660 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-23:41:44.920 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-23:41:46.133 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-23:41:47.286 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-23:41:52.308 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-23:41:55.440 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-23:41:58.581 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-23:42:00.614 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-23:42:00.767 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-23:42:01.983 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-23:42:03.195 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-23:42:04.205 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-23:42:05.356 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-23:42:05.534 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-23:42:06.546 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-23:42:06.547 [main] INFO  my_support.DatePicker - Input year: 2023
-23:42:06.548 [main] INFO  my_support.DatePicker - Input month: August
-23:42:06.549 [main] INFO  my_support.DatePicker - Input date: 18
-23:42:07.751 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-23:42:09.536 [main] INFO  my_support.DatePicker - Selected year: 2023
-23:42:09.536 [main] INFO  my_support.DatePicker - Year selected
-23:42:10.100 [main] INFO  my_support.DatePicker - August 2023
-23:42:10.101 [main] INFO  my_support.DatePicker - Displayed month name: August
-23:42:10.101 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-23:42:11.984 [main] INFO  my_support.DatePicker - Selected date: 18
-23:42:11.985 [main] INFO  my_support.DatePicker - Date selected
-23:42:11.985 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-23:42:16.124 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-23:42:18.237 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-23:44:20.420 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-23:44:23.338 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-23:44:31.718 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-23:44:32.927 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-23:44:34.080 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-23:44:39.113 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-23:44:42.259 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-23:44:45.425 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-23:44:47.466 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-23:44:47.611 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-23:44:48.803 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-23:44:49.997 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-23:44:50.998 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-23:44:52.170 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-23:44:52.357 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-23:44:53.367 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-23:44:53.367 [main] INFO  my_support.DatePicker - Input year: 2023
-23:44:53.368 [main] INFO  my_support.DatePicker - Input month: August
-23:44:53.369 [main] INFO  my_support.DatePicker - Input date: 18
-23:44:54.524 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-23:44:56.288 [main] INFO  my_support.DatePicker - Selected year: 2023
-23:44:56.288 [main] INFO  my_support.DatePicker - Year selected
-23:44:56.835 [main] INFO  my_support.DatePicker - August 2023
-23:44:56.836 [main] INFO  my_support.DatePicker - Displayed month name: August
-23:44:56.836 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-23:44:58.624 [main] INFO  my_support.DatePicker - Selected date: 18
-23:44:58.625 [main] INFO  my_support.DatePicker - Date selected
-23:44:58.625 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-23:45:02.550 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-23:45:02.551 [main] INFO  com.hrms.pageObject.PO_LeavePage - 1
-23:45:04.705 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-23:46:16.511 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-23:46:18.965 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-23:46:27.165 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-23:46:28.384 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-23:46:29.546 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-23:46:34.582 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-23:46:37.703 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-23:46:40.856 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-23:46:42.877 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-23:46:43.030 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-23:46:44.152 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-23:46:45.368 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-23:46:46.370 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-23:46:47.523 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-23:46:47.710 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-23:46:48.724 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-23:46:48.724 [main] INFO  my_support.DatePicker - Input year: 2023
-23:46:48.725 [main] INFO  my_support.DatePicker - Input month: August
-23:46:48.725 [main] INFO  my_support.DatePicker - Input date: 18
-23:46:49.872 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-23:46:51.664 [main] INFO  my_support.DatePicker - Selected year: 2023
-23:46:51.665 [main] INFO  my_support.DatePicker - Year selected
-23:46:52.235 [main] INFO  my_support.DatePicker - August 2023
-23:46:52.236 [main] INFO  my_support.DatePicker - Displayed month name: August
-23:46:52.236 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-23:46:54.215 [main] INFO  my_support.DatePicker - Selected date: 18
-23:46:54.216 [main] INFO  my_support.DatePicker - Date selected
-23:46:54.216 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-23:47:00.013 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-23:47:00.014 [main] INFO  com.hrms.pageObject.PO_LeavePage - 1
-23:47:04.207 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-23:56:41.810 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-23:56:45.040 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-23:56:53.480 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-23:56:54.686 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-23:56:55.839 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-23:57:00.870 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-23:57:04.002 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-23:57:07.182 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-23:57:09.196 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-23:57:09.360 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-23:57:10.515 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-23:57:11.696 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-23:57:12.709 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-23:57:13.859 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-23:57:14.025 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-23:57:15.041 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-23:57:15.042 [main] INFO  my_support.DatePicker - Input year: 2023
-23:57:15.043 [main] INFO  my_support.DatePicker - Input month: August
-23:57:15.043 [main] INFO  my_support.DatePicker - Input date: 18
-23:57:16.219 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-23:57:18.030 [main] INFO  my_support.DatePicker - Selected year: 2023
-23:57:18.031 [main] INFO  my_support.DatePicker - Year selected
-23:57:18.567 [main] INFO  my_support.DatePicker - August 2023
-23:57:18.567 [main] INFO  my_support.DatePicker - Displayed month name: August
-23:57:18.567 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-23:57:20.476 [main] INFO  my_support.DatePicker - Selected date: 18
-23:57:20.477 [main] INFO  my_support.DatePicker - Date selected
-23:57:20.478 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-23:57:25.373 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-23:57:26.509 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-23:57:26.513 [main] INFO  com.hrms.testCases.TC_Leave - Leave applied
-23:57:28.417 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-00:00:35.315 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-00:00:38.100 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-00:00:46.667 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-00:00:47.927 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-00:00:49.037 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-00:00:54.065 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-00:00:57.198 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-00:01:00.353 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-00:01:02.393 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-00:01:02.550 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:01:03.677 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-00:01:04.809 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-00:01:05.823 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-00:01:06.998 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-00:01:07.177 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-00:01:08.182 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-00:01:08.183 [main] INFO  my_support.DatePicker - Input year: 2023
-00:01:08.183 [main] INFO  my_support.DatePicker - Input month: August
-00:01:08.184 [main] INFO  my_support.DatePicker - Input date: 18
-00:01:09.342 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-00:01:11.021 [main] INFO  my_support.DatePicker - Selected year: 2023
-00:01:11.021 [main] INFO  my_support.DatePicker - Year selected
-00:01:11.606 [main] INFO  my_support.DatePicker - August 2023
-00:01:11.607 [main] INFO  my_support.DatePicker - Displayed month name: August
-00:01:11.607 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-00:01:13.509 [main] INFO  my_support.DatePicker - Selected date: 18
-00:01:13.510 [main] INFO  my_support.DatePicker - Date selected
-00:01:13.510 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-00:01:17.678 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-00:01:18.114 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:01:18.114 [main] INFO  com.hrms.testCases.TC_Leave - Leave applied
-00:01:20.010 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-00:02:58.032 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-00:03:00.346 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-00:03:08.616 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-00:03:09.803 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-00:03:10.912 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-00:03:15.948 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-00:03:19.052 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-00:03:22.224 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-00:03:24.241 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-00:03:24.382 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:03:25.522 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-00:03:26.713 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-00:03:27.714 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-00:03:28.881 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-00:03:29.068 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-00:03:30.085 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-00:03:30.085 [main] INFO  my_support.DatePicker - Input year: 2023
-00:03:30.086 [main] INFO  my_support.DatePicker - Input month: August
-00:03:30.087 [main] INFO  my_support.DatePicker - Input date: 18
-00:03:31.247 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-00:03:33.067 [main] INFO  my_support.DatePicker - Selected year: 2023
-00:03:33.068 [main] INFO  my_support.DatePicker - Year selected
-00:03:33.627 [main] INFO  my_support.DatePicker - August 2023
-00:03:33.627 [main] INFO  my_support.DatePicker - Displayed month name: August
-00:03:33.627 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-00:03:35.588 [main] INFO  my_support.DatePicker - Selected date: 18
-00:03:35.588 [main] INFO  my_support.DatePicker - Date selected
-00:03:35.588 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-00:03:39.580 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-00:03:40.020 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:03:40.021 [main] INFO  com.hrms.testCases.TC_Leave - Leave applied
-00:03:44.953 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-00:10:30.630 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-00:10:33.341 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-00:10:41.657 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-00:10:42.894 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-00:10:44.031 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-00:10:49.056 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-00:10:52.208 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-00:10:55.362 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-00:10:57.395 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-00:10:57.541 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:10:58.667 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-00:10:59.846 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-00:11:00.853 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-00:11:02.021 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-00:11:02.191 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-00:11:03.203 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-00:11:03.204 [main] INFO  my_support.DatePicker - Input year: 2023
-00:11:03.204 [main] INFO  my_support.DatePicker - Input month: August
-00:11:03.205 [main] INFO  my_support.DatePicker - Input date: 18
-00:11:04.306 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-00:11:06.079 [main] INFO  my_support.DatePicker - Selected year: 2023
-00:11:06.079 [main] INFO  my_support.DatePicker - Year selected
-00:11:06.641 [main] INFO  my_support.DatePicker - August 2023
-00:11:06.641 [main] INFO  my_support.DatePicker - Displayed month name: August
-00:11:06.641 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-00:11:08.636 [main] INFO  my_support.DatePicker - Selected date: 18
-00:11:08.637 [main] INFO  my_support.DatePicker - Date selected
-00:11:08.638 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-00:11:12.102 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered leave reason
-00:11:12.529 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:11:12.530 [main] INFO  com.hrms.testCases.TC_Leave - Leave applied
-00:11:14.710 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
-00:13:57.753 [main] INFO  com.hrms.testCases.TC_Leave - Base class started...
-00:14:00.492 [main] INFO  com.hrms.testCases.TC_Leave - Chrome driver selected
-00:14:08.695 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-00:14:09.893 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-00:14:11.069 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-00:14:16.106 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-00:14:19.185 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-00:14:22.425 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabLeave button
-00:14:24.460 [main] INFO  com.hrms.pageObject.PO_LeavePage - Entered into apply leave methods
-00:14:24.614 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the apply leave button
-00:14:25.731 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the icon dropdown
-00:14:26.877 [main] INFO  my_support.Generic_Method_ToSelect_Boostrape_Dropdown - Option is selected
-00:14:27.892 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave types selected
-00:14:29.052 [main] INFO  com.hrms.pageObject.PO_LeavePage - Select radio button half leave
-00:14:29.201 [main] INFO  com.hrms.pageObject.PO_LeavePage - Clicked on the start date icon
-00:14:30.205 [main] INFO  my_support.DatePicker - Enter inside date picker methods
-00:14:30.205 [main] INFO  my_support.DatePicker - Input year: 2023
-00:14:30.206 [main] INFO  my_support.DatePicker - Input month: August
-00:14:30.206 [main] INFO  my_support.DatePicker - Input date: 18
-00:14:31.381 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
-00:14:33.118 [main] INFO  my_support.DatePicker - Selected year: 2023
-00:14:33.118 [main] INFO  my_support.DatePicker - Year selected
-00:14:33.684 [main] INFO  my_support.DatePicker - August 2023
-00:14:33.685 [main] INFO  my_support.DatePicker - Displayed month name: August
-00:14:33.685 [main] INFO  my_support.DatePicker - Month is selected and name is: August
-00:14:35.598 [main] INFO  my_support.DatePicker - Selected date: 18
-00:14:35.598 [main] INFO  my_support.DatePicker - Date selected
-00:14:35.598 [main] INFO  com.hrms.pageObject.PO_LeavePage - Leave start date, month and year entered
-00:14:37.697 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Cancle button
-00:14:38.011 [main] INFO  com.hrms.testCases.TC_Leave - Leave applied
-00:14:38.073 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-00:14:44.211 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
-00:14:45.335 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-00:14:46.490 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
-00:14:46.515 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-00:14:47.284 [main] INFO  com.hrms.testCases.TC_Leave - Driver shutdown
+18:29:58.649 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:30:02.926 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:30:06.163 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:30:08.472 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:30:11.720 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:30:14.952 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:30:18.173 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:30:21.442 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:30:24.559 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:30:27.660 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:30:30.895 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:30:34.089 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:30:36.341 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:30:39.420 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:30:39.686 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:30:39.813 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:30:40.907 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:30:40.942 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:30:40.965 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:30:40.984 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:30:42.218 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:30:52.463 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:33:35.638 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:33:38.113 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:33:46.407 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:33:47.611 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:33:48.773 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:33:53.798 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:33:53.903 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:33:56.991 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:33:59.018 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:33:59.114 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:34:03.345 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:34:06.583 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:34:08.876 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:34:12.084 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:34:15.339 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:34:18.568 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:34:21.801 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:34:24.997 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:34:28.208 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:34:31.388 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:34:34.654 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:34:36.903 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:34:39.981 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:34:40.234 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:34:40.352 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:34:41.429 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:34:41.463 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:34:41.498 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:34:41.532 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:34:42.771 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:34:50.128 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Return back from the MyCalendar Picker
+18:34:55.011 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:36:02.101 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:36:04.715 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:36:13.058 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:36:14.277 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:36:15.416 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:36:20.449 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:36:20.547 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:36:23.682 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:36:25.728 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:36:25.839 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:36:27.983 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on the show more plus button
+18:36:32.423 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on the show more content
+18:36:36.751 [main] INFO  com.hrms.testCases.TC_MyCalendar - test_VisitMyCalendarContent call done
+18:36:38.907 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:36:44.019 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+18:36:45.156 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+18:36:46.289 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+18:36:46.298 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+18:36:46.809 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:40:48.289 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:40:50.931 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:40:59.296 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:41:00.509 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:41:01.679 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:41:06.701 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:41:06.806 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:41:09.991 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:41:12.028 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:41:12.141 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:41:16.392 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:41:19.636 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:41:21.913 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:41:25.088 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:41:28.367 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:41:31.566 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:41:34.765 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:41:37.938 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:41:41.095 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:41:44.255 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:41:47.422 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:41:49.694 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:41:52.782 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:41:52.980 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:41:53.126 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:41:54.192 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:41:54.238 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:41:54.272 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:41:54.298 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:41:55.553 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:42:02.927 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Return back from the MyCalendar Picker
+18:42:09.075 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:43:02.404 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:43:04.839 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:43:13.209 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:43:14.402 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:43:15.572 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:43:20.601 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:43:20.695 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:43:23.851 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:43:25.901 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:43:26.028 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:43:30.293 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:43:33.544 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:43:35.824 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:43:38.972 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:43:42.132 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:43:45.355 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:43:48.593 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:43:51.797 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:43:54.991 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:43:58.184 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:44:01.397 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:44:03.626 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:44:06.706 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:44:06.947 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:44:07.081 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:44:08.157 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:44:08.190 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:44:08.224 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:44:08.247 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:44:09.469 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:44:16.879 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Return back from the MyCalendar Picker
+18:44:19.006 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:44:19.137 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:44:22.335 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:47:23.617 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:47:26.006 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:47:34.351 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:47:35.556 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:47:36.718 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:47:41.741 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:47:41.853 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:47:45.027 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:47:47.066 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:47:47.172 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:47:51.438 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:47:54.692 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:47:57.036 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:48:00.256 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:48:03.408 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:48:06.638 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:48:09.922 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:48:13.103 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:48:16.299 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:48:19.477 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:48:22.766 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:48:25.019 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:48:28.083 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:48:28.284 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:48:28.413 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:48:29.491 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:48:29.532 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:48:29.557 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:48:29.580 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:48:30.834 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:48:38.246 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Return back from the MyCalendar Picker
+18:48:40.389 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:48:40.525 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:48:43.758 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:53:46.621 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:53:49.111 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:53:57.435 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:53:58.638 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:53:59.800 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:54:04.824 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:54:04.928 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:54:08.077 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:54:10.124 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:54:10.233 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:54:14.503 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:54:17.869 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:54:20.227 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:54:23.420 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:54:26.618 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:54:29.844 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:54:33.104 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:54:36.294 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:54:39.512 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:54:42.733 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:54:46.020 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:54:48.255 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:54:51.323 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:54:51.563 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:54:51.691 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:54:52.761 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:54:52.790 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:54:52.816 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:54:52.840 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:54:54.068 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:55:01.479 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Return back from the MyCalendar Picker
+18:55:03.612 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:55:03.743 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:55:06.939 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown
+18:57:36.116 [main] INFO  com.hrms.testCases.TC_MyCalendar - Base class started...
+18:57:38.809 [main] INFO  com.hrms.testCases.TC_MyCalendar - Chrome driver selected
+18:57:47.192 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+18:57:48.395 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+18:57:49.558 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+18:57:54.600 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+18:57:54.704 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:57:57.790 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:57:59.832 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Entered inside clickAndViewMyCalendarElement method
+18:57:59.938 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:58:04.234 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:58:07.478 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:58:09.828 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Week button
+18:58:13.027 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:58:16.224 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:58:19.464 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Days button
+18:58:22.679 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:58:25.824 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:58:29.025 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Todays button
+18:58:32.186 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on back Month button
+18:58:35.476 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on next Month button
+18:58:37.684 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on Month button
+18:58:40.754 [main] INFO  my_support.TimePicker - Entered inside methods moveToCorrectDateInCalendarAndClickOnContent
+18:58:41.027 [main] INFO  my_support.TimePicker - Entered inside first if blcok and date value from page is: 17
+18:58:41.159 [main] INFO  my_support.TimePicker - Curser moved to the given date: 17
+18:58:42.204 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:58:42.233 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: YourDreamHouse
+18:58:42.259 [main] INFO  my_support.TimePicker - Entered inside second for loop with path_DateListContent: MetaVerseMetaVerse
+18:58:42.279 [main] INFO  my_support.TimePicker - Entered inside second if blcok and content value from page is: MetaVerseMetaVerse
+18:58:43.497 [main] INFO  my_support.TimePicker - Clicked on the given date content: MetaVerseMetaVerse
+18:58:50.951 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Return back from the MyCalendar Picker
+18:58:53.084 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:58:54.210 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabMyCalender button
+18:58:56.314 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on the show more plus button
+18:58:58.573 [main] INFO  com.hrms.pageObject.PO_MyCalendarPage - Clicked on the show more content
+18:59:03.127 [main] INFO  com.hrms.testCases.TC_MyCalendar - test_VisitMyCalendarContent call done
+18:59:05.258 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+18:59:10.476 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on btnSystemManager button
+18:59:11.619 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+18:59:12.716 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogotYesBtn button
+18:59:12.725 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+18:59:13.194 [main] INFO  com.hrms.testCases.TC_MyCalendar - Driver shutdown

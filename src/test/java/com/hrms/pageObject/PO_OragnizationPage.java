@@ -1,26 +1,46 @@
 package com.hrms.pageObject;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
+import my_support.Action_Activate;
+import my_support.Action_Archive;
+import my_support.Action_DeActivate;
+import my_support.Action_Restore;
 import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
 
-public class PO_OragnizationPage {
+public class PO_OragnizationPage extends ReUseAbleElement{
 	
-	public WebDriver driver = null;
+	//CONSTRUCTOR AND OTHRE VARIABLE DECLARATIOIN
+	public WebDriver driver;
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement ruae;
 	public Logger logger = LogManager.getLogger(getClass());
+	public WebDriverWait wait;
+
 	
-	public PO_OragnizationPage(WebDriver driver)
-	{
+	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
+	public PO_OragnizationPage(WebDriver driver){	
+		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		jsExecutor  = (JavascriptExecutor)driver;
+		ruae = new ReUseAbleElement(driver);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
 	
 
@@ -77,169 +97,390 @@ public class PO_OragnizationPage {
 	@CacheLookup
 	List <WebElement> dropdownTimeZone;
 	
-	@FindBy(xpath = "//p[normalize-space()='Create']")
-	@CacheLookup
-	WebElement btnCreate;
-	
-	@FindBy(xpath = "//p[normalize-space()='Cancel']")
-	@CacheLookup
-	WebElement btnCancel;
-	//=====END====Organization page and Create organization page object============//
-	
-	public void clickOnBtnCreateOrganization()
-	{
-		btnCreateOrganization.click();
-		logger.info("Click on Create organization button");
-	}
-	
-	public void setOrgName(String orgName)
-	{
-		textEnterName.sendKeys(orgName);
-		logger.info("Enterd org name");
-	}
-	
-	public void setOrgCode(String orgCode)
-	{
-		textEnterCode.sendKeys(orgCode);
-		logger.info("Enterd org code");
-	}
-	
-	public void setOrgEmail(String orgEmail)
-	{
-		textEnterEmail.sendKeys(orgEmail);
-		logger.info("Enterd org email");
-	}
-	
-	public void setOrgPhoneNumber(String orgPhoneNumber)
-	{
-		textEnterPhoneNumber.sendKeys(orgPhoneNumber);
-		logger.info("Enterd org phone number");
-	}
-	
-	public void setOrgAddress(String orgAddress)
-	{
-		textEnterAddress.sendKeys(orgAddress);
-		logger.info("Enterd org address");
-	}
-	
-	public void setOrgArea(String orgArea)
-	{
-		textEnterArea.sendKeys(orgArea);
-		logger.info("Enterd org area");
-	}
-	
-	public void setOrgCity(String orgCity)
-	{
-		textEnterCity.sendKeys(orgCity);
-		logger.info("Enterd org city");
-	}
-	
-	public void setOrgState(String orgState)
-	{
-		textEnterState.sendKeys(orgState);
-		logger.info("Enterd org  state");
-	}
-	
-	public void setOrgPostalCode(String orgPostalCode)
-	{
-		textEnterPostalCode.sendKeys(orgPostalCode);
-		logger.info("Enterd org postal code");
-	}
-	
-	public void setOrgCountry(String orgCountry)
-	{
-		textEnterCountry.sendKeys(orgCountry);
-		logger.info("Enterd org  country");
-	}
-	
-	public void clickOnIconDropdownTimeZone()
-	{
-		iconDropdownTimeZone.click();
-		logger.info("Clicked on the icon drop down for the time zone");
-	}
-	
-	public void selectOrgTimeZone(String orgTimeZone)//"(UTC +05:30) Asia/Kolkata"
-	{
-		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(dropdownTimeZone,orgTimeZone );
-		logger.info("Enterd org  time zone");
-	}
-	
-	public void clickBtnCreate()
-	{
-		btnCreate.click();
-		logger.info("clicked on Create button");
-	}
-	
-	public void clickBtnCancel()
-	{
-		btnCancel.click();
-		logger.info("Clicked on Cancel button");
-	}
-	
-	public PO_HomePage createOragnization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode,String orgCountry, String orgTimeZone ) throws InterruptedException
-	{
-		
+	//=====START====ACTION METHODS ON THE ORGANIZATION PAGE OBJECTS============//
+	public void clickOnBtnCreateOrganization() throws InterruptedException{
 		btnCreateOrganization.click();
 		logger.info("Click on Create organization button");
 		Thread.sleep(2000);
-		
+	}
+	
+	public void setOrgName(String orgName) throws InterruptedException{
 		textEnterName.sendKeys(orgName);
+		Thread.sleep(1000);
 		logger.info("Enterd org name");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgCode(String orgCode) throws InterruptedException{
 		textEnterCode.sendKeys(orgCode);
+		Thread.sleep(1000);
 		logger.info("Enterd org code");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgEmail(String orgEmail) throws InterruptedException{
 		textEnterEmail.sendKeys(orgEmail);
+		Thread.sleep(1000);
 		logger.info("Enterd org email");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgPhoneNumber(String orgPhoneNumber) throws InterruptedException{
 		textEnterPhoneNumber.sendKeys(orgPhoneNumber);
+		Thread.sleep(1000);
 		logger.info("Enterd org phone number");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgAddress(String orgAddress) throws InterruptedException{
 		textEnterAddress.sendKeys(orgAddress);
+		Thread.sleep(1000);
 		logger.info("Enterd org address");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgArea(String orgArea) throws InterruptedException{
 		textEnterArea.sendKeys(orgArea);
+		Thread.sleep(1000);
 		logger.info("Enterd org area");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgCity(String orgCity) throws InterruptedException{
 		textEnterCity.sendKeys(orgCity);
+		Thread.sleep(1000);
 		logger.info("Enterd org city");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgState(String orgState) throws InterruptedException{
 		textEnterState.sendKeys(orgState);
+		Thread.sleep(1000);
 		logger.info("Enterd org  state");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgPostalCode(String orgPostalCode) throws InterruptedException{
 		textEnterPostalCode.sendKeys(orgPostalCode);
+		Thread.sleep(1000);
 		logger.info("Enterd org postal code");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void setOrgCountry(String orgCountry) throws InterruptedException{
 		textEnterCountry.sendKeys(orgCountry);
+		Thread.sleep(1000);
 		logger.info("Enterd org  country");
-		Thread.sleep(1000);
-		
+	}
+	
+	public void clickOnIconDropdownTimeZone() throws InterruptedException{
 		iconDropdownTimeZone.click();
-		logger.info("Clicked on the icon drop down for the time zone");
 		Thread.sleep(1000);
-		
-		//System.out.println(dropdownTimeZone);
+		logger.info("Clicked on the icon drop down for the time zone");
+	}
+	
+	public void selectOrgTimeZone(String orgTimeZone) throws InterruptedException{	
+		//"(UTC +05:30) Asia/Kolkata"
+		clickOnIconDropdownTimeZone();
 		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(dropdownTimeZone,orgTimeZone );
+		Thread.sleep(1000);
 		logger.info("Enterd org  time zone");
-		Thread.sleep(3000);
-		
-		btnCreate.click();
-		logger.info("clicked on Create button");
-		Thread.sleep(3000);
-		
+	}
+
+	//=====END====ACTION METHODS ON THE ORGANIZATION PAGE OBJECTS============//
+	
+	
+	//TO CREATE ORGANIZATION
+	public PO_HomePage createOragnization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode,String orgCountry, String orgTimeZone ) throws InterruptedException
+	{ 	logger.info("Entered into create organizatioin methods");
+		clickOnBtnCreateOrganization();
+		setOrgName(orgName);
+		setOrgCode(orgCode);
+		setOrgEmail(orgEmail);
+		setOrgPhoneNumber(orgPhoneNumber);
+		setOrgAddress(orgAddress);
+		setOrgArea(orgArea);
+		setOrgCity(orgCity);
+		setOrgState(orgState);
+		setOrgPostalCode(orgPostalCode);
+		setOrgCountry(orgCountry);
+		selectOrgTimeZone(orgTimeZone);
+		ruae.clickOnCreateButton_RU();
 		return new PO_HomePage(driver);
-		
-		
+	}
+	
+	//TO ARCHIVE ORGANIZATION
+	// THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+   	public PO_HomePage archiveOrganization(String orgName) throws InterruptedException {
+       logger.info("Archive organization method called");
+       // METHODS TO ARCHIVE THE ORGANIZATION
+       Action_Archive.archive(orgName, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "confirmMessage");
+       logger.info("Returned inside archive organization method");
+       isOrganizationArchiveSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGESS
+       return new PO_HomePage(driver);
+   	}
+   
+   //TO RESTORE ORGANIZATION
+   // THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+   public PO_HomePage restoreOrganization(String orgName) throws InterruptedException {
+       logger.info("Restore organization method called");
+       // METHODS TO RESTORE THE ORGANIZATION
+       Action_Restore.restore(orgName, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "confirmMessage");
+       logger.info("Returned inside restore organization method");
+       isOrganizationRestoreSuccessMessageDisplayed(); //TO VARIFIRY CONFIRMATION MESSAGESS
+       return new PO_HomePage(driver);
+   }
+   
+   	//TO ACTIVATE ORGANIZATION
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage activateOrganization(String orgName) throws InterruptedException {
+		logger.info("Activate organization methods called");
+    	//METHODS TO ACTIVATE THE ORGANIZATION
+		Action_Activate.activate(orgName, searchBox, inactiveLabel, btnAction, actionActivate, btnYes, "cofirmMessage");
+    	 logger.info("Return back inside activate organization method");
+    	 isOrganizationActivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
+    	 return new PO_HomePage(driver);
 	}
 	
 	
+	//TO DEACTIVATE ORGANIZATION
+	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
+	public PO_HomePage deactivateOrganization(String orgName) throws InterruptedException {
+		logger.info("De-Activate organization methods called");
+    	//METHODS TO DEACTIVATE THE ORGANIZATION 
+		Action_DeActivate.deactivate(orgName, searchBox, activeLabel, btnAction, actionDeactivate, btnYes, "cofirmMessage");
+    	 logger.info("Return back inside deactivate organization method");
+    	 isOrganizationDeactivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
+    	 return new PO_HomePage(driver);
+	}
+	
+	//TO EDIT ORGANIZATION
+	public PO_HomePage editOragnization(String orgName, String newOrgCode, String newOrgEmail,String newOrgPhoneNumber, String newOrgAddress, String newOrgArea, String newOrgCity, String newOrgState, String newOrgPostalCode,String newOrgCountry, String newOrgTimeZone ) throws InterruptedException
+	{ 	logger.info("Entered into edit organizatioin methods");
+	
+		//IT WILL SEARCH FIRST THE SEARCK KEY AND ONCE IT COMES AT THE TOP THEN ONLY IT WILL ABLE TO EDIT THE CORRECT PROJECT
+	    ruae.searchBox_RU(orgName); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
+	    ruae.clickOnActionButton_RU();    // TO CLICK ON THE ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
+	    ruae.clickOnEditAction_RU();	//IT WILL CLICK ON THE EDIT ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
+		Thread.sleep(1000);
+		
+		//setOrgName(orgName);	// I AM NOT CHAGNING ORGANIZATION NAMES
+		
+		//TO CLEAR AND SET NEW TEXT
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterCode);
+		setOrgCode(newOrgCode);	
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterEmail);
+		setOrgEmail(newOrgEmail);
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterPhoneNumber);
+		setOrgPhoneNumber(newOrgPhoneNumber);
+
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterAddress);
+		setOrgAddress(newOrgAddress);
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterArea);
+		setOrgArea(newOrgArea);
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterCity);
+		setOrgCity(newOrgCity);
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterState);
+		setOrgState(newOrgState);
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterPostalCode);
+		setOrgPostalCode(newOrgPostalCode);
+		
+		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterCountry);
+		setOrgCountry(newOrgCountry);
+		
+		selectOrgTimeZone(newOrgTimeZone);
+
+		ruae.clickOnBtnSaveChanges_RU(); //RU REPRESENT RE USEABLE ELEMENT
+		return new PO_HomePage(driver);
+	}
+	
+	//CALL THIS METHODS ALWAYS IN THE EDIT METHODS CALL JUST BEFORE SETTING NEW TEXT BY PASSING ELEMENT ADDRESS
+	public void callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(WebElement elementAddress)
+	{	//THIS METHOD WILL CLEAR THE ALREADY WRITTEN TEXT AND WAIT TILL IT IS NOT CLEARED AND JUST AFTER THIS METHOD CALL SET THE ACTION METHODS
+		elementAddress.sendKeys(Keys.CONTROL + "a");
+		elementAddress.sendKeys(Keys.DELETE);
+		wait.until(ExpectedConditions.textToBePresentInElementValue(elementAddress, ""));
+		logger.info("Text field cleared: "+elementAddress);
+		
+		//NOTE:- JAVA SCRIPT CODE IS USE TO CLEAR THE ALREADY WRITTEN TEXT AND STOP THE AUTO FILL
+		//jsExecutor.executeScript("arguments[0].setAttribute('autocomplete', 'off');", textEnterCode);
+		//jsExecutor.executeScript("arguments[0].value = '';", textEnterCode); 
+	}
+	
+	
+	
+	//============START========CONFIRMATION MESSAGES FORM ORGANIZATIONS PAGE OBJECTS AND ITS ACTION METHODS============//
+		//=========START===========ADDRESS==============//
+		//ON ORGANIZATION UPDATE 
+		@FindBy(xpath = "//div[contains(text(),'Organization Updated Successfully.')]")
+		@CacheLookup
+		WebElement msgOrganizationUpdate;
+		
+		//ON ORGANIZATION CREATE 
+		@FindBy(xpath = "//div[contains(text(),'Organization Created Successfully.')]")
+		@CacheLookup
+		WebElement msgOrganizationCreate;
+		
+		//ON ORGANIZATIONDEACTIVATE
+		@FindBy(xpath = "//div[contains(text(),'Organization Deactivated Successfully.')]")
+		@CacheLookup
+		WebElement msgOrganizationDeactivate;
+		
+		//ON ORGANIZATION ACTIVATE
+		@FindBy(xpath = "//div[contains(text(),'Organization Activated Successfully.')]")
+		@CacheLookup
+		WebElement msgOrganizationActivate;
+		
+		//ON ORGANIZATION ARCHIVE
+		@FindBy(xpath = "//div[contains(text(),'Organization Archived Successfully.')]")
+		@CacheLookup
+		WebElement msgOrganizationArchive;
+		
+		
+		//ON ORGANIZATION RESTORE
+		@FindBy(xpath = "//div[contains(text(),'Organization Restored Successfully.')]")
+		@CacheLookup
+		WebElement msgOrganizationRestore;
+		
+		
+		//ON ORGANIZATION MENDATORY CONDITION
+		@FindBy(xpath = "//p[contains(text(),'required')]")
+		@CacheLookup
+		WebElement msgMendatoryCondition;
+		//===========END===========ADDRESS===========//
+		
+		//========START==========ACTIONS METHODS==========//
+		//FOR ORGANIZATION UPDATE
+		public boolean isOrganizationUpdateSuccessMessageDisplayed() {
+			boolean flag = false;
+			try {
+				wait.until(ExpectedConditions.visibilityOf(msgOrganizationUpdate));
+		        if(msgOrganizationUpdate.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Confirmation message caught : "+msgOrganizationUpdate.getText());
+		        }else {
+		        	logger.info("Confirmation message not caught");
+		        }
+			}catch(Exception e) {
+				logger.info(e);
+			}
+	        
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT 
+	        return flag;
+	    }
+
+		//FOR ORGANIZATION CREATE
+	    public boolean isOrganizationCreateSuccessMessageDisplayed() {
+	    	boolean flag = false;
+	    	try {
+	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationCreate));
+		    	if(msgOrganizationCreate.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Confirmation message caught : "+msgOrganizationCreate.getText());
+		        }else {
+		        	logger.info("Confirmation message not caught");
+		        }
+	    	}catch(Exception e) {
+	    		logger.info(e);
+	    	}
+
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
+	        return flag;
+	       
+	    }
+
+	  //FOR ORGANIZATION DEACTIVATE
+	    public boolean isOrganizationDeactivateSuccessMessageDisplayed() {
+	    	boolean flag = false;
+	    	try {
+	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationDeactivate));
+		        if(msgOrganizationDeactivate.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Confirmation message caught : "+msgOrganizationDeactivate.getText());
+		        }else {
+		        	logger.info("Confirmation message not caught");
+		        }
+	    	}catch(Exception e)
+	    	{
+	    		logger.info(e);
+	    	}
+ 
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
+	        return flag;
+	    }
+
+	  //FOR ORGANIZATION ACTIVATE
+	    public boolean isOrganizationActivateSuccessMessageDisplayed() {
+	    	boolean flag = false;
+	    	try {
+	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationActivate));
+		        if(msgOrganizationActivate.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Confirmation message caught : "+msgOrganizationActivate.getText());
+		        }else {
+		        	logger.info("Confirmation message not caught");
+		        }
+	    	}catch(Exception e) {
+	    		logger.info(e);
+	    	}
+ 
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
+	        return flag;
+	    }
+
+	  //FOR ORGANIZATION ARCHIVE
+	    public boolean isOrganizationArchiveSuccessMessageDisplayed() {
+	    	boolean flag = false;
+	    	try {
+	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationArchive));
+		        if(msgOrganizationArchive.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Confirmation message caught : "+msgOrganizationArchive.getText());
+		        }else {
+		        	logger.info("Confirmation message not caught");
+		        }
+	    	}catch(Exception e) {
+	    		logger.info(e);
+	    	}
+
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
+	        return flag;
+	    }
+
+	  //FOR ORGANIZATION RESTORE
+	    public boolean isOrganizationRestoreSuccessMessageDisplayed() {
+	    	boolean flag = false;
+	    	try {
+	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationRestore));
+		        if(msgOrganizationRestore.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Confirmation message caught : "+msgOrganizationRestore.getText());
+		        }else {
+		        	logger.info("Confirmation message not caught");
+		        }
+	    	}catch(Exception e) {
+	    		logger.info(e);
+	    	}
+
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
+	        return flag;
+	    }
+	    
+	  //FOR ORGANIZATION MANDATORY FILED
+	    public boolean isMedatoryMessageDisplayed() {
+	    	boolean flag = false;
+			try {
+				//wait.until(ExpectedConditions.visibilityOf(msgMendatoryCondition));
+		        if(msgMendatoryCondition.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Required message caught : "+msgMendatoryCondition.getText());
+		        }else {
+		        	logger.info("Required message not caught");
+		        }
+			}catch(Exception e){
+				logger.info(e);
+			}
+
+        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
+	        return flag;
+	    }
+	  //========END==========ACTIONS METHODS==========//
+	  //============START========CONFIRMATION MESSAGES FORM ORGANIZATIONS PAGE OBJECTS AND ITS ACTION METHODS============//
 }

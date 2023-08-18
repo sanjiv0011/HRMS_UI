@@ -50,10 +50,11 @@ public class BaseClass {
 			System.setProperty("webdriver.chromedriver",rcf.getChromePath());
 			
 			// for headless browsing
-			//ChromeOptions option = new ChromeOptions();
+			ChromeOptions option = new ChromeOptions();
+	        option.addArguments("--incognito");	//TO OPEN CHROME DIRVER INCOGNITO MODE
 			//option.addArguments("--headless=chrome");
 			//option.setExperimentalOption("debuggerAddress", "http://localhost:8888");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(option);
 			
 			logger.info("Chrome driver selected");
 		}

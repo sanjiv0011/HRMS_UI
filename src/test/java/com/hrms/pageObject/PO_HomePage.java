@@ -56,7 +56,7 @@ public class PO_HomePage{
 	@CacheLookup
 	public WebElement tabAssets;
 	
-	@FindBy(xpath = "//span[normalize-space()=\"My Calender\"]")
+	@FindBy(xpath = "//span[normalize-space()='My Calendar']")
 	@CacheLookup
 	public WebElement tabMyCalender;
 	
@@ -156,7 +156,7 @@ public class PO_HomePage{
 		logger.info("Clicked on tabAssets button");
 	}
 	
-	public void clickOntabMyCalender() 
+	public void clickOntabMyCalendar() 
 	{
 		tabMyCalender.click();
 		logger.info("Clicked on tabMyCalender button");

@@ -21,7 +21,7 @@ import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UsersPage extends ReUseAbleElement{
 	
-	//CONSTRUCTOR AND OTHRE VARIABLE INITIALIZATION
+	//CONSTRUCTOR AND OTHRE VARIABLE DECLARATIOIN
 	public WebDriver driver;
 	public JavascriptExecutor jsExecutor;
 	public ReUseAbleElement ruae;
@@ -187,7 +187,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		   	public PO_HomePage archiveUser(String uname) throws InterruptedException {
 		       logger.info("Archive user method called");
 	
-		       // METHODS TO ARCHIVE THE PROJECT
+		       // METHODS TO ARCHIVE THE USER
 		       Action_Archive.archive(uname, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "confirmMessage");
 		       logger.info("Returned inside archive user method");
 		       return new PO_HomePage(driver);
@@ -198,7 +198,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		   public PO_HomePage restoreUser(String uname) throws InterruptedException {
 		       logger.info("Restore user method called");
 
-		       // METHODS TO RESTORE THE PROJECT
+		       // METHODS TO RESTORE THE USER
 		       Action_Restore.restore(uname, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "confirmMessage");
 		       logger.info("Returned inside restore user method");
 		       return new PO_HomePage(driver);

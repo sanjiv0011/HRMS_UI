@@ -1,5 +1,6 @@
 package com.hrms.ReUseAble.PageObject;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -7,9 +8,14 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import my_support.TimePicker;
 
 
 public class ReUseAbleElement {
@@ -17,12 +23,16 @@ public class ReUseAbleElement {
 	//CONSTRUCTOR INITIALIZATIONS
 	public WebDriver driver=null;
 	public static final Logger logger = LogManager.getLogger(ReUseAbleElement.class);
+	public static WebDriverWait wait = null;
+	static Actions action;
 	
 	//CREATE PAGE FACTORY METHODS WITH DRIVERS
 	public ReUseAbleElement(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+		action = new Actions(driver);
 	}
 	
 	
@@ -39,7 +49,7 @@ public class ReUseAbleElement {
 			Thread.sleep(5000);
 		}
 	
-		// Action button three dot for
+		//ACTION BUTTON THREE DOTS
 		@FindBy(xpath = "//div[@class='pointer']//*[name()='svg']")
 		@CacheLookup
 		public WebElement btnAction;
@@ -75,63 +85,63 @@ public class ReUseAbleElement {
 	        Thread.sleep(300);
 	    }
 	    
-	 // No button before confirm the action
-	 		@FindBy(xpath = "//div[contains(text(),'Leave Type Activated Successfully.')]")
-	 		@CacheLookup
-	 		public WebElement msgActivated;
-	 		 // Action method to get the message after activation
-	 	    public boolean getActivatedSuccessfullyMessage_RU() throws InterruptedException {
-	 	    	boolean flag = false;
-	 	        if (msgActivated.isDisplayed()) {
-	 	            flag = true;
-	 	           logger.info("InActive label present: "+flag);
-	 	        }
-	 	        Thread.sleep(300);
-	 	        return flag;
-	 	    }
-	 		
-	 	    // No button before confirm the action
-	  		@FindBy(xpath = "//div[contains(text(),'Leave Deactivated Successfully.')]")
-	  		@CacheLookup
-	  		public WebElement msgDeactivated;
-	 	    // Action method to get the message after deactivation
-	 	    public boolean isDeactivatedSuccessfullyMessage_RU() throws InterruptedException {
-	 	    	boolean flag = false;
-	 	        if (msgDeactivated.isDisplayed()) {
-	 	            flag = true;
-	 	           logger.info("Active label present: "+flag);
-	 	        }
-	 	        Thread.sleep(300);
-	 	        return flag;
-	 	    }
-	 		
-	 	    //TO CHECK LABLE INACTIVE
-	 	    @FindBy(xpath="//span[normalize-space()='InActive']")
-	 	    @CacheLookup
-	 	    public WebElement inactiveLabel;
-	 	    public boolean isAlreadyInActiveDisplayed_RU() throws InterruptedException {
-	 	        boolean flag = false;
-	 	        if (inactiveLabel.isDisplayed()) {
-	 	            flag = true;
-	 	           logger.info("InActive label present: "+flag);
-	 	        }
-	 	        Thread.sleep(300);
-	 	        return flag;
-	 	    }
-	 	    
-	 	    //TO CHECK LABLE ACTIVE 
-	 	    @FindBy(xpath="//span[normalize-space()='Active']")
-	 	    @CacheLookup
-	 	    public WebElement activeLabel;
-	 	    public boolean isAlreadyActiveDisplayed_RU() throws InterruptedException {
-	 	        boolean flag = false;
-	 	        if (activeLabel.isDisplayed()) {
-	 	            flag = true;
-	 	           logger.info("InActive label present: "+flag);
-	 	        }
-	 	        Thread.sleep(300);
-	 	        return flag;
-	 	    }
+    	// No button before confirm the action
+ 		@FindBy(xpath = "//div[contains(text(),'Leave Type Activated Successfully.')]")
+ 		@CacheLookup
+ 		public WebElement msgActivated;
+ 		 // Action method to get the message after activation
+ 	    public boolean getActivatedSuccessfullyMessage_RU() throws InterruptedException {
+ 	    	boolean flag = false;
+ 	        if (msgActivated.isDisplayed()) {
+ 	            flag = true;
+ 	           logger.info("InActive label present: "+flag);
+ 	        }
+ 	        Thread.sleep(300);
+ 	        return flag;
+ 	    }
+ 		
+ 	    // No button before confirm the action
+  		@FindBy(xpath = "//div[contains(text(),'Leave Deactivated Successfully.')]")
+  		@CacheLookup
+  		public WebElement msgDeactivated;
+ 	    // Action method to get the message after deactivation
+ 	    public boolean isDeactivatedSuccessfullyMessage_RU() throws InterruptedException {
+ 	    	boolean flag = false;
+ 	        if (msgDeactivated.isDisplayed()) {
+ 	            flag = true;
+ 	           logger.info("Active label present: "+flag);
+ 	        }
+ 	        Thread.sleep(300);
+ 	        return flag;
+ 	    }
+ 		
+ 	    //TO CHECK LABLE INACTIVE
+ 	    @FindBy(xpath="//span[normalize-space()='InActive']")
+ 	    @CacheLookup
+ 	    public WebElement inactiveLabel;
+ 	    public boolean isAlreadyInActiveDisplayed_RU() throws InterruptedException {
+ 	        boolean flag = false;
+ 	        if (inactiveLabel.isDisplayed()) {
+ 	            flag = true;
+ 	           logger.info("InActive label present: "+flag);
+ 	        }
+ 	        Thread.sleep(300);
+ 	        return flag;
+ 	    }
+ 	    
+ 	    //TO CHECK LABLE ACTIVE 
+ 	    @FindBy(xpath="//span[normalize-space()='Active']")
+ 	    @CacheLookup
+ 	    public WebElement activeLabel;
+ 	    public boolean isAlreadyActiveDisplayed_RU() throws InterruptedException {
+ 	        boolean flag = false;
+ 	        if (activeLabel.isDisplayed()) {
+ 	            flag = true;
+ 	           logger.info("InActive label present: "+flag);
+ 	        }
+ 	        Thread.sleep(300);
+ 	        return flag;
+ 	    }
 	 	    
 	 	//===========END=======ACTIVATE AND DEACTIVATE==================//
 	    
@@ -218,7 +228,7 @@ public class ReUseAbleElement {
 	    }
 		
 	    
-	    //===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, AND DELETE==================//
+	    //===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, AND DELETE===================//
 	    
 		@FindBy(xpath = "//p[normalize-space()=\"Create\"]")
 		@CacheLookup
@@ -310,17 +320,60 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	  
-	    
-	    
-		
-	  //===========END=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, AND DELETE==================//
+	    //DROPDOWN ADDRESS
+  		@FindBy(xpath = "//button[@title='Open']//*[name()='svg']")
+  		@CacheLookup
+  		public WebElement iconDropdown_RU;
+  		public void clickOnProjectDropdown_RU() throws InterruptedException {
+  			iconDropdown_RU.click();
+  			logger.info("Clicked on the icon dropdown");
+  			Thread.sleep(1000);
+  		}
+	   	
+	  //===========END=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, DORPDOWN ICON AND DELETE==================//
 	//========START=======Actions Elements=========TO USER ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP===========//
 	    
 	    
 	    
   //==========START=========DATE SELECTION=========THIS ELEMENT NEVER GET CHANSE TO CALLS INDIVISUALLY THAT WHY ACTION METHODS IMPLEMENTED UNDER DATE PICKER CLASS=======//
-		// to click on toggle button to select date and year
+		//DATE ICON ADDRESS FIRST
+	    @FindBy(xpath = "(//button[@aria-label='Choose date'])[1]")
+		@CacheLookup
+		public WebElement iconDate_1_RU;
+	    
+	    //DATE ICON ADDRESS SECONDS
+	    @FindBy(xpath = "(//button[@aria-label='Choose date'])[2]")
+		@CacheLookup
+		public WebElement iconDate_2_RU;
+	    
+	    //DATE ICON ADDRESS THIRD
+	    @FindBy(xpath = "(//button[@aria-label='Choose date'])[3]")
+		@CacheLookup
+		public WebElement iconDate_3_RU;
+	    
+	    //ACTION METHODS TO CLICK ON DATE ICON ADDRESS FIRST
+	    public void clickOnDateIconFirst_RU() throws InterruptedException {
+	    	iconDate_1_RU.click();
+	    	logger.info("Clicked on the date icon first");
+	    	Thread.sleep(500);
+	    }
+	    
+	    //ACTION METHODS TO CLICK ON DATE ICON ADDRESS SECONDS
+	    public void clickOnDateIconSecond_RU() throws InterruptedException {
+	    	iconDate_2_RU.click();
+	    	logger.info("Clicked on the date icon second");
+	    	Thread.sleep(500);
+	    }
+	    
+	    //ACTION METHODS TO CLICK ON DATE ICON ADDRESS THIRD
+	    public void clickOnDateIconThird_RU() throws InterruptedException {
+	    	iconDate_3_RU.click();
+	    	logger.info("Clicked on the date icon third");
+	    	Thread.sleep(500);
+	    }
+	    
+	    //FOR THIS REMAINIG ACTION METHODS IMPLEMENTED UNDER DATE PICKER METHODS
+	    // to click on toggle button to select date and year
 		@FindBy(xpath = "//button[contains(@aria-label,'calendar view')]")
 		@CacheLookup
 		public WebElement toggleBtnYearAndDate;
@@ -360,7 +413,7 @@ public class ReUseAbleElement {
 		public WebElement actionActivateUser;
 		// Action method to click the Archive action
 	    public void clickOnActivateAction_RU_User() throws InterruptedException {
-	        actionActivate.click();
+	    	actionActivateUser.click();
 	        logger.info("Clicked on the Action_Activate button");
 	        Thread.sleep(300);
 	    }
@@ -371,11 +424,74 @@ public class ReUseAbleElement {
 		public WebElement actionDeactivateUser;
 		 // Action method to click the Restore action
 	    public void clickOnDeactivateAction_RU_User() throws InterruptedException {
-	        actionDeactivate.click();
+	    	actionDeactivateUser.click();
 	        logger.info("Clicked on the Action_Deactivated button");
 	        Thread.sleep(300);
 	    }
   //===========END======ACTIVATE AND DEACTIVATE ONLY FOR USER PAGE OBJECT AND ITE ACTION METHODS===========//	
+	    
+	    
+  //==========START==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS===========//
+		//TIME ICON ADDRESS FIRST
+	    @FindBy(xpath = "(//button[@aria-label='Choose time'])[1]")
+		@CacheLookup
+		public WebElement iconTime_1_RU;
+	    //ACTION METHODS
+	    public void clickOnTimeIcon_1_RU() {
+	    	try {
+	    		 Thread.sleep(1000);
+	    		 action.moveToElement(iconTime_1_RU).click().build().perform();
+	    		 Thread.sleep(1000);
+	    		 //iconTime_1_RU.click();
+	    		 logger.info("Click on time icon 1");
+	    	}catch(Exception e) {
+	    		 logger.info(e.getMessage());
+	    	}
+	    }
+	    
+	    //TIME ICON ADDRESS SECONDS
+	    @FindBy(xpath = "(//button[@aria-label='Choose time'])[2]")
+		@CacheLookup
+		public WebElement iconTime_2_RU;
+	    //ACTION METHODS
+	    public void clickOnTimeIcon_2_RU() {
+	    	try {
+	    		 Thread.sleep(1000);
+	    		 action.moveToElement(iconTime_2_RU).click().build().perform();
+	    		 Thread.sleep(1000);
+	    		 //iconTime_2_RU.click();
+	    		 logger.info("Click on time icon 2");
+	    	}catch(Exception e) {
+	    		 logger.info(e.getMessage());
+	    	}
+	    }
+	    //HOURS LIST ADDRESS	
+	    @FindBy(xpath = "//div[@role='listbox']//span")
+		@CacheLookup
+		public List <WebElement> listHours_RU;
+	    
+	    //MINUTES LIST ADDRESS
+	    @FindBy(xpath = "//div[contains(@role,'listbox')]//span")
+		@CacheLookup
+		public List <WebElement> listMinutes_RU;
+
+	    //AM BUTTON ADDRESS 
+	    @FindBy(xpath = "(//span[contains(@class,'MuiTouchRipple-root')])[11]")
+		@CacheLookup
+		public WebElement btnAM_RU;
+	   
+	    //PM BUTTON ADDRESS
+	    @FindBy(xpath = "(//span[contains(@class,'MuiTouchRipple-root')])[12]")
+		@CacheLookup
+		public WebElement btnPM_RU;
+	   
+	    //OK BUTTON ADDRESS
+	    @FindBy(xpath = "//button[normalize-space()='OK']")
+		@CacheLookup
+		public WebElement btnOK_RU;
+  
+  //==========END==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS===========//
+
 
 }
 
