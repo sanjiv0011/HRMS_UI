@@ -30,7 +30,7 @@ public class TC_MyCalendar extends BaseClass{
 	@Test(priority =1)
 	public void test_Login() throws InterruptedException{
 		lgn = new PO_LoginPage(driver);
-		hp = lgn.login(userName, password);
+		hp = lgn.Login(userName, password);
 	}
 	
 	//TO VISIT AND CHECK MY CALLENDAR MONTH VIEW

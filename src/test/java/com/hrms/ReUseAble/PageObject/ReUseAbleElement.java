@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -230,7 +231,38 @@ public class ReUseAbleElement {
 	    
 	    //===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, AND DELETE===================//
 	    
-		@FindBy(xpath = "//p[normalize-space()=\"Create\"]")
+	  
+	    //PASSWORD VISIBILITY EYE ICON 1
+	    @FindBy(xpath = "(//button[@aria-label='toggle password visibility']//*[name()='svg'])[1]")
+		@CacheLookup
+		public WebElement iconPasswordVisibility_1_RU;
+		public void clickOnEyeIconPasswordView_1_RU() throws InterruptedException{
+			iconPasswordVisibility_1_RU.click();
+		   logger.info("Clicked on the eye icon to view the password");
+		   Thread.sleep(1000);
+		}
+		
+		//PASSWORD VISIBILITY EYE ICON 2
+	    @FindBy(xpath = "(//button[@aria-label='toggle password visibility']//*[name()='svg'])[2]")
+		@CacheLookup
+		public WebElement iconPasswordVisibility_2_RU;
+		public void clickOnEyeIconPasswordView_2_RU() throws InterruptedException{
+			iconPasswordVisibility_2_RU.click();
+		   logger.info("Clicked on the eye icon to view the password");
+		   Thread.sleep(1000);
+		}
+		
+		//PASSWORD VISIBILITY EYE ICON 3
+		@FindBy(xpath = "(//button[@aria-label='toggle password visibility']//*[name()='svg'])[3]")
+		@CacheLookup
+		public WebElement iconPasswordVisibility_3_RU;
+		public void clickOnEyeIconPasswordView_3_RU() throws InterruptedException{
+			iconPasswordVisibility_3_RU.click();
+		   logger.info("Clicked on the eye icon to view the password");
+		   Thread.sleep(1000);
+		}
+		
+	    @FindBy(xpath = "//p[normalize-space()=\"Create\"]")
 		@CacheLookup
 		public WebElement btnCreate;
 		public void clickOnCreateButton_RU() throws InterruptedException{
@@ -256,7 +288,7 @@ public class ReUseAbleElement {
 	    public void clickOnYesButton_RU() throws InterruptedException {
 	        btnYes.click();
 	        logger.info("Clicked on the Yes button");
-	        Thread.sleep(300);
+	        Thread.sleep(500);
 	    }
 		
 		// No button before confirm the action
@@ -300,12 +332,32 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	    //SAVE AND GO TO HOME BUTTON
-	    @FindBy(xpath = "//p[text()='Save & Go To Home']")
+	    //SAVE AND GO TO HOME BUTTON 1
+	    @FindBy(xpath = "(//p[text()='Save & Go To Home'])[1]")
 		@CacheLookup
-		public WebElement btnSaveAndGoToHome;
-	    public void clickOnBtnSaveAndGoToHome_RU() throws InterruptedException {
-	    	btnSaveAndGoToHome.click();
+		public WebElement btnSaveAndGoToHome_1_RU;
+	    public void clickOnBtnSaveAndGoToHome_1_RU() throws InterruptedException {
+	    	btnSaveAndGoToHome_1_RU.click();
+	    	logger.info("Clicked on the save and go to home button");
+			Thread.sleep(300);
+		}
+	    
+	    //SAVE AND GO TO HOME BUTTON 2 
+	    @FindBy(xpath = "(//p[text()='Save & Go To Home'])[2]")
+		@CacheLookup
+		public WebElement btnSaveAndGoToHome_2_RU;
+	    public void clickOnBtnSaveAndGoToHome_2_RU() throws InterruptedException {
+	    	btnSaveAndGoToHome_2_RU.click();
+	    	logger.info("Clicked on the save and go to home button");
+			Thread.sleep(300);
+		}
+	    
+	    //SAVE AND GO TO HOME BUTTON 3
+	    @FindBy(xpath = "(//p[text()='Save & Go To Home'])[3]")
+		@CacheLookup
+		public WebElement btnSaveAndGoToHome_3_RU;
+	    public void clickOnBtnSaveAndGoToHome_3_RU() throws InterruptedException {
+	    	btnSaveAndGoToHome_3_RU.click();
 	    	logger.info("Clicked on the save and go to home button");
 			Thread.sleep(300);
 		}
@@ -320,91 +372,60 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	    //DROPDOWN ADDRESS
-  		@FindBy(xpath = "//button[@title='Open']//*[name()='svg']")
+	    //DROPDOWN ADDRESS 1
+  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")
   		@CacheLookup
-  		public WebElement iconDropdown_RU;
-  		public void clickOnProjectDropdown_RU() throws InterruptedException {
-  			iconDropdown_RU.click();
-  			logger.info("Clicked on the icon dropdown");
+  		public WebElement iconDropdown_1_RU;
+  		public void clickOnDropdown_1_RU() throws InterruptedException {
+  			iconDropdown_1_RU.click();
+  			logger.info("Clicked on the icon dropdown 1");
+  			Thread.sleep(1000);
+  		}
+  		
+  		//DROPDOWN ADDRESS 2
+  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[2]")
+  		@CacheLookup
+  		public WebElement iconDropdown_2_RU;
+  		public void clickOnDropdown_2_RU() throws InterruptedException {
+  			iconDropdown_2_RU.click();
+  			logger.info("Clicked on the icon dropdown 1");
+  			Thread.sleep(1000);
+  		}
+  		
+  		//DROPDOWN ADDRESS 3
+  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[3]")
+  		@CacheLookup
+  		public WebElement iconDropdown_3_RU;
+  		public void clickOnDropdown_3_RU() throws InterruptedException {
+  			iconDropdown_3_RU.click();
+  			logger.info("Clicked on the icon dropdown 3 ");
+  			Thread.sleep(1000);
+  		}
+  		
+  		//DROPDOWN ADDRESS 4
+  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[4]")
+  		@CacheLookup
+  		public WebElement iconDropdown_4_RU;
+  		public void clickOnDropdown_4_RU() throws InterruptedException {
+  			iconDropdown_4_RU.click();
+  			logger.info("Clicked on the icon dropdown 4");
   			Thread.sleep(1000);
   		}
 	   	
+  		//DROPDOWN ADDRESS 4
+  		@FindBy(xpath = "(//p[normalize-space()='Save'])[1]")
+  		@CacheLookup
+  		public WebElement btnSave_1_RU;
+  		public void clickOnBtnSave_1_RU() throws InterruptedException {
+  			btnSave_1_RU.click();
+  			logger.info("Clicked on the button save");
+  			Thread.sleep(300);
+  		}
+  		
 	  //===========END=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, DORPDOWN ICON AND DELETE==================//
 	//========START=======Actions Elements=========TO USER ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP===========//
 	    
-	    
-	    
-  //==========START=========DATE SELECTION=========THIS ELEMENT NEVER GET CHANSE TO CALLS INDIVISUALLY THAT WHY ACTION METHODS IMPLEMENTED UNDER DATE PICKER CLASS=======//
-		//DATE ICON ADDRESS FIRST
-	    @FindBy(xpath = "(//button[@aria-label='Choose date'])[1]")
-		@CacheLookup
-		public WebElement iconDate_1_RU;
-	    
-	    //DATE ICON ADDRESS SECONDS
-	    @FindBy(xpath = "(//button[@aria-label='Choose date'])[2]")
-		@CacheLookup
-		public WebElement iconDate_2_RU;
-	    
-	    //DATE ICON ADDRESS THIRD
-	    @FindBy(xpath = "(//button[@aria-label='Choose date'])[3]")
-		@CacheLookup
-		public WebElement iconDate_3_RU;
-	    
-	    //ACTION METHODS TO CLICK ON DATE ICON ADDRESS FIRST
-	    public void clickOnDateIconFirst_RU() throws InterruptedException {
-	    	iconDate_1_RU.click();
-	    	logger.info("Clicked on the date icon first");
-	    	Thread.sleep(500);
-	    }
-	    
-	    //ACTION METHODS TO CLICK ON DATE ICON ADDRESS SECONDS
-	    public void clickOnDateIconSecond_RU() throws InterruptedException {
-	    	iconDate_2_RU.click();
-	    	logger.info("Clicked on the date icon second");
-	    	Thread.sleep(500);
-	    }
-	    
-	    //ACTION METHODS TO CLICK ON DATE ICON ADDRESS THIRD
-	    public void clickOnDateIconThird_RU() throws InterruptedException {
-	    	iconDate_3_RU.click();
-	    	logger.info("Clicked on the date icon third");
-	    	Thread.sleep(500);
-	    }
-	    
-	    //FOR THIS REMAINIG ACTION METHODS IMPLEMENTED UNDER DATE PICKER METHODS
-	    // to click on toggle button to select date and year
-		@FindBy(xpath = "//button[contains(@aria-label,'calendar view')]")
-		@CacheLookup
-		public WebElement toggleBtnYearAndDate;
-		
-		// to select the year
-		@FindBy(xpath = "//div[contains(@class, 'MuiYearCalendar-root')]//div")
-		@CacheLookup
-		public List <WebElement> selectYear;
-		
-		// to select the next Month
-		@FindBy(xpath = "//button[@title=\"Next month\"]")
-		@CacheLookup
-		public WebElement arrowNextMonth;
-		
-		// to select the Month
-		@FindBy(xpath = "//button[@title=\"Previous month\"]")
-		@CacheLookup
-		public WebElement arrowPreviousMonth;
-		
-		// to match exact Month and year
-		//@FindBy(xpath = "//div[contains(@class,'MuiPickersCalendarHeader-label')]"
-		@FindBy(xpath ="//div[contains(@id,'grid-label')]")
-		@CacheLookup
-		public WebElement elementCurrentMonthYearDisplayed;
-		
-		// to select the date
-		@FindBy(xpath = "//div[@role='row']//button")
-		@CacheLookup
-		public List <WebElement> selectDate;
-  //==========END=========DATE SELECTION=========THIS ELEMENT NEVER GET CHANSE TO CALLS INDIVISUALS THAT WHY ACTION METHODS IMPLEMENTED UNDER DATE PICKER CLASS=======//
-		
+
 		
   //===========START======ACTIVATE AND DEACTIVATE ONLY FOR USER PAGE OBJECT AND ITE ACTION METHODS===========//
 		//ACTIVATE Action => To use this first search list item so that it comes at first position

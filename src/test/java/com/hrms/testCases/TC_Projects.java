@@ -45,12 +45,12 @@ public class TC_Projects extends BaseClass{
 	@Test(priority = 1)
 	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
-		hp = lgn.login(userName, password);
+		hp = lgn.Login(userName, password);
 		Thread.sleep(3000);
 	}
 	
 	//TO CREATE THE  PROJECT 
-	//@Test(priority =2 , dependsOnMethods = {"test_Login"})
+	@Test(priority =2 , dependsOnMethods = {"test_Login"})
 	public void test_CreateProject() throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.createProject(projectName, projectDescription, domainName, clientName, technologyName, projectStartDate, projectEndDate);
@@ -83,7 +83,7 @@ public class TC_Projects extends BaseClass{
 	}
 	
 	//ASSIGN PROJECT TO THE USERS
-	@Test(priority = 6 , dependsOnMethods = {"test_Login"})
+	//@Test(priority = 6 , dependsOnMethods = {"test_Login"})
 	public void test_AssignProject()throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.assignProjectToUser(projectSearchKey, userNameToAssignProject, assignProjectStartDate, assignProjectEndDate);

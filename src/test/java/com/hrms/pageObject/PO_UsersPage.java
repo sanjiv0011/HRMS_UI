@@ -177,7 +177,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setLastName(lastName);
 			setEmailAddress(emailAddress);
 			selectUserRole(userRole);
-			ruae.clickOnBtnSaveAndGoToHome_RU();
+			ruae.clickOnBtnSaveAndGoToHome_1_RU();
 			return new PO_HomePage(driver);
 		}
 		
@@ -257,7 +257,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 				setEmailAddress(newEmailAddress);
 				btnDropdownUserRole.click();
 				selectUserRole(newUserRole);
-				ruae.clickOnBtnSaveAndGoToHome_RU();
+				ruae.clickOnBtnSaveAndGoToHome_1_RU();
 				return new PO_HomePage(driver);
 			}
 		
@@ -328,19 +328,19 @@ public class PO_UsersPage extends ReUseAbleElement{
 			}
 			
 			//ACTION METHOD TO SELECT THE PROJECT START DATE
-			public void selectStartDate(String projectStartDate) throws InterruptedException {
-				clickOnStartDateIcon(); //IT WILL CLICK ON THE START DATE ICON
+			public void selectStartDate(String projectStartDate, int x) throws InterruptedException {
+				
 				//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, projectStartDate);
+			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectStartDate, 1);
 			    logger.info("Project start date, month and year entered");
 			    Thread.sleep(2000);
 			}
 
 			//ACTION METHOD TO SELECT PROJECT END DATE
-			public void selectEndDate(String projectEndDate) throws InterruptedException {
-				clickEndDateIcon();	//IT WILL CLICK ON THE END DATE ICON
+			public void selectEndDate(String projectEndDate, int x) throws InterruptedException {
+
 				//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, projectEndDate);
+			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectEndDate, 2);
 			    logger.info("Project end date, month and year entered");
 			    Thread.sleep(2000);
 			}
@@ -394,8 +394,10 @@ public class PO_UsersPage extends ReUseAbleElement{
 		   		ruae.searchBox_RU(userSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 		   		clickOnAssignProjectBtn();	//IT CLICK ON THE ASSIGN USER BUTTON
 		   		selectUserForProjectAssignment(projectName); 	//IT CLICK ON THE USER SELECTION DORPDOWN ICON AND SELECT THE GIVEN USER FROM THE LIST
-		   		selectStartDate(assignProjectStartDate);    //SELECT THE ASSIGN PROJECT START DATE 
-		   		//selectEndDate(assignProjectEndDate);    //SELECT THE ASSIGN PROJECT END DATE 
+		   		
+		   		selectStartDate(assignProjectStartDate, 1);    //SELECT THE ASSIGN PROJECT START DATE 
+		   		selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
+		   		
 		   		clickOnBtnAssign(); //IT CLICK ON THE ON THE ASSGIN BUTTON AFTER FILLING THE DETAILS
 		   		
 		   		//TAKES THE DECISION BASED ON THE CONFIREMATINO MESSAGES

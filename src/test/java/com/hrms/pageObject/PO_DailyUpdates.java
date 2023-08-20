@@ -43,7 +43,7 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 		action = new Actions(driver);
 	}
 	
-	//=====START====Organization page and Create organization page object============//
+	//=====START====DAILY UPDATES PAGE OBJECT AND ITS ACTION METHODS============//
 		//PROJECT LIST ADDRESS
 		@FindBy(xpath = "//ul[@id='myProjectObj-listbox']//li")
 		@CacheLookup
@@ -52,7 +52,7 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 		//ACTION METHOD TO CLICK ON THE PROJECT LIST DROPDOWN AND SELECT THE GIVEN PROJECT NAME
 		public void selectProject(String projectName) throws InterruptedException {
 			//TO CLICK ON THE DROPDOWN ICON 
-			clickOnProjectDropdown_RU();
+			clickOnDropdown_1_RU();
 		    //THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE
 		    Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listProject, projectName);
 		    logger.info("Project name selected");
@@ -90,11 +90,8 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 		
 		//TO CREATE DAILY UPDATES
 		public PO_HomePage createDailyUpdates(WebDriver driver, String dailyUpdateDate, String hoursStart, String mintuesStart, String AMPMStart,String hoursEnd, String mintuesEnd, String AMPMEnd, String projectName, String description ) throws InterruptedException
-		{	
-			//IT WILL CLICK ON THE START DATE ICON
-			clickOnDateIconFirst_RU();
-			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, dailyUpdateDate);
+		{	//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
+		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, dailyUpdateDate, 1);
 		    logger.info("Daily update date, month and year entered");
 		    Thread.sleep(2000);	
 		    

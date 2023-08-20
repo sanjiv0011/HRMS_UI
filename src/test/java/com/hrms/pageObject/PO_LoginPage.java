@@ -1,26 +1,34 @@
 package com.hrms.pageObject;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class PO_LoginPage {
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
+public class PO_LoginPage extends ReUseAbleElement {
 	
+	public WebDriver driver;
 	public Logger logger = LogManager.getLogger(getClass());
-	
-	// initiate page factory constructor
-	public WebDriver driver= null;
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement ruae;
+	public WebDriverWait wait;
 	
 	public  PO_LoginPage(WebDriver driver)
-	{ 
-		this.driver = driver;
-		//this.driver = driver;
-		PageFactory.initElements(driver,this);
+	{   super(driver);
+	    this.driver = driver;
+	    jsExecutor  = (JavascriptExecutor)driver;
+		ruae = new ReUseAbleElement(driver);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
 
 	// to find page elements
@@ -40,10 +48,6 @@ public class PO_LoginPage {
 	@CacheLookup
 	WebElement checkBox;
 	
-	@FindBy(xpath = "//*[name()='path' and contains(@d,'M12 7c2.76')]")
-	@CacheLookup
-	WebElement viewPasswordBtn;
-	
 	@FindBy(xpath = "//span[@class='MuiBox-root css-1bd5wky']")
 	@CacheLookup
 	WebElement forgetPasswordLink;
@@ -52,21 +56,23 @@ public class PO_LoginPage {
 	// apply set method for each variable 
 	// here get method not required beacues we are using config.properties files
 
-	public void setUserName(String userName) 
+	public void setUserName(String userName) throws InterruptedException 
 	{
 		textUserName.sendKeys(userName);
+		logger.info("Enteterd userName");
+		Thread.sleep(1000);
 	}
 		
-	public void setTextpassword(String password) {
+	public void setTextpassword(String password) throws InterruptedException {
 		textpassword.sendKeys(password);
+		logger.info("Entered password");
+		Thread.sleep(1000);
 	}
 
-	public void clickBtnsubmit() {
+	public void clickBtnsubmit() throws InterruptedException {
 		btnsubmit.click();
-	}
-	
-	public void clickViewPasswordBtn() {
-		viewPasswordBtn.click();
+		logger.info("clicke on login submit button");
+		Thread.sleep(5000);
 	}
 	
 	public void clickOnCheckBox() {
@@ -77,20 +83,12 @@ public class PO_LoginPage {
 		forgetPasswordLink.click();
 	}
 	
-	public PO_HomePage login(String userName, String password) throws InterruptedException
+	public PO_HomePage Login(String userName, String password) throws InterruptedException
 	{
-		textUserName.sendKeys(userName);
-		logger.info("Enteterd userName");
-		Thread.sleep(1000);
-		
-		textpassword.sendKeys(password);
-		logger.info("Entered password");
-		Thread.sleep(1000);
-		
-		btnsubmit.click();
-		logger.info("clicke on login submit button");
-		Thread.sleep(5000);
-	
+		setUserName(userName);
+		setTextpassword(password);
+		clickBtnsubmit();
+
 		if(driver.getPageSource().contains("Dashboard"))
 		{
 			Assert.assertTrue(true);

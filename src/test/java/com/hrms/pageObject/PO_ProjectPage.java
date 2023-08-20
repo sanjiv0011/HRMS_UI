@@ -71,17 +71,6 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		@CacheLookup
 		public List <WebElement> domaintList;
 		
-		
-		//START DATE ICON ADDRESS
-		@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[1]")
-		@CacheLookup
-		WebElement iconDateStart;
-
-		//END DATE ICON ADDRESS
-		@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[2]")
-		@CacheLookup
-		WebElement iconDateEnd;
-		
 		//TECHNOLOGY DROPDOWN ADDRESS
 		@FindBy(xpath = "//input[@id='projectTechnologies']")
 		@CacheLookup
@@ -155,36 +144,20 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		    Thread.sleep(1000);
 		}
 		
-		//ACTION METHOD TO CLICK ON THE PROJECT START DATE ICON
-		public void clickOnStartDateIcon() throws InterruptedException {
-			iconDateStart.click();
-		    logger.info("Clicked on the start date icon");
-		    Thread.sleep(1000);
-		}
-		
 		//ACTION METHOD TO SELECT THE PROJECT START DATE
-		public void selectStartDate(String projectStartDate) throws InterruptedException {
-			clickOnStartDateIcon(); //IT WILL CLICK ON THE START DATE ICON
+		public void selectStartDate(String projectStartDate, int x) throws InterruptedException {
+			
 			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, projectStartDate);
+		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectStartDate, x);
 		    logger.info("Project start date, month and year entered");
-		    Thread.sleep(2000);
-		}
-
-		//ACTION METHOD TO CLICK ON THE PROJECT END DATE ICON
-		public void clickEndDateIcon() throws InterruptedException {
-			iconDateEnd.click();
-		    logger.info("Clicked on the end date icon");
-		    Thread.sleep(1000);
 		}
 
 		//ACTION METHOD TO SELECT PROJECT END DATE
-		public void selectEndDate(String projectEndDate) throws InterruptedException {
-			clickEndDateIcon();	//IT WILL CLICK ON THE END DATE ICON
+		public void selectEndDate(String projectEndDate, int x ) throws InterruptedException {
+			
 			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, projectEndDate);
+		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectEndDate, x);
 		    logger.info("Project end date, month and year entered");
-		    Thread.sleep(2000);
 		}
 		
 		//ACTION METHOD TO CLICK ON THE TECHNOLOGY DROPDOWN AND SELECT THE GIVEN TECHNOLOGY NAME
@@ -226,8 +199,8 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   		setProjectDescription(projectDescription);	//TO ENTER THE PROJECT DESCRIPTION
 	   		selectClient(clientName);	//TO SELECT THE CLIENT
 	   		selectDomain(domainName);	//TO SELECT THE DOMAIN
-	   		selectStartDate(projectStartDate);	//SET SELECT THE PROJECT START DATE 
-	   		selectEndDate(projectEndDate);	//SET SELECT THE PROJECT END DATE 
+	   		selectStartDate(projectStartDate, 1);	//SET SELECT THE PROJECT START DATE 
+	   		selectEndDate(projectEndDate, 2);	//SET SELECT THE PROJECT END DATE 
 	   		selectTechnology(technologyName);	//TO SELECT THE TECHNOLOGY
 	   		ruae.clickOnCreateButton_RU();	//TO CLICK ON THE CREATE BUTTON AFTER FILLING DETAILS
 		    return new PO_HomePage(driver);	//TO RETURN THE DRIVER AT HOME PAGE
@@ -267,8 +240,8 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		   setProjectName(newProjecName);    // TO ENTER THE PROJECT NAME
 	       setProjectDescription(newProjecDescription);    // TO ENTER THE PROJECT DESCRIPTION
 	       selectDomain(newDomainName);    // TO SELECT THE DOMAIN
-	       selectStartDate(newProjectStartDate);    //SELECT THE PROJECT START DATE 
-	       selectEndDate(newProjectEndDate);    //SELECT THE PROJECT END DATE 
+	       selectStartDate(newProjectStartDate, 1);    //SELECT THE PROJECT START DATE 
+	       selectEndDate(newProjectEndDate, 2);    //SELECT THE PROJECT END DATE 
 	       selectTechnology(newTechnologyName);    // TO SELECT THE TECHNOLOGY
 	       ruae.clickOnBtnSaveChanges_RU();// TO CLICK ON THE SAVE CHANGES BUTTON AFTER FILLING DETAILS AND IT PREENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
 	       return new PO_HomePage(driver);    // TO RETURN THE DRIVER AT HOME PAGE
@@ -369,8 +342,8 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   		ruae.searchBox_RU(projectSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 	   		clickOnAssignUserBtn();	//IT CLICK ON THE ASSIGN USER BUTTON
 	   		selectUserForProjectAssignment(userName); 	//IT CLICK ON THE USER SELECTION DORPDOWN ICON AND SELECT THE GIVEN USER FROM THE LIST
-	   		selectStartDate(assignProjectStartDate);    //SELECT THE ASSIGN PROJECT START DATE 
-	   		//selectEndDate(assignProjectEndDate);    //SELECT THE ASSIGN PROJECT END DATE 
+	   		selectStartDate(assignProjectStartDate, 1);    //SELECT THE ASSIGN PROJECT START DATE 
+	   		selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
 	   		clickOnBtnAssign(); //IT CLICK ON THE ON THE ASSGIN BUTTON AFTER FILLING THE DETAILS
 	   		
 	   		//TAKES THE DECISION BASED ON THE CONFIREMATINO MESSAGES

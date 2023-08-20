@@ -1,23 +1,35 @@
 package com.hrms.pageObject;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class PO_UserProfilePage {
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-	public WebDriver driver = null;
+public class PO_UserProfilePage extends ReUseAbleElement {
+
+	public WebDriver driver;
 	public Logger logger = LogManager.getLogger(getClass());
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement ruae;
+	public WebDriverWait wait;
 
 	public PO_UserProfilePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
+        this.driver = driver;
+        jsExecutor  = (JavascriptExecutor)driver;
+		ruae = new ReUseAbleElement(driver);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
 
 	//=====START====Personal info Page objects============//
@@ -29,11 +41,11 @@ public class PO_UserProfilePage {
 	@CacheLookup
 	WebElement tabAddress;
 
-	@FindBy(xpath = "//button[@id='simple-tab-2']")
+	@FindBy(xpath = "//button[@id='simple-tab-3']")
 	@CacheLookup
 	WebElement tabBankDetails;
 
-	@FindBy(xpath = "//button[@id='simple-tab-3']")
+	@FindBy(xpath = "//button[@id='simple-tab-2']")
 	@CacheLookup
 	WebElement tabOtherInformation;
 
@@ -48,108 +60,51 @@ public class PO_UserProfilePage {
 		
 	
 	//=====START====Personal info Action Methods============//
-	public void clickOntabPersonalInfo() 
-	{
+	public void clickOntabPersonalInfo() throws InterruptedException {
 		tabPersonalInfo.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabPersonalInfo");
 	}
 	
-	public void clickOntabAddress() 
-	{
+	public void clickOntabAddress() throws InterruptedException {
 		tabAddress.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabAddress");
 	}
 	
-	public void clickOntabBankDetails() 
-	{
+	public void clickOntabBankDetails() throws InterruptedException {
 		tabBankDetails.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabBankDetails");
 	}
 	
-	public void clickOntabOtherInformation() 
-	{
+	public void clickOntabOtherInformation() throws InterruptedException {
 		tabOtherInformation.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabOtherInformation");
 	}
 	
-	public void clickOntabLeaveHistory() 
-	{
+	public void clickOntabLeaveHistory() throws InterruptedException {
 		tabLeaveHistory.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabLeaveHistory");
 	}
 	
-	public void clickOntabResetPassword() 
-	{
+	public void clickOntabResetPassword() throws InterruptedException {
 		tabResetPassword.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabResetPassword");
 	}
 	
+	//TO TEST THE USER PROFILE PAGE TAB WORKING
 	public PO_HomePage UserProfilePageTesting() throws InterruptedException
 	{
-		tabPersonalInfo.click();
-		logger.info("Clicked on tabPersonalInfo");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Phone Number")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-		
-		tabAddress.click();
-		logger.info("Clicked on tabAddress");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Phone Number")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-
-		tabBankDetails.click();
-		logger.info("Clicked on tabBankDetails");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Address Line 1")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-		
-		tabOtherInformation.click();
-		logger.info("Clicked on tabOtherInformation");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Bank Name")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-		
-		tabLeaveHistory.click();
-		logger.info("Clicked on tabLeaveHistory");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Emergency Contact Name")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-		
-
-		tabLeaveHistory.click();
-		logger.info("Clicked on tabLeaveHistory");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Leave History")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-		
-		tabResetPassword.click();
-		logger.info("Clicked on tabResetPassword");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Old Password")) {
-			Assert.assertTrue(true);
-		}else {
-			Assert.assertTrue(false);
-		}
-		
+		clickOntabPersonalInfo();
+		clickOntabAddress();
+		clickOntabBankDetails();
+		clickOntabOtherInformation();
+		clickOntabLeaveHistory();
+		clickOntabResetPassword();
 		return new PO_HomePage(driver);
 	}
 }

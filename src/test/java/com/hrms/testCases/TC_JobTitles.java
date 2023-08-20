@@ -30,7 +30,7 @@ public class TC_JobTitles extends BaseClass {
 	{
 		//to perform login
 		lgn = new PO_LoginPage(driver);
-		hp = lgn.login(userName, password);
+		hp = lgn.Login(userName, password);
 		Thread.sleep(5000);
 	}
 	

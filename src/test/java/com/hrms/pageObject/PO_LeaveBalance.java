@@ -15,6 +15,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import my_support.Action_Archive;
@@ -22,7 +25,7 @@ import my_support.Action_Restore;
 import my_support.DatePicker;
 import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
 
-public class PO_LeaveBalance {
+public class PO_LeaveBalance extends ReUseAbleElement {
 	
 	public WebDriver driver = null;
 	public Logger logger = LogManager.getLogger(getClass());
@@ -30,6 +33,7 @@ public class PO_LeaveBalance {
 	
 	public PO_LeaveBalance(WebDriver driver)
 	{
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 		wait = new FluentWait<>(this.driver)  // Initialize FluentWait with the driver
@@ -44,86 +48,6 @@ public class PO_LeaveBalance {
 	@FindBy(xpath = "//button//p[.='Create Leave Balance']")
 	@CacheLookup
 	WebElement btnCreateLeaveBalance;
-	
-	//==========START=========SELECT LeaveBalanceStartDate================//
-		//Click on date of birth icon
-		@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[1]")
-		@CacheLookup
-		WebElement iconDateStart;
-		
-		// to click on toggle button to select date and year
-		@FindBy(xpath = "//button[contains(@aria-label,'calendar view')]")
-		@CacheLookup
-		WebElement toggleBtnYearAndDate;
-		
-		// to select the year
-		@FindBy(xpath = "//div[contains(@class, 'MuiYearCalendar-root')]//div")
-		@CacheLookup
-		List <WebElement> selectYear;
-		
-		// to select the next Month
-		@FindBy(xpath = "//button[@title=\"Next month\"]")
-		@CacheLookup
-		WebElement arrowNextMonth;
-		
-		// to select the Month
-		@FindBy(xpath = "//button[@title=\"Previous month\"]")
-		@CacheLookup
-		WebElement arrowPreviousMonth;
-		
-		// to match exact Month and year
-		//@FindBy(xpath = "//div[contains(@class,'MuiPickersCalendarHeader-label')]"
-		@FindBy(xpath ="//div[contains(@id,'grid-label')]")
-		@CacheLookup
-		WebElement elementCurrentMonthYearDisplayed;
-		
-		// to select the date
-		@FindBy(xpath = "//div[@role='row']//button")
-		@CacheLookup
-		List <WebElement> selectDate;
-		
-		//==========END=========LeaveBalanceStartDate================//
-		
-		
-		//==========START=========SELECT LeaveBalanceEndDate================//
-		//Click on leave balance start date icon
-		@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[2]")	//(//button[contains(@aria-label,'Choose date')])[2]
-		@CacheLookup
-		WebElement iconDateEnd;
-		
-//		// to click on toggle button to select date and year
-//		@FindBy(xpath = "//button[@aria-label=\"calendar view is open, switch to year view\"]")
-//		@CacheLookup
-//		WebElement toggleBtnToSelect_LeaveBalanceEndDate_YearAndDate;
-//		
-//		// to select the year
-//		@FindBy(xpath = "//div[contains(@class, 'MuiYearCalendar-root')]//div")
-//		@CacheLookup
-//		List <WebElement> select_LeaveBalanceEndDate_Year;
-//		
-//		// to select the next Month
-//		@FindBy(xpath = "//button[@title=\"Next month\"]")
-//		@CacheLookup
-//		WebElement icon_LeaveBalanceEndDate_NextMonth;
-//		
-//		// to select the Month
-//		@FindBy(xpath = "//button[@title=\"Previous month\"]")
-//		@CacheLookup
-//		WebElement icon_LeaveBalanceEndDate_PreviousMonth;
-//		
-//		// to match exact Month and year
-//		//@FindBy(xpath = "//div[contains(@class,'MuiPickersCalendarHeader-label')]"
-//		@FindBy(xpath ="//div[contains(@id,'grid-label')]")
-//		@CacheLookup
-//		WebElement text_LeaveBalanceEndDate_currentMonthYearDisplayed;
-//		
-//		// to select the date
-//		@FindBy(xpath = "//div[@role='row']//button")
-//		@CacheLookup
-//		List <WebElement> select_LeaveBalanceEndDate_Date;
-//		
-//		//==========END=========LeaveBalanceEndDate================//
-
 	
 	@FindBy(xpath = "//button[@title=\"Open\"]//*[name()=\"svg\"]")
 	@CacheLookup
@@ -185,12 +109,8 @@ public class PO_LeaveBalance {
 		logger.info("Clicked on the dropdown icon leave types");
 	}
 	
-	public void selectLeaveTypesName(String leaveTypeName)
+	public void selectLeaveTypesName(String leaveTypeName) throws InterruptedException
 	{
-		for(WebElement li : listLeaveTypes )
-		{
-			System.out.println(li.getText());
-		}
 		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLeaveTypes,leaveTypeName );
 		logger.info("Leave types selected");
 	}
@@ -228,35 +148,13 @@ public class PO_LeaveBalance {
 		Thread.sleep(2000);
 		
 		
-//		DatePicker.DatePicker_GenericMethod_WithoutDropDown(icon_LeaveBalanceEndtDate, toggleBtnToSelect_LeaveBalanceEndDate_YearAndDate, text_LeaveBalanceEndDate_currentMonthYearDisplayed, icon_LeaveBalanceEndDate_NextMonth, icon_LeaveBalanceEndDate_PreviousMonth, select_LeaveBalanceEndDate_Date, select_LeaveBalanceEndDate_Year,  leaveBalanceEndDate);
-//		logger.info("Leave balance end date, month and year entered");
-//		//Thread.sleep(1000);
-		
-//		DatePicker.DatePicker_GenericMethod_WithoutDropDown(icon_LeaveBalanceStartDate, toggleBtnToSelect_LeaveBalanceEndDate_YearAndDate, text_LeaveBalanceEndDate_currentMonthYearDisplayed, icon_LeaveBalanceEndDate_NextMonth, icon_LeaveBalanceEndDate_PreviousMonth, select_LeaveBalanceEndDate_Date, select_LeaveBalanceEndDate_Year,  leaveBalanceStartDate);
-//		logger.info("Leave balance end date, month and year entered");
-//		//Thread.sleep(1000);
-		
-		iconDateEnd.click();
-		logger.info("Clicked on the end date icon");
-		Thread.sleep(500);
-		
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(toggleBtnYearAndDate));
-			toggleBtnYearAndDate.click();
-		}catch(Exception e) {
-			e.getCause();
-		}
-		
-		DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  leaveBalanceEndDate);
+		DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceEndDate, 2);
 		logger.info("Leave balance end date, month and year entered");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
-		iconDateStart.click();
-		logger.info("Clicked on the start date icon");
-		Thread.sleep(500);
-		DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  leaveBalanceStartDate);
-		logger.info("Leave balance start date, month and year entered");
-		Thread.sleep(2000);
+		DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceStartDate, 1);
+		logger.info("Leave balance end date, month and year entered");
+		Thread.sleep(1000);
 		
 		iconDropDownEnterLeaveType.click();
 		logger.info("Clicked on the dropdown icon leave types");
@@ -475,15 +373,12 @@ public class PO_LeaveBalance {
 	    	Thread.sleep(2000);
 	    	
 	    	
-	    	iconDateEnd.click();
-			logger.info("Clicked on the end date icon");
-			DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  leaveBalanceEndDate);
+	  
+			DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceEndDate, 2);
 			logger.info("Leave balance start date, month and year entered");
 			Thread.sleep(2000);
 			
-			iconDateStart.click();
-			logger.info("Clicked on the start date icon");
-			DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  leaveBalanceStartDate);
+			DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver,leaveBalanceStartDate, 1);
 			logger.info("Leave balance start date, month and year entered");
 			Thread.sleep(2000);
 			

@@ -1,104 +1,87 @@
 package com.hrms.pageObject;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PO_UserProfilePage_BankDetails {
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
+public class PO_UserProfilePage_BankDetails extends ReUseAbleElement {
 	
-	public WebDriver driver = null;
+	public WebDriver driver;
 	public Logger logger = LogManager.getLogger(getClass());
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement ruae;
+	public WebDriverWait wait;
 
 	public PO_UserProfilePage_BankDetails(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
+        this.driver = driver;
+        jsExecutor  = (JavascriptExecutor)driver;
+		ruae = new ReUseAbleElement(driver);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
 	
 
 	//=====START====Bank Details Page objects============//
-	@FindBy(xpath = "//input[@id=':rv:']")
+	@FindBy(xpath = "//input[@name='bankName']")
 	@CacheLookup
 	WebElement textBankName;
 
-	@FindBy(xpath = "//input[@id=':r1d:']")
+	@FindBy(xpath = "//input[@name='accountName']")
 	@CacheLookup
-	WebElement textBankNumber;
+	WebElement textAccountName;
 
-	@FindBy(xpath = "//input[@id=':r1f:']")
+	@FindBy(xpath = "//input[@name='accountNumber']")
 	@CacheLookup
-	WebElement textSalary;
+	WebElement textAccountNumber;
 					
-	@FindBy(xpath = "//div[3]//button[1]//p[1]")
+	@FindBy(xpath = "//input[@name='ifscCode']")
 	@CacheLookup
-	WebElement btnBankDetailsSaveandGoToHome;
+	WebElement textISFCCode;
 
-	@FindBy(xpath = "//div[3]//button[1]//p[1]")
-	@CacheLookup
-	WebElement btnBankDetailsNext;
 	//=====END====Bank Details Page objects============//
 	
 	//=====START====Bank Details Action Methods============//
-		public void setBankName(String bankName)
-		{
+		public void setBankName(String bankName) throws InterruptedException {
 			textBankName.sendKeys(bankName);
+			Thread.sleep(500);
 			logger.info("Entered bank nane");
 		}
 		
-		public void setBankNumber(String bankNumber)
-		{
-			textBankNumber.sendKeys(bankNumber);
+		public void setBankNumber(String accountName) throws InterruptedException {
+			textAccountName.sendKeys(accountName);
+			Thread.sleep(500);
 			logger.info("Entered bank number");
 		}
 		
-		public void setSalary(String salary)
-		{
-			textSalary.sendKeys(salary);
-			logger.info("Entered salary");
-		}
-		
-		public void clickOnBtnBankDetailsSaveAndGoToHome()
-		{
-			btnBankDetailsSaveandGoToHome.click();
-			logger.info("clicked On Btn Bank Details Save And Go To Home");
-		}
-		
-		public void clickOnBtnBankDetailsNext()
-		{
-			btnBankDetailsNext.click();
-			logger.info("Entered bank nane");
-		}
-		
-		
-		public PO_UserProfilePage fillAddressDetails(String bankName, String bankNumber, String salary, String choice) throws InterruptedException
-		{
-			textBankName.sendKeys(bankName);
-			logger.info("Entered bank nane");
-			Thread.sleep(500);		
-			
-			textBankNumber.sendKeys(bankNumber);
-			logger.info("Entered bank number");
+		public void setAccountName(String accountNumber) throws InterruptedException {
+			textAccountNumber.sendKeys(accountNumber);
 			Thread.sleep(500);
-			
-			textSalary.sendKeys(salary);
-			logger.info("Entered salary");
+			logger.info("Entered accountName");
+		}
+		
+		public void setISFCCode(String isfcCode) throws InterruptedException {
+			textISFCCode.sendKeys(isfcCode);
 			Thread.sleep(500);
-			
-			if(choice == "saveAndHome")
-			{
-				btnBankDetailsSaveandGoToHome.click();
-				logger.info("clicked On Btn Bank Details Save And Go To Home");
-				Thread.sleep(500);
-			}
-			else if(choice == "next")
-			{
-				btnBankDetailsNext.click();
-				logger.info("Entered bank nane");
-				Thread.sleep(500);
-			}
+			logger.info("Entered isfc code");
+		}
+
+		public PO_UserProfilePage fillBankDetails(String bankName, String bankNumber, String accountName,String isfcCode) throws InterruptedException
+		{
+			setBankName(bankName);		
+			setBankNumber(bankNumber);
+			setAccountName(accountName);
+			setISFCCode(isfcCode);
+			ruae.clickOnBtnSave_1_RU();
 			
 			return new PO_UserProfilePage(driver);
 			

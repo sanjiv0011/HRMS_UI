@@ -1,26 +1,39 @@
 package com.hrms.pageObject;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.utilities.ExtentReport;
 
 
-public class PO_HomePage{
+public class PO_HomePage extends ReUseAbleElement{
 	
+	 // Constructor to initialize the page and its elements
+	public WebDriver driver;
 	public Logger logger = LogManager.getLogger(getClass());
-	public WebDriver driver = null;
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement ruae;
+	public WebDriverWait wait;
 	
 	public PO_HomePage(WebDriver driver)
-	{
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	{	
+		super(driver);
+	    this.driver = driver;
+	    jsExecutor  = (JavascriptExecutor)driver;
+		ruae = new ReUseAbleElement(driver);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+
 	}
 	
 	//Page objects
@@ -107,139 +120,126 @@ public class PO_HomePage{
 	
 	// ACTION METHODS
 	
-	public void clickOnbtnSystemManager() 
+	public void clickOnbtnSystemManager() throws InterruptedException 
 	{
 		btnSystemManager.click();
+		Thread.sleep(1000);
 		logger.info("Clicked on system manager button");
 	}
 	
-	public void clickOntabOrganizations() 
-	{
+	public void clickOntabOrganizations() throws InterruptedException {
 		tabOrganizations.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabOrganizations button");
 	}
 	
-	public void clickOntabLeave() 
-	{
+	public void clickOntabLeave() throws InterruptedException {
 		tabLeave.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabLeave button");
 	}
 	
-	public void clickOntabClients() 
-	{
+	public void clickOntabClients() throws InterruptedException {
 		tabClients.click();
+		Thread.sleep(500);
 		logger.info("Clicked on tabClients button");
 	}
 	
-	public void clickOntabUsers() 
-	{
+	public void clickOntabUsers() throws InterruptedException {
 		tabUsers.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabUsers button");
 	}
 	
-	public void clickOntabProjects() 
-	{
+	public void clickOntabProjects() throws InterruptedException {
 		tabProjects.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabProjects button");
 	}
 	
-	public void clickOntabDailyUpdates() 
-	{
+	public void clickOntabDailyUpdates() throws InterruptedException {
 		tabDailyUpdates.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabDailyUpdates button");
 	}
 	
 	
-	public void clickOntabAssets() 
-	{
+	public void clickOntabAssets() throws InterruptedException {
 		tabAssets.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabAssets button");
 	}
 	
-	public void clickOntabMyCalendar() 
-	{
+	public void clickOntabMyCalendar() throws InterruptedException {
 		tabMyCalender.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabMyCalender button");
 	}
 	
-	public void clickOntabJobTitle()
-	{
+	public void clickOntabJobTitle() throws InterruptedException {
 		tabJobTitle.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabMyCalender button");
 	}
 	
-	public void clickOntabManageLeaveTypes() 
+	public void clickOntabManageLeaveTypes() throws InterruptedException 
 	{
 		tabManageLeaveTypes.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabManageLeaveTypes button");
 	}
 	
-	public void clickOntabLeaveBalances() 
-	{
+	public void clickOntabLeaveBalances() throws InterruptedException {
 		tabLeaveBalances.click();
+		Thread.sleep(2000);
 		logger.info("Clicked on tabLeaveBalances button");
 	}
 	
-	public void clickOntabMenu() 
-	{
+	public void clickOntabMenu() throws InterruptedException {
 		tabMenu.click();
+		Thread.sleep(1000);
 		logger.info("Clicked on tabMenu button");
 	}
 	
-	public void clickOnIconUserLogged()
-	{
+	public void clickOnIconUserLogged() throws InterruptedException{
 		iconUserLogged.click();
+		Thread.sleep(1000);
 		logger.info("Clicked on the Icon user logged");
 	}
-	public void clickOniconHomeImage() 
-	{
+	public void clickOniconHomeImage() throws InterruptedException {
 		iconHomeImage.click();
+		Thread.sleep(1000);
 		logger.info("Clicked on iconHomeImage button");
 	}
 	
-	public void clickOndropdownMyProfile() 
-	{
+	public PO_UserProfilePage clickOndropdownMyProfile() throws InterruptedException {
 		dropdownMyProfile.click();
+		Thread.sleep(1000);
 		logger.info("Clicked on dropdownMyProfile button");
+		//TO PASS THE DRIVER FROM THE HOME PAGE TO USER PROFILE PAGE
+		return new PO_UserProfilePage(driver);
 	}
 	
-	public void clickOndropdownLogout() 
-	{
+	public void clickOndropdownLogout() throws InterruptedException {
 		dropdownLogout.click();
+		Thread.sleep(1000);
 		logger.info("Clicked on dropdownLogout button");
 	}
 	
-	public void clickOndropdownLogotNoBtn() 
-	{
-		dropdownLogotNoBtn.click();
-		logger.info("Clicked on dropdownLogotNoBtn button");
-	}
-	
-	public void clickOndropdownLogotYesBtn()
-	{
-		dropdownLogotYesBtn.click();
-		logger.info("Clicked on dropdownLogotYesBtn button");
-	}
-	
-	public void clickOnBtnAddressHome()
-	{
+	public void clickOnBtnAddressHome() throws InterruptedException {
 		btnAddressHome.click();
+		Thread.sleep(500);
 		logger.info("Clicked on address HOME button");
 	}
 	
+	// TO LOGOUT
 	public PO_LoginPage Logout() throws InterruptedException
-	{
-		btnSystemManager.click();
-		Thread.sleep(1000);
-		logger.info("Clicked on btnSystemManager button");
-		
-		dropdownLogout.click();
-		Thread.sleep(1000);
-		logger.info("Clicked on dropdownLogout button");
-		
-		dropdownLogotYesBtn.click();
-		Thread.sleep(1000);
-		logger.info("Clicked on dropdownLogotYesBtn button");
+	{	Thread.sleep(2000);
+		clickOniconHomeImage();
+		Thread.sleep(3000);
+		clickOnbtnSystemManager();
+		clickOndropdownLogout();
+		clickOnYesButton_RU();
 		
 		if(driver.getTitle().equals("Login to HRMS")){
 			Assert.assertTrue(true);
@@ -252,11 +252,10 @@ public class PO_HomePage{
 		return new PO_LoginPage(driver);
 	}
 	
+	// TEST HOME PAGE FUNCTIONALITY
 	public PO_HomePage HomePageTesting() throws InterruptedException
 	{
-		tabOrganizations.click();
-		logger.info("Clicked on tabOrganizations button");
-		Thread.sleep(2000);
+		clickOntabOrganizations();
 		if(driver.getPageSource().contains("Organization List")){
 			Assert.assertTrue(true);
 			logger.info("Organization tab working fine");
@@ -265,10 +264,7 @@ public class PO_HomePage{
 			logger.info("Organization not tab working");
 		}
 		
-		
-		tabLeave.click();
-		logger.info("Clicked on tabLeave button");
-		Thread.sleep(2000);
+		clickOntabLeave();
 		if(driver.getPageSource().contains("Leave Request List")){
 			Assert.assertTrue(true);
 			logger.info("Leave tab working fine");
@@ -279,9 +275,7 @@ public class PO_HomePage{
 		}
 		
 		
-		tabClients.click();
-		logger.info("Clicked on tabClients button");
-		Thread.sleep(2000);
+		clickOntabClients();
 		if(driver.getPageSource().contains("Client List")){
 			Assert.assertTrue(true);
 			logger.info("Client tab working fine");
@@ -291,9 +285,7 @@ public class PO_HomePage{
 			logger.info("Client tab working not fine");
 		}
 		
-		tabUsers.click();
-		logger.info("Clicked on tabUsers button");
-		Thread.sleep(2000);
+		clickOntabUsers();
 		if(driver.getPageSource().contains("User List")){
 			Assert.assertTrue(true);
 			logger.info("User tab working fine");
@@ -303,9 +295,7 @@ public class PO_HomePage{
 			logger.info("User tab not working fine");
 		}
 		
-		tabProjects.click();
-		logger.info("Clicked on tabProjects button");
-		Thread.sleep(2000);
+		clickOntabProjects();
 		if(driver.getPageSource().contains("Project List")){
 			Assert.assertTrue(true);
 			logger.info("Project tab working fine");
@@ -315,9 +305,7 @@ public class PO_HomePage{
 			logger.info("Project tab not working fine");
 		}
 		
-		tabDailyUpdates.click();
-		logger.info("Clicked on tabDailyUpdates button");
-		Thread.sleep(2000);
+		clickOntabDailyUpdates();
 		if(driver.getPageSource().contains("Start Time")){
 			Assert.assertTrue(true);
 			logger.info("tabDailyUpdates working fine");
@@ -327,9 +315,7 @@ public class PO_HomePage{
 			logger.info("tabDailyUpdates not working fine");
 		}
 		
-		tabAssets.click();
-		logger.info("Clicked on tabAssets button");
-		Thread.sleep(2000);
+		 clickOntabAssets();
 		if(driver.getPageSource().contains("Asset List")){
 			Assert.assertTrue(true);
 			logger.info("Asset tab not working fine");
@@ -339,9 +325,7 @@ public class PO_HomePage{
 			logger.info("Asset tab not working fine");
 		}
 		
-		tabMyCalender.click();
-		logger.info("Clicked on tabMyCalender button");
-		Thread.sleep(2000);
+		clickOntabMyCalendar();
 		if(driver.getPageSource().contains("Month")){
 			Assert.assertTrue(true);
 			logger.info("Calendar tab working fine");
@@ -351,9 +335,7 @@ public class PO_HomePage{
 			logger.info("Calendar tab not working fine");
 		}
 		
-		tabJobTitle.click();
-		logger.info("Clicked on tabMyCalender button");
-		Thread.sleep(2000);
+		clickOntabJobTitle();
 		if(driver.getPageSource().contains("Job Title List")){
 			Assert.assertTrue(true);
 			logger.info("Job Title tab working fine");
@@ -363,9 +345,7 @@ public class PO_HomePage{
 			logger.info("Job Title tab not working fine");
 		}
 		
-		tabManageLeaveTypes.click();
-		logger.info("Clicked on tabManageLeaveTypes button");
-		Thread.sleep(2000);
+		clickOntabManageLeaveTypes();
 		if(driver.getPageSource().contains("Leave Type List")){
 			Assert.assertTrue(true);
 			logger.info("Leave Type tab working fine");
@@ -375,9 +355,7 @@ public class PO_HomePage{
 			logger.info("Leave Type tab not working fine");
 		}
 		
-		tabLeaveBalances.click();
-		logger.info("Clicked on tabLeaveBalances button");
-		Thread.sleep(2000);
+		clickOntabLeaveBalances();
 		if(driver.getPageSource().contains("Leave Balance List")){
 			Assert.assertTrue(true);
 			logger.info("Leave Balance tab working fine");
@@ -387,30 +365,8 @@ public class PO_HomePage{
 			logger.info("Leave Balance tab not working fine");
 		}
 		
-		tabMenu.click();
-		logger.info("Clicked on tabMenu button");
-		Thread.sleep(2000);
-		
-		btnAddressHome.click();
-		logger.info("Clicked on address HOME button");
-		Thread.sleep(2000);
-		if(driver.getPageSource().contains("Organization List")){
-			Assert.assertTrue(true);
-			logger.info("Home address tab working fine");
-		}else {	
-			Assert.assertTrue(false);
-			logger.info("Home address not working fine");
-		}
-		
-//		Thread.sleep(2000);
-//		tabMenu.click();
-//		logger.info("Clicked on tabMenu button");
-//		Thread.sleep(2000);
-
-		iconUserLogged.click();
-		logger.info("Clicked on the Icon user logged");
-		Thread.sleep(4000);
-		
+		clickOntabMenu();
+		clickOntabMenu();
 		return new PO_HomePage(driver);
 	}
 }

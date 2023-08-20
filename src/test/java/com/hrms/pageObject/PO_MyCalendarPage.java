@@ -95,6 +95,10 @@ public class PO_MyCalendarPage extends ReUseAbleElement{
 	@CacheLookup
 	public List <WebElement> path_listShowMoreContent;
 	
+	//CURRENT DAY MONTH DATE ADDRESS
+	@FindBy(xpath = "//span[@class='rbc-toolbar-label']")
+	@CacheLookup
+	public WebElement elementDisplayedDayMonthDate;
 	
 	
 	//=====END====MY CALENDAR PAGE OBJECTS============//
@@ -222,5 +226,19 @@ public class PO_MyCalendarPage extends ReUseAbleElement{
     	clickOnShowMoreContentAndView(dateContent);
     	return new PO_HomePage(driver);
     }
+    
+    //CLICK AND VIEW ELEMENT FROMT THE DAY TAB
+    public PO_HomePage clickAndViewMyCalendarElementDayView(WebDriver driver,String dateValue,String dateContent) throws InterruptedException
+    {	logger.info("Entered inside clickAndViewMyCalendarElementDayView method");
+    	clickOnBtnDay();
+    	
+    	//TO MOVE CORRECT DATE AND CLICK ON THE CORRECT CONTENT(DAILY UPDATES) WITHOUT EXPANDING SHOW MORE PLUS BUTTON
+    	MyCalendarPicker.moveToCorrectDateInCalendarAndClickOnContentMonthView(driver, dateValue,dateContent, path_listCallendarDate, path_listContentDate,path_btnShowMorePlusSign, path_listShowMoreContent);
+    	//TO CHECK HIDES CONTENT FIRST CLICK ON THE SHOW MORE PLUS BUTTON
+    	logger.info("Return back from the MyCalendar Picker");
+    	
+    	return new PO_HomePage(driver);
+    }
+
 
 }

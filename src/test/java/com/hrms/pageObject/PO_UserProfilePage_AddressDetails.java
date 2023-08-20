@@ -1,144 +1,117 @@
 package com.hrms.pageObject;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PO_UserProfilePage_AddressDetails {
+import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+
+public class PO_UserProfilePage_AddressDetails extends ReUseAbleElement {
 	
-	public WebDriver driver = null;
+	public WebDriver driver;
 	public Logger logger = LogManager.getLogger(getClass());
+	public JavascriptExecutor jsExecutor;
+	public ReUseAbleElement ruae;
+	public WebDriverWait wait;
 
 	public PO_UserProfilePage_AddressDetails(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
+        this.driver = driver;
+        jsExecutor  = (JavascriptExecutor)driver;
+		ruae = new ReUseAbleElement(driver);
+		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
 	
 	
 	//=====START====Address info Page objects============//
-		@FindBy(xpath = "//input[@id=':rv:']")
+		@FindBy(xpath = "//input[@name='addressLine1']")
 		@CacheLookup
 		WebElement textAddressLine1;
 
-		@FindBy(xpath = "//input[@id=':r11:']")
+		@FindBy(xpath = "//input[@name='addressLine2']")
 		@CacheLookup
 		WebElement textAddressLine2;
 
-		@FindBy(xpath = "//input[@id=':r13:']")
+		@FindBy(xpath = "//input[@name='city']")
 		@CacheLookup
 		WebElement textCity;
 
-		@FindBy(xpath = "//input[@id=':r15:']")
+		@FindBy(xpath = "//input[@name='state']")
 		@CacheLookup
 		WebElement textState;
 
-		@FindBy(xpath = "//input[@id=':r17:']")
+		@FindBy(xpath = "//input[@name='country']")
 		@CacheLookup
 		WebElement textCountry;
 
-		@FindBy(xpath = "//input[@id=':r19:']")
+		@FindBy(xpath = "//input[@name='postalCode']")
 		@CacheLookup
 		WebElement textPostalCode;
-						
-		@FindBy(xpath = "//div[@class='account-tabs-content MuiBox-root css-0']//div[2]//button[1]//p[1]")
-		@CacheLookup
-		WebElement btnAddressSaveandGoToHome;
-
-		@FindBy(xpath = "//body/div[@id='__next']/div[@class='MuiBox-root css-1k9dio6']/div[@class='miniSidebarWrapper appMainFixedHeader MuiBox-root css-1f8gm9f']/div[@class='mainContent MuiBox-root css-0']/form[@action='#']/div[@class='MuiBox-root css-1c5ij41']/div[@class='MuiBox-root css-1n83im1']/div[@class='MuiBox-root css-hcwjkm']/div[@class='MuiBox-root css-deejpe']/div[@class='account-tabs-content MuiBox-root css-0']/div[1]/button[1]")
-		@CacheLookup
-		WebElement btnAddressNext;
+		
 		//=====END====Address info Page objects============//
 	
 	//=====START====Address Action Methods============//
-		public void setAddressLine1(String addressline1)
-		{
+		//TO SET ADDRESS LINE 1
+		public void setAddressLine1(String addressline1) throws InterruptedException {
 			textAddressLine1.sendKeys(addressline1);
+			Thread.sleep(500);
 			logger.info("Entered address line 1");
 		}
 		
-		public void setAddressLine2(String addressline2)
-		{
+		//TO SET ADDRESS LINE 2
+		public void setAddressLine2(String addressline2) throws InterruptedException {
 			textAddressLine2.sendKeys(addressline2);
+			Thread.sleep(500);
 			logger.info("Entered address line 2");
 		}
 		
-		public void setCity(String city)
-		{
+		public void setCity(String city) throws InterruptedException {
 			textCity.sendKeys(city);
+			Thread.sleep(500);
 			logger.info("Entered city");
 		}
 		
-		public void setState(String state)
-		{
+		public void setState(String state) throws InterruptedException {
 			textState.sendKeys(state);
+			Thread.sleep(500);
 			logger.info("Entered state");
 		}
 		
-		public void setCountry(String country)
-		{
+		public void setCountry(String country) throws InterruptedException {
 			textCountry.sendKeys(country);
+			Thread.sleep(500);
 			logger.info("Entered country");
 		}
 		
-		public void setPostalCode(String postalCode)
-		{
+		public void setPostalCode(String postalCode) throws InterruptedException {
 			textPostalCode.sendKeys(postalCode);
+			Thread.sleep(500);
 			logger.info("Entered postal code");
 		}
 		
-		public void clickOnBtnAddressSaveAndGoToHome()
-		{
-			btnAddressSaveandGoToHome.click();
-			logger.info("Clicked on the address btn save and go to home");
-		}
 		
-		public void clickOnBtnAddressNext()
+		//TO FOR THE USER ADDRESS(WHILE CREATEING USER PROFILE)
+		public PO_UserProfilePage fillUsersAddressDetails(String address1, String address2, String city, String state, String country, String postalCode, String buttonNextOrGoToHome) throws InterruptedException
 		{
-			btnAddressNext.click();
-			logger.info("Clicked on the address btn next");
-		}
-		
-		public PO_UserProfilePage fillAddressDetails(String address1, String address2, String city, String state, String country, String postalCode, String choice) throws InterruptedException
-		{
-			textAddressLine1.sendKeys(address1);
-			logger.info("Entered address line 1");
-			Thread.sleep(500);
+			setAddressLine1(address1);
+			setAddressLine2(address2);
+			setCity(city);
+			setState(state);
+			setCountry(country);
+			setPostalCode(postalCode);
 			
-			textAddressLine2.sendKeys(address2);
-			logger.info("Entered address line 1");
-			Thread.sleep(500);
-			
-			textCity.sendKeys(city);
-			logger.info("Entered city");
-			Thread.sleep(500);
-			
-			textState.sendKeys(state);
-			logger.info("Entered state");
-			Thread.sleep(500);
-			
-			textCountry.sendKeys(country);
-			logger.info("Entered country");
-			Thread.sleep(500);
-			
-			textPostalCode.sendKeys(postalCode);
-			logger.info("Entered postal code");
-			Thread.sleep(500);
-			
-			if(choice == "saveAndHome")
-			{
-				btnAddressSaveandGoToHome.click();
-				logger.info("Clicked on the address btn save and go to home");
-				Thread.sleep(500);
-			}
-			else if(choice == "next")
-			{
-				btnAddressNext.click();
-				logger.info("Clicked on the address btn next");
-				Thread.sleep(500);
+			if(buttonNextOrGoToHome.equals("saveAndGoToHome")){
+				clickOnBtnSaveAndGoToHome_2_RU();
+			} else if(buttonNextOrGoToHome.equals("next")){
+				clickOnBtnNext_RU();
 			}
 			
 			return new PO_UserProfilePage(driver);

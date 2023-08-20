@@ -47,7 +47,7 @@ public class TC_Users extends BaseClass{
 		@Test(priority = 1)
 		public void test_Login() throws InterruptedException {
 			lgn = new PO_LoginPage(driver);
-			hp = lgn.login(userName, password);
+			hp = lgn.Login(userName, password);
 			Thread.sleep(3000);
 		}
 		

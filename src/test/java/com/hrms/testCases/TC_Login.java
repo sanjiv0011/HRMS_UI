@@ -23,8 +23,7 @@ public class TC_Login extends BaseClass {
 	public void test_Login() throws InterruptedException, IOException
 	{
 		lgn = new PO_LoginPage(driver);
-		
-		lgn.login(userName, password);
+		lgn.Login(userName, password);
 	}
 	
 }

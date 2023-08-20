@@ -94,42 +94,20 @@ public class PO_LeavePage extends ReUseAbleElement {
 	    logger.info("Select radio button full leave");
     }
 	
-	//START DATE ICON ADDRESS
-	@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[1]")
-	@CacheLookup
-	WebElement iconDateStart;
-	//ACTION METHOD TO CLICK ON THE LEAVE START DATE ICON
-	public void clickOnStartDateIcon() throws InterruptedException {
-		iconDateStart.click();
-	    logger.info("Clicked on the start date icon");
-	    Thread.sleep(1000);
-	}
-	
-	//END DATE ICON ADDRESS
-	@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[2]")
-	@CacheLookup
-	WebElement iconDateEnd;
-	//ACTION METHOD TO CLICK ON THE LEAVE END DATE ICON
-	public void clickEndDateIcon() throws InterruptedException {
-		iconDateEnd.click();
-	    logger.info("Clicked on the end date icon");
-	    Thread.sleep(1000);
-	}
-	
 	//ACTION METHOD TO SELECT THE LEAVE START DATE
-	public void selectStartDate(String leaveStartDate) throws InterruptedException {
-		clickOnStartDateIcon(); //IT WILL CLICK ON THE START DATE ICON
+	public void selectStartDate(String leaveStartDate, int x) throws InterruptedException {
+
 		//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-	    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, leaveStartDate);
+	    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveStartDate, x);
 	    logger.info("Leave start date, month and year entered");
 	    Thread.sleep(2000);
 	}
 
 	//ACTION METHOD TO SELECT LEAVE END DATE
-	public void selectEndDate(String leaveEndDate) throws InterruptedException {
-		clickEndDateIcon();	//IT WILL CLICK ON THE END DATE ICON
+	public void selectEndDate(String leaveEndDate, int x) throws InterruptedException {
+	
 		//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-	    DatePicker.DatePicker_GenericMethod_WithoutDropDown(toggleBtnYearAndDate, elementCurrentMonthYearDisplayed, arrowNextMonth, arrowPreviousMonth, selectDate, selectYear, leaveEndDate);
+	    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveEndDate, x);
 	    logger.info("Leave end date, month and year entered");
 	    Thread.sleep(2000);
 	}
@@ -172,10 +150,10 @@ public class PO_LeavePage extends ReUseAbleElement {
 			logger.info("Invalid leave types: "+leaveTypeName);
 		}
 		
-		selectStartDate(leaveStartDate);
-		//selectEndDate(leaveEndDate);
-		//setLeaveReason(reason);
-		//clickOnBtnApplyLeaveFinal();
+		selectStartDate(leaveStartDate, 1);
+		selectEndDate(leaveEndDate, 2);
+		setLeaveReason(reason);
+		clickOnBtnApplyLeaveFinal();
 		ruae.clickOnCancelButton_RU();
 		
 		return new PO_HomePage(driver);

@@ -14,25 +14,33 @@
      
 	<!--  <class name="com.hrms.testCases.TC_LoginAndLogout"/>--> 
 	
-	 <!-- <class name="com.hrms.testCases.TC_HomePage"/>-->
+	 <!--<class name="com.hrms.testCases.TC_HomePage"/>-->
 	  
 	  <!--<class name="com.hrms.testCases.TC_UserProfilePage"/>-->
 	  
-	<!--  <class name="com.hrms.testCases.TC_PersonalInfoDetails"/>-->
+	<!--<class name="com.hrms.testCases.TC_UserProfile_PersonalInfo"/>-->
+	
+	<!--<class name="com.hrms.testCases.TC_UsersProfile_AddressDetails"/>-->
+	
+	<!--<class name="com.hrms.testCases.TC_UsersProfile_OthersDetails"/>-->
+	
+	<!-- <class name="com.hrms.testCases.TC_UsersProfile_BankDetails"/> -->
+	
+	<class name="com.hrms.testCases.TC_UsersProfile_ResetPassword"/>
 	  
 	<!--<class name="com.hrms.testCases.TC_Ogranization"/>-->
 	
 		<!--<class name="com.hrms.testCases.TC_DailyUpdates"/>-->
 		
-		<class name="com.hrms.testCases.TC_MyCalendar"/>
+		<!--<class name="com.hrms.testCases.TC_MyCalendar"/>-->
 	
 		<!--<class name="com.hrms.testCases.TC_Leave"/>-->
 	  
 	  <!--<class name="com.hrms.testCases.TC_Cleint"/>-->
 	  
-	  <!--<class name="com.hrms.testCases.TC_Users"/>-->
+	 <!-- <class name="com.hrms.testCases.TC_Users"/>-->
 	  
-	  <!--<class name="com.hrms.testCases.TC_Projects"/>-->
+	  <!--<class name="com.hrms.testCases.TC_Projects"/>   -->    
 	  
 	 <!--<class name="com.hrms.testCases.TC_JobTitles"/>-->
 	 
@@ -42,7 +50,7 @@
 	
 	<!--<class name="com.hrms.testCases.TC_AssetsTypes"/>-->
 	
-	<!--<class name="com.hrms.testCases.TC_Assets_CreateAssets"/>-->
+	<!--<class name="com.hrms.testCases.TC_Assets"/>-->
       
     </classes>
     

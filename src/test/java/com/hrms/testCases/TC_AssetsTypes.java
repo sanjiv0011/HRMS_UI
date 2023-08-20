@@ -31,7 +31,7 @@ public class TC_AssetsTypes extends BaseClass {
 	public void test_Login() throws InterruptedException
 	{	//to perform login
 		lgn = new PO_LoginPage(driver);
-		hp = lgn.login(userName, password);
+		hp = lgn.Login(userName, password);
 		Thread.sleep(5000);
 	}
 		
