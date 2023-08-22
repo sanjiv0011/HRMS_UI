@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -52,41 +53,57 @@ public class PO_UserProfilePage_BankDetails extends ReUseAbleElement {
 	
 	//=====START====Bank Details Action Methods============//
 		public void setBankName(String bankName) throws InterruptedException {
+			textBankName.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textBankName.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textBankName.sendKeys(bankName);
 			Thread.sleep(500);
 			logger.info("Entered bank nane");
 		}
 		
-		public void setBankNumber(String accountName) throws InterruptedException {
+		public void setAccountName(String accountName) throws InterruptedException {
+			textAccountName.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textAccountName.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textAccountName.sendKeys(accountName);
 			Thread.sleep(500);
 			logger.info("Entered bank number");
 		}
 		
-		public void setAccountName(String accountNumber) throws InterruptedException {
+		public void setAccounNumber(String accountNumber) throws InterruptedException {
+			textAccountNumber.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textAccountNumber.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textAccountNumber.sendKeys(accountNumber);
 			Thread.sleep(500);
 			logger.info("Entered accountName");
 		}
 		
 		public void setISFCCode(String isfcCode) throws InterruptedException {
+			textISFCCode.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textISFCCode.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textISFCCode.sendKeys(isfcCode);
 			Thread.sleep(500);
 			logger.info("Entered isfc code");
 		}
 
-		public PO_UserProfilePage fillBankDetails(String bankName, String bankNumber, String accountName,String isfcCode) throws InterruptedException
+		//TO FILL THE USER BANK DETAILS WITH RETURN TYPE(PO_HomePage)
+		public PO_HomePage fillBankDetails(String bankName, String bankNumber, String accountName,String isfcCode) throws InterruptedException
 		{
 			setBankName(bankName);		
-			setBankNumber(bankNumber);
 			setAccountName(accountName);
+			setAccounNumber(bankNumber);
 			setISFCCode(isfcCode);
 			ruae.clickOnBtnSave_1_RU();
 			
-			return new PO_UserProfilePage(driver);
+			return new PO_HomePage(driver);
 			
 		}
-		
 		//=====END====Bank Details Action Methods============//
 
 }

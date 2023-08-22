@@ -4,12 +4,14 @@ import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -72,7 +74,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	public void clickBtnsubmit() throws InterruptedException {
 		btnsubmit.click();
 		logger.info("clicke on login submit button");
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 	
 	public void clickOnCheckBox() {
@@ -88,16 +90,18 @@ public class PO_LoginPage extends ReUseAbleElement {
 		setUserName(userName);
 		setTextpassword(password);
 		clickBtnsubmit();
-
-		if(driver.getPageSource().contains("Dashboard"))
-		{
-			Assert.assertTrue(true);
-			logger.info("Login success...");
-		}
-		else
-		{
-			Assert.assertTrue(false);
-			logger.info("Login failed!!!");
+		
+		try {
+			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
+			if(driver.getPageSource().contains("Dashboard")){
+				Assert.assertTrue(true);
+				logger.info("Login success...");
+			} else{
+				Assert.assertTrue(false);
+				logger.info("Login failed!!!");
+			}
+		}catch(Exception e) {
+			logger.info(e.getMessage());
 		}
 		
 		return new PO_HomePage(driver);

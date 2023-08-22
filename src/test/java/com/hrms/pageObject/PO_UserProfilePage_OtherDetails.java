@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -48,40 +49,51 @@ public class PO_UserProfilePage_OtherDetails extends ReUseAbleElement {
 	
 	//=====START====Others Details Action Methods============//
 		public void setEmergencyContactName(String emergencyContactName) throws InterruptedException {
+			textEmergencyContactName.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textEmergencyContactName.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textEmergencyContactName.sendKeys(emergencyContactName);
 			Thread.sleep(500);
 			logger.info("Entered emergency contact name");
 		}
 		
 		public void setEmegencyContactNumber(String emergencyContactNumber) throws InterruptedException{
+			textEmergencyContactNumber.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textEmergencyContactNumber.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textEmergencyContactNumber.sendKeys(emergencyContactNumber);
 			Thread.sleep(500);
 			logger.info("Entered emergency contact number");
 		}
 		
 		public void setSocialSecurityNumber(String socialSecuritynumber) throws InterruptedException {
+			textSocialSecurityNumber.sendKeys(Keys.CONTROL, "a"); // Select all text
+			Thread.sleep(300);
+			textSocialSecurityNumber.sendKeys(Keys.DELETE);	 // Delete all text
+			Thread.sleep(300);
 			textSocialSecurityNumber.sendKeys(socialSecuritynumber);
 			Thread.sleep(500);
 			logger.info("Entered social security contact number");
 		}
 					
 		
-		//TO FILL OTHERES INFORMTIONS
-		public PO_UserProfilePage fillOthersDetails(String emergencyContactName, String emergencyContactNumber, String socialSecuritynumber, String buttonNextOrGoToHome) throws InterruptedException
+		//TO FILL OTHERES INFORMTIONS WITH RETURN TYPE(PO_HomePage)
+		public PO_HomePage fillOthersDetails(String emergencyContactName, String emergencyContactNumber, String socialSecuritynumber, String buttonNextOrGoToHome) throws InterruptedException
 		{
 			setEmergencyContactName(emergencyContactName);
 			setEmegencyContactNumber(emergencyContactNumber);
 			setSocialSecurityNumber(socialSecuritynumber);
 			
-			if(buttonNextOrGoToHome.equals("saveAndGoToHome")){
+			if(buttonNextOrGoToHome.equals("saveAndGoToHome") || buttonNextOrGoToHome.equals("next")){
 				clickOnBtnSaveAndGoToHome_3_RU();
-			} else if(buttonNextOrGoToHome.equals("next")){
-				clickOnBtnNext_RU();
+			}else {
+				logger.info("Invalid button choise: "+buttonNextOrGoToHome);
 			}
 			
-			return new PO_UserProfilePage(driver);
+			return new PO_HomePage(driver);
 		}
-			
 		//=====END====Others Details Action Methods============//
 
 

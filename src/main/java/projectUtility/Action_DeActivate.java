@@ -1,4 +1,4 @@
-package my_support;
+package projectUtility;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

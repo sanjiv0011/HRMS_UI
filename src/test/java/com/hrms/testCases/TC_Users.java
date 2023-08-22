@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LoginPage;
+import com.hrms.pageObject.PO_UserPermissions;
 import com.hrms.pageObject.PO_UsersPage;
 
 public class TC_Users extends BaseClass{
@@ -18,12 +19,13 @@ public class TC_Users extends BaseClass{
 		public PO_LoginPage lgn;
 		public PO_HomePage hp;
 		public PO_UsersPage up;
+		public PO_UserPermissions userPermissions;
 		public Faker faker = new Faker();
 		
 		//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
-		String uname = "jhondove";
+		String uname = "mariasoma";
 		String passwordToCreate = faker.internet().password(8, 10, true, true, true);
-		String organizationName = faker.company().name();
+		String organizationName = "Westwood";
 		String firstName = faker.name().firstName();
 		String lastName = faker.name().lastName();
 		String emailAddress= faker.internet().emailAddress();
@@ -41,7 +43,7 @@ public class TC_Users extends BaseClass{
 		String userSearchKey = uname;
 		String assignProjectStartDate = "18 August 2023" ;
 		String assignProjectEndDate = "30 August 2023";
-		
+	
 		
 		//TO PERFORM THE LOGIN
 		@Test(priority = 1)
@@ -103,21 +105,30 @@ public class TC_Users extends BaseClass{
 		}
 			
 		//ASSIGN PROJECT TO THE USERSNewFirstName
-		@Test(priority = 8, dependsOnMethods = {"test_Login"})
+		//@Test(priority = 8, dependsOnMethods = {"test_Login"})
 		public void test_AssignUserToProject()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.assignUserToProject(userSearchKey, projectName, assignProjectStartDate, assignProjectEndDate);
 			Thread.sleep(2000);
 		}
 			
-			
+		
+		//TO CREATE USER WITH PERMISSIONS
+		@Test(priority = 9 , dependsOnMethods = {"test_Login"})
+		public void test_CreateUserWithUserPermissions() throws InterruptedException {
+			up = callMeBeforePerformAnyAction();
+			userPermissions = up.createUser_ReturnType_PO_UserPermissions(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);
+			logger.info("User created");
+			Thread.sleep(500);
+			hp = userPermissions.userPermissionsAdminCheckbox();
+			Thread.sleep(3000);
+				
+		}
+		
+				
 		//TO PERFORM THE LOGOUT
 		@Test(priority = 10, dependsOnMethods = {"test_Login"})
 		public void test_Logout() throws InterruptedException {
-			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-			hp.clickOniconHomeImage();
-			Thread.sleep(5000);
-			// TO LOGOUT
 			hp.Logout();
 		}
 		
@@ -126,11 +137,9 @@ public class TC_Users extends BaseClass{
 			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 			hp.clickOniconHomeImage();
 			Thread.sleep(3000);
-			
 			//TO ACCESS USERS TAB
 			hp.clickOntabUsers();
 			Thread.sleep(2000);
-			
 			//TO ACCESS USERS PAGE OBJECTS
 			return new PO_UsersPage(driver);	
 		}

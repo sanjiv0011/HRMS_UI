@@ -36,14 +36,13 @@ public class TC_UsersProfile_ResetPassword extends BaseClass{
 	public void test_Login() throws InterruptedException{
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 		
 	@Test(priority = 2)
-	public void test_UsersProfile_AddressDetails() throws InterruptedException
+	public void test_UsersProfile_ResetPassword() throws InterruptedException
 	{
 		uprp = callMeBeforePerformAnyAction();
-		uprp.resetPassword(oldPassword,newPassword);	
+		hp = uprp.resetPassword(oldPassword,newPassword);	
 	}
 
 	//TO LOGOUT

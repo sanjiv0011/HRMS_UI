@@ -1,5 +1,7 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -15,6 +17,7 @@ public class TC_UserProfile_PersonalInfo extends BaseClass {
 		super();
 	}
 	
+	//CONSTRUCTOR DECLARATION AND INITIALIZATION
 	public PO_LoginPage lgn;
 	public PO_HomePage hp;
 	public PO_UserProfilePage upp;
@@ -22,7 +25,7 @@ public class TC_UserProfile_PersonalInfo extends BaseClass {
 	public Faker faker= new Faker();
 	
 	//VARIABLES
-	public String phoneNumber = "+91"+"1234567890";
+	public String phoneNumber = "+91 "+"1234567890";
     public String dateOfBirth = "20 July 2021";
     public String gender = "Male";
     public String marri = "Married";
@@ -39,11 +42,11 @@ public class TC_UserProfile_PersonalInfo extends BaseClass {
 	}
 		
 	@Test(priority = 2)
-	public void test_UsersProfile_PersonalInfo() throws InterruptedException
+	public void test_UsersProfile_PersonalInfo() throws InterruptedException, IOException
 	{
 		uppi = callMeBeforePerformAnyAction();
 		System.out.println("uppi: "+uppi);
-		uppi.personalInfoDetails(phoneNumber,dateOfBirth,gender, marri,bio,buttonNextOrGoToHome);	
+		hp = uppi.personalInfoDetails(phoneNumber,dateOfBirth,gender, marri,bio,buttonNextOrGoToHome);	
 	}
 	
 	//TO LOGOUT

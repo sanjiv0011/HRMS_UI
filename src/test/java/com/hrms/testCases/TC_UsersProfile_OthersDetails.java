@@ -26,7 +26,7 @@ public class TC_UsersProfile_OthersDetails extends BaseClass{
 	
 	//VARIABLES
 	public String emergencyContactName = faker.name().fullName();
-    public String emergencyContactNumber = "+91_"+"1234567890";
+    public String emergencyContactNumber = "+91 "+"1234567890";
     public String socialSecuritynumber = "123456789";
     
     public String  buttonNextOrGoToHome = "saveAndGoToHome"; //or "next"
@@ -38,12 +38,13 @@ public class TC_UsersProfile_OthersDetails extends BaseClass{
 		hp = lgn.Login(userName, password);
 		logger.info("Login Done");
 	}
-		
+	
+	//TO FILL OTHERS DETAILS
 	@Test(priority = 2)
-	public void test_UsersProfile_AddressDetails() throws InterruptedException
+	public void test_UsersProfile_OthresDetails() throws InterruptedException
 	{
 		upod = callMeBeforePerformAnyAction();
-		upod.fillOthersDetails(emergencyContactName,emergencyContactNumber,socialSecuritynumber,buttonNextOrGoToHome);	
+		hp = upod.fillOthersDetails(emergencyContactName,emergencyContactNumber,socialSecuritynumber,buttonNextOrGoToHome);	
 	}
 
 	//TO LOGOUT

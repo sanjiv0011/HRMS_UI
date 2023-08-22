@@ -10,7 +10,8 @@
 	    <parameter name="browser" value="chrome"></parameter>
     
     <classes>
-     <!-- <class name="com.hrms.testCases.TC_Login"/> -->
+		
+    <class name="com.hrms.testCases.TC_Login"/>
      
 	<!--  <class name="com.hrms.testCases.TC_LoginAndLogout"/>--> 
 	
@@ -24,9 +25,11 @@
 	
 	<!--<class name="com.hrms.testCases.TC_UsersProfile_OthersDetails"/>-->
 	
-	<!-- <class name="com.hrms.testCases.TC_UsersProfile_BankDetails"/> -->
+	 <!--<class name="com.hrms.testCases.TC_UsersProfile_BankDetails"/>-->
 	
-	<class name="com.hrms.testCases.TC_UsersProfile_ResetPassword"/>
+	<!--<class name="com.hrms.testCases.TC_UsersProfile_ResetPassword"/>-->
+	
+	<!--<class name="com.hrms.testCases.TC_UserProfile_CompleteDetails"/>-->
 	  
 	<!--<class name="com.hrms.testCases.TC_Ogranization"/>-->
 	
@@ -38,7 +41,9 @@
 	  
 	  <!--<class name="com.hrms.testCases.TC_Cleint"/>-->
 	  
-	 <!-- <class name="com.hrms.testCases.TC_Users"/>-->
+	<!--<class name="com.hrms.testCases.TC_Users"/>-->
+	 
+	 <!--<class name="com.hrms.testCases.TC_UsersPermissions"/>-->
 	  
 	  <!--<class name="com.hrms.testCases.TC_Projects"/>   -->    
 	  

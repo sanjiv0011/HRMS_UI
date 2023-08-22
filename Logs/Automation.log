@@ -1,16 +1,34 @@
-23:36:42.026 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-23:36:43.223 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-23:36:48.259 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-23:36:48.264 [main] INFO  com.hrms.testCases.TC_UsersProfile_ResetPassword - Login Done
-23:36:49.376 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-23:36:53.529 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-23:36:54.633 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownMyProfile button
-23:36:56.774 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabResetPassword
-23:37:00.011 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_ResetPassword - Enterd Old password
-23:37:00.116 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the eye icon to view the password
-23:37:02.384 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_ResetPassword - Enterd new password
-23:37:02.444 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the eye icon to view the password
-23:37:04.653 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_ResetPassword - Enterd retype new password
-23:37:04.712 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the eye icon to view the password
-23:37:05.857 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes button
-23:37:08.881 [main] INFO  com.hrms.testCases.TC_UsersProfile_ResetPassword - Driver shutdown
+19:26:33.898 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
+19:26:34.972 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownMyProfile button
+19:26:37.055 [main] INFO  com.hrms.pageObject.PO_UserProfilePage - Clicked on tabPersonalInfo
+19:26:41.211 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_PersonalInfo - Phone number entered
+19:26:41.215 [main] INFO  my_support.DatePicker - Enter inside date picker methods
+19:26:41.215 [main] INFO  my_support.DatePicker - User given Date: 20 Month: July year: 2021
+19:26:43.251 [main] INFO  my_support.DatePicker - Clicked on the date picker icon: 1
+19:26:44.440 [main] INFO  my_support.DatePicker - Clicked on the toggle button for date and year selection
+19:26:47.198 [main] INFO  my_support.DatePicker - Selected year: 2021
+19:26:48.436 [main] INFO  my_support.DatePicker - Displayed month and year: August 2021
+19:26:49.530 [main] INFO  my_support.DatePicker - Month is selected and name is: July
+19:26:51.300 [main] INFO  my_support.DatePicker - Selected date: 20
+19:26:53.485 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_PersonalInfo - Date of birth entered
+19:26:53.608 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+19:26:54.621 [main] INFO  my_support.TimePicker - Enter inside method selectOptionFromDropdown
+19:26:54.691 [main] INFO  my_support.TimePicker - matched list valueMale
+19:26:54.796 [main] INFO  my_support.TimePicker - Selected matched list value
+19:26:55.801 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_PersonalInfo - Gender selected: Male
+19:26:55.907 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
+19:26:56.917 [main] INFO  my_support.TimePicker - Enter inside method selectOptionFromDropdown
+19:26:57.001 [main] INFO  my_support.TimePicker - matched list valueMarried
+19:26:57.101 [main] INFO  my_support.TimePicker - Selected matched list value
+19:26:58.105 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_PersonalInfo - Selected MaritalStatus: Married
+19:27:00.138 [main] INFO  com.hrms.pageObject.PO_UserProfilePage_PersonalInfo - Bio entered
+19:27:00.315 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon to upload the user profile image
+19:27:01.791 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save and go to home button
+19:27:06.304 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:27:10.436 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
+19:27:11.575 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+19:27:11.733 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:27:12.243 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+19:27:12.725 [main] INFO  com.hrms.testCases.TC_UserProfile_PersonalInfo - Driver shutdown
+10:08:10.759 [main] INFO  com.hrms.testCases.TC_Login - Base class started...
+10:12:38.052 [main] INFO  com.hrms.testCases.TC_Login - Base class started...

@@ -11,8 +11,8 @@ import org.openqa.selenium.support.FindBy;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-import my_support.Action_Archive;
-import my_support.Action_Restore;
+import projectUtility.Action_Archive;
+import projectUtility.Action_Restore;
 
 public class PO_ClientPage extends ReUseAbleElement {
 	

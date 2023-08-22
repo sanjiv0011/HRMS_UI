@@ -16,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import my_support.TimePicker;
+import projectUtility.TimePicker;
 
 
 public class ReUseAbleElement {
@@ -229,9 +229,21 @@ public class ReUseAbleElement {
 	    }
 		
 	    
-	    //===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, AND DELETE===================//
+	    //===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON, SAVE & GO TO HOME, AND DELETE, PROFILE ICON, EYE ICON===================//
 	    
 	  
+	    
+	    //TO CLICK ON THE USER PROFILE ICON FOR ICON UPLOAD
+	    @FindBy(xpath = "(//label//div[contains(@class,\"MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault\")])[1]")
+		@CacheLookup
+		public WebElement iconUserProfileImage_1_RU;
+		public void clickOnUserProfileIcon_1_RU() throws InterruptedException{
+			iconUserProfileImage_1_RU.click();
+		   logger.info("Clicked on the icon to upload the user profile image");
+		   Thread.sleep(1000);
+		}
+		
+		
 	    //PASSWORD VISIBILITY EYE ICON 1
 	    @FindBy(xpath = "(//button[@aria-label='toggle password visibility']//*[name()='svg'])[1]")
 		@CacheLookup
@@ -362,12 +374,32 @@ public class ReUseAbleElement {
 			Thread.sleep(300);
 		}
 	    
-	    //NEXT BUTTON
-	    @FindBy(xpath = "//p[normalize-space()='Next']")
+	    //NEXT BUTTON 1
+	    @FindBy(xpath = "(//p[normalize-space()='Next'])[1]")
 		@CacheLookup
-		public WebElement btnNext;
-	    public void clickOnBtnNext_RU() throws InterruptedException {
-	    	btnNext.click();
+		public WebElement btnNext_1_RU;
+	    public void clickOnBtnNext_1_RU() throws InterruptedException {
+	    	btnNext_1_RU.click();
+	    	logger.info("Clicked on the nextbutton");
+			Thread.sleep(300);
+		}
+	    
+	    //NEXT BUTTON 2
+	    @FindBy(xpath = "(//p[normalize-space()='Next'])[2]")
+		@CacheLookup
+		public WebElement btnNext_2_RU;
+	    public void clickOnBtnNext_2_RU() throws InterruptedException {
+	    	btnNext_2_RU.click();
+	    	logger.info("Clicked on the nextbutton");
+			Thread.sleep(300);
+		}
+	    
+	    //NEXT BUTTON 3
+	    @FindBy(xpath = "(//p[normalize-space()='Next'])[3]")
+		@CacheLookup
+		public WebElement btnNext_3_RU;
+	    public void clickOnBtnNext_3_RU() throws InterruptedException {
+	    	btnNext_3_RU.click();
 	    	logger.info("Clicked on the nextbutton");
 			Thread.sleep(300);
 		}

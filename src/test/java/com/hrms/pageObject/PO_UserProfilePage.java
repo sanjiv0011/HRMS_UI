@@ -72,10 +72,19 @@ public class PO_UserProfilePage extends ReUseAbleElement {
 		logger.info("Clicked on tabAddress");
 	}
 	
+	//USE IN GENERAL FLOW
 	public void clickOntabBankDetails() throws InterruptedException {
 		tabBankDetails.click();
 		Thread.sleep(2000);
 		logger.info("Clicked on tabBankDetails");
+	}
+		
+	//TO SET THE DRIVER AT BANK DETAILS PAGE
+	public PO_UserProfilePage_BankDetails clickOntabBankDetails_ReturnBankDeailsPage() throws InterruptedException {
+		tabBankDetails.click();
+		Thread.sleep(2000);
+		logger.info("Clicked on tabBankDetails");
+		return new PO_UserProfilePage_BankDetails(driver);
 	}
 	
 	public void clickOntabOtherInformation() throws InterruptedException {
@@ -90,10 +99,19 @@ public class PO_UserProfilePage extends ReUseAbleElement {
 		logger.info("Clicked on tabLeaveHistory");
 	}
 	
+	//USE IN GENERAL FLOW
 	public void clickOntabResetPassword() throws InterruptedException {
 		tabResetPassword.click();
 		Thread.sleep(2000);
 		logger.info("Clicked on tabResetPassword");
+	}
+	
+	//USE IN GENERAL FLOW
+	public PO_UserProfilePage_ResetPassword clickOntabResetPassword_ReturnResetPasswordPage() throws InterruptedException {
+		tabResetPassword.click();
+		Thread.sleep(2000);
+		logger.info("Clicked on tabResetPassword");
+		return new PO_UserProfilePage_ResetPassword(driver);
 	}
 	
 	//TO TEST THE USER PROFILE PAGE TAB WORKING

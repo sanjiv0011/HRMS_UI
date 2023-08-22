@@ -1,5 +1,6 @@
 package com.hrms.pageObject;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -16,8 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-import my_support.DatePicker;
-import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
+import projectUtility.DatePicker;
+import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UserProfilePage_PersonalInfo extends ReUseAbleElement {
 	
@@ -62,6 +64,10 @@ public class PO_UserProfilePage_PersonalInfo extends ReUseAbleElement {
 	
 	
 	public void setPhoneNumber(String phoneNumber) throws InterruptedException {
+		textEnterPhoneNumber.sendKeys(Keys.CONTROL, "a"); // Select all text
+		Thread.sleep(300);
+		textEnterPhoneNumber.sendKeys(Keys.DELETE);	 // Delete all text
+		Thread.sleep(300);
 		textEnterPhoneNumber.sendKeys(phoneNumber);
 		Thread.sleep(500);
 		logger.info("Phone number entered");
@@ -88,6 +94,10 @@ public class PO_UserProfilePage_PersonalInfo extends ReUseAbleElement {
 	}
 	
 	public void settBio(String bio) throws InterruptedException {
+		textBio.sendKeys(Keys.CONTROL, "a"); // Select all text
+		Thread.sleep(300);
+		textBio.sendKeys(Keys.DELETE);	 // Delete all text
+		Thread.sleep(300);
 		textBio.sendKeys(bio);
 		Thread.sleep(500);
 		logger.info("Bio entered");
@@ -97,8 +107,28 @@ public class PO_UserProfilePage_PersonalInfo extends ReUseAbleElement {
 		imgageProfile.click();
 	}
 	
-	//PERSONAL DETAILS
-	public PO_UserProfilePage personalInfoDetails(String phoneNumber,String dateOfBirth, String gender, String marri,String bio, String buttonNextOrGoToHome) throws InterruptedException
+	//PERSONAL DETAILS WITH RETRUN TYPE(PO_HomePage)
+	public PO_HomePage personalInfoDetails(String phoneNumber,String dateOfBirth, String gender, String marri,String bio, String buttonNextOrGoToHome) throws InterruptedException, IOException
+	{	
+		setPhoneNumber(phoneNumber);
+		selectDateOfBirth(dateOfBirth, 1);
+		selectGender(gender);
+		selectMaritalStatus(marri);
+		settBio(bio);
+		ruae.clickOnUserProfileIcon_1_RU();
+		Runtime.getRuntime().exec("D://Sanjiv_QA/Eclipse Project/HRMS_UI/autoIt.exe");
+		if(buttonNextOrGoToHome.equals("saveAndGoToHome")){
+			clickOnBtnSaveAndGoToHome_1_RU();
+			Thread.sleep(1000);
+		}else if(buttonNextOrGoToHome.equals("next")) {
+			clickOnBtnNext_1_RU();
+			Thread.sleep(1000);
+		}
+		return new PO_HomePage(driver);
+	}
+	
+	//PERSONAL DETAILS WITH RETRUN TYPE(PO_UserProfilePage_AddressDetails)
+	public PO_UserProfilePage_AddressDetails personalInfoDetails_ReturnTypeAddressDetails(String phoneNumber,String dateOfBirth, String gender, String marri,String bio, String buttonNextOrGoToHome) throws InterruptedException
 	{	
 		setPhoneNumber(phoneNumber);
 		selectDateOfBirth(dateOfBirth, 1);
@@ -108,15 +138,14 @@ public class PO_UserProfilePage_PersonalInfo extends ReUseAbleElement {
 		
 		if(buttonNextOrGoToHome.equals("saveAndGoToHome")){
 			clickOnBtnSaveAndGoToHome_1_RU();
+			Thread.sleep(1000);
 		}else if(buttonNextOrGoToHome.equals("next")) {
-			clickOnBtnNext_RU();
+			clickOnBtnNext_1_RU();
+			Thread.sleep(1000);
 		}
-		
-		return new PO_UserProfilePage(driver);
-		
+		return new PO_UserProfilePage_AddressDetails(driver);
 	}
 	//=====END====Personal info Action Methods============//
-	
-	
+
 
 }

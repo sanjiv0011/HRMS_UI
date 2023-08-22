@@ -1,5 +1,6 @@
 package com.hrms.pageObject;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -12,12 +13,12 @@ import org.openqa.selenium.support.FindBy;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-import my_support.Action_Activate;
-import my_support.Action_Archive;
-import my_support.Action_DeActivate;
-import my_support.Action_Restore;
-import my_support.DatePicker;
-import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
+import projectUtility.Action_Activate;
+import projectUtility.Action_Archive;
+import projectUtility.Action_DeActivate;
+import projectUtility.Action_Restore;
+import projectUtility.DatePicker;
+import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UsersPage extends ReUseAbleElement{
 	
@@ -25,6 +26,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	public WebDriver driver;
 	public JavascriptExecutor jsExecutor;
 	public ReUseAbleElement ruae;
+	public Runtime runtime;
 	public Logger logger = LogManager.getLogger(getClass());
 	
 	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
@@ -33,7 +35,6 @@ public class PO_UsersPage extends ReUseAbleElement{
 		this.driver = driver;
 		jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
-		
 	}
 	
 	//=====START====PROJECTS PAGE OBJECTS AND ITS ACTION METHODS============//
@@ -57,7 +58,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	        Thread.sleep(1000);
 	    }
 		
-		//TAB PERMISSIONS ADDRESS
+		//TAB PERMISSIONS ADDRESS(FOR NORMAL USE)
 		@FindBy(xpath = "(//button[normalize-space()='Permissions'])[1]")
 		@CacheLookup
 		WebElement tabPermissions;
@@ -65,6 +66,17 @@ public class PO_UsersPage extends ReUseAbleElement{
 	        tabPermissions.click();
 	        logger.info("Clicked on the permissions tab");
 	        Thread.sleep(1000);
+	    }
+		
+		//TAB PERMISSIONS ADDRESS WITH RETURN TYPE(PERMISSIONS PAGE OBJECTS)
+		@FindBy(xpath = "(//button[normalize-space()='Permissions'])[1]")
+		@CacheLookup
+		WebElement tabPermissionsReturnTypePermissionPage;
+		public PO_UserPermissions clickOnTabPermissions_ReturnTypePermissionPage() throws InterruptedException {
+			tabPermissionsReturnTypePermissionPage.click();
+	        logger.info("Clicked on the permissions tab");
+	        Thread.sleep(1000);
+	        return new PO_UserPermissions(driver);
 	    }
 		
 		//TEXT FIELD USER NAME ADDRESS
@@ -165,7 +177,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	//=====END====PROJECTS PAGE OBJECTS AND ITS ACTION METHODS============//
 	
 	
-		//CREATE USERS
+		//CREATE USERS WITH RETURN TYPE(PO_HomePage)
 		public PO_HomePage createUser(String userNameToCreate, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException
 		{
 			clickOnBtnCreateUser(); 
@@ -177,10 +189,28 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setLastName(lastName);
 			setEmailAddress(emailAddress);
 			selectUserRole(userRole);
+			
 			ruae.clickOnBtnSaveAndGoToHome_1_RU();
+
 			return new PO_HomePage(driver);
 		}
 		
+		//CREATE USERS WITH RETURN TYPE(PO_UserPermissions)
+		public PO_UserPermissions createUser_ReturnType_PO_UserPermissions(String userNameToCreate, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException
+		{
+			clickOnBtnCreateUser(); 
+			clickOnTabUserDetails();
+			setUserName(userNameToCreate);
+			setPassword(passwordToCreate);
+			selectOrganization(organizationName);
+			setFirstName(firstName);
+			setLastName(lastName);
+			setEmailAddress(emailAddress);
+			selectUserRole(userRole);
+			ruae.clickOnBtnNext_1_RU();
+
+			return new PO_UserPermissions(driver);
+		}
 		
 			//TO ARCHIVE USER
 			// THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS

@@ -12,8 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-import my_support.Action_Archive;
-import my_support.Action_Restore;
+import projectUtility.Action_Archive;
+import projectUtility.Action_Restore;
 
 public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 	

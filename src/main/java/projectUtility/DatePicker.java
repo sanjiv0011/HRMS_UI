@@ -1,10 +1,11 @@
-package my_support;
+package projectUtility;
 
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -15,9 +16,18 @@ public class DatePicker{
 	
 	public static final Logger logger = LogManager.getLogger(DatePicker.class);
 	
+	
+	//DATE PLACE HOLDER ADDRESS THIS IS USED CLEAR ALREADY PRESENT DATE
+	public static String textDatePlaceHolder_1_RU = "(//input[@placeholder='MM/DD/YYYY'])[1]";
+	public static String textDatePlaceHolder_2_RU = "(//input[@placeholder='MM/DD/YYYY'])[2]";
+	public static String textDatePlaceHolder_3_RU = "(//input[@placeholder='MM/DD/YYYY'])[3]";
+			
+	//DATE ICON ADDRESS
     public static String iconDate_1_RU = "(//button[@aria-label='Choose date'])[1]";
 	public static String iconDate_2_RU = "(//button[@aria-label='Choose date'])[2]";
 	public static String iconDate_3_RU = "(//button[@aria-label='Choose date'])[3]";
+	
+	//DATE TOGGLE BUTTON, YEAR LIST, DATE LIST, NEXT BUTTON, PREVIOUS BUTTON, CURRENT MONTH YEAR DISPLAYED ADDRESS
 	public static String toggleBtnYearAndDate = "//button[@aria-label=\"calendar view is open, switch to year view\"]";
 	public static String selectYear = "//div[contains(@class, 'MuiYearCalendar-root')]//div";
 	public static String arrowNextMonth = "//button[@title=\"Next month\"]";
@@ -39,14 +49,29 @@ public class DatePicker{
 		        logger.info("User given Date: "+date+" Month: "+month+" year: " + year);
 		        
 		        if(x == 1) {
+		        	WebElement datePlaceholder1 = driver.findElement(By.xpath(textDatePlaceHolder_1_RU));
+		        	datePlaceholder1.sendKeys(Keys.CONTROL,"a");
+		        	Thread.sleep(300);
+		        	datePlaceholder1.sendKeys(Keys.DELETE);
+		        	Thread.sleep(300);
 		        	driver.findElement(By.xpath(iconDate_1_RU)).click();
 		        	Thread.sleep(1000);
 		        	logger.info("Clicked on the date picker icon: "+ x);
 		        }else if(x == 2){
+		        	WebElement datePlaceholder2 = driver.findElement(By.xpath(textDatePlaceHolder_2_RU));
+		        	datePlaceholder2.sendKeys(Keys.CONTROL,"a");
+		        	Thread.sleep(300);
+		        	datePlaceholder2.sendKeys(Keys.DELETE);
+		        	Thread.sleep(300);
 		        	driver.findElement(By.xpath(iconDate_2_RU)).click();
 		        	Thread.sleep(1000);
 		        	logger.info("Clicked on the date picker icon: "+ x);
 		        }else if(x == 3) {
+		        	WebElement datePlaceholder3 = driver.findElement(By.xpath(textDatePlaceHolder_3_RU));
+		        	datePlaceholder3.sendKeys(Keys.CONTROL,"a");
+		        	Thread.sleep(300);
+		        	datePlaceholder3.sendKeys(Keys.DELETE);
+		        	Thread.sleep(300);
 		        	driver.findElement(By.xpath(iconDate_3_RU)).click();
 		        	Thread.sleep(1000);
 		        	logger.info("Clicked on the date picker icon: "+ x);

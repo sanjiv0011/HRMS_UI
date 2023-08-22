@@ -18,11 +18,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-import my_support.Action_Activate;
-import my_support.Action_Archive;
-import my_support.Action_DeActivate;
-import my_support.Action_Restore;
-import my_support.Generic_Method_ToSelect_Boostrape_Dropdown;
+import projectUtility.Action_Activate;
+import projectUtility.Action_Archive;
+import projectUtility.Action_DeActivate;
+import projectUtility.Action_Restore;
+import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_OragnizationPage extends ReUseAbleElement{
 	

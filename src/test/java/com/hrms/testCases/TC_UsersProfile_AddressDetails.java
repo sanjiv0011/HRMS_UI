@@ -40,12 +40,13 @@ public class TC_UsersProfile_AddressDetails extends BaseClass{
 		hp = lgn.Login(userName, password);
 		logger.info("Login Done");
 	}
-		
+	
+	//TO FILL ADDRESS DETAILS
 	@Test(priority = 2)
 	public void test_UsersProfile_AddressDetails() throws InterruptedException
 	{
 		upad = callMeBeforePerformAnyAction();
-		upad.fillUsersAddressDetails(addressLine1,addressLine2,city, state,country,  postalCode,buttonNextOrGoToHome);	
+		hp = upad.fillUsersAddressDetails(addressLine1,addressLine2,city, state,country,  postalCode,buttonNextOrGoToHome);	
 	}
 	
 	//TO LOGOUT

@@ -12,9 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
-import my_support.Action_Activate;
-import my_support.Action_DeActivate;
-import my_support.Action_Delete;
+import projectUtility.Action_Activate;
+import projectUtility.Action_DeActivate;
+import projectUtility.Action_Delete;
 
 
 public class PO_ManageLeaveTypes extends ReUseAbleElement{

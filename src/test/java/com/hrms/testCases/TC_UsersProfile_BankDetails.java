@@ -29,7 +29,7 @@ public class TC_UsersProfile_BankDetails extends BaseClass{
 	public String bankName = "Bank of baroda";
     public String bankNumber = "123546789987420";
     public String accountName = "My name bank name";
-    public String isfcCode = "KLJD54612";
+    public String isfcCode = "COSB0000001";
 
 	
 	//TO LOGIN
@@ -39,12 +39,13 @@ public class TC_UsersProfile_BankDetails extends BaseClass{
 		hp = lgn.Login(userName, password);
 		logger.info("Login Done");
 	}
-		
+	
+	//TO FILL UP BANK DETAILS
 	@Test(priority = 2)
-	public void test_UsersProfile_AddressDetails() throws InterruptedException
+	public void test_UsersProfile_BankDetails() throws InterruptedException
 	{
 		upbd = callMeBeforePerformAnyAction();
-		upbd.fillBankDetails(bankName,bankNumber,accountName,isfcCode);	
+		hp = upbd.fillBankDetails(bankName,bankNumber,accountName,isfcCode);	
 	}
 
 	//TO LOGOUT

@@ -1,14 +1,14 @@
-package com.hrms.dataProviders.from_pkg_readExcelData;
+package com.hrms.dataProviders.from_readDataFromExcelFile;
 
 import java.io.IOException;
 
 import org.testng.annotations.DataProvider;
 
-import com.hrms.readExcelData.ReadDataFromExcelFile;
+import com.hrms.utilities.ReadDataFromExcelFile;
 
 
 
-// It is used to provides that in the TEST CASES CLASS	 by using java files "ReadDataFromExcelFile.java"
+// IT IS USED TO PROVIDE DATA TO THE TEST CASES CLASS	 by using java files "ReadDataFromExcelFile.java"
 public class DataProviders {
 	
 	@DataProvider(name = "Data")
