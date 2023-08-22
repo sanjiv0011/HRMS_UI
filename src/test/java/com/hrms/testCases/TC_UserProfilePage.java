@@ -13,7 +13,7 @@ public class TC_UserProfilePage extends BaseClass {
 		super();
 	}
 	
-	
+	//CONSTRUCTOR DECLARATIONS
 	public PO_LoginPage lgn;
 	public PO_HomePage hp;
 	public PO_UserProfilePage upp;
@@ -22,17 +22,16 @@ public class TC_UserProfilePage extends BaseClass {
 	
 	//TO LOGIN
 	@Test(priority = 1)
-	public void test_Login() throws InterruptedException{
+	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
 	}
 	
 	//USER PROFILE PAGE TESTING
-	@Test(priority = 2)
-	public void test_UserProfilePage() throws InterruptedException
-	{	upp = callMeBeforePerformAnyAction();
+	@Test(priority = 2 , dependsOnMethods = {"test_Login"})
+	public void test_UserProfilePage() throws InterruptedException {
+		upp = callMeBeforePerformAnyAction();
 		hp = upp.UserProfilePageTesting();
-		logger.info("User profile testing done");
 	}
 	
 	//TO LOGOUT

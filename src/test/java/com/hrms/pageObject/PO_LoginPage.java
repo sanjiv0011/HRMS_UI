@@ -50,7 +50,7 @@ public class PO_LoginPage extends ReUseAbleElement {
 	@CacheLookup
 	WebElement checkBox;
 	
-	@FindBy(xpath = "//span[@class='MuiBox-root css-1bd5wky']")
+	@FindBy(xpath = "//span[text()=\"Forget Your Password?\"]")
 	@CacheLookup
 	WebElement forgetPasswordLink;
 	
@@ -62,19 +62,19 @@ public class PO_LoginPage extends ReUseAbleElement {
 	{
 		textUserName.sendKeys(userName);
 		logger.info("Enteterd userName");
-		Thread.sleep(1000);
+		Thread.sleep(500);
 	}
 		
 	public void setTextpassword(String password) throws InterruptedException {
 		textpassword.sendKeys(password);
 		logger.info("Entered password");
-		Thread.sleep(1000);
+		Thread.sleep(500);
 	}
 
 	public void clickBtnsubmit() throws InterruptedException {
 		btnsubmit.click();
 		logger.info("clicke on login submit button");
-		Thread.sleep(1000);
+		Thread.sleep(500);
 	}
 	
 	public void clickOnCheckBox() {

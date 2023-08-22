@@ -2,23 +2,35 @@ package com.hrms.dataProviders.from_readDataFromExcelFile;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.DataProvider;
 
 import com.hrms.utilities.ReadDataFromExcelFile;
 
 
 
-// IT IS USED TO PROVIDE DATA TO THE TEST CASES CLASS	 by using java files "ReadDataFromExcelFile.java"
+// IT IS USED TO PROVIDE DATA TO THE TEST CASES CLASe BY USING CLASS "ReadDataFromExcelFile.java"
 public class DataProviders {
 	
-	@DataProvider(name = "Data")
-	public String[][] getDataFromExcelFile() throws IOException
+	//TO LOG THE MESSAGES ON THE CONSOLE AND LOG FILES BOTH
+	public static Logger logger = LogManager.getLogger();
+	
+	//CONSTRUCTOR TO ACCESS THE READ DATA FROM THE EXCEL FILES
+	public static ReadDataFromExcelFile rdfef;
+
+	//DATE PROVIDER METHODS CONCEPT TO ACCESS DATA FROM THE EXCEL FILES, FOR THIS IT IS ALSO CALLED TO THE ReadDataFromExcelFile CLASS AND NOTE ACTUAL DATA READING DONE AT(ReadDataFromExcelFile)
+	public static String[][] dataProviderGetDataFromExcelFile(String fileNameOnly) throws IOException
 	{
-		String filePath = "./"+"//ExcelData//Excel_Data_For_Test.xlsx";
-		ReadDataFromExcelFile xls = new ReadDataFromExcelFile(filePath);
+		try {
+			String filePath = "./"+"//ExcelData//"+fileNameOnly+".xlsx";
+			rdfef = new ReadDataFromExcelFile(filePath);
+		}catch(Exception e) {
+			logger.info(e.getCause());
+		}
 		
-		int rownum = xls.getRowCount("Sheet1");
-		int colcount = xls.getCellCount("Sheet1", 1);
+		int rownum = rdfef.getRowCount("Sheet1");
+		int colcount = rdfef.getCellCount("Sheet1", 1);
 		
 		String UserData[][] = new String[rownum][colcount];
 		
@@ -26,7 +38,7 @@ public class DataProviders {
 		{
 			for(int j=0; j<colcount ;j++)
 			{
-				UserData[i-1][j] = xls.	getCellData("Sheet1",i,j);
+				UserData[i-1][j] = rdfef.	getCellData("Sheet1",i,j);
 			}
 		}
 		

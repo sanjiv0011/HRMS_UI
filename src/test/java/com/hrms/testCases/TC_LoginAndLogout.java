@@ -1,7 +1,7 @@
 package com.hrms.testCases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
 
 import com.hrms.pageObject.PO_HomePage;
 
@@ -13,19 +13,17 @@ public class TC_LoginAndLogout extends TC_Login{
 	
 	*/
 	
-	public TC_LoginAndLogout()
-	{
+	public TC_LoginAndLogout(){
 		super();
 	}
 	
-	PO_HomePage hp;
+	public PO_HomePage hp;
 	
-	@Test(priority = 1)	// here zero ensures least priority, so that this call happens at the last.
+	@Test(priority = 10)	// here zero or ten ensures least priority, so that this call happens at the last.
 	public void test_Logout() throws InterruptedException
 	{	// It perform the logout activity
-		
 		hp = new PO_HomePage(driver);
-		
 		hp.Logout();
 	}
+
 }

@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LoginPage;
 import com.hrms.pageObject.PO_OragnizationPage;
@@ -21,30 +25,47 @@ public class TC_Ogranization extends BaseClass{
 	public PO_HomePage hp;
 	public PO_OragnizationPage op;
 	
-	//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
-	String orgName = faker.company().name(); //"Willms-Mann";
-	String orgCode = faker.random().hex(4);
-	String orgEmail = faker.internet().emailAddress();
-	String orgPhoneNumber = "+91"+"1234567890";
-	String orgAddress = faker.address().buildingNumber();
-	String orgArea = faker.address().secondaryAddress();
-	String orgCity = faker.address().city();
-	String orgState = faker.address().state();
-	String orgPostalCode = "123456";
-	String orgCountry = "India"; //faker.address().country();
-	String orgTimeZone = "(UTC +05:30) Asia/Kolkata";
+//  //VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
+//	//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
+//	String orgCode = faker.random().hex(4);
+//	String orgEmail = faker.internet().emailAddress();
+//	String orgPhoneNumber = "+91"+"1234567890";
+//	String orgAddress = faker.address().buildingNumber();
+//	String orgArea = faker.address().secondaryAddress();
+//	String orgCity = faker.address().city();
+//	String orgState = faker.address().state();
+//	String orgPostalCode = "123456";
+//	String orgCountry = "India"; //faker.address().country();
+//	String orgTimeZone = "(UTC +05:30) Asia/Kolkata";
+//	
+//	String newOrgCode = faker.random().hex(4);
+//	String newOrgEmail = faker.internet().emailAddress();
+//	String newOrgPhoneNumber = "+91"+"1234567890";
+//	String newOrgAddress = faker.address().buildingNumber();
+//	String newOrgArea = faker.address().secondaryAddress();
+//	String newOrgCity = faker.address().city();
+//	String newOrgState = faker.address().state();
+//	String newOrgPostalCode = "123456";
+//	String newOrgCountry = "India";
+//	String newOrgTimeZone = "(UTC +05:30) Asia/Kolkata";
 	
-	String newOrgCode = faker.random().hex(4);
-	String newOrgEmail = faker.internet().emailAddress();
-	String newOrgPhoneNumber = "+91"+"1234567890";
-	String newOrgAddress = faker.address().buildingNumber();
-	String newOrgArea = faker.address().secondaryAddress();
-	String newOrgCity = faker.address().city();
-	String newOrgState = faker.address().state();
-	String newOrgPostalCode = "123456";
-	String newOrgCountry = "India";
-	String newOrgTimeZone = "(UTC +05:30) Asia/Kolkata";
-	
+	String orgName = "SFCSolutions"; // PASS THE VALUE YOU WANT TO ARCHIVE/RESTORE/ACTIVATE/DEACTIVATE
+
+	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly = "TC_Ogranization";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly)
+  	public String[][] dataProvider() throws IOException {
+  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+  		return loginData;
+  	}
+  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+  	
+  	
 	//TO LOGIN
 	@Test(priority =1)
 	public void test_Login() throws InterruptedException{
@@ -54,8 +75,8 @@ public class TC_Ogranization extends BaseClass{
 	}
 	
 	//TO CREATE ORGANIZATION
-	@Test(priority = 2, dependsOnMethods = {"test_Login"})
-	public void test_CreateOrganization() throws InterruptedException
+	//@Test(priority = 2, dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+	public void test_CreateOrganization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode, String orgCountry, String orgTimeZone) throws InterruptedException
 	{	op = callMeBeforePerformAnyAction();
 		hp = op.createOragnization(orgName, orgCode, orgEmail, orgPhoneNumber, orgAddress, orgArea, orgCity, orgState, orgPostalCode, orgCountry, orgTimeZone);
 		logger.info("Organization created");
@@ -64,7 +85,7 @@ public class TC_Ogranization extends BaseClass{
 	
 	
 	//ARCHIVE ORGANIZATION
-	@Test(priority = 3 , dependsOnMethods = {"test_Login"})
+	//@Test(priority = 3 , dependsOnMethods = {"test_Login"})
 	public void test_ArchiveOrganization()throws InterruptedException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.archiveOrganization(orgName);
@@ -72,7 +93,7 @@ public class TC_Ogranization extends BaseClass{
 	}
 	
 	//RESTORE ORGANIZATION
-	@Test(priority = 4, dependsOnMethods = {"test_Login"})
+	//@Test(priority = 4, dependsOnMethods = {"test_Login"})
 	public void test_RestoreOrganization()throws InterruptedException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.restoreOrganization(orgName);
@@ -80,7 +101,7 @@ public class TC_Ogranization extends BaseClass{
 	}
 	
 	//DEACTIVATE ORGANIZATION
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	public void test_DeActivateOrganization()throws InterruptedException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.deactivateOrganization(orgName);
@@ -88,7 +109,7 @@ public class TC_Ogranization extends BaseClass{
 	}
 	
 	//ACTIVATE ORGANIZATION
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	public void test_ActivateOrganization()throws InterruptedException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.activateOrganization(orgName);
@@ -97,10 +118,10 @@ public class TC_Ogranization extends BaseClass{
 		
 	
 	//EDIT ORGANIZATION
-	@Test(priority = 7, dependsOnMethods = {"test_Login"})
-	public void test_EditOrganization()throws InterruptedException {
+	@Test(priority = 7, dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+	public void test_EditOrganization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode, String orgCountry, String orgTimeZone)throws InterruptedException {
 		op = callMeBeforePerformAnyAction();
-		hp = op.editOragnization(orgName, newOrgCode, newOrgEmail, newOrgPhoneNumber, newOrgAddress, newOrgArea, newOrgCity, newOrgState, newOrgPostalCode, newOrgCountry, newOrgTimeZone );
+		hp = op.editOragnization(orgName, orgCode, orgEmail, orgPhoneNumber, orgAddress, orgArea, orgCity, orgState, orgPostalCode, orgCountry, orgTimeZone );
 		logger.info("Edit organization call done");	
 	}
 			

@@ -146,7 +146,6 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		
 		//ACTION METHOD TO SELECT THE PROJECT START DATE
 		public void selectStartDate(String projectStartDate, int x) throws InterruptedException {
-			
 			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
 		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectStartDate, x);
 		    logger.info("Project start date, month and year entered");
@@ -154,7 +153,6 @@ public class PO_ProjectPage extends ReUseAbleElement {
 
 		//ACTION METHOD TO SELECT PROJECT END DATE
 		public void selectEndDate(String projectEndDate, int x ) throws InterruptedException {
-			
 			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
 		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectEndDate, x);
 		    logger.info("Project end date, month and year entered");

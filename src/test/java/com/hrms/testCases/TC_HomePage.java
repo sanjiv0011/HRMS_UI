@@ -22,17 +22,15 @@ public class TC_HomePage extends BaseClass {
 	
 	//TO LOGIN
 	@Test(priority = 1)
-	public void test_Login() throws InterruptedException{
+	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 	
 	
 	//TO TEST HOME PAGE 
-	//@Test(priority = 2)
-	public void test_HomePage() throws InterruptedException
-	{	// To perform the home page testing activity
+	@Test(priority = 2 , dependsOnMethods = {"test_Login"})
+	public void test_HomePage() throws InterruptedException {
 		hp.HomePageTesting();
 		logger.info("Home Page testing done");
 	}
