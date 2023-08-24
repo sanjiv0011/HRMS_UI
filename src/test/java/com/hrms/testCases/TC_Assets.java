@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_Asserts_CreateAssetsTypes;
 import com.hrms.pageObject.PO_AssetsPage;
 import com.hrms.pageObject.PO_ClientPage;
@@ -46,8 +50,8 @@ public class TC_Assets extends BaseClass {
 	}
 		
 	//TO CREATE ASSETS
-	@Test(priority = 2)
-	public void test_CreateAssets() throws InterruptedException
+	@Test(priority = 2, dependsOnMethods = "test_Login", dataProvider = fileNameOnly)
+	public void test_CreateAssets(String companyName, String assetType, String serialNumber, String modelNumber, String usedBy, String supportPerson, String warranty, String warrantyExpiry, String manufacturerDate1, String purchaseDate1, String invoiceNumber, String invoiceURL, String status, String condition, String replacementStatus ) throws InterruptedException
 	{	// to create new organization
 		aca = callMeBeforePerformAnyAction();
 		hp = aca.createAssets(companyName, assetType, serialNumber, modelNumber, usedBy, supportPerson, warranty, warrantyExpiry, manufacturerDate1, purchaseDate1, invoiceNumber, invoiceURL, status, condition, replacementStatus);
@@ -55,7 +59,7 @@ public class TC_Assets extends BaseClass {
 	}
 	
 	//TO LOGOUT
-	@Test(priority = 10, dependsOnMethods = {"test_Login"})
+	//@Test(priority = 10, dependsOnMethods = "test_Login")
 	public void test_Logout() throws InterruptedException {
 		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 		Thread.sleep(2000);
@@ -80,4 +84,18 @@ public class TC_Assets extends BaseClass {
 	}
 
 
+	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly = "TC_Assets";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly)
+  	public String[][] dataProvider() throws IOException {
+  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+  		return loginData;
+  	}
+  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+  	
 }

@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,20 +23,23 @@ import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_AssetsPage extends ReUseAbleElement {
 	
-	    // Constructor to initialize the page and its elements
+	    //OBJECT DECLARATIONS
 		public WebDriver driver;
 		public Logger logger = LogManager.getLogger(getClass());
 		public JavascriptExecutor jsExecutor;
 		public ReUseAbleElement ruae;
 		public WebDriverWait wait;
+		public Actions action;
 	
 
+		//CONSTRUCTOR
 	    public PO_AssetsPage(WebDriver driver) {
 	        super(driver);
 	        this.driver = driver;
 	        jsExecutor  = (JavascriptExecutor)driver;
 			ruae = new ReUseAbleElement(driver);
 			wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+			action = new Actions(driver);
 	    }
 	    
 	    //CRETAE ASSETS BUTTON AT ASSETS PAGE
@@ -126,113 +130,87 @@ public class PO_AssetsPage extends ReUseAbleElement {
 	    // Method to enter Asset Company Name
 	    public void selectAssetCompanyName(String companyName) throws InterruptedException {
 	    	enterCompanyName.sendKeys(companyName);
-	    	Thread.sleep(1000);
+	    	Thread.sleep(500);
 		     logger.info("Entered company name");
 	    }
 
 	    // Method to select Asset Type
 	    public void selectAssetType(String assetType) throws InterruptedException {
 	    	clickOnDropdown_1_RU();
-	    	Thread.sleep(1000);
 	    	Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listAssetType,assetType );
-	    	Thread.sleep(1000);
+	    	Thread.sleep(500);
 	    }
 
 	    // Method to enter Serial Number
 	    public void enterSerialNumber(String serialNumber) throws InterruptedException {
 	    	enterSerialNumber.sendKeys(serialNumber);
-	    	Thread.sleep(1000);
+	    	Thread.sleep(500);
 	        logger.info("Entered Serial Numbe");
 	    }
 
 	    // Method to enter Model Number
 	    public void enterModelNumber(String modelNumber) throws InterruptedException {
 	    	enterModleNumber.sendKeys(modelNumber);
-	    	Thread.sleep(1000);
+	    	Thread.sleep(500);
 	        logger.info("Entered Model Number: ");
 	    }
 
 	    // Method to enter Used By
 	    public void enterUsedBy(String usedBy) throws InterruptedException {
 	        enterUsedBy.sendKeys(usedBy);
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	        logger.info("Entered Used By");
 	    }
 
 	    // Method to enter Support Person
 	    public void enterSupportPerson(String supportPerson) throws InterruptedException {
 	        enterSupportPerson.sendKeys(supportPerson);
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	        logger.info("Entered Support Person");
 	    }
 
 	    // Method to enter Warranty
 	    public void enterWarranty(String warranty) throws InterruptedException {
 	    	enterWarranty.sendKeys(warranty);
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	        logger.info("Entered Warranty");
 	    }
-
-//	    // Method to enter Warranty Expiry Date (MM/DD/YYYY)
-//	    public void enterWarrantyExpiryDate(String warrantyExpiry) throws InterruptedException {
-//	    	driver.findElement(By.xpath(iconDate_1_RU)).click();
-//	    	DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  warrantyExpiry);
-//			Thread.sleep(2000);
-//	    }
-//
-//	    // Method to enter Manufacturer Date (MM/DD/YYYY)
-//	    public void enterManufacturerDate(String manufacturerDate1) throws InterruptedException {
-//	    	driver.findElement(By.xpath(iconDate_2_RU)).click();
-//	    	DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  manufacturerDate1);
-//			Thread.sleep(2000);
-//	    }
-//
-//	    
-//	    // Method to enter Purchase Date (MM/DD/YYYY)
-//	    public void enterPurchaseDate(String purchaseDate1) throws InterruptedException {
-//	    	driver.findElement(By.xpath(iconDate_2_RU)).click();
-//	    	DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, toggleBtnYearAndDate, elementCurrentMonthYearDisplayed , arrowNextMonth, arrowPreviousMonth, selectDate, selectYear,  purchaseDate1);
-//			Thread.sleep(2000);
-//	    }
-	    
 	    
 	    // Method to enter Warranty Expiry Date (MM/DD/YYYY)
 	    public void enterWarrantyExpiryDate(String warrantyExpiry, int x) throws InterruptedException {
 	    	DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver,warrantyExpiry, x);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 	    }
 
 	    // Method to enter Manufacturer Date (MM/DD/YYYY)
 	    public void enterManufacturerDate(String manufacturerDate1, int x) throws InterruptedException {
 	    	DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver,manufacturerDate1, x);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 	    }
-
 	    
 	    // Method to enter Purchase Date (MM/DD/YYYY)
 	    public void enterPurchaseDate(String purchaseDate1, int x) throws InterruptedException {
 	    	DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, purchaseDate1, x);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 	    }
 
 	    // Method to enter Invoice Number
 	    public void enterInvoiceNumber(String invoiceNumber) throws InterruptedException {
 	        enterInvoiceNumber.sendKeys(invoiceNumber);
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	        logger.info("Entered Invoice Number: " + invoiceNumber);
 	    }
 
 	    // Method to enter Invoice URL
 	    public void enterInvoiceURL(String invoiceURL) throws InterruptedException {
 	        enterInvoiceURL.sendKeys(invoiceURL);
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	        logger.info("Entered Invoice URL: " + invoiceURL);
 	    }
 
 	    // Method to select Status
 	    public void selectStatus(String status) throws InterruptedException {
 	    	clickOnDropdown_2_RU();
-	    	Thread.sleep(500);
 	    	Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listStatus,status );
 	    	Thread.sleep(500);
 	    }
@@ -240,7 +218,6 @@ public class PO_AssetsPage extends ReUseAbleElement {
 	    // Method to select Condition
 	    public void selectCondition(String condition) throws InterruptedException {
 	    	clickOnDropdown_3_RU();
-	    	Thread.sleep(500);
 	    	Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listCondition,condition );
 	    	Thread.sleep(500);
 	    }
@@ -248,7 +225,6 @@ public class PO_AssetsPage extends ReUseAbleElement {
 	    // Method to select Replacement Status
 	    public void selectReplacementStatus(String replacementStatus) throws InterruptedException {
 	    	clickOnDropdown_4_RU();
-	    	Thread.sleep(500);
 	    	Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listReplacementStatus,replacementStatus );
 	    	Thread.sleep(500);
 	    }
@@ -260,29 +236,27 @@ public class PO_AssetsPage extends ReUseAbleElement {
 	        logger.info("Clicked on the create assets button at create assets page");
 	    }
 	    
-	    // all in one
+	    //TO CREATE ASSETS
 	    public PO_HomePage createAssets(String companyName, String assetType,String serialNumber,String modelNumber, String usedBy,	String supportPerson, String warranty, String warrantyExpiry, String manufacturerDate1, String purchaseDate1, String invoiceNumber, String invoiceURL, String status, String condition, String replacementStatus) throws InterruptedException
 	    {
 	    	clickOnBtnCreateAssetsAtAssetaPage();
-//	    	selectAssetCompanyName(companyName);
-//	    	selectAssetType(assetType);
-//	    	enterSerialNumber(serialNumber);
-//	    	enterModelNumber(modelNumber);
-//	    	enterUsedBy(usedBy);
-//	    	enterSupportPerson(supportPerson);
-//	    	enterWarranty(warranty);
+	    	enterPurchaseDate(purchaseDate1,3);
+	    	enterManufacturerDate(manufacturerDate1,2);
 	    	enterWarrantyExpiryDate(warrantyExpiry,1);
-	    	
-	    	enterManufacturerDate(manufacturerDate1, 2);
-	    	
-	    	enterPurchaseDate(purchaseDate1, 3);
-	    	
-//	    	enterInvoiceNumber(invoiceNumber);
-//	    	enterInvoiceURL(invoiceURL);
-//	    	selectStatus(status);
-//	    	selectCondition(condition);
-//	    	selectReplacementStatus(replacementStatus);
+	    	selectAssetCompanyName(companyName);
+	    	selectAssetType(assetType);
+	    	enterSerialNumber(serialNumber);
+	    	enterModelNumber(modelNumber);
+	    	enterUsedBy(usedBy);
+	    	enterSupportPerson(supportPerson);
+	    	enterWarranty(warranty);
+	    	enterInvoiceNumber(invoiceNumber);
+	    	enterInvoiceURL(invoiceURL);
+	    	selectStatus(status);
+	    	selectCondition(condition);
+	    	selectReplacementStatus(replacementStatus);
 	    	clickOnBtnCreateAssetsAtCreateAssetsPage();
+	    	
 		    return new PO_HomePage(driver);
 	    }
 }

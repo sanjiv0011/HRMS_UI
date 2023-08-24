@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -31,6 +32,7 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 	public Logger logger = LogManager.getLogger(getClass());
 	public WebDriverWait wait;
 	public Actions action;
+	public TimePicker tp;
 
 	
 	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
@@ -86,35 +88,48 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 			
 			return flag;
 		}
-				
+		
+		
 		
 		//TO CREATE DAILY UPDATES
 		public PO_HomePage createDailyUpdates(WebDriver driver, String dailyUpdateDate, String hoursStart, String mintuesStart, String AMPMStart,String hoursEnd, String mintuesEnd, String AMPMEnd, String projectName, String description ) throws InterruptedException
-		{	//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
+		{	
+			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
 		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, dailyUpdateDate, 1);
-		    logger.info("Daily update date, month and year entered");
-		    Thread.sleep(2000);	
 		    
-		    
-		    clickOnTimeIcon_2_RU();
-		    //TO SELECT THE END TIME IT IS CALLING FORM THE MY SUPPORT PACKAGE HAVNG CLASS TIME PICKER
-		    TimePicker.selectTime(driver, hoursEnd, mintuesEnd, AMPMEnd, btnAM_RU, btnPM_RU, listHours_RU, listMinutes_RU);
-		    clickOnTimeIcon_1_RU();
 		    //TO SELECT THE START TIME IT IS CALLING FORM THE MY SUPPORT PACKAGE HAVNG CLASS TIME PICKER
-		    TimePicker.selectTime(driver,hoursStart, mintuesStart, AMPMStart, btnAM_RU, btnPM_RU, listHours_RU, listMinutes_RU);
-		   
+		    TimePicker.selectTime(driver,hoursStart, mintuesStart, AMPMStart,1);
+		    
+		    //TO SELECT THE END TIME IT IS CALLING FORM THE MY SUPPORT PACKAGE HAVNG CLASS TIME PICKER
+		    TimePicker.selectTime(driver, hoursEnd, mintuesEnd, AMPMEnd, 2);
+		    
 		    //TO SELECT THE PROJECT
 		    selectProject(projectName);
-		    
 		    //TO SET THE DESCRIPTION
 		    setDescription(description);
-		    
 		    ruae.clickOnCreateButton_RU();
-		    if(isSuccessFullDailyUpdatesMSGDisplayed()) {
+		    
+		    //TO TRY ANOTHER WAY IN CASE TIME PICKER FAILED TO SET END TIME
+		   try {
+			   if(isDisplayedEndTimeRequired_RU()) {
+				   setStartTimeWithoutUsingTimePicker_RU(driver,hoursEnd,mintuesEnd,AMPMEnd);
+			   }else {
+				   logger.info("End time not selected");
+			   }
+		   }
+		   catch(Exception e) {
+			  logger.info(e.getCause());
+		   }
+		   
+		   //AFTER FILLING TIME WITHOUT SELECTING FURTHER CLICK ON THE CREATE BUTTON
+		   ruae.clickOnCreateButton_RU();
+		   
+		   if(isSuccessFullDailyUpdatesMSGDisplayed()) {
 		    	logger.info("Daily updates created successfully");
 		    }else {
-		    	logger.info("Does not caught the daily updates message");
+		    	logger.info("Do not caught the daily updates message");
 		    }
+		  
 		    return new PO_HomePage(driver);
 		}
 		

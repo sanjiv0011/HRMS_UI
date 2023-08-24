@@ -42,21 +42,21 @@ public class ReUseAbleElement {
 		//SEARCH BOX
 		@FindBy(xpath = "//input[@placeholder='Search…']")
 		@CacheLookup
-		public WebElement searchBox;
+		public WebElement searchBox_RU;
 		public void searchBox_RU(String SearchKey) throws InterruptedException
 		{	Thread.sleep(200);
-			searchBox.sendKeys(SearchKey,Keys.ENTER);
+			searchBox_RU.sendKeys(SearchKey,Keys.ENTER);
 			logger.info("Searched the search keys in the search box: "+SearchKey);
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 		}
 	
 		//ACTION BUTTON THREE DOTS
 		@FindBy(xpath = "//div[@class='pointer']//*[name()='svg']")
 		@CacheLookup
-		public WebElement btnAction;
+		public WebElement btnAction_RU;
 		// Action method to click the Action button
 	    public void clickOnActionButton_RU() throws InterruptedException {
-	        btnAction.click();
+	    	btnAction_RU.click();
 	        logger.info("Clicked on the Three dot Action button");
 	        Thread.sleep(1000);
 	    }
@@ -86,7 +86,7 @@ public class ReUseAbleElement {
 	        Thread.sleep(300);
 	    }
 	    
-    	// No button before confirm the action
+    	//MESSAGE ACTIVATED
  		@FindBy(xpath = "//div[contains(text(),'Leave Type Activated Successfully.')]")
  		@CacheLookup
  		public WebElement msgActivated;
@@ -101,7 +101,7 @@ public class ReUseAbleElement {
  	        return flag;
  	    }
  		
- 	    // No button before confirm the action
+ 	    //MESSAGE DEACTIVATED
   		@FindBy(xpath = "//div[contains(text(),'Leave Deactivated Successfully.')]")
   		@CacheLookup
   		public WebElement msgDeactivated;
@@ -171,7 +171,7 @@ public class ReUseAbleElement {
   	        Thread.sleep(300);
   	    }
 		
-  	    // No button before confirm the action
+  	    //MESSAGE RESTORED
 		@FindBy(xpath = "//div[contains(text(),'Leave Balance Restored Successfully.')]")
 		@CacheLookup
 		public WebElement msgArchived;
@@ -186,7 +186,7 @@ public class ReUseAbleElement {
 	        return flag;
 	    }
 		
-	    // No button before confirm the action
+	    //MESSAGE ARCHIVED
  		@FindBy(xpath = "//div[contains(text(),'Leave Balance Archived Successfully.')]")
  		@CacheLookup
  		public WebElement msgRestored;
@@ -220,10 +220,10 @@ public class ReUseAbleElement {
 		//Edit Action => To use this first search list item so that it comes at first position
 		@FindBy(xpath = "(//div[contains(text(),'Edit')])[1]")
 		@CacheLookup
-		public WebElement actionEdit;
+		public WebElement actionEdit_RU;
 		// Action method to click the Edit action
 	    public void clickOnEditAction_RU() throws InterruptedException {
-	        actionEdit.click();
+	    	actionEdit_RU.click();
 	        logger.info("Clicked on the Action_Edit button");
 	        Thread.sleep(300);
 	    }
@@ -274,20 +274,22 @@ public class ReUseAbleElement {
 		   Thread.sleep(1000);
 		}
 		
+		//CREATE BUTTON
 	    @FindBy(xpath = "//p[normalize-space()=\"Create\"]")
 		@CacheLookup
-		public WebElement btnCreate;
+		public WebElement btnCreate_RU;
 		public void clickOnCreateButton_RU() throws InterruptedException{
-		   btnCreate.click();
+			btnCreate_RU.click();
 		   logger.info("Clicked on the Create button");
 		   Thread.sleep(300);
 		}
 
+		//BUTTON CANCEL
 		@FindBy(xpath = "//p[normalize-space()=\"Cancel\"]")
 		@CacheLookup
-		public WebElement btnCancel;
+		public WebElement btnCancel_RU;
 		public void clickOnCancelButton_RU() throws InterruptedException {
-		   btnCancel.click();
+			btnCancel_RU.click();
 		   logger.info("Clicked on the Cancle button");
 		   Thread.sleep(300);
 		}
@@ -327,9 +329,9 @@ public class ReUseAbleElement {
 	    //SAVE CHANGES BUTTON
 	    @FindBy(xpath = "//p[normalize-space()='Save Changes']")
 		@CacheLookup
-		public WebElement btnSaveChanges;
+		public WebElement btnSaveChanges_RU;
 	    public void clickOnBtnSaveChanges_RU() throws InterruptedException {
-			btnSaveChanges.click();
+	    	btnSaveChanges_RU.click();
 			logger.info("Clicked on the save changes button");
 			Thread.sleep(300);
 		}
@@ -444,7 +446,7 @@ public class ReUseAbleElement {
   			Thread.sleep(1000);
   		}
 	   	
-  		//DROPDOWN ADDRESS 4
+  		//SAVE BUTTON 1
   		@FindBy(xpath = "(//p[normalize-space()='Save'])[1]")
   		@CacheLookup
   		public WebElement btnSave_1_RU;
@@ -481,70 +483,111 @@ public class ReUseAbleElement {
 	        logger.info("Clicked on the Action_Deactivated button");
 	        Thread.sleep(300);
 	    }
+	    
+	    //USER ICON DROPDOWN BUTTON
+	    @FindBy(xpath="//*[@data-testid='ExpandMoreIcon']")
+	    @CacheLookup
+	    public WebElement iconDropdownLoggedUser_RU;
+	    public void clickOnDropdownIconLoggedUser_RU() throws InterruptedException {
+	    	wait.until(ExpectedConditions.elementToBeClickable(iconDropdownLoggedUser_RU));
+	    	iconDropdownLoggedUser_RU.click();
+	        logger.info("Clicked on the dropdown icon of the already logged in user");
+	        Thread.sleep(300);
+	    }
   //===========END======ACTIVATE AND DEACTIVATE ONLY FOR USER PAGE OBJECT AND ITE ACTION METHODS===========//	
 	    
-	    
-  //==========START==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS===========//
-		//TIME ICON ADDRESS FIRST
-	    @FindBy(xpath = "(//button[@aria-label='Choose time'])[1]")
-		@CacheLookup
-		public WebElement iconTime_1_RU;
-	    //ACTION METHODS
-	    public void clickOnTimeIcon_1_RU() {
-	    	try {
-	    		 Thread.sleep(1000);
-	    		 action.moveToElement(iconTime_1_RU).click().build().perform();
-	    		 Thread.sleep(1000);
-	    		 //iconTime_1_RU.click();
-	    		 logger.info("Click on time icon 1");
-	    	}catch(Exception e) {
-	    		 logger.info(e.getMessage());
-	    	}
-	    }
-	    
-	    //TIME ICON ADDRESS SECONDS
-	    @FindBy(xpath = "(//button[@aria-label='Choose time'])[2]")
-		@CacheLookup
-		public WebElement iconTime_2_RU;
-	    //ACTION METHODS
-	    public void clickOnTimeIcon_2_RU() {
-	    	try {
-	    		 Thread.sleep(1000);
-	    		 action.moveToElement(iconTime_2_RU).click().build().perform();
-	    		 Thread.sleep(1000);
-	    		 //iconTime_2_RU.click();
-	    		 logger.info("Click on time icon 2");
-	    	}catch(Exception e) {
-	    		 logger.info(e.getMessage());
-	    	}
-	    }
-	    //HOURS LIST ADDRESS	
-	    @FindBy(xpath = "//div[@role='listbox']//span")
-		@CacheLookup
-		public List <WebElement> listHours_RU;
-	    
-	    //MINUTES LIST ADDRESS
-	    @FindBy(xpath = "//div[contains(@role,'listbox')]//span")
-		@CacheLookup
-		public List <WebElement> listMinutes_RU;
+ 
+  //==========START==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS=====USE THIS METHODS IF AND ONLY IF TIME PICKRE FAILED TO PICK THE TIME======//
+	  //START AND END TIME REQUIRED MESSAGES ADDRESS
+	  		String endTimeRequired_RU = "//p[contains(.,'End time is required')]";
+	  		String startTimeRequired_RU = "//p[contains(.,'Start time is required')]";
+	  		
+	  		//START AND END TIME PLACE HOLDER ADDRESS
+	  		String textTimePlaceHolder_1_RU = "(//input[@placeholder='hh:mm aa'])[1]";
+	  		String textTimePlaceHolder_2_RU = "(//input[@placeholder='hh:mm aa'])[2]";
+	  		
+	  		//TO CONFFIRM THE END TIME REQUIRED MESSAGE
+	  		public boolean isDisplayedEndTimeRequired_RU() {
+	  			WebElement endTimeMsg = driver.findElement(By.xpath(endTimeRequired_RU));
+	  			return endTimeMsg.isDisplayed();
+	  		}
+	  		
+	  		//TO CONFFIRM THE START TIME REQUIRED MESSAGE
+	  		public boolean isDisplayedStartTimeRequired_RU() {
+	  			WebElement startTimeMsg = driver.findElement(By.xpath(startTimeRequired_RU));
+	  			return startTimeMsg.isDisplayed();
+	  		}
+	  		
+	  		//TO SET END TIME WITHOUT USING END TIME PICKER
+	  		public void setEndTimeWithoutUsingTimePicker_RU(WebDriver driver, String hours, String minutes, String AmPm) throws InterruptedException
+	  		{
+	  			WebElement endTimePlaceHolder = driver.findElement(By.xpath(textTimePlaceHolder_2_RU));
+	  			endTimePlaceHolder.sendKeys(Keys.CONTROL, "a");      // Select all text
+	  			endTimePlaceHolder.sendKeys(Keys.CONTROL, "DELETE"); // Delete selected text
 
-	    //AM BUTTON ADDRESS 
-	    @FindBy(xpath = "(//span[contains(@class,'MuiTouchRipple-root')])[11]")
-		@CacheLookup
-		public WebElement btnAM_RU;
-	   
-	    //PM BUTTON ADDRESS
-	    @FindBy(xpath = "(//span[contains(@class,'MuiTouchRipple-root')])[12]")
-		@CacheLookup
-		public WebElement btnPM_RU;
-	   
-	    //OK BUTTON ADDRESS
-	    @FindBy(xpath = "//button[normalize-space()='OK']")
-		@CacheLookup
-		public WebElement btnOK_RU;
+	  			logger.info("hours: "+hours);
+	  			endTimePlaceHolder.sendKeys(hours);
+	  			Thread.sleep(300);
+	  			endTimePlaceHolder.sendKeys(minutes);
+	  			logger.info("minutes: "+minutes);
+	  			Thread.sleep(300);
+	  			endTimePlaceHolder.sendKeys(AmPm);
+	  			logger.info("AmPm: "+AmPm);
+	  			Thread.sleep(300);
+	  			logger.info("Entered end time");
+	  		}
+	  		
+	  		//TO SET START TIME WITHOUT USING TIME PICKER
+	  		public void setStartTimeWithoutUsingTimePicker_RU(WebDriver driver, String hours, String minutes, String AmPm) throws InterruptedException
+	  		{
+	  			WebElement endTimePlaceHolder = driver.findElement(By.xpath(textTimePlaceHolder_2_RU));
+	  			endTimePlaceHolder.sendKeys(Keys.CONTROL, "a");      // Select all text
+	  			endTimePlaceHolder.sendKeys(Keys.CONTROL, "DELETE"); // Delete selected text
+
+	  			logger.info("hours: "+hours);
+	  			endTimePlaceHolder.sendKeys(hours);
+	  			Thread.sleep(300);
+	  			endTimePlaceHolder.sendKeys(minutes);
+	  			logger.info("minutes: "+minutes);
+	  			Thread.sleep(300);
+	  			endTimePlaceHolder.sendKeys(AmPm);
+	  			logger.info("AmPm: "+AmPm);
+	  			Thread.sleep(300);
+	  			logger.info("Entered end time");
+	  		}
+
+	  	  //==========END==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS=====USE THIS METHODS IF AND ONLY IF TIME PICKRE FAILED TO PICK THE TIME======//
+  		
+	  		//TO SELECT DATE IF IT IS SECONDS ONE DATE AND DATE FAILED TO PICK THE DATE
+	  		String endDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[2]";
+	  		public void setSecondsDateWithoutUsingDatePicker_RU(String leaveEndDate) throws InterruptedException {
+	  			WebElement endDate = driver.findElement(By.xpath(endDateHolder_RU));
+	  			endDate.sendKeys(Keys.CONTROL,"a");
+	  			endDate.sendKeys(Keys.DELETE);
+	  			String[] date = leaveEndDate.split(" ");
+	  			String dt = date[0];
+	  			String mt = date[1];
+	  			String yr = date[2];
+	  			int x = 0;
+	  			String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+	  			for(String mon : months)
+	  			{	x++;
+	  				if(mon.equals(mt)){
+	  					break;
+	  				}
+	  			}
+	  			String xAsString = String.valueOf(x);
+	  			endDate.sendKeys(xAsString);
+	  			Thread.sleep(200);
+	  			endDate.sendKeys(dt);
+	  			Thread.sleep(200);
+	  			endDate.sendKeys(yr);
+	  			Thread.sleep(200);
+	  			logger.info("Entered second one date");
+	  			
+	  		}
   
-  //==========END==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS===========//
-
+	  		
 
 }
 

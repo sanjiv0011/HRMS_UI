@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_Asserts_CreateAssetsTypes;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LoginPage;
@@ -36,8 +40,8 @@ public class TC_AssetsTypes extends BaseClass {
 	}
 		
 	//TO CREATE ASSESTS TYPES	
-	@Test(priority =2 , dependsOnMethods = {"test_Login"})
-	public void test_CreateAssetsTypes() throws InterruptedException
+	@Test(priority =2 , dependsOnMethods = "test_Login", dataProvider = fileNameOnly)
+	public void test_CreateAssetsTypes(String assetTypeName, String assetTypeCode, String assetTypeDescription) throws InterruptedException
 	{	// to create new organization
 		acat = callMeBeforePerformAnyAction();
 		hp = acat.createAssetType(assetTypeName, assetTypeCode, assetTypeDescription);
@@ -45,8 +49,8 @@ public class TC_AssetsTypes extends BaseClass {
 		Thread.sleep(2000);
 	}
 	
-	//ARCHIVE JOB TITLES
-	@Test(priority = 3 , dependsOnMethods = {"test_Login"})
+	//ARCHIVE ASSESTS TYPES
+	//@Test(priority = 3 , dependsOnMethods = "test_Login")
 	public void test_ArchiveAssetsTypes()throws InterruptedException
 	{
 		acat = callMeBeforePerformAnyAction();
@@ -55,8 +59,8 @@ public class TC_AssetsTypes extends BaseClass {
 		Thread.sleep(2000);
 	}
 	
-	//RESTORE JOB TITLES
-	@Test(priority = 4, dependsOnMethods = {"test_Login"})
+	//RESTORE ASSESTS TYPES
+	//@Test(priority = 4, dependsOnMethods = "test_Login")
 	public void test_RestoreAssetsTypes()throws InterruptedException
 	{
 		acat = callMeBeforePerformAnyAction();
@@ -66,8 +70,8 @@ public class TC_AssetsTypes extends BaseClass {
 	}
 		
 	
-	//EDITJOB TITLES
-	@Test(priority = 5 , dependsOnMethods = {"test_Login"})
+	//EDIT ASSESTS TYPES
+	//@Test(priority = 5 , dependsOnMethods = "test_Login")
 	public void test_EditAssetsTypes()throws InterruptedException
 	{
 		acat = callMeBeforePerformAnyAction();
@@ -76,7 +80,7 @@ public class TC_AssetsTypes extends BaseClass {
 	}
 	
 	//TO PERFORM THE LOGOUT
-	@Test(priority = 10, dependsOnMethods = {"test_Login"})
+	@Test(priority = 10, dependsOnMethods = "test_Login")
 	public void test_Logout() throws InterruptedException
 	{	//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 		hp.clickOniconHomeImage();
@@ -98,4 +102,18 @@ public class TC_AssetsTypes extends BaseClass {
 		return new PO_Asserts_CreateAssetsTypes(driver);	
 	}
 
+	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly = "TC_AssetsTypes";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly)
+  	public String[][] dataProvider() throws IOException {
+  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+  		return loginData;
+  	}
+  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+  	
 }

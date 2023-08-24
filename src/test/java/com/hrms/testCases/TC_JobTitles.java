@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_JobTitles;
 import com.hrms.pageObject.PO_LoginPage;
@@ -35,8 +39,8 @@ public class TC_JobTitles extends BaseClass {
 	}
 	
 	//TO CREATE THE  JOB TITLES 
-	@Test(priority =2 , dependsOnMethods = {"test_Login"})
-	public void test_CreateCleint() throws InterruptedException
+	@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+	public void test_CreateCleint(String jobTitle, String jobDescription) throws InterruptedException
 	{		
 		jt = callMeBeforePerformAnyAction();
 		hp = jt.createJobTitle(jobTitle, jobDescription);
@@ -44,7 +48,7 @@ public class TC_JobTitles extends BaseClass {
 	}
 	
 	//ARCHIVE JOB TITLES
-	@Test(priority = 3 , dependsOnMethods = {"test_Login"})
+	//@Test(priority = 3 , dependsOnMethods = {"test_Login"})
 	public void test_ArchiveJobTitles()throws InterruptedException
 	{
 		jt = callMeBeforePerformAnyAction();
@@ -53,7 +57,7 @@ public class TC_JobTitles extends BaseClass {
 	}
 	
 	//RESTORE JOB TITLES
-	@Test(priority = 4, dependsOnMethods = {"test_Login"})
+	//@Test(priority = 4, dependsOnMethods = {"test_Login"})
 	public void test_RestoreJobTitles()throws InterruptedException
 	{
 		jt = callMeBeforePerformAnyAction();
@@ -63,7 +67,7 @@ public class TC_JobTitles extends BaseClass {
 		
 	
 	//EDITJOB TITLES
-	@Test(priority = 5 , dependsOnMethods = {"test_Login"})
+	//@Test(priority = 5 , dependsOnMethods = {"test_Login"})
 	public void test_EditJobTitles()throws InterruptedException
 	{
 		jt = callMeBeforePerformAnyAction();
@@ -73,7 +77,7 @@ public class TC_JobTitles extends BaseClass {
 	
 	
 	//TO PERFORM THE LOGOUT
-	@Test(priority = 10, dependsOnMethods = {"test_Login"})
+	//@Test(priority = 10, dependsOnMethods = {"test_Login"})
 	public void test_Logout() throws InterruptedException
 	{	//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 		hp.clickOniconHomeImage();
@@ -96,5 +100,19 @@ public class TC_JobTitles extends BaseClass {
 		return new PO_JobTitles(driver);	
 	}
 
+	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly = "TC_JobTitles";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly)
+  	public String[][] dataProvider() throws IOException {
+  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+  		return loginData;
+  	}
+  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+  	
 
 }

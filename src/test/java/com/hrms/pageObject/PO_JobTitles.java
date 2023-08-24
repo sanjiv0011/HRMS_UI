@@ -108,7 +108,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 		logger.info("Archive job titles methods called");
     	
     	//METHODS TO ARCHIVE THE JOB TITLES
-		Action_Archive.archive(jobTitle, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
+		Action_Archive.archive(jobTitle, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "cofirmMessage");
     	 logger.info("Return back inside archive job titles method");
     	 return new PO_HomePage(driver);
 	}
@@ -120,7 +120,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 		logger.info("Restore job titles methods called");
     	
     	//METHODS TO RESTORE THE JOB TITLES 
-		Action_Restore.restore(jobTitle, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "cofirmMessage");
+		Action_Restore.restore(jobTitle, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "cofirmMessage");
     	 logger.info("Return back inside restore job titles method");
     	 return new PO_HomePage(driver);
 	}
@@ -131,15 +131,15 @@ public class PO_JobTitles extends ReUseAbleElement{
 		logger.info("Entered edit job titles methods");
 		Thread.sleep(2000);
 		
-		searchBox.sendKeys(jobTitlesSearchKey,Keys.ENTER);
+		searchBox_RU.sendKeys(jobTitlesSearchKey,Keys.ENTER);
 		logger.info("Searched searchKeys");
 		Thread.sleep(5000);
 		
-		btnAction.click();
-		logger.info("Clicked on  button btnAction");
+		btnAction_RU.click();
+		logger.info("Clicked on  button btnAction_RU");
 		Thread.sleep(2000);
 		
-		actionEdit.click();
+		actionEdit_RU.click();
 		logger.info("Clicked on  button edit");
 		Thread.sleep(2000);
 		
@@ -157,7 +157,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 		logger.info("Enterd leave types description");
 		Thread.sleep(1000);
 		
-		btnSaveChanges.click();
+		btnSaveChanges_RU.click();
 		logger.info("clicked on Create button");
 		Thread.sleep(100);
 		

@@ -142,7 +142,7 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		Thread.sleep(2000);
 		
     	//METHODS TO ARCHIVE THE LEAVE BALNACE 
-		Action_Archive.archive(assetsType, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
+		Action_Archive.archive(assetsType, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "cofirmMessage");
     	 logger.info("Return back inside archive assets method");
     	 return new PO_HomePage(driver);
 	}
@@ -159,7 +159,7 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		Thread.sleep(2000);
 		
     	//METHODS TO ARCHIVE THE LEAVE BALNACE 
-		Action_Restore.restore(assetsType, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "cofirmMessage");
+		Action_Restore.restore(assetsType, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "cofirmMessage");
     	 logger.info("Return back inside restore assets method");
     	 return new PO_HomePage(driver);
 	}
@@ -175,15 +175,15 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		logger.info("Click on Create Assert Type button");
 		Thread.sleep(2000);
 		
-		searchBox.sendKeys(assetTypeSearchKey,Keys.ENTER);
+		searchBox_RU.sendKeys(assetTypeSearchKey,Keys.ENTER);
 		logger.info("Searched searchKeys");
 		Thread.sleep(5000);
 		
-		btnAction.click();
-		logger.info("Clicked on  button btnAction");
+		btnAction_RU.click();
+		logger.info("Clicked on  button btnAction_RU");
 		Thread.sleep(2000);
 		
-		actionEdit.click();
+		actionEdit_RU.click();
 		logger.info("Clicked on  button edit");
 		Thread.sleep(2000);
 		
@@ -207,7 +207,7 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		logger.info("Enterd leave types description");
 		Thread.sleep(500);
 		
-		btnSaveChanges.click();
+		btnSaveChanges_RU.click();
 		logger.info("clicked on Create button");
 		Thread.sleep(300);
 		return new PO_HomePage(driver);

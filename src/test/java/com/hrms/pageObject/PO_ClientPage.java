@@ -110,7 +110,7 @@ public class PO_ClientPage extends ReUseAbleElement {
 	{	logger.info("Archive Client methods called");
     	
     	//METHODS TO ARCHIVE THE CLEINT 
-		Action_Archive.archive(clientName, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
+		Action_Archive.archive(clientName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "cofirmMessage");
     	 logger.info("Return back inside archive Client method");
     	 return new PO_HomePage(driver);
 	}
@@ -121,7 +121,7 @@ public class PO_ClientPage extends ReUseAbleElement {
 	{	logger.info("Restore Client methods called");
     	
     	//METHODS TO ARCHIVE THE CLIENT
-		Action_Restore.restore(clientName, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "cofirmMessage");
+		Action_Restore.restore(clientName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "cofirmMessage");
     	 logger.info("Return back inside restore Client method");
     	 return new PO_HomePage(driver);
 	}
@@ -131,15 +131,15 @@ public class PO_ClientPage extends ReUseAbleElement {
 	{	logger.info("Entered edit job titles methods");
 		Thread.sleep(2000);
 		
-		searchBox.sendKeys(clientNameSearchKey,Keys.ENTER);
+		searchBox_RU.sendKeys(clientNameSearchKey,Keys.ENTER);
 		logger.info("Searched searchKeys");
 		Thread.sleep(5000);
 		
-		btnAction.click();
-		logger.info("Clicked on  button btnAction");
+		btnAction_RU.click();
+		logger.info("Clicked on  button btnAction_RU");
 		Thread.sleep(2000);
 		
-		actionEdit.click();
+		actionEdit_RU.click();
 		logger.info("Clicked on  button edit");
 		Thread.sleep(2000);
 		
@@ -157,7 +157,7 @@ public class PO_ClientPage extends ReUseAbleElement {
 		logger.info("Enterd leave types description");
 		Thread.sleep(1000);
 		
-		btnSaveChanges.click();
+		btnSaveChanges_RU.click();
 		logger.info("clicked on Create button");
 		Thread.sleep(100);
 		

@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_HomePage;
 
 import com.hrms.pageObject.PO_LoginPage;
@@ -27,16 +31,15 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	
 	//TO PERFORM THE LOGIN
 	@Test(priority = 1)
-	public void test_Login() throws InterruptedException
-	{
-		//to perform login 
+	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
 		Thread.sleep(5000);
 	}
 			
-	@Test(priority =2)
-	public void test_CreateLeaveType() throws InterruptedException
+	//TO CREATE LEAVE TYPES
+	@Test(priority =2, dependsOnMethods = {"test_Login"} , dataProvider = fileNameOnly)
+	public void test_CreateLeaveType(String leaveTypeName, String leaveTypeDescription) throws InterruptedException
 	{
 		mlt = callMeBeforePerformAnyAction();
 		hp = mlt.createLeaveType(leaveTypeName, leaveTypeDescription);
@@ -45,7 +48,7 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	
 	
 	//ACTIVATE LEAVE TYPES
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void test_ActivateLeaveTypes()throws InterruptedException
 	{
 		mlt = callMeBeforePerformAnyAction();
@@ -54,7 +57,7 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	}
 	
 	//DEACTIVATE LEAVE TYPES
-	@Test(priority = 4)
+	//@Test(priority = 4)
 	public void test_DeActivateLeaveTypes()throws InterruptedException
 	{
 		mlt = callMeBeforePerformAnyAction();
@@ -63,7 +66,7 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	}
 	
 	//EDIT LEAVE TYPES
-	@Test(priority = 4)
+	//@Test(priority = 4)
 	public void test_EditLeaveTypes()throws InterruptedException
 	{
 		mlt = callMeBeforePerformAnyAction();
@@ -72,7 +75,7 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	}
 	
 	//DELETE LEAVE TYPES
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	public void test_DeleteLeaveTypes()throws InterruptedException
 	{
 		mlt = callMeBeforePerformAnyAction();
@@ -109,5 +112,19 @@ public class TC_ManageLeaveTypes extends BaseClass {
 		return new PO_ManageLeaveTypes(driver);	
 	}
 
+	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly = "TC_ManageLeaveTypes";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly)
+  	public String[][] dataProvider() throws IOException {
+  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+  		return loginData;
+  	}
+  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+  	
 
 }

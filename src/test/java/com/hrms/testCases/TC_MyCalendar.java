@@ -34,20 +34,20 @@ public class TC_MyCalendar extends BaseClass{
 	}
 	
 	//TO VISIT AND CHECK MY CALLENDAR MONTH VIEW
-	@Test(priority = 2, dependsOnMethods = {"test_Login"})
+	//@Test(priority = 2, dependsOnMethods = {"test_Login"})
 	public void test_VisitMyCalendarContentMonthWiseView() throws InterruptedException
 	{	mcp = callMeBeforePerformAnyAction();
 		hp = mcp.clickAndViewMyCalendarElementMonthView(driver, dateValue, dateContent);
 		logger.info("test_VisitMyCalendarContent call done");
 	}
 	
-//	//TO VISIT AND CHECK MY CALLENDAR MONTH VIEW
-//	@Test(priority = 2, dependsOnMethods = {"test_Login"})
-//	public void test_VisitMyCalendarContentDayWiseView() throws InterruptedException
-//	{	mcp = callMeBeforePerformAnyAction();
-//		hp = mcp.clickAndViewMyCalendarElementDayWiseView(driver, dateValue, dateContent);
-//		logger.info("test_VisitMyCalendarContentDayWiseView call done");
-//	}
+	//TO VISIT AND CHECK MY CALLENDAR DAY WISE VIEW
+	@Test(priority = 3, dependsOnMethods = {"test_Login"})
+	public void test_VisitMyCalendarContentDayWiseView() throws InterruptedException
+	{	mcp = callMeBeforePerformAnyAction();
+		hp = mcp.clickAndViewMyCalendarElementDayView(driver, dateValue, dateContent);
+		logger.info("test_VisitMyCalendarContentDayWiseView call done");
+	}
 	
 	//TO LOGOUT
 	@Test(priority = 10, dependsOnMethods = {"test_Login"})

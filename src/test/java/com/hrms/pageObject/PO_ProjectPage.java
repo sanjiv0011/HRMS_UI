@@ -198,9 +198,10 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   		selectClient(clientName);	//TO SELECT THE CLIENT
 	   		selectDomain(domainName);	//TO SELECT THE DOMAIN
 	   		selectStartDate(projectStartDate, 1);	//SET SELECT THE PROJECT START DATE 
-	   		selectEndDate(projectEndDate, 2);	//SET SELECT THE PROJECT END DATE 
+	   		setSecondsDateWithoutUsingDatePicker_RU(projectEndDate); 	//SET SELECT THE PROJECT END DATE 
 	   		selectTechnology(technologyName);	//TO SELECT THE TECHNOLOGY
 	   		ruae.clickOnCreateButton_RU();	//TO CLICK ON THE CREATE BUTTON AFTER FILLING DETAILS
+	   		//TO TRY ANOTHER WAY IN CASE TIME PICKER FAILED TO SET END TIME
 		    return new PO_HomePage(driver);	//TO RETURN THE DRIVER AT HOME PAGE
 	   }
 	   
@@ -210,7 +211,7 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	       logger.info("Archive project method called");
 
 	       // METHODS TO ARCHIVE THE PROJECT
-	       Action_Archive.archive(projectName, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "confirmMessage");
+	       Action_Archive.archive(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "confirmMessage");
 	       logger.info("Returned inside archive project method");
 	       return new PO_HomePage(driver);
 	   }
@@ -221,7 +222,7 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	       logger.info("Restore project method called");
 
 	       // METHODS TO RESTORE THE PROJECT
-	       Action_Restore.restore(projectName, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "confirmMessage");
+	       Action_Restore.restore(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "confirmMessage");
 	       logger.info("Returned inside restore project method");
 	       return new PO_HomePage(driver);
 	   }

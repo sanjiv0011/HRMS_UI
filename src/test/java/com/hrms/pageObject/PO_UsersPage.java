@@ -218,7 +218,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		       logger.info("Archive user method called");
 	
 		       // METHODS TO ARCHIVE THE USER
-		       Action_Archive.archive(uname, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "confirmMessage");
+		       Action_Archive.archive(uname, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "confirmMessage");
 		       logger.info("Returned inside archive user method");
 		       return new PO_HomePage(driver);
 		   	}
@@ -229,7 +229,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		       logger.info("Restore user method called");
 
 		       // METHODS TO RESTORE THE USER
-		       Action_Restore.restore(uname, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "confirmMessage");
+		       Action_Restore.restore(uname, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "confirmMessage");
 		       logger.info("Returned inside restore user method");
 		       return new PO_HomePage(driver);
 		   }
@@ -240,7 +240,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 				logger.info("Activate user methods called");
 		    	
 		    	//METHODS TO ACTIVATE THE USER
-				Action_Activate.activate(uname, searchBox, inactiveLabel, btnAction, actionActivateUser, btnYes, "cofirmMessage");
+				Action_Activate.activate(uname, searchBox_RU, inactiveLabel, btnAction_RU, actionActivateUser, btnYes, "cofirmMessage");
 		    	 logger.info("Return back inside activate user method");
 		    	 return new PO_HomePage(driver);
 			}
@@ -252,7 +252,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 				logger.info("De-Activate user methods called");
 		    	
 		    	//METHODS TO DEACTIVATE THE USER 
-				Action_DeActivate.deactivate(uname, searchBox, activeLabel, btnAction, actionDeactivateUser, btnYes, "cofirmMessage");
+				Action_DeActivate.deactivate(uname, searchBox_RU, activeLabel, btnAction_RU, actionDeactivateUser, btnYes, "cofirmMessage");
 		    	 logger.info("Return back inside deactivate user method");
 		    	 return new PO_HomePage(driver);
 			}

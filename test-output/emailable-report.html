@@ -9,37 +9,11 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">HRMS</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">72,642</td><td></td><td></td></tr>
+<tr><td><a href="#t0">HRMS</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">79,699</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HRMS &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.hrms.testCases.TC_DailyUpdates</td><td><a href="#m0">test_Logout</a></td><td rowspan="1">1692711797295</td><td rowspan="1">9224</td></tr><tr><th colspan="4">HRMS &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.hrms.testCases.TC_DailyUpdates</td><td><a href="#m1">test_CreateDailyUpdates</a></td><td rowspan="1">1692711741563</td><td rowspan="1">55723</td></tr><tr class="passedeven"><td><a href="#m2">test_Login</a></td><td rowspan="1">1692711738428</td><td rowspan="1">2324</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HRMS &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.hrms.testCases.TC_Assets</td><td><a href="#m0">test_CreateAssets</a></td><td rowspan="1">1692855702977</td><td rowspan="1">71869</td></tr><tr class="passedeven"><td><a href="#m1">test_Login</a></td><td rowspan="1">1692855699703</td><td rowspan="1">2356</td></tr></tbody>
 </table>
-<h2>HRMS</h2><h3 id="m0">com.hrms.testCases.TC_DailyUpdates#test_Logout</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=116.0.5845.97)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c35942cf19885201035e0a55e6fcd30f, clickElement {id=5EDD36C1D739D20313DE857D7458E634_element_179}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.97, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54864}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54864/devtoo..., se:cdpVersion: 116.0.5845.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c35942cf19885201035e0a55e6fcd30f)] -&gt; xpath: //img[@alt=&apos;Image&apos;]]
-Session ID: c35942cf19885201035e0a55e6fcd30f
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
-	at com.hrms.pageObject.PO_HomePage.clickOniconHomeImage(PO_HomePage.java:210)
-	at com.hrms.pageObject.PO_HomePage.Logout(PO_HomePage.java:238)
-	at com.hrms.testCases.TC_DailyUpdates.test_Logout(TC_DailyUpdates.java:78)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.hrms.testCases.TC_DailyUpdates#test_CreateDailyUpdates</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th><th>Parameter #9</th></tr><tr class="param stripe"><td>Thursday, August 17, 2023</td><td>5</td><td>55</td><td>PM</td><td>9</td><td>20</td><td>AM</td><td>YourDreamHouse</td><td>time pass</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.hrms.testCases.TC_DailyUpdates#test_Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>HRMS</h2><h3 id="m0">com.hrms.testCases.TC_Assets#test_CreateAssets</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th><th>Parameter #9</th><th>Parameter #10</th><th>Parameter #11</th><th>Parameter #12</th><th>Parameter #13</th><th>Parameter #14</th><th>Parameter #15</th></tr><tr class="param stripe"><td>Bajaj</td><td>Geyser</td><td>Electric geyser </td><td>MODL54646</td><td>jonly</td><td>dove</td><td>2</td><td>25 July 2026</td><td>20 March 2021 </td><td>20 August 2023</td><td>INIVD8465543</td><td>https:\\bajaj</td><td>active</td><td>new</td><td>on-going</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.hrms.testCases.TC_Assets#test_Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

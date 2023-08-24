@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_ClientPage;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_JobTitles;
@@ -18,7 +22,8 @@ public class TC_Cleint extends BaseClass {
 	public PO_LoginPage lgn;
 	public PO_HomePage hp;
 	public PO_ClientPage cp;
-	
+
+  //VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
 	String cleintName = "AMR Reseach";
 	String clientDescription = faker.company().profession();
 	String clientSearchKey = cleintName;
@@ -36,10 +41,10 @@ public class TC_Cleint extends BaseClass {
 	}
 	
 	//TO CREATE CLIENT
-	@Test(priority =2 , dependsOnMethods = {"test_Login"})
-	public void test_CreateCleint() throws InterruptedException
+	@Test(priority =2 , dependsOnMethods = {"test_Login"} , dataProvider = fileNameOnly)
+	public void test_CreateCleint(String cleintName, String clientDescriptions ) throws InterruptedException
 	{	cp = callMeBeforePerformAnyAction();
-		hp = cp.createClient(cleintName, clientDescription);
+		hp = cp.createClient(cleintName, clientDescriptions);
 		logger.info("Client created");
 	
 	}
@@ -68,7 +73,7 @@ public class TC_Cleint extends BaseClass {
 	public void test_EditClient()throws InterruptedException
 	{
 		cp = callMeBeforePerformAnyAction();
-		hp = cp.editClient(clientSearchKey,newClientDescription, newCleintName);
+		hp = cp.editClient(cleintName,clientDescription, cleintName);
 		logger.info("Edit client call done");
 	}
 	
@@ -95,6 +100,21 @@ public class TC_Cleint extends BaseClass {
 		//TO ACCESS JOB TITLES PAGE OBJECTS
 		return new PO_ClientPage(driver);	
 	}
+	
+	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+  	public final String fileNameOnly = "TC_Cleint";
+  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+  	public DataProviders dp =  new DataProviders();
+  	//DATA PROVIDER
+  	@DataProvider(name = fileNameOnly)
+  	public String[][] dataProvider() throws IOException {
+  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+  		return loginData;
+  	}
+  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+  	
 
 
 }

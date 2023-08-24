@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LoginPage;
 import com.hrms.pageObject.PO_UserPermissions;
@@ -21,7 +25,8 @@ public class TC_Users extends BaseClass{
 		public PO_UsersPage up;
 		public PO_UserPermissions userPermissions;
 		public Faker faker = new Faker();
-		
+
+		//VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
 		//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
 		String uname = "mariasoma";
 		String passwordToCreate = faker.internet().password(8, 10, true, true, true);
@@ -54,8 +59,8 @@ public class TC_Users extends BaseClass{
 		}
 		
 		//TO CREATE USER
-		//@Test(priority =2 , dependsOnMethods = {"test_Login"})
-		public void test_CreateUser() throws InterruptedException {
+		@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+		public void test_CreateUser(String uname, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.createUser(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);
 			logger.info("User created");		
@@ -143,5 +148,20 @@ public class TC_Users extends BaseClass{
 			//TO ACCESS USERS PAGE OBJECTS
 			return new PO_UsersPage(driver);	
 		}
+		
+		//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+	  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+	  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+	  	public final String fileNameOnly = "TC_Users";
+	  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+	  	public DataProviders dp =  new DataProviders();
+	  	//DATA PROVIDER
+	  	@DataProvider(name = fileNameOnly)
+	  	public String[][] dataProvider() throws IOException {
+	  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+	  		return loginData;
+	  	}
+	  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+	  	
 
 }

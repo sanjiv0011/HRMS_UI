@@ -4,12 +4,14 @@ import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -37,9 +39,9 @@ public class PO_HomePage extends ReUseAbleElement{
 	}
 	
 	//Page objects
-	@FindBy(xpath = "//div[@class='MuiBox-root css-12an206']")
-	@CacheLookup
-	public WebElement btnSystemManager;
+//	@FindBy(xpath = "//div[@class='MuiBox-root css-12an206']")
+//	@CacheLookup
+//	public WebElement btnSystemManager;
 	
 	@FindBy(xpath = "//a[@href=\"/organization\"]")
 	@CacheLookup
@@ -69,9 +71,9 @@ public class PO_HomePage extends ReUseAbleElement{
 	@CacheLookup
 	public WebElement tabAssets;
 	
-	@FindBy(xpath = "//span[normalize-space()='My Calendar']")
-	@CacheLookup
-	public WebElement tabMyCalender;
+//	@FindBy(xpath = "//span[normalize-space()='My Calendar']")
+//	@CacheLookup
+	public String tabMyCalender = "//span[normalize-space()='My Calendar']";
 	
 	@FindBy(xpath = "//a[@href=\"/job-title\"]")
 	@CacheLookup
@@ -93,10 +95,6 @@ public class PO_HomePage extends ReUseAbleElement{
 	@FindBy(xpath = "//*[name()='path' and contains(@d,'M3 18h18v-')]")
 	@CacheLookup
 	public WebElement iconUserLogged;
-	
-	@FindBy(xpath = "//img[@alt='Image']")
-	@CacheLookup
-	public WebElement iconHomeImage;
 	
 	@FindBy(xpath = "//li[normalize-space()='My Profile']")
 	@CacheLookup
@@ -122,8 +120,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	
 	public void clickOnbtnSystemManager() throws InterruptedException 
 	{
-		btnSystemManager.click();
-		Thread.sleep(1000);
+		clickOnDropdownIconLoggedUser_RU();
 		logger.info("Clicked on system manager button");
 	}
 	
@@ -171,7 +168,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	}
 	
 	public void clickOntabMyCalendar() throws InterruptedException {
-		tabMyCalender.click();
+		driver.findElement(By.xpath(tabMyCalender)).click();
 		Thread.sleep(2000);
 		logger.info("Clicked on tabMyCalender button");
 	}
@@ -179,7 +176,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	public void clickOntabJobTitle() throws InterruptedException {
 		tabJobTitle.click();
 		Thread.sleep(2000);
-		logger.info("Clicked on tabMyCalender button");
+		logger.info("Clicked on tabJobTitle button");
 	}
 	
 	public void clickOntabManageLeaveTypes() throws InterruptedException 
@@ -206,11 +203,6 @@ public class PO_HomePage extends ReUseAbleElement{
 		Thread.sleep(1000);
 		logger.info("Clicked on the Icon user logged");
 	}
-	public void clickOniconHomeImage() throws InterruptedException {
-		iconHomeImage.click();
-		Thread.sleep(1000);
-		logger.info("Clicked on iconHomeImage button");
-	}
 	
 	public PO_UserProfilePage clickOndropdownMyProfile() throws InterruptedException {
 		dropdownMyProfile.click();
@@ -232,11 +224,22 @@ public class PO_HomePage extends ReUseAbleElement{
 		logger.info("Clicked on address HOME button");
 	}
 	
+	
+	//TO CLICK ON HOME LOGO 
+	public String iconHomeImage_RU = "//img[@alt='Image']";
+	public void clickOniconHomeImage() throws InterruptedException {
+		WebElement iconHomeLogo = driver.findElement(By.xpath(iconHomeImage_RU));
+		wait.until(ExpectedConditions.elementToBeClickable(iconHomeLogo));
+		iconHomeLogo.click();
+		logger.info("Clicked on iconHomeImage button");
+	}
+		
+		
+		
 	// TO LOGOUT
 	public PO_LoginPage Logout() throws InterruptedException
-	{	Thread.sleep(2000);
+	{	
 		clickOniconHomeImage();
-		Thread.sleep(3000);
 		clickOnbtnSystemManager();
 		clickOndropdownLogout();
 		clickOnYesButton_RU();

@@ -205,7 +205,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
    	public PO_HomePage archiveOrganization(String orgName) throws InterruptedException {
        logger.info("Archive organization method called");
        // METHODS TO ARCHIVE THE ORGANIZATION
-       Action_Archive.archive(orgName, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "confirmMessage");
+       Action_Archive.archive(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "confirmMessage");
        logger.info("Returned inside archive organization method");
        isOrganizationArchiveSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGESS
        return new PO_HomePage(driver);
@@ -216,7 +216,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
    public PO_HomePage restoreOrganization(String orgName) throws InterruptedException {
        logger.info("Restore organization method called");
        // METHODS TO RESTORE THE ORGANIZATION
-       Action_Restore.restore(orgName, searchBox, archivedLabel, btnAction, actionRestore, btnYes, "confirmMessage");
+       Action_Restore.restore(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "confirmMessage");
        logger.info("Returned inside restore organization method");
        isOrganizationRestoreSuccessMessageDisplayed(); //TO VARIFIRY CONFIRMATION MESSAGESS
        return new PO_HomePage(driver);
@@ -227,7 +227,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	public PO_HomePage activateOrganization(String orgName) throws InterruptedException {
 		logger.info("Activate organization methods called");
     	//METHODS TO ACTIVATE THE ORGANIZATION
-		Action_Activate.activate(orgName, searchBox, inactiveLabel, btnAction, actionActivate, btnYes, "cofirmMessage");
+		Action_Activate.activate(orgName, searchBox_RU, inactiveLabel, btnAction_RU, actionActivate, btnYes, "cofirmMessage");
     	 logger.info("Return back inside activate organization method");
     	 isOrganizationActivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
     	 return new PO_HomePage(driver);
@@ -239,7 +239,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	public PO_HomePage deactivateOrganization(String orgName) throws InterruptedException {
 		logger.info("De-Activate organization methods called");
     	//METHODS TO DEACTIVATE THE ORGANIZATION 
-		Action_DeActivate.deactivate(orgName, searchBox, activeLabel, btnAction, actionDeactivate, btnYes, "cofirmMessage");
+		Action_DeActivate.deactivate(orgName, searchBox_RU, activeLabel, btnAction_RU, actionDeactivate, btnYes, "cofirmMessage");
     	 logger.info("Return back inside deactivate organization method");
     	 isOrganizationDeactivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
     	 return new PO_HomePage(driver);

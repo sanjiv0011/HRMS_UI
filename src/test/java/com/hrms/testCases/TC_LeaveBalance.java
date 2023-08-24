@@ -1,8 +1,12 @@
 package com.hrms.testCases;
 
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_AssetsPage;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LeaveBalance;
@@ -43,8 +47,8 @@ public class TC_LeaveBalance extends BaseClass {
 		}
 		
 		//TO CREATE LEAVE BALANCE
-		@Test(priority =2 /*, dependsOnMethods = {"test_Login"} */)
-		public void test_CreateLeaveBalance() throws InterruptedException
+		@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+		public void test_CreateLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String  leaveBalance) throws InterruptedException
 		{
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.createLeaveBalance(leaveBalanceStartDate, leaveBalanceEndDate, leaveTypeName, leaveBalance);
@@ -103,4 +107,19 @@ public class TC_LeaveBalance extends BaseClass {
 			return new PO_LeaveBalance(driver);
 		}
 
+		
+		//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
+	  	//======START=====DATA READING FORM THE EXCEL FILE======IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME=====//
+	  	//EXCEL FILE NAME ONLY(EXCEL FILE MUST PRESENT ONLY EXCELDATA FOLDER THEN ONLY IT IS ACCESS IT)
+	  	public final String fileNameOnly = "TC_LeaveBalance";
+	  	//CONSTRUCTOR DECLARATIONS TO ACCESS THE DATA PROVIDER METHODs
+	  	public DataProviders dp =  new DataProviders();
+	  	//DATA PROVIDER
+	  	@DataProvider(name = fileNameOnly)
+	  	public String[][] dataProvider() throws IOException {
+	  		String loginData[][] = DataProviders.dataProviderGetDataFromExcelFile(fileNameOnly);
+	  		return loginData;
+	  	}
+	  	//======END=====DATA READING FORM THE EXCEL FILE=====IT IS GENERIC METHOD TO USE THIS ONLY PASS THE EXCEL FILE NAME======//
+	  	
 }

@@ -181,6 +181,7 @@ public class PO_MyCalendarPage extends ReUseAbleElement{
     
     //TO VIEW AND CLICK ON SHOW MORE CONTENT UNDER SHOW MORE BUTTON
     public void clickOnShowMoreContentAndView(String dateContent) throws InterruptedException {
+    	hp.clickOntabMyCalendar();
     	clickOnBtnShowMorePlusSign();
     	for(WebElement ele : path_listShowMoreContent) {
     		if(ele.getText().equals(dateContent))
@@ -218,16 +219,14 @@ public class PO_MyCalendarPage extends ReUseAbleElement{
     	MyCalendarPicker.moveToCorrectDateInCalendarAndClickOnContentMonthView(driver, dateValue,dateContent, path_listCallendarDate, path_listContentDate,path_btnShowMorePlusSign, path_listShowMoreContent);
     	//TO CHECK HIDES CONTENT FIRST CLICK ON THE SHOW MORE PLUS BUTTON
     	logger.info("Return back from the MyCalendar Picker");
-    	Thread.sleep(2000);
-    	hp.clickOniconHomeImage();
-    	Thread.sleep(1000);
-    	hp.clickOntabMyCalendar();
-    	Thread.sleep(2000);
+    	driver.navigate().refresh();
+    	logger.info("Page refreshed");
+    	Thread.sleep(3000);
     	clickOnShowMoreContentAndView(dateContent);
     	return new PO_HomePage(driver);
     }
     
-    //CLICK AND VIEW ELEMENT FROMT THE DAY TAB
+    //CLICK AND VIEW ELEMENT FROMT DAY TAB
     public PO_HomePage clickAndViewMyCalendarElementDayView(WebDriver driver,String dateValue,String dateContent) throws InterruptedException
     {	logger.info("Entered inside clickAndViewMyCalendarElementDayView method");
     	clickOnBtnDay();
