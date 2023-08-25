@@ -12,13 +12,12 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.Action_Activate;
-import projectUtility.Action_Archive;
-import projectUtility.Action_DeActivate;
-import projectUtility.Action_Restore;
-import projectUtility.DatePicker;
-import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
+import com.hrms.projectUtility.Action_Activate;
+import com.hrms.projectUtility.Action_Archive;
+import com.hrms.projectUtility.Action_DeActivate;
+import com.hrms.projectUtility.Action_Restore;
+import com.hrms.projectUtility.DatePicker;
+import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_UsersPage extends ReUseAbleElement{
 	
@@ -189,9 +188,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setLastName(lastName);
 			setEmailAddress(emailAddress);
 			selectUserRole(userRole);
-			
 			ruae.clickOnBtnSaveAndGoToHome_1_RU();
-
 			return new PO_HomePage(driver);
 		}
 		
@@ -208,7 +205,6 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setEmailAddress(emailAddress);
 			selectUserRole(userRole);
 			ruae.clickOnBtnNext_1_RU();
-
 			return new PO_UserPermissions(driver);
 		}
 		
@@ -218,7 +214,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		       logger.info("Archive user method called");
 	
 		       // METHODS TO ARCHIVE THE USER
-		       Action_Archive.archive(uname, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "confirmMessage");
+		       Action_Archive.archive(uname, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
 		       logger.info("Returned inside archive user method");
 		       return new PO_HomePage(driver);
 		   	}
@@ -229,7 +225,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		       logger.info("Restore user method called");
 
 		       // METHODS TO RESTORE THE USER
-		       Action_Restore.restore(uname, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "confirmMessage");
+		       Action_Restore.restore(uname, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
 		       logger.info("Returned inside restore user method");
 		       return new PO_HomePage(driver);
 		   }
@@ -240,7 +236,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 				logger.info("Activate user methods called");
 		    	
 		    	//METHODS TO ACTIVATE THE USER
-				Action_Activate.activate(uname, searchBox_RU, inactiveLabel, btnAction_RU, actionActivateUser, btnYes, "cofirmMessage");
+				Action_Activate.activate(uname, searchBox_RU, inactiveLabel, btnAction_RU, actionActivateUser, btnYes, driver);
 		    	 logger.info("Return back inside activate user method");
 		    	 return new PO_HomePage(driver);
 			}
@@ -252,7 +248,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 				logger.info("De-Activate user methods called");
 		    	
 		    	//METHODS TO DEACTIVATE THE USER 
-				Action_DeActivate.deactivate(uname, searchBox_RU, activeLabel, btnAction_RU, actionDeactivateUser, btnYes, "cofirmMessage");
+				Action_DeActivate.deactivate(uname, searchBox_RU, activeLabel, btnAction_RU, actionDeactivateUser, btnYes, driver);
 		    	 logger.info("Return back inside deactivate user method");
 		    	 return new PO_HomePage(driver);
 			}

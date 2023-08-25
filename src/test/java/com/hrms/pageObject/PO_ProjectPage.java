@@ -12,11 +12,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.Action_Archive;
-import projectUtility.Action_Restore;
-import projectUtility.DatePicker;
-import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
+import com.hrms.projectUtility.Action_Archive;
+import com.hrms.projectUtility.Action_Restore;
+import com.hrms.projectUtility.DatePicker;
+import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_ProjectPage extends ReUseAbleElement {
 	
@@ -211,7 +210,7 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	       logger.info("Archive project method called");
 
 	       // METHODS TO ARCHIVE THE PROJECT
-	       Action_Archive.archive(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "confirmMessage");
+	       Action_Archive.archive(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
 	       logger.info("Returned inside archive project method");
 	       return new PO_HomePage(driver);
 	   }
@@ -222,7 +221,7 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	       logger.info("Restore project method called");
 
 	       // METHODS TO RESTORE THE PROJECT
-	       Action_Restore.restore(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "confirmMessage");
+	       Action_Restore.restore(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
 	       logger.info("Returned inside restore project method");
 	       return new PO_HomePage(driver);
 	   }

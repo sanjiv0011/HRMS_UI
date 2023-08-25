@@ -1,4 +1,4 @@
-package projectUtility;
+package com.hrms.projectUtility;
 
 import java.util.List;
 
@@ -42,10 +42,10 @@ public class DatePicker{
 			{	logger.info("Enter inside date picker methods");
 					
 			    // my date setting
-		        String myDate[] = yourDate.split(" ");
-		        String year = myDate[2];
+		        String myDate[] = yourDate.split("[\\s\\-\\.]");
+		        String year = myDate[0];
 		        String month = myDate[1];
-		        String date = myDate[0];
+		        String date = myDate[2];
 		        logger.info("User given Date: "+date+" Month: "+month+" year: " + year);
 		        
 		        //========START=========TO SELECT DATE PICKER ICON 1,2,3=============//
@@ -162,7 +162,8 @@ public class DatePicker{
 		        	logger.info("Date not selected");
 		        }
 		    }
-
+		
+}
 			
 /*	
     // WAY 1
@@ -390,5 +391,3 @@ public class DatePicker{
 //		
 //	}
 	
-	
-}

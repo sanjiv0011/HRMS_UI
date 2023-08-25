@@ -9,9 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.Action_Archive;
-import projectUtility.Action_Restore;
+import com.hrms.projectUtility.Action_Archive;
+import com.hrms.projectUtility.Action_Restore;
 
 public class PO_JobTitles extends ReUseAbleElement{
 	
@@ -108,7 +107,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 		logger.info("Archive job titles methods called");
     	
     	//METHODS TO ARCHIVE THE JOB TITLES
-		Action_Archive.archive(jobTitle, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "cofirmMessage");
+		Action_Archive.archive(jobTitle, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
     	 logger.info("Return back inside archive job titles method");
     	 return new PO_HomePage(driver);
 	}
@@ -120,7 +119,7 @@ public class PO_JobTitles extends ReUseAbleElement{
 		logger.info("Restore job titles methods called");
     	
     	//METHODS TO RESTORE THE JOB TITLES 
-		Action_Restore.restore(jobTitle, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "cofirmMessage");
+		Action_Restore.restore(jobTitle, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
     	 logger.info("Return back inside restore job titles method");
     	 return new PO_HomePage(driver);
 	}

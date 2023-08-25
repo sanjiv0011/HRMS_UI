@@ -11,9 +11,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.Action_Archive;
-import projectUtility.Action_Restore;
+import com.hrms.projectUtility.Action_Archive;
+import com.hrms.projectUtility.Action_Restore;
 
 public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 	
@@ -142,7 +141,7 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		Thread.sleep(2000);
 		
     	//METHODS TO ARCHIVE THE LEAVE BALNACE 
-		Action_Archive.archive(assetsType, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "cofirmMessage");
+		Action_Archive.archive(assetsType, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
     	 logger.info("Return back inside archive assets method");
     	 return new PO_HomePage(driver);
 	}
@@ -159,7 +158,7 @@ public class PO_Asserts_CreateAssetsTypes extends ReUseAbleElement {
 		Thread.sleep(2000);
 		
     	//METHODS TO ARCHIVE THE LEAVE BALNACE 
-		Action_Restore.restore(assetsType, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "cofirmMessage");
+		Action_Restore.restore(assetsType, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
     	 logger.info("Return back inside restore assets method");
     	 return new PO_HomePage(driver);
 	}

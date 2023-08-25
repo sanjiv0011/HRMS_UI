@@ -1,300 +1,183 @@
-10:50:32.264 [main] INFO  projectUtility.DatePicker - User given Date: 25 Month: July year: 2026
-10:50:34.261 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 1
-10:50:35.384 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-10:50:38.063 [main] INFO  projectUtility.DatePicker - Selected year: 2026
-10:50:39.313 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2026
-10:50:40.414 [main] INFO  projectUtility.DatePicker - Month is selected and name is: July
-10:50:42.173 [main] INFO  projectUtility.DatePicker - Selected date: 25
-10:50:45.582 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Warranty
-10:50:45.582 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-10:50:45.582 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-10:50:47.600 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-10:50:48.765 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-10:50:51.402 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-10:50:52.698 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-10:50:58.569 [main] INFO  projectUtility.DatePicker - Month is selected and name is: March
-10:51:00.407 [main] INFO  projectUtility.DatePicker - Selected date: 20
-10:51:04.205 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Invoice Number: INIVD8465543
-10:51:04.758 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-10:51:04.758 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-10:51:06.933 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:51:12.008 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:51:12.101 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
-10:51:12.421 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-10:51:13.728 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-10:51:13.803 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-10:51:14.326 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-10:51:15.018 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-10:54:38.746 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-10:54:41.029 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-10:54:41.872 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-10:54:42.405 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-10:54:43.076 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-10:54:43.763 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-10:54:44.353 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-10:54:44.358 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-10:54:45.375 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:54:50.484 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-10:54:52.609 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-10:54:53.616 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-10:54:53.616 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-10:54:55.632 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-10:54:56.757 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-10:54:59.408 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-10:55:00.681 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-10:55:06.401 [main] INFO  projectUtility.DatePicker - Month is selected and name is: March
-10:55:08.302 [main] INFO  projectUtility.DatePicker - Selected date: 20
-10:55:12.154 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Invoice Number: INIVD8465543
-10:55:12.689 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-10:55:12.689 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-10:55:14.868 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:55:19.960 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:55:20.110 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
-10:55:20.422 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-10:55:21.507 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-10:55:21.602 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-10:55:22.122 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-10:55:22.534 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-10:56:51.858 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-10:56:54.262 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-10:56:55.124 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-10:56:55.662 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-10:56:56.425 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-10:56:57.060 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-10:56:57.673 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-10:56:57.677 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-10:56:58.728 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:57:03.906 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-10:57:06.022 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-10:57:07.035 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-10:57:07.035 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-10:57:09.076 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-10:57:10.196 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-10:57:12.881 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-10:57:14.157 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-10:57:19.945 [main] INFO  projectUtility.DatePicker - Month is selected and name is: March
-10:57:21.785 [main] INFO  projectUtility.DatePicker - Selected date: 20
-10:57:23.966 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-10:57:23.966 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: August year: 2023
-10:57:27.180 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:57:32.434 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:57:32.526 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
-10:57:32.831 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-10:57:33.966 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-10:57:34.093 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-10:57:34.629 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-10:57:35.241 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-10:57:58.209 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-10:58:00.597 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-10:58:01.427 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-10:58:02.071 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-10:58:02.805 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-10:58:03.475 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-10:58:04.139 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-10:58:04.143 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-10:58:05.175 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-10:58:10.301 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-10:58:12.396 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-10:58:13.416 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-10:58:13.416 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: August year: 2023
-10:58:15.414 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 3
-10:58:16.535 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-10:58:19.197 [main] INFO  projectUtility.DatePicker - Selected year: 2023
-10:58:20.413 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2023
-10:58:20.413 [main] INFO  projectUtility.DatePicker - Month is selected and name is: August
-10:58:22.190 [main] INFO  projectUtility.DatePicker - Selected date: 20
-10:58:24.852 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-10:58:24.852 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-10:58:25.551 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-11:05:06.448 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-11:05:08.825 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-11:05:09.654 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-11:05:10.213 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-11:05:11.036 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-11:05:11.690 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-11:05:12.284 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-11:05:12.287 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-11:05:13.367 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-11:05:18.540 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-11:05:20.664 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-11:05:21.674 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:05:21.674 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: August year: 2023
-11:05:23.763 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 3
-11:05:24.948 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:05:27.594 [main] INFO  projectUtility.DatePicker - Selected year: 2023
-11:05:28.778 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2023
-11:05:28.778 [main] INFO  projectUtility.DatePicker - selected month name is: August
-11:05:30.480 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:05:32.718 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:05:32.718 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-11:05:34.676 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-11:05:35.822 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:05:38.469 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-11:05:39.759 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-11:05:45.530 [main] INFO  projectUtility.DatePicker - selected month name is: March
-11:05:47.337 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:05:50.050 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-11:05:50.050 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-11:05:50.913 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-11:06:15.332 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-11:06:17.579 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-11:06:18.463 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-11:06:19.045 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-11:06:19.778 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-11:06:20.439 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-11:06:21.037 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-11:06:21.041 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-11:06:22.023 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-11:06:27.147 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-11:06:29.255 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-11:06:30.282 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:06:30.282 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: August year: 2023
-11:06:32.324 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 3
-11:06:33.457 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:06:36.168 [main] INFO  projectUtility.DatePicker - Selected year: 2023
-11:06:37.389 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2023
-11:06:37.389 [main] INFO  projectUtility.DatePicker - selected month name is: August
-11:06:39.087 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:06:41.274 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:06:41.274 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-11:06:43.282 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-11:06:44.396 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:06:47.024 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-11:06:48.263 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-11:06:54.068 [main] INFO  projectUtility.DatePicker - selected month name is: March
-11:06:55.859 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:06:58.063 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:06:58.063 [main] INFO  projectUtility.DatePicker - User given Date: 25 Month: July year: 2026
-11:07:00.137 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 1
-11:07:01.347 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:07:04.019 [main] INFO  projectUtility.DatePicker - Selected year: 2026
-11:07:05.272 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2026
-11:07:06.439 [main] INFO  projectUtility.DatePicker - selected month name is: July
-11:07:08.232 [main] INFO  projectUtility.DatePicker - Selected date: 25
-11:07:10.877 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-11:07:10.877 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-11:07:11.723 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-11:08:00.928 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-11:08:03.242 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-11:08:04.064 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-11:08:04.624 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-11:08:05.366 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-11:08:06.016 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-11:08:06.619 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-11:08:06.623 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-11:08:07.589 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-11:08:12.693 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-11:08:14.826 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-11:08:15.834 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:08:15.834 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: August year: 2023
-11:08:17.846 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 3
-11:08:19.025 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:08:21.693 [main] INFO  projectUtility.DatePicker - Selected year: 2023
-11:08:22.861 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2023
-11:08:22.862 [main] INFO  projectUtility.DatePicker - selected month name is: August
-11:08:24.601 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:08:26.826 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:08:26.826 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-11:08:28.801 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-11:08:29.978 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:08:32.647 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-11:08:33.916 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-11:08:39.751 [main] INFO  projectUtility.DatePicker - selected month name is: March
-11:08:41.590 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:08:43.814 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:08:43.814 [main] INFO  projectUtility.DatePicker - User given Date: 25 Month: July year: 2026
-11:08:45.738 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 1
-11:08:46.869 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:08:49.412 [main] INFO  projectUtility.DatePicker - Selected year: 2026
-11:08:50.722 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2026
-11:08:51.843 [main] INFO  projectUtility.DatePicker - selected month name is: July
-11:08:53.730 [main] INFO  projectUtility.DatePicker - Selected date: 25
-11:08:57.243 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered company name
-11:08:57.410 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
-11:08:59.441 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:08:59.517 [main] INFO  projectUtility.TimePicker - matched list valueGeyser
-11:08:59.607 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:09:02.409 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Serial Numbe
-11:09:03.946 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Model Number: 
-11:09:05.361 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Used By
-11:09:06.662 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Support Person
-11:09:07.910 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Warranty
-11:09:09.611 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Invoice Number: INIVD8465543
-11:09:11.298 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Invoice URL: https:\\bajaj
-11:09:11.449 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
-11:09:12.978 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:09:13.056 [main] INFO  projectUtility.TimePicker - matched list valueactive
-11:09:13.142 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:09:13.758 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 3 
-11:09:15.266 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:09:15.348 [main] INFO  projectUtility.TimePicker - matched list valuenew
-11:09:15.424 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:09:16.054 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 4
-11:09:17.566 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:09:17.657 [main] INFO  projectUtility.TimePicker - matched list valueon-going
-11:09:17.767 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:09:18.792 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-11:09:18.792 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-11:09:19.456 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
-11:11:35.935 [main] INFO  com.hrms.testCases.TC_Assets - Base class started...
-11:11:38.578 [main] INFO  com.hrms.testCases.TC_Assets - Chrome driver selected
-11:11:39.415 [main] INFO  com.hrms.testCases.TC_Assets - Login page started
-11:11:40.034 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-11:11:40.792 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-11:11:41.466 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-11:11:42.055 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-11:11:42.059 [main] INFO  com.hrms.testCases.TC_Assets - Login Done
-11:11:43.078 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-11:11:48.245 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabAssets button
-11:11:50.368 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the button
-11:11:51.385 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:11:51.385 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: August year: 2023
-11:11:53.450 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 3
-11:11:54.571 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:11:57.278 [main] INFO  projectUtility.DatePicker - Selected year: 2023
-11:11:58.527 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2023
-11:11:58.528 [main] INFO  projectUtility.DatePicker - selected month name is: August
-11:12:00.319 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:12:02.559 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:12:02.559 [main] INFO  projectUtility.DatePicker - User given Date: 20 Month: March year: 2021
-11:12:04.571 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 2
-11:12:05.780 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:12:08.387 [main] INFO  projectUtility.DatePicker - Selected year: 2021
-11:12:09.686 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2021
-11:12:15.656 [main] INFO  projectUtility.DatePicker - selected month name is: March
-11:12:17.510 [main] INFO  projectUtility.DatePicker - Selected date: 20
-11:12:19.700 [main] INFO  projectUtility.DatePicker - Enter inside date picker methods
-11:12:19.700 [main] INFO  projectUtility.DatePicker - User given Date: 25 Month: July year: 2026
-11:12:21.692 [main] INFO  projectUtility.DatePicker - Clicked on the date picker icon: 1
-11:12:22.869 [main] INFO  projectUtility.DatePicker - Clicked on the toggle button for date and year selection
-11:12:25.524 [main] INFO  projectUtility.DatePicker - Selected year: 2026
-11:12:26.841 [main] INFO  projectUtility.DatePicker - Displayed month and year: August 2026
-11:12:27.962 [main] INFO  projectUtility.DatePicker - selected month name is: July
-11:12:29.784 [main] INFO  projectUtility.DatePicker - Selected date: 25
-11:12:33.380 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered company name
-11:12:33.574 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
-11:12:35.589 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:12:35.644 [main] INFO  projectUtility.TimePicker - matched list valueGeyser
-11:12:35.726 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:12:38.515 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Serial Numbe
-11:12:40.082 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Model Number: 
-11:12:41.447 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Used By
-11:12:42.769 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Support Person
-11:12:44.016 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Warranty
-11:12:45.665 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Invoice Number: INIVD8465543
-11:12:47.335 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Entered Invoice URL: https:\\bajaj
-11:12:47.480 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 1
-11:12:48.999 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:12:49.061 [main] INFO  projectUtility.TimePicker - matched list valueactive
-11:12:49.168 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:12:49.803 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 3 
-11:12:51.318 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:12:51.357 [main] INFO  projectUtility.TimePicker - matched list valuenew
-11:12:51.429 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:12:52.055 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon dropdown 4
-11:12:53.569 [main] INFO  projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
-11:12:53.679 [main] INFO  projectUtility.TimePicker - matched list valueon-going
-11:12:53.830 [main] INFO  projectUtility.TimePicker - Selected matched list value
-11:12:54.845 [main] INFO  com.hrms.pageObject.PO_AssetsPage - Clicked on the create assets button at create assets page
-11:12:54.846 [main] INFO  com.hrms.testCases.TC_Assets - Assets created
-11:12:55.385 [main] INFO  com.hrms.testCases.TC_Assets - Driver shutdown
+19:29:21.506 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:29:21.548 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:29:21.560 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Leave types created
+19:29:21.652 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:29:26.856 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:29:28.870 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered edit leave types Methods
+19:29:30.511 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
+19:29:32.571 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0106b58fbdb82167010a95780f98590c, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0106b58fbdb82167010a95780f98590c
+19:29:32.645 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:29:33.291 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Edit button
+19:29:34.895 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
+19:29:36.234 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
+19:29:36.378 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes button
+19:29:36.704 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0106b58fbdb82167010a95780f98590c, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0106b58fbdb82167010a95780f98590c
+19:29:36.704 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:29:36.728 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:29:36.742 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Edit leave types method call done
+19:29:36.829 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:29:41.992 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:29:44.008 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered delete leave types Methods
+19:29:44.593 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
+19:29:46.648 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0106b58fbdb82167010a95780f98590c, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0106b58fbdb82167010a95780f98590c
+19:29:46.760 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:29:47.362 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the delete button
+19:29:47.849 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:29:48.156 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:29:48.182 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:29:48.197 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Delete leave types method call done
+19:29:53.374 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:29:56.490 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:29:56.581 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
+19:29:56.894 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
+19:29:58.005 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+19:29:58.182 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:29:58.510 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+19:29:59.090 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Driver shutdown
+19:31:08.252 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Base class started...
+19:31:10.574 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Chrome driver selected
+19:31:11.571 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Login page started
+19:31:12.208 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
+19:31:12.942 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
+19:31:13.592 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
+19:31:14.200 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
+19:31:19.904 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:31:25.071 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:31:27.100 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered create leave types Methods
+19:31:29.214 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Click on Create leave type button
+19:31:30.577 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
+19:31:32.078 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
+19:31:32.276 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Create button
+19:31:32.605 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8638c229762874b7d4bbbeb8b833395
+19:31:32.606 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:31:32.635 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:31:32.647 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Leave types created
+19:31:32.762 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:31:37.830 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:31:39.837 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - De-Activate leave types methods called
+19:31:40.460 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
+19:31:42.499 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8638c229762874b7d4bbbeb8b833395
+19:31:42.526 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
+19:31:42.966 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:31:43.579 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Deactivated button
+19:31:44.012 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:31:44.315 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:31:44.341 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:31:44.351 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Deactivate Leave Types methods call done
+19:31:44.442 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:31:49.571 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:31:51.586 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Activate leave types methods called
+19:31:52.283 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
+19:31:54.319 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8638c229762874b7d4bbbeb8b833395
+19:31:54.348 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
+19:31:54.833 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:31:55.436 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Activate button
+19:31:55.863 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:31:56.168 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:31:56.231 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:31:56.246 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Activate leave types methods call done
+19:31:56.335 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:32:01.481 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:32:03.489 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered edit leave types Methods
+19:32:05.069 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
+19:32:07.125 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8638c229762874b7d4bbbeb8b833395
+19:32:07.241 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:32:07.867 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Edit button
+19:32:09.487 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
+19:32:10.797 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
+19:32:10.958 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes button
+19:32:11.287 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8638c229762874b7d4bbbeb8b833395
+19:32:11.287 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:32:11.325 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:32:11.338 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Edit leave types method call done
+19:32:11.420 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:32:16.488 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
+19:32:18.499 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered delete leave types Methods
+19:32:19.079 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
+19:32:21.131 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8638c229762874b7d4bbbeb8b833395
+19:32:21.246 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:32:21.846 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the delete button
+19:32:22.283 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:32:22.591 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
+19:32:22.662 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:32:22.676 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Delete leave types method call done
+19:32:27.926 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:32:31.032 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:32:31.109 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
+19:32:31.696 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
+19:32:32.814 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+19:32:32.963 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:32:33.288 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
+19:32:34.268 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Driver shutdown

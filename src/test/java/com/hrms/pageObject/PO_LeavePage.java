@@ -16,9 +16,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.DatePicker;
-import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
+import com.hrms.projectUtility.DatePicker;
+import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_LeavePage extends ReUseAbleElement {
 	

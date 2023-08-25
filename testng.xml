@@ -49,13 +49,13 @@
 			  
 			<!--<class name="com.hrms.testCases.TC_JobTitles"/>-->
 			 
-			<!-- <class name="com.hrms.testCases.TC_ManageLeaveTypes"/>-->
+			 <class name="com.hrms.testCases.TC_ManageLeaveTypes"/>
 			 
 			<!--<class name="com.hrms.testCases.TC_LeaveBalance"/>-->
 			
 				<!--<class name="com.hrms.testCases.TC_AssetsTypes"/>-->
 			
-			<class name="com.hrms.testCases.TC_Assets"/>
+			<!--<class name="com.hrms.testCases.TC_Assets"/>-->
 		      
     </classes>
     

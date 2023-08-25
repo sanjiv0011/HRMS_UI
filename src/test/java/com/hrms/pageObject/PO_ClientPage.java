@@ -10,9 +10,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.Action_Archive;
-import projectUtility.Action_Restore;
+import com.hrms.projectUtility.Action_Archive;
+import com.hrms.projectUtility.Action_Restore;
 
 public class PO_ClientPage extends ReUseAbleElement {
 	
@@ -110,7 +109,7 @@ public class PO_ClientPage extends ReUseAbleElement {
 	{	logger.info("Archive Client methods called");
     	
     	//METHODS TO ARCHIVE THE CLEINT 
-		Action_Archive.archive(clientName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, "cofirmMessage");
+		Action_Archive.archive(clientName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
     	 logger.info("Return back inside archive Client method");
     	 return new PO_HomePage(driver);
 	}
@@ -121,7 +120,7 @@ public class PO_ClientPage extends ReUseAbleElement {
 	{	logger.info("Restore Client methods called");
     	
     	//METHODS TO ARCHIVE THE CLIENT
-		Action_Restore.restore(clientName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, "cofirmMessage");
+		Action_Restore.restore(clientName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
     	 logger.info("Return back inside restore Client method");
     	 return new PO_HomePage(driver);
 	}

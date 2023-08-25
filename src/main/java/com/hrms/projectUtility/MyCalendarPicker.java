@@ -1,4 +1,4 @@
-package projectUtility;
+package com.hrms.projectUtility;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MyCalendarPicker {
 	
 	//VARIABLE AND CONSTRUCTER DECLARATIONS
-	public static final Logger logger = LogManager.getLogger(TimePicker.class);
+	public static final Logger logger = LogManager.getLogger(MyCalendarPicker.class);
 	static Actions action;
 	
 	 public static void moveToCorrectDateInCalendarAndClickOnContentMonthView(WebDriver driver, String dateValue,String dateContent, List<WebElement> path_DateList, List<WebElement> path_DateListContent,WebElement path_showMoreBtn, List<WebElement> path_listShowMoreContent) throws InterruptedException 

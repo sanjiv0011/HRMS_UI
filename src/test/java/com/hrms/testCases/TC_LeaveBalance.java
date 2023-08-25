@@ -1,11 +1,16 @@
 package com.hrms.testCases;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+import com.hrms.dataBase.DatabaseConnectionAndQuery_GenericMethods;
 import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_AssetsPage;
 import com.hrms.pageObject.PO_HomePage;
@@ -19,13 +24,10 @@ public class TC_LeaveBalance extends BaseClass {
 	
 	//TO INITIATE FAKER LIBRARY CONSTRUCTER
 	public Faker faker = new Faker();
-	
 	//TO INITIATE LONGIN CONSTRUCTER
 	public PO_LoginPage lgn;
-	
 	//TO INITIATE HOME PAGE CONSTRUCTER
 	public PO_HomePage hp;
-	
 	//TO INITIATE LEAVE BALANCE PAGE CONSTRUCTER
 	public PO_LeaveBalance lb;
 	
@@ -38,9 +40,7 @@ public class TC_LeaveBalance extends BaseClass {
 	
 		//TO PERFORM THE LOGIN
 		@Test(priority = 1)
-		public void test_Login() throws InterruptedException
-		{
-			//to perform login 
+		public void test_Login() throws InterruptedException{
 			lgn = new PO_LoginPage(driver);
 			hp = lgn.Login(userName, password);
 			Thread.sleep(3000);
@@ -48,17 +48,56 @@ public class TC_LeaveBalance extends BaseClass {
 		
 		//TO CREATE LEAVE BALANCE
 		@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
-		public void test_CreateLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String  leaveBalance) throws InterruptedException
+		public void test_CreateLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String  leaveBalance) throws InterruptedException, SQLException
 		{
 			lb = callMeBeforePerformAnyAction();
+
+//			String  ui_leaveBalanceStartDate =  leaveBalanceStartDate;
+//			String  ui_leaveBalanceEndDate =  leaveBalanceEndDate;
+//			String  ui_leaveTypeName =  leaveTypeName;
+//			String  ui_leaveBalance = leaveBalance;
+		
 			hp = lb.createLeaveBalance(leaveBalanceStartDate, leaveBalanceEndDate, leaveTypeName, leaveBalance);
-			logger.info("Leave Balance created");
+
+			
+//			//For DataBase Testing
+//			if(lb.isLeaveBalanceCreatedMessageDisplayed()) {
+//				//TO SELECT THE LEAVE TYPES
+//				ResultSet resultsetLeaveTypes = DatabaseConnectionAndQuery_GenericMethods.dataBaseCollectionAndQuerry("select id,name from public.leave_types");
+//				String leaveTypeId = null;
+//				while(resultsetLeaveTypes.next()){
+//					System.out.println("Leave types: "+resultsetLeaveTypes.getString("name")+" "+resultsetLeaveTypes.getString("id"));
+//					if(ui_leaveTypeName.equals(resultsetLeaveTypes.getString("name"))) {
+//						leaveTypeId = resultsetLeaveTypes.getString("id");
+//					}
+//				}
+//				
+//				//TO SELECT LEAVE BALANCE BY LEAVE TYPES ID
+//				ResultSet resultsetLeaveBalance = DatabaseConnectionAndQuery_GenericMethods.dataBaseCollectionAndQuerry("select * from public.leave_balances ORDER BY updated_at");
+//				while(resultsetLeaveBalance.next())
+//				{	System.out.println(resultsetLeaveBalance);
+//					//System.out.println("Leave balance: "+resultsetLeaveTypes.getString("start_date")+" "+resultsetLeaveTypes.getString("end_date")+" "+resultsetLeaveTypes.getString("balance"));
+//					if(leaveTypeId.equals(resultsetLeaveBalance.getString("leave_type_id")))
+//					{
+//						//DATA FROM THE DATABASE
+//						//String db_ogName = resultset.getString("name");
+//						String db_leaveBalanceStartDate = resultsetLeaveBalance.getString("start_date");
+//						String db_leaveBalanceEndDate = resultsetLeaveBalance.getString("end_date");
+//						String db_leaveBalance = resultsetLeaveBalance.getString("balance");
+//					
+//						//CROSS VERIFICATIONS(IT WILL MATCH USER INPUT DATA WITH DATABASE ENTRY)
+//						Assert.assertEquals(ui_leaveBalanceStartDate, db_leaveBalanceStartDate, "To match start_date");
+//						Assert.assertEquals(ui_leaveBalanceEndDate, db_leaveBalanceEndDate, "To match end_date");
+//						Assert.assertEquals(ui_leaveBalance, db_leaveBalance, "To match balance");
+//						break;
+//					}
+//				}
+//			}
 		}
 		
 	
 		//@Test(priority = 3, dependsOnMethods = {"test_Login"} )//TO ARCHIVE THE LEAVE BALANCE
-		public void test_ArchiveLeaveBalance() throws InterruptedException
-		{
+		public void test_ArchiveLeaveBalance() throws InterruptedException {
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.archiveLeaveBalance(leaveTypeNameForSearch);
 			Thread.sleep(2000);
@@ -67,19 +106,17 @@ public class TC_LeaveBalance extends BaseClass {
 	
 	
 		//@Test(priority = 4, dependsOnMethods = {"test_Login"} )//TO RESTORE THE LEAVE BALANCE
-		public void test_RestoreLeaveBalance() throws InterruptedException
-		{
+		public void test_RestoreLeaveBalance() throws InterruptedException {
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.restoreLeaveBalance(leaveTypeNameForSearch);
-			Thread.sleep(2000);
+
 		}
 		
 		//@Test(priority = 5 , dependsOnMethods = {"test_Login"} )//TO EDIT THE LEAVE BALANCE
-		public void test_EditLeaveBalance() throws InterruptedException
-		{
+		public void test_EditLeaveBalance() throws InterruptedException {
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.editLeaveBalance(leaveBalanceStartDate, leaveBalanceEndDate, leaveTypeNameForSearch, leaveBalance);
-			Thread.sleep(2000);
+	
 		}
 		
 		//TO LOGOUT

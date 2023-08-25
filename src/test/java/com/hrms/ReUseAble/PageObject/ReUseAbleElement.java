@@ -16,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import projectUtility.TimePicker;
+import com.hrms.projectUtility.TimePicker;
 
 
 public class ReUseAbleElement {
@@ -42,7 +42,7 @@ public class ReUseAbleElement {
 		//SEARCH BOX
 		@FindBy(xpath = "//input[@placeholder='Search…']")
 		@CacheLookup
-		public WebElement searchBox_RU;
+		public  WebElement searchBox_RU;
 		public void searchBox_RU(String SearchKey) throws InterruptedException
 		{	Thread.sleep(200);
 			searchBox_RU.sendKeys(SearchKey,Keys.ENTER);
@@ -50,15 +50,34 @@ public class ReUseAbleElement {
 			Thread.sleep(1000);
 		}
 	
+		//SEARCH KEY NOT FOUND
+	  	public String searchKeyMessage_RU = "//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]";
+	  	String searchKeyMessageNotFound_RU;
+	  	public boolean isSearchKeysNotFound_RU() {
+	  		boolean flag = false;
+	  		try {
+	  			Thread.sleep(1000);
+	  			WebElement searchKey = driver.findElement(By.xpath(searchKeyMessage_RU));
+	  			if(searchKey.isDisplayed()) {
+	  				flag = true;
+	  				logger.info("Searched keys is not found: "+searchKey.isDisplayed());
+	  			}	
+	  		}catch(Exception e) {
+	  			logger.info("Searched key not found exception: "+e.getMessage());
+	  		}
+	  		return flag;
+	  	}
+	  	
 		//ACTION BUTTON THREE DOTS
 		@FindBy(xpath = "//div[@class='pointer']//*[name()='svg']")
 		@CacheLookup
 		public WebElement btnAction_RU;
 		// Action method to click the Action button
 	    public void clickOnActionButton_RU() throws InterruptedException {
-	    	btnAction_RU.click();
+	    	//BEFORE CLICK ON THE THREE DOTS IT WILL CONFIRM FIST WHERE IT IS PRESENT OR NOT
+    		btnAction_RU.click();
 	        logger.info("Clicked on the Three dot Action button");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	    }
 
 		
@@ -85,36 +104,6 @@ public class ReUseAbleElement {
 	        logger.info("Clicked on the Action_Deactivated button");
 	        Thread.sleep(300);
 	    }
-	    
-    	//MESSAGE ACTIVATED
- 		@FindBy(xpath = "//div[contains(text(),'Leave Type Activated Successfully.')]")
- 		@CacheLookup
- 		public WebElement msgActivated;
- 		 // Action method to get the message after activation
- 	    public boolean getActivatedSuccessfullyMessage_RU() throws InterruptedException {
- 	    	boolean flag = false;
- 	        if (msgActivated.isDisplayed()) {
- 	            flag = true;
- 	           logger.info("InActive label present: "+flag);
- 	        }
- 	        Thread.sleep(300);
- 	        return flag;
- 	    }
- 		
- 	    //MESSAGE DEACTIVATED
-  		@FindBy(xpath = "//div[contains(text(),'Leave Deactivated Successfully.')]")
-  		@CacheLookup
-  		public WebElement msgDeactivated;
- 	    // Action method to get the message after deactivation
- 	    public boolean isDeactivatedSuccessfullyMessage_RU() throws InterruptedException {
- 	    	boolean flag = false;
- 	        if (msgDeactivated.isDisplayed()) {
- 	            flag = true;
- 	           logger.info("Active label present: "+flag);
- 	        }
- 	        Thread.sleep(300);
- 	        return flag;
- 	    }
  		
  	    //TO CHECK LABLE INACTIVE
  	    @FindBy(xpath="//span[normalize-space()='InActive']")
@@ -302,7 +291,7 @@ public class ReUseAbleElement {
 	    public void clickOnYesButton_RU() throws InterruptedException {
 	        btnYes.click();
 	        logger.info("Clicked on the Yes button");
-	        Thread.sleep(500);
+	        Thread.sleep(300);
 	    }
 		
 		// No button before confirm the action
@@ -564,10 +553,10 @@ public class ReUseAbleElement {
 	  			WebElement endDate = driver.findElement(By.xpath(endDateHolder_RU));
 	  			endDate.sendKeys(Keys.CONTROL,"a");
 	  			endDate.sendKeys(Keys.DELETE);
-	  			String[] date = leaveEndDate.split(" ");
-	  			String dt = date[0];
+	  			String[] date = leaveEndDate.split("[\\s\\-\\.]");
+	  			String dt = date[2];
 	  			String mt = date[1];
-	  			String yr = date[2];
+	  			String yr = date[0];
 	  			int x = 0;
 	  			String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 	  			for(String mon : months)
@@ -583,11 +572,44 @@ public class ReUseAbleElement {
 	  			Thread.sleep(200);
 	  			endDate.sendKeys(yr);
 	  			Thread.sleep(200);
-	  			logger.info("Entered second one date");
-	  			
+	  			logger.info("Entered second one date");	
 	  		}
   
+	
 	  		
-
+	  	//ALARTS ADDRESS AND ACTIONS METHODS
+	  	public String alertAddress_RU = "//div[@role='alert']";
+	  	String alertMessageContent_RU;
+	  	public String snakeAlertMessagesDisplayedContent_RU() {
+	  		try {
+	  			logger.info("Alert - Try");
+	  			WebElement alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
+	  			logger.info("Alert message is displayed: "+alertSnakeMessage.isDisplayed());
+	  			alertMessageContent_RU = alertSnakeMessage.getText();
+	  		}catch(Exception e) {
+	  			logger.info("Alert exception: "+e.getMessage());
+	  		}
+	  		return alertMessageContent_RU;
+	  	}
+	  	
+	  	//REQUIRED FIELD MESSAGES
+	  	public String requiredMessage_RU = "//p[contains(@class,'MuiFormHelperText-contained')]";
+	  	String requiredMessageContent_RU;
+	  	public boolean isRequiredMessageDisplayed_RU() {
+	  		boolean flag = false;
+	  		try {
+	  			WebElement requiredMessage = driver.findElement(By.xpath(requiredMessage_RU));
+	  			if(requiredMessage.isDisplayed()) {
+	  				flag = true;
+	  				logger.info("Required message is present"+requiredMessage.isDisplayed());
+	  			}	
+	  		}catch(Exception e) {
+	  			logger.info("Required Exception: "+e.getMessage());
+	  		}
+	  		return flag;
+	  	}
+	  	
+	 	
+	  
 }
 

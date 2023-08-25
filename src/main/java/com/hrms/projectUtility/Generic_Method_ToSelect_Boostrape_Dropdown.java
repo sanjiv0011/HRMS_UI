@@ -1,4 +1,4 @@
-package projectUtility;
+package com.hrms.projectUtility;
 
 import java.util.List;
 

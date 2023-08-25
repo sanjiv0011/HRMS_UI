@@ -6,10 +6,12 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,11 +19,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-
-import projectUtility.Action_Archive;
-import projectUtility.Action_Restore;
-import projectUtility.DatePicker;
-import projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
+import com.hrms.projectUtility.Action_Archive;
+import com.hrms.projectUtility.Action_Restore;
+import com.hrms.projectUtility.DatePicker;
+import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -29,18 +30,16 @@ public class PO_LeaveBalance extends ReUseAbleElement {
 	
 	public WebDriver driver = null;
 	public Logger logger = LogManager.getLogger(getClass());
-	public FluentWait<WebDriver> wait;
+	public WebDriverWait wait;
+	public Actions action;
 	
 	public PO_LeaveBalance(WebDriver driver)
 	{
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
-		wait = new FluentWait<>(this.driver)  // Initialize FluentWait with the driver
-	            .withTimeout(Duration.ofSeconds(10)) // Set the timeout duration
-	            .pollingEvery(Duration.ofMillis(500)) // Set how often to check for the condition
-	            .ignoring(NoSuchElementException.class); // Specify exceptions to ignore
-		
+		wait = new WebDriverWait(driver,Duration.ofSeconds(10)); // Set the timeout duration
+		action = new Actions(driver);
 	}
 
 	//=====START====Leave balance page and Create Leave balance page object============//
@@ -48,11 +47,7 @@ public class PO_LeaveBalance extends ReUseAbleElement {
 	@FindBy(xpath = "//button//p[.='Create Leave Balance']")
 	@CacheLookup
 	WebElement btnCreateLeaveBalance;
-	
-	@FindBy(xpath = "//button[@title=\"Open\"]//*[name()=\"svg\"]")
-	@CacheLookup
-	WebElement iconDropDownEnterLeaveType;
-	
+
 	@FindBy(xpath = "//ul[@id=\"leaveType-listbox\"]//li")
 	@CacheLookup
 	List <WebElement> listLeaveTypes;
@@ -60,364 +55,220 @@ public class PO_LeaveBalance extends ReUseAbleElement {
 	@FindBy(xpath = "//input[@name='balance']")
 	@CacheLookup
 	WebElement textEnterLeaveBalance;
-	
-	@FindBy(xpath = "//p[normalize-space()=\"Create\"]")
-	@CacheLookup
-	WebElement btnCreate;
-	
-	@FindBy(xpath = "//p[normalize-space()='Save Changes']")
-	@CacheLookup
-	WebElement btnSaveChanges;
-	
-	@FindBy(xpath = "//p[normalize-space()=\"Cancel\"]")
-	@CacheLookup
-	WebElement btnCancel;
-	
-	// confirmation message
-	@FindBy(xpath = "//div[contains(text(),\"Leave balance already exists.\")]")
-	@CacheLookup
-	WebElement msgAlreadyExist;
-	
-	@FindBy(xpath = "//div[contains(text(),\"Leave Balance Created Successfully.\")]")
-	@CacheLookup
-	WebElement msgCreated;
-	
-		
-	
-	//Action methods
-	public void clickOnBtnCreateLeaveBalance()
-	{
+
+	//TO CLICK ON THE LEAVE BALANCE CREATE BUTTON
+	public void clickOnBtnCreateLeaveBalance() throws InterruptedException {
 		btnCreateLeaveBalance.click();
+		Thread.sleep(1000);
 		logger.info("Click on Create leave type button");
 	}
 	
-//	public void selectLeaveBalanceStartDate(String leaveBalanceStartDate) throws InterruptedException 
-//	{
-//		DatePicker.DatePicker_GenericMethod_WithoutDropDown(icon_LeaveBalanceStartDate, toggleBtnToSelect_LeaveBalanceStartDate_YearAndDate, text_LeaveBalanceStartDate_currentMonthYearDisplayed, icon_LeaveBalanceStartDate_NextMonth, icon_LeaveBalanceStartDate_PreviousMonth, select_LeaveBalanceStartDate_Date, select_LeaveBalanceStartDate_Year,  leaveBalanceStartDate);
-//		logger.info("LeaveBalanceStartDate date, month and year entered");
-//	}
-//	
-//	public void selectLeaveBalanceEndDate(String leaveBalanceEndDate) throws InterruptedException 
-//	{
-//		DatePicker.DatePicker_GenericMethod_WithoutDropDown(icon_LeaveBalanceEndtDate, toggleBtnToSelect_LeaveBalanceEndDate_YearAndDate, text_LeaveBalanceEndDate_currentMonthYearDisplayed, icon_LeaveBalanceEndDate_NextMonth, icon_LeaveBalanceEndDate_PreviousMonth, select_LeaveBalanceEndDate_Date, select_LeaveBalanceEndDate_Year,  leaveBalanceEndDate);
-//		logger.info("Leave balance end date, month and year entered");
-//	}
+	//TO SELECT THE LEAVE BALANCE START DATE
+	public void selectLeaveBalanceStartDate(String leaveBalanceStartDate, int x) throws InterruptedException {
+		DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceStartDate, x);
+		logger.info("Leave balance end date, month and year entered");
+		Thread.sleep(500);}
 	
-	public void clickOnDropDownIconLeaveType()
-	{
-		iconDropDownEnterLeaveType.click();
-		logger.info("Clicked on the dropdown icon leave types");
+	//TO SELECT THE LEAVE BALANCE END DATE
+	public void selectLeaveBalanceEndDate(String leaveBalanceEndDate, int x) throws InterruptedException {
+		DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceEndDate, x);
+		logger.info("Leave balance end date, month and year entered");
+		Thread.sleep(500);
 	}
 	
-	public void selectLeaveTypesName(String leaveTypeName) throws InterruptedException
-	{
+	//TO SELECT THE LEAVE TYPE NAME
+	public void selectLeaveTypesName(String leaveTypeName) throws InterruptedException {
+		clickOnDropdown_1_RU();
 		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLeaveTypes,leaveTypeName );
-		logger.info("Leave types selected");
 	}
 	
-	public void setLeaveBalance(String leaveBalance)
-	{
+	public void setLeaveBalance(String leaveBalance) throws InterruptedException {
 		textEnterLeaveBalance.sendKeys(leaveBalance);
+		Thread.sleep(500);
 		logger.info("Enterd leave leaveBalance");
 	}
 	
-	public void clickBtnCreate()
-	{
-		btnCreate.click();
-		logger.info("clicked on Create button");
-	}
-	
-	public void clickOnBtnSaveChanges() {
-		btnSaveChanges.click();
-		logger.info("Clicked on the button save changes");
-	}
-	
-	public void clickBtnCancel()
-	{
-		btnCancel.click();
-		logger.info("Clicked on Cancel button");
-	}
-	
-	//ALL IN ONE CREATE LEAVE BALANCE
+	//TO CREATE LEAVE BALANCE
 	public PO_HomePage createLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String leaveBalance) throws InterruptedException
 	{
 		logger.info("Entered create leave balance Methods");
-		
-		btnCreateLeaveBalance.click();
-		logger.info("Click on Create leave balance button");
-		Thread.sleep(2000);
-		
-		
-		DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceEndDate, 2);
-		logger.info("Leave balance end date, month and year entered");
-		Thread.sleep(1000);
-		
-		DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceStartDate, 1);
-		logger.info("Leave balance end date, month and year entered");
-		Thread.sleep(1000);
-		
-		iconDropDownEnterLeaveType.click();
-		logger.info("Clicked on the dropdown icon leave types");
-		Thread.sleep(1000);
-		
-		for(WebElement li : listLeaveTypes )
-		{
-			System.out.println("From create leave balance method: "+li.getText());
+		clickOnBtnCreateLeaveBalance();
+		selectLeaveBalanceStartDate(leaveBalanceStartDate, 1);
+		//selectLeaveBalanceEndDate(leaveBalanceEndDate, 2);
+		setSecondsDateWithoutUsingDatePicker_RU(leaveBalanceEndDate);
+		selectLeaveTypesName(leaveTypeName);
+		setLeaveBalance(leaveBalance);
+		clickOnCreateButton_RU();
+		if(isLeaveBalanceCreatedMessageDisplayed()) {
+			Assert.assertTrue(true);
+		}else if(isLeaveBalanceAlreadyExistMessageDisplayed()){
+			logger.info("Already exists");
 		}
-		Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLeaveTypes,leaveTypeName );
-		logger.info("Leave types selected");
-		Thread.sleep(1000);
-		
-		textEnterLeaveBalance.sendKeys(leaveBalance);
-		logger.info("Enterd leave leaveBalance");
-		Thread.sleep(1000);
-		
-		btnCreate.click();
-		logger.info("clicked on Create button");
-		//Thread.sleep(500);
-		
-		try {
-			if(msgCreated.getText().contains("Leave Balance Created Successfully"))
-			{
-				Assert.assertTrue("Leave balance created ",true);
-			}else if(msgCreated.getText().contains("Leave balance already exists")){
-				Assert.assertTrue("Leave balance already exist ",true);
-			}
-		}catch(Exception e){
-			e.getCause();
-		}
-		
 		return new PO_HomePage(driver);
 	}
 	
-	
-	
-	//to use this first that leave balance so that it comes at first
-		//to search the leave balance
-		@FindBy(xpath = "//input[@placeholder='Search…']")
-		@CacheLookup
-		WebElement searchBox;
-		public void searchLeaveBalance(String leaveBalanceSearchKey)
-		{
-			searchBox.sendKeys(leaveBalanceSearchKey,Keys.ENTER);
+	//TO ARCHIVE LEAVE BALANCE
+    public PO_HomePage archiveLeaveBalance(String leaveBalanceName) throws InterruptedException
+    {	
+    	logger.info("Archive leave balance methods called");
+    	
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+    	Action_Archive.archive(leaveBalanceName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
+    	logger.info("Return to archiveLeaveBalance method");
+    	 return new PO_HomePage(driver);
+    }
+    
+    //TO RESTORE LEAVE BALANCE
+    public PO_HomePage restoreLeaveBalance(String leaveBalanceName) throws InterruptedException
+    {
+    	logger.info("Restore leave balance methods called");
+    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
+    	Action_Restore.restore(leaveBalanceName, searchBox_RU,archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
+    	 logger.info("Return to restoreLeaveBalance method");
+    	 return new PO_HomePage(driver);
+    }
+    
+    //TO EDIT LEAVE BALANCE TYPES
+    public PO_HomePage editLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String leaveBalance) throws InterruptedException
+    {
+    	logger.info("Edit leave balance methods called");
+    	searchBox_RU(leaveTypeName);
+    	clickOnActionButton_RU();
+    	clickOnEditAction_RU();
+    	selectLeaveBalanceStartDate(leaveBalanceStartDate, 1);
+		selectLeaveBalanceEndDate(leaveBalanceEndDate, 2);
+		selectLeaveTypesName(leaveTypeName);
+		setLeaveBalance(leaveBalance);
+		btnSaveChanges_RU.click();
+		if(isLeaveBalanceUpdatedMessageDisplayed()) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
 		}
+    	return new PO_HomePage(driver);
+    }
+    //==============END=======EDIT LEAVE BALANCE===============//
+    
+    
 		
-		//========START=======Actions Elements===========TO USER ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP=========//
-		// Action button three dot for
-		@FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]//*[name()='svg']")
-		@CacheLookup
-		WebElement btnAction;
-		// Action method to click the Action button
-	    public void clickActionButton() {
-	        btnAction.click();
-	    }
-
-		
-		
-		//Archive Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Archive')])[1]")
-		@CacheLookup
-		WebElement actionArchive;
-		// Action method to click the Archive action
-	    public void clickArchiveAction() {
-	        actionArchive.click();
-	    }
-		
-		//Restore Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Restore')])[1]")
-		@CacheLookup
-		WebElement actionRestore;
-		 // Action method to click the Restore action
-	    public void clickRestoreAction() {
-	        actionRestore.click();
-	    }
-		
-		
-		//Edit Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Edit')])[1]")
-		@CacheLookup
-		WebElement actionEdit;
-		// Action method to click the Edit action
-	    public void clickEditAction() {
-	        actionEdit.click();
-	    }
-		
-		// Yes button before confirm the action
-		@FindBy(xpath = "//p[normalize-space()='Yes']")
-		@CacheLookup
-		WebElement btnYes;
-		 // Action method to click the Yes button
-	    public void clickYesButton() {
-	        btnYes.click();
-	    }
-		
-		// No button before confirm the action
-		@FindBy(xpath = "//p[normalize-space()='No']")
-		@CacheLookup
-		WebElement btnNo;
-		// Action method to click the No button
-	    public void clickNoButton() {
-	        btnNo.click();
-	    }
-		
-		// No button before confirm the action
-		@FindBy(xpath = "//div[contains(text(),'Leave Balance Restored Successfully.')]")
-		@CacheLookup
-		WebElement msgArchived;
-		 // Action method to get the message after archiving
-	    public String getArchivedMessage() {
-	        return msgArchived.getText();
-	    }
-		
-	    // No button before confirm the action
- 		@FindBy(xpath = "//div[contains(text(),'Leave Balance Archived Successfully.')]")
- 		@CacheLookup
- 		WebElement msgRestored;
-	    // Action method to get the message after restoring
-	    public String getRestoredMessage() {
-	        return msgRestored.getText();
-	    }
-		
-	    //TO CHECK ALLREADY ARCHIVED
-	    @FindBy(xpath="//span[text()='Archived']")
-	    @CacheLookup
-	    WebElement archivedLabel;
-	    public boolean isAlreadyArchivedDisplayed() {
+		//========START======CONFIRMATION MESSAGES VALIDATIONS=========//
+	 	//ADDRES MESSAGE ARRCHIVE AND ACTION METHODS
+		String msgArchived_Address = "//div[contains(text(),'Leave Balance Archived Successfully.')]";
+	    public boolean isArchivedMessageDisplayed() {
 	        boolean flag = false;
-	        if (archivedLabel.isDisplayed()) {
-	            flag = true;
-	            System.out.println(flag);
-	        }
+			try {
+				WebElement msgArchived = driver.findElement(By.xpath(msgArchived_Address));
+				wait.until(ExpectedConditions.visibilityOf(msgArchived));
+		        if(msgArchived.isDisplayed()) {
+		        	flag = true;
+		        	logger.info("Archived message caught : "+msgArchived.getText());
+		        }else {
+		        	logger.info("Archived message did not caught");
+		        }
+			}catch(Exception e){
+				logger.info(e);
+			}
 	        return flag;
 	    }
+		
+	    //ADDRES MESSAGE RESTORED AND ACTION METHODS
+ 		String msgRestored_address = "//div[contains(text(),'Leave Balance Restored Successfully.')]";
+	    public boolean isRestoredMessageDisplayed() {
+	    	 boolean flag = false;
+				try {
+					WebElement msgRestored = driver.findElement(By.xpath(msgRestored_address));
+					wait.until(ExpectedConditions.visibilityOf(msgRestored));
+			        if(msgRestored.isDisplayed()) {
+			        	flag = true;
+			        	logger.info("Restored message caught : "+msgRestored.getText());
+			        }else {
+			        	logger.info("Restored message did not caught");
+			        }
+				}catch(Exception e){
+					logger.info(e);
+				}
+		        return flag;
+	    }
+		
+	    //TO CHECK ALLREADY ARCHIVED LABEL
+	    String archivedLabel_Address = "//span[text()='Archived']";
+	    public boolean isAlreadyArchivedLabelPresent() {
+	    	 boolean flag = false;
+				try {
+					WebElement msgAlready_Archived = driver.findElement(By.xpath(archivedLabel_Address));
+					wait.until(ExpectedConditions.visibilityOf(msgAlready_Archived));
+			        if(msgAlready_Archived.isDisplayed()) {
+			        	flag = true;
+			        	logger.info("Already arhived message caught : "+msgAlready_Archived.getText());
+			        }else {
+			        	logger.info("Already arhived did not caught");
+			        }
+				}catch(Exception e){
+					logger.info(e);
+				}
+		        return flag;
+	    }
 	    
-
-		//========START=======Actions Elements=========TO USER ANY ONE OF THIS FIRST SEARCH IT SO THAT IT COMES AT TOP===========//
+		
+		//MESSAGE LEAVE BALANCE ALREADY EXIST AND ACTION METHODS
+		String msgAlreadyExist_Address = "//div[contains(text(),\"Leave balance already exists.\")]";
+		public boolean isLeaveBalanceAlreadyExistMessageDisplayed() {
+	    	 boolean flag = false;
+				try {
+					WebElement msgAlreadyLeaveBalanceExist = driver.findElement(By.xpath(msgAlreadyExist_Address));
+					wait.until(ExpectedConditions.visibilityOf(msgAlreadyLeaveBalanceExist));
+			        if(msgAlreadyLeaveBalanceExist.isDisplayed()) {
+			        	flag = true;
+			        	logger.info("Leave balance already message caught : "+msgAlreadyLeaveBalanceExist.getText());
+			        }else {
+			        	logger.info("Leave balance message did not caught");
+			        }
+				}catch(Exception e){
+					logger.info(e);
+				}
+		        return flag;
+	    }
+		
+		//MESSAGE LEAVE BALANCE CREATED AND ACTION METHODS
+		String msgCreated_Address = "//div[contains(text(),\"Leave Balance Created Successfully.\")]";
+		public boolean isLeaveBalanceCreatedMessageDisplayed() {
+	    	 boolean flag = false;
+				try {
+					WebElement msgLeaveBalanceCreated = driver.findElement(By.xpath(msgCreated_Address));
+					wait.until(ExpectedConditions.visibilityOf(msgLeaveBalanceCreated));
+			        if(msgLeaveBalanceCreated.isDisplayed()) {
+			        	flag = true;
+			        	logger.info("Leave balance created message caught : "+msgLeaveBalanceCreated.getText());
+			        }else {
+			        	logger.info("Leave balance created did not caught");
+			        }
+				}catch(Exception e){
+					logger.info(e);
+				}
+		        return flag;
+	    }
+		
+		//MESSAGE LEAVE BALANCE UPDATED AND ACTION METHODS
+		String msgUpdated_Address = "//div[contains(text(),\"Leave Balance Updated Successfully.\")]";
+		public boolean isLeaveBalanceUpdatedMessageDisplayed() {
+	    	 boolean flag = false;
+				try {
+					WebElement msgLeaveBalanceUpdated = driver.findElement(By.xpath(msgUpdated_Address));
+					wait.until(ExpectedConditions.visibilityOf(msgLeaveBalanceUpdated));
+			        if(msgLeaveBalanceUpdated.isDisplayed()) {
+			        	flag = true;
+			        	logger.info("Leave balance updated message caught : "+msgLeaveBalanceUpdated.getText());
+			        }else {
+			        	logger.info("Leave balance updated did not caught");
+			        }
+				}catch(Exception e){
+					logger.info(e);
+				}
+		        return flag;
+	    }
+		//========END=======CONFIRMATION MESSAGES VALIDATIONS===========//
 		
 	   
-	    //============START========ARCHIVE LEAVE BALANCE=============//
-	    public PO_HomePage archiveLeaveBalance(String leaveBalanceName) throws InterruptedException
-	    {	
-	    	logger.info("Archive leave balance methods called");
-	    	
-	    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
-	    	Action_Archive.archive(leaveBalanceName, searchBox, archivedLabel, btnAction, actionArchive, btnYes, "cofirmMessage");
 	    
-	    	
-	    	 
-//	    	 String msg = getArchivedMessage();
-//	    	 try {
-//	    		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
-//	    		 if(msg.contains("Leave Balance Archived Successfully")) {
-//		    		 Assert.assertTrue(true);
-//		    		 logger.info("Leave balance archived passed...");
-//		    	 }else {
-//		    		 Assert.assertTrue(false);
-//		    		 logger.info("Leave balance archived failed!!!");
-//		    	 }
-//	    	 }catch(Exception e)
-//	    	 {
-//	    		 e.getCause();
-//	    	 }
-	    	 logger.info("Return to archiveLeaveBalance method");
-	    	 return new PO_HomePage(driver);
-	    }
-	    //==============END=======ARCHIVE LEAVE BALANCE===============//
-	    
-	    
-	  //============START========RESTORE LEAVE BALANCE=============//
-	    public PO_HomePage restoreLeaveBalance(String leaveBalanceName) throws InterruptedException
-	    {
-	    	logger.info("Restore leave balance methods called");
-	    	
-	    	//METHODS TO ARCHIVE THE LEAVE BALNACE 
-	    	Action_Restore.restore(leaveBalanceName, searchBox,archivedLabel, btnAction, actionRestore, btnYes, "confirmMessage" );
-	    	
-//	    	 String msg = getRestoredMessage();
-//	    	 try {
-//	    		 wait.until(ExpectedConditions.invisibilityOf(msgCreated));
-//	    		 if(msg.contains("Leave Balance Restored Successfully")) {
-//		    		 Assert.assertTrue(true);
-//		    		 logger.info("Leave balance restored passed...");
-//		    	 }else {
-//		    		 Assert.assertTrue(false);
-//		    		 logger.info("Leave balance restored failed!!!");
-//		    	 }
-//	    	 }catch(Exception e)
-//	    	 {
-//	    		 e.getCause();
-//	    	 }
-	    	 logger.info("Return to restoreLeaveBalance method");
-	    	 return new PO_HomePage(driver);
-	    }
-	    //==============END=======RESTORE LEAVE BALANCE===============//
-	    
-	    
-	    
-	  //============START========EDIT LEAVE BALANCE=============//
-	    public PO_HomePage editLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String leaveBalance) throws InterruptedException
-	    {
-	    	logger.info("Edit leave balance methods called");
-	    	
-	    	searchBox.sendKeys(leaveTypeName, Keys.ENTER);
-	    	logger.info("Clicked on the search box button");
-	    	Thread.sleep(5000);
-	    	
-	    	btnAction.click();
-	    	logger.info("Clicked on the Action button");
-	    	Thread.sleep(1000);
-	    	
-	    	//===========START EDITING=========To edit this details===========//
-	    	actionEdit.click();
-	    	logger.info("Clicked on the edit button");
-	    	Thread.sleep(2000);
-	    	
-	    	
-	  
-			DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveBalanceEndDate, 2);
-			logger.info("Leave balance start date, month and year entered");
-			Thread.sleep(2000);
-			
-			DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver,leaveBalanceStartDate, 1);
-			logger.info("Leave balance start date, month and year entered");
-			Thread.sleep(2000);
-			
-			iconDropDownEnterLeaveType.click();
-			logger.info("Clicked on the dropdown icon leave types");
-			Thread.sleep(1000);
-			
-			for(WebElement li : listLeaveTypes )
-			{
-				System.out.println("From create leave balance method: "+li.getText());
-			}
-			Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listLeaveTypes,leaveTypeName );
-			logger.info("Leave types selected");
-			Thread.sleep(1000);
-			
-			textEnterLeaveBalance.sendKeys(leaveBalance);
-			logger.info("Enterd leave leaveBalance");
-			Thread.sleep(1000);
-			
-			btnSaveChanges.click();
-			logger.info("clicked on button save changes");
-			Thread.sleep(200);
-			
-//			try {
-//				wait.until(ExpectedConditions.invisibilityOf(msgCreated));
-//				if(msgCreated.getText().contains("Leave Balance Created Successfully"))
-//				{
-//					Assert.assertTrue("Leave balance created ",true);
-//				}else if(msgCreated.getText().contains("Leave balance already exists")){
-//					Assert.assertTrue("Leave balance already exist ",true);
-//				}
-//			}catch(Exception e) {
-//				e.getCause();
-//			}
-			//===========END EDITING=========To edit this details===========//
-	    	 
-			logger.info("Return back inside editLeaveBalance method");
-	    	return new PO_HomePage(driver);
-	    }
-	    //==============END=======EDIT LEAVE BALANCE===============//
 	
 }
