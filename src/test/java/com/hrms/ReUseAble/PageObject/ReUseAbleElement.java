@@ -161,36 +161,6 @@ public class ReUseAbleElement {
   	        Thread.sleep(300);
   	    }
 		
-//  	    //MESSAGE RESTORED
-//		@FindBy(xpath = "//div[contains(text(),'Leave Balance Restored Successfully.')]")
-//		@CacheLookup
-//		public WebElement msgArchived;
-//		 // Action method to get the message after archiving
-//	    public boolean isArchivedSuccessfullyMessage_RU() throws InterruptedException {
-//	    	boolean flag = false;
-//	        if (msgArchived.isDisplayed()) {
-//	            flag = true;
-//	            logger.info("Confirmation message is Archived successfully: "+flag);
-//	        }
-//	        Thread.sleep(300);
-//	        return flag;
-//	    }
-//		
-//	    //MESSAGE ARCHIVED
-// 		@FindBy(xpath = "//div[contains(text(),'Leave Balance Archived Successfully.')]")
-// 		@CacheLookup
-// 		public WebElement msgRestored;
-//	    // Action method to get the message after restoring
-//	    public boolean isRestoredSuccessfullyMessage_RU() throws InterruptedException {
-//	    	boolean flag = false;
-//	        if (msgRestored.isDisplayed()) {
-//	            flag = true;
-//	            logger.info("Confirmation message is Restored successfully: "+flag);
-//	        }
-//	        Thread.sleep(300);
-//	        return flag;
-//	    }
-		
 	    //TO CHECK ALLREADY ARCHIVED
 	    @FindBy(xpath="//span[text()='Archived']")
 	    @CacheLookup

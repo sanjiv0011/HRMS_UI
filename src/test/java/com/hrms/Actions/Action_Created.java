@@ -14,16 +14,17 @@ public class Action_Created {
 	public static final Logger logger = LogManager.getLogger(Action_Created.class);
 	public ReUseAbleElement ruae;
 
-	public void created(WebDriver driver, String messageCreated, String messageAlreadyExist) throws InterruptedException
+	public boolean created(WebDriver driver, String messageCreated, String messageAlreadyExist) throws InterruptedException
 	{
 		ruae = new ReUseAbleElement(driver);
-		
+		boolean flag = false;
 		//CHECK THE CREATE CONFIRMATIONS MESSAGES
     	if(!ruae.isRequiredMessageDisplayed_RU()){
     		String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     		if(alretMsg.equals(messageCreated)) {
         		Assert.assertEquals(alretMsg, messageCreated, "CREATED successfully");
         		logger.info("==> "+messageCreated);
+        		flag = true;
         	}else if(alretMsg.equals(messageAlreadyExist)){
         		Assert.assertEquals(alretMsg,messageAlreadyExist,"Already Exist");
         		logger.info("===>>> "+messageAlreadyExist);
@@ -38,6 +39,7 @@ public class Action_Created {
     	}else {
     		ruae.clickOnCancelButton_RU();
     	}
+    	return flag;
 	}
 	
 }

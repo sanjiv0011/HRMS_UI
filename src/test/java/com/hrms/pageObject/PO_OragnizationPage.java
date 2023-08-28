@@ -1,11 +1,11 @@
 package com.hrms.pageObject;
 
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -22,6 +22,7 @@ import com.hrms.Actions.Action_Created;
 import com.hrms.Actions.Action_Deactivate;
 import com.hrms.Actions.Action_Restore;
 import com.hrms.Actions.Action_Updated;
+import com.hrms.DataBaseTesting.DB_TC_Organization;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
@@ -33,6 +34,9 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	public ReUseAbleElement ruae;
 	public Logger logger = LogManager.getLogger(getClass());
 	public WebDriverWait wait;
+	
+	//FOR DATABASE TESTING
+	public DB_TC_Organization db_o = new DB_TC_Organization();
 	
 	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
 	public PO_OragnizationPage(WebDriver driver){	
@@ -230,7 +234,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	
 	
 	//TO CREATE ORGANIZATION
-	public PO_HomePage createOragnization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode,String orgCountry, String orgTimeZone ) throws InterruptedException
+	public PO_HomePage createOragnization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode,String orgCountry, String orgTimeZone ) throws InterruptedException, SQLException
 	{ 	logger.info("Entered into create organizatioin methods");
 		clickOnBtnCreateOrganization();
 		setOrgName(orgName);
@@ -245,7 +249,14 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		setOrgCountry(orgCountry);
 		selectOrgTimeZone(orgTimeZone);
 		ruae.clickOnCreateButton_RU();
-		confirmationCreated.created(driver, alertCreated_org, alertAleradyExist_org);
+		boolean flag = confirmationCreated.created(driver, alertCreated_org, alertAleradyExist_org);
+		
+		//DATABASE TESTING
+		if(flag) {
+			db_o.test_DB_TC_Organization(orgName, orgCode, orgEmail, orgPhoneNumber, orgAddress, orgArea, orgCity, orgState, orgPostalCode, orgCountry, orgTimeZone);
+			logger.info("===>>> DataBase data matched with Entry input data");
+		}
+		
 		return new PO_HomePage(driver);
 	}
 	
@@ -253,10 +264,6 @@ public class PO_OragnizationPage extends ReUseAbleElement{
    	public PO_HomePage archiveOrganization(String orgName) throws InterruptedException {
        logger.info("Archive organization method called");
        actionArchive.archive(orgName, driver, alertArchived_org);
-       // METHODS TO ARCHIVE THE ORGANIZATION
-//       Action_Archive.archive(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
-//       logger.info("Returned inside archive organization method");
-//       isOrganizationArchiveSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGESS
        return new PO_HomePage(driver);
    	}
    
@@ -264,22 +271,14 @@ public class PO_OragnizationPage extends ReUseAbleElement{
    public PO_HomePage restoreOrganization(String orgName) throws InterruptedException {
         logger.info("Restore organization method called");
    		actionRestore.restore(orgName, driver,alertRestored_org );
-//       // METHODS TO RESTORE THE ORGANIZATION
-//       Action_Restore.restore(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
-//       logger.info("Returned inside restore organization method");
-//       isOrganizationRestoreSuccessMessageDisplayed(); //TO VARIFIRY CONFIRMATION MESSAGESS
-       return new PO_HomePage(driver);
+   		return new PO_HomePage(driver);
    }
    
    	//TO ACTIVATE ORGANIZATION
 	public PO_HomePage activateOrganization(String orgName) throws InterruptedException {
 		logger.info("Activate organization methods called");
 		actionActivate.activate(orgName, driver, alertActivated_org);
-    	//METHODS TO ACTIVATE THE ORGANIZATION
-//		Action_Activate.activate(orgName, searchBox_RU, inactiveLabel, btnAction_RU, actionActivate, btnYes, driver);
-//    	 logger.info("Return back inside activate organization method");
-//    	 isOrganizationActivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
-    	 return new PO_HomePage(driver);
+    	return new PO_HomePage(driver);
 	}
 	
 	
@@ -287,11 +286,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	public PO_HomePage deactivateOrganization(String orgName) throws InterruptedException {
 		logger.info("De-Activate organization methods called");
 		actionDeactivate.deactivate(orgName, driver, alertDeactivated_org);
-//    	//METHODS TO DEACTIVATE THE ORGANIZATION 
-//		Action_DeActivate.deactivate(orgName, searchBox_RU, activeLabel, btnAction_RU, actionDeactivate, btnYes, driver);
-//    	 logger.info("Return back inside deactivate organization method");
-//    	 isOrganizationDeactivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
-    	 return new PO_HomePage(driver);
+		return new PO_HomePage(driver);
 	}
 	
 	//TO EDIT ORGANIZATION
@@ -318,166 +313,5 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		ruae.clickOnBtnSaveChanges_RU(); //RU REPRESENT RE USEABLE ELEMENT
 		confirmationUpdated.updated(driver, alertUpdated_org,alertAleradyExist_org);
 		return new PO_HomePage(driver);
-	}
-	
-	
-	//============START========CONFIRMATION MESSAGES FORM ORGANIZATIONS PAGE OBJECTS AND ITS ACTION METHODS============//
-		//=========START===========ADDRESS==============//
-		//ON ORGANIZATION UPDATE 
-		String msgOrganizationUpdate_address =  "//div[contains(text(),'Organization Updated Successfully.')]";
-		//ON ORGANIZATION CREATE
-		String msgOrganizationCreate_address = "//div[contains(text(),'Organization Created Successfully.')]";
-		//ON ORGANIZATIONDEACTIVATE
-		String msgOrganizationDeactivate_address = "//div[contains(text(),'Organization Deactivated Successfully.')]";
-		//ON ORGANIZATION ACTIVATE
-		String msgOrganizationActivate_address = "//div[contains(text(),'Organization Activated Successfully.')]";
-		//ON ORGANIZATION ARCHIVE
-		String msgOrganizationArchive_address = "//div[contains(text(),'Organization Archived Successfully.')]";
-		//ON ORGANIZATION RESTORE
-		String msgOrganizationRestore_address = "//div[contains(text(),'Organization Restored Successfully.')]";
-		//ON ORGANIZATION MENDATORY CONDITION
-		String msgMendatoryCondition_address = "//p[contains(text(),'required')]";
-		//===========END===========ADDRESS===========//
-		
-		//========START==========ACTIONS METHODS==========//
-		//FOR ORGANIZATION UPDATE
-		public boolean isOrganizationUpdateSuccessMessageDisplayed() {
-			boolean flag = false;
-			try {
-				WebElement msgOrganizationUpdate = driver.findElement(By.xpath(msgOrganizationUpdate_address));
-				wait.until(ExpectedConditions.visibilityOf(msgOrganizationUpdate));
-		        if(msgOrganizationUpdate.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Confirmation message caught : "+msgOrganizationUpdate.getText());
-		        }else {
-		        	logger.info("Confirmation message not caught");
-		        }
-			}catch(Exception e) {
-				logger.info(e);
-			}
-			
-	        return flag;
-	    }
-
-		//FOR ORGANIZATION CREATE
-	    public boolean isOrganizationCreateSuccessMessageDisplayed() {
-	    	boolean flag = false;
-	    	try {
-	    		WebElement msgOrganizationCreate = driver.findElement(By.xpath(msgOrganizationCreate_address));
-	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationCreate));
-		    	if(msgOrganizationCreate.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Confirmation message caught : "+msgOrganizationCreate.getText());
-		        }else {
-		        	logger.info("Confirmation message not caught");
-		        }
-	    	}catch(Exception e) {
-	    		logger.info(e);
-	    	}
-	    	
-	        return flag;
-	    }
-
-	  //FOR ORGANIZATION DEACTIVATE
-	    public boolean isOrganizationDeactivateSuccessMessageDisplayed() {
-	    	boolean flag = false;
-	    	try {
-	    		WebElement msgOrganizationDeactivate = driver.findElement(By.xpath(msgOrganizationDeactivate_address));
-	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationDeactivate));
-		        if(msgOrganizationDeactivate.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Confirmation message caught : "+msgOrganizationDeactivate.getText());
-		        }else {
-		        	logger.info("Confirmation message not caught");
-		        }
-	    	}catch(Exception e)
-	    	{
-	    		logger.info(e);
-	    	}
- 
-        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
-	        return flag;
-	    }
-
-	  //FOR ORGANIZATION ACTIVATE
-	    public boolean isOrganizationActivateSuccessMessageDisplayed() {
-	    	boolean flag = false;
-	    	try {
-	    		WebElement msgOrganizationActivate = driver.findElement(By.xpath(msgOrganizationActivate_address));
-	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationActivate));
-		        if(msgOrganizationActivate.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Confirmation message caught : "+msgOrganizationActivate.getText());
-		        }else {
-		        	logger.info("Confirmation message not caught");
-		        }
-	    	}catch(Exception e) {
-	    		logger.info(e);
-	    	}
- 
-        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
-	        return flag;
-	    }
-
-	  //FOR ORGANIZATION ARCHIVE
-	    public boolean isOrganizationArchiveSuccessMessageDisplayed() {
-	    	boolean flag = false;
-	    	try {
-	    		WebElement msgOrganizationArchive = driver.findElement(By.xpath(msgOrganizationArchive_address));
-	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationArchive));
-		        if(msgOrganizationArchive.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Confirmation message caught : "+msgOrganizationArchive.getText());
-		        }else {
-		        	logger.info("Confirmation message not caught");
-		        }
-	    	}catch(Exception e) {
-	    		logger.info(e);
-	    	}
-
-        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
-	        return flag;
-	    }
-
-	  //FOR ORGANIZATION RESTORE
-	    public boolean isOrganizationRestoreSuccessMessageDisplayed() {
-	    	boolean flag = false;
-	    	try {
-	    		WebElement msgOrganizationRestore = driver.findElement(By.xpath(msgOrganizationRestore_address));
-	    		wait.until(ExpectedConditions.visibilityOf(msgOrganizationRestore));
-		        if(msgOrganizationRestore.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Confirmation message caught : "+msgOrganizationRestore.getText());
-		        }else {
-		        	logger.info("Confirmation message not caught");
-		        }
-	    	}catch(Exception e) {
-	    		logger.info(e);
-	    	}
-
-        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
-	        return flag;
-	    }
-	    
-	  //FOR ORGANIZATION MANDATORY FILED
-	    public boolean isMedatoryMessageDisplayed() {
-	    	boolean flag = false;
-			try {
-				WebElement msgMendatoryCondition = driver.findElement(By.xpath(msgMendatoryCondition_address));
-				wait.until(ExpectedConditions.visibilityOf(msgMendatoryCondition));
-		        if(msgMendatoryCondition.isDisplayed()) {
-		        	flag = true;
-		        	logger.info("Required message caught : "+msgMendatoryCondition.getText());
-		        }else {
-		        	logger.info("Required message not caught");
-		        }
-			}catch(Exception e){
-				logger.info(e);
-			}
-
-        	Assert.assertTrue(flag);	//TESTNG ASSERTION IT WILL REFLECT ON THE REPORT
-	        return flag;
-	    }
-	  //========END==========ACTIONS METHODS==========//
-	  //============START========CONFIRMATION MESSAGES FORM ORGANIZATIONS PAGE OBJECTS AND ITS ACTION METHODS============//
+	}	
 }
