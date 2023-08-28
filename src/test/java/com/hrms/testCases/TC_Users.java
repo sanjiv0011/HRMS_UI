@@ -55,15 +55,13 @@ public class TC_Users extends BaseClass{
 		public void test_Login() throws InterruptedException {
 			lgn = new PO_LoginPage(driver);
 			hp = lgn.Login(userName, password);
-			Thread.sleep(3000);
 		}
 		
 		//TO CREATE USER
-		@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+		//@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
 		public void test_CreateUser(String uname, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
-			hp = up.createUser(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);
-			logger.info("User created");		
+			hp = up.createUser(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);	
 		}
 			
 		//ARCHIVE USER
@@ -71,7 +69,6 @@ public class TC_Users extends BaseClass{
 		public void test_ArchiveUser()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.archiveUser(uname);
-			logger.info("Archive User call done");	
 		}
 		
 		//RESTORE USER
@@ -79,25 +76,20 @@ public class TC_Users extends BaseClass{
 		public void test_RestoreUser()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.restoreUser(uname);
-			logger.info("Restore user call done");
 		}
 		
 		//ACTIVATE USER
 		//@Test(priority = 5)
-		public void test_ActivateUser()throws InterruptedException
-		{
+		public void test_ActivateUser()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.activateUser(uname);
-			logger.info("Activate user call done");	
 		}
 		
 		//DEACTIVATE USER
 		//@Test(priority = 6)
-		public void test_DeActivateUser()throws InterruptedException
-		{
+		public void test_DeActivateUser()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.deactivateUser(uname);
-			logger.info("DeActivate user call done");
 		}
 				
 			
@@ -106,7 +98,6 @@ public class TC_Users extends BaseClass{
 		public void test_EditUser()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.editUser(uname, newUName, newOrganizationName, NewFirstName, newLastName, newEmailAddress, newUserRole );
-			Thread.sleep(2000);
 		}
 			
 		//ASSIGN PROJECT TO THE USERSNewFirstName
@@ -114,7 +105,6 @@ public class TC_Users extends BaseClass{
 		public void test_AssignUserToProject()throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.assignUserToProject(userSearchKey, projectName, assignProjectStartDate, assignProjectEndDate);
-			Thread.sleep(2000);
 		}
 			
 		
@@ -123,11 +113,6 @@ public class TC_Users extends BaseClass{
 		public void test_CreateUserWithUserPermissions() throws InterruptedException {
 			up = callMeBeforePerformAnyAction();
 			userPermissions = up.createUser_ReturnType_PO_UserPermissions(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);
-			logger.info("User created");
-			Thread.sleep(500);
-			hp = userPermissions.userPermissionsAdminCheckbox();
-			Thread.sleep(3000);
-				
 		}
 		
 				

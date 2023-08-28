@@ -15,6 +15,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.hrms.Actions.Action_Archive;
+import com.hrms.Actions.Action_Created;
+import com.hrms.Actions.Action_Restore;
+import com.hrms.Actions.Action_Updated;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
@@ -38,6 +42,21 @@ public class PO_LeavePage extends ReUseAbleElement {
 		action = new Actions(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
+	
+	//ACTION OPTIONS CONSTRUCTOR
+	public Action_Archive actionArchive = new Action_Archive();
+	public Action_Restore actionRestore = new Action_Restore();
+	public Action_Created confirmationCreated = new Action_Created();
+	public Action_Updated confirmationUpdated = new Action_Updated();
+		
+		
+	//ALERT LEAVE MESSAGES
+	String alertRestored_leave = "Leave Restored Successfully.";
+	String alertArchived_leave = "Leave Archived Successfully.";
+	String alertCreated_leave = "Leave Created Successfully.";
+	String alertUpdated_leave = "Leave Updated Successfully.";
+	String alertAleradyExist_leave = "Leave already exists.";
+	
 	
 	//=====START====LEAVE PAGE OBJECTS AND ITS ACTION METHODS============//
 	//APLLY LEAVE BUTTON ADDRESS
@@ -94,16 +113,16 @@ public class PO_LeavePage extends ReUseAbleElement {
 	
 	//ACTION METHOD TO SELECT THE LEAVE START DATE
 	public void selectStartDate(String leaveStartDate, int x) throws InterruptedException {
-		//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
 	    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveStartDate, x);
+		//ruae.setDateWithoutUsingDatePicker_RU(leaveStartDate,x);
 	    logger.info("Leave start date, month and year entered");
 	    Thread.sleep(1000);
 	}
 
 	//ACTION METHOD TO SELECT LEAVE END DATE
 	public void selectEndDate(String leaveEndDate, int x) throws InterruptedException {
-		//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-	    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveEndDate, x);
+	    //DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, leaveEndDate, x);
+		ruae.setDateWithoutUsingDatePicker_RU(leaveEndDate,x);
 	    logger.info("Leave end date, month and year entered");
 	    Thread.sleep(2000);
 	}
@@ -124,18 +143,9 @@ public class PO_LeavePage extends ReUseAbleElement {
 	WebElement btnApplyLeaveFinal;
 	public void clickOnBtnApplyLeaveFinal() throws InterruptedException {
 		btnApplyLeaveFinal.click();
-	    Thread.sleep(300);
 	    logger.info("Clicked on the apply leave button");
     }
-	
-	//REQUIRED FILED MESSAGES ADDRESS AND ITS ACTION METHODS
-	String endDateEndRequiredMsg = "//p[contains(.,'End date is required')]";
-	public boolean isEndDateRequiredMessageDisplayed() {
-		WebElement endDateReqMsg = driver.findElement(By.xpath(endDateEndRequiredMsg));
-		return endDateReqMsg.isDisplayed();
-	}
-	
-	
+
 	
 	//TO APPLY LEAVE
 	public PO_HomePage applyLeave(String leaveTypeName,String leaveDuration,String leaveStartDate,String leaveEndDate, String reason) throws InterruptedException
@@ -155,17 +165,11 @@ public class PO_LeavePage extends ReUseAbleElement {
 		}
 		
 		selectStartDate(leaveStartDate, 1);
-		//selectEndDate(leaveEndDate, 2);
+		selectEndDate(leaveEndDate, 2);
 		setLeaveReason(reason);
 		clickOnBtnApplyLeaveFinal();
-		try {
-			if(isEndDateRequiredMessageDisplayed()) {
-				setSecondsDateWithoutUsingDatePicker_RU(leaveEndDate);
-			}
-		}catch(Exception e) {
-			logger.info(e.getCause());
-		}
-		clickOnBtnApplyLeaveFinal();
+		confirmationCreated.created(driver, alertCreated_leave, alertAleradyExist_leave);
+		
 		Thread.sleep(200);
 		clickOnCancelButton_RU();
 		

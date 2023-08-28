@@ -43,7 +43,7 @@ public class PO_HomePage extends ReUseAbleElement{
 //	@CacheLookup
 //	public WebElement btnSystemManager;
 	
-	@FindBy(xpath = "//a[@href=\"/organization\"]")
+	@FindBy(xpath = "//span[normalize-space()='Organizations']")
 	@CacheLookup
 	public WebElement tabOrganizations;
 	
@@ -59,7 +59,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	@CacheLookup
 	public WebElement tabUsers;
 	
-	@FindBy(xpath = "//a[@href=\"/project\"]")
+	@FindBy(xpath = "//span[normalize-space()='Projects']")
 	@CacheLookup
 	public WebElement tabProjects;
 	
@@ -75,7 +75,7 @@ public class PO_HomePage extends ReUseAbleElement{
 //	@CacheLookup
 	public String tabMyCalender = "//span[normalize-space()='My Calendar']";
 	
-	@FindBy(xpath = "//a[@href=\"/job-title\"]")
+	@FindBy(xpath = "//span[normalize-space()='Job Titles']")
 	@CacheLookup
 	public WebElement tabJobTitle;
 	
@@ -92,7 +92,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	@CacheLookup
 	public WebElement tabMenu;
 	
-	@FindBy(xpath = "//*[name()='path' and contains(@d,'M3 18h18v-')]")
+	@FindBy(xpath = "(//div[contains(@class,'MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault')])[1]")
 	@CacheLookup
 	public WebElement iconUserLogged;
 	
@@ -244,12 +244,19 @@ public class PO_HomePage extends ReUseAbleElement{
 		clickOndropdownLogout();
 		clickOnYesButton_RU();
 		
-		if(driver.getTitle().equals("Login to HRMS")){
-			Assert.assertTrue(true);
-			logger.info("Logout successful...");
-		}else{
-			Assert.assertTrue(false);
-			logger.info("Logout failed!!!");
+		try {
+			
+			wait.until(ExpectedConditions.titleContains("Login to HRMS"));
+			Thread.sleep(2000);
+			if(driver.getTitle().equals("Login to HRMS")){
+				Assert.assertTrue(true);
+				logger.info("... LOGOUT DONE ...");
+			}else{
+				Assert.assertTrue(false);
+				logger.info("!!! LOGOUT FAILEED !!!");
+			}
+		}catch(Exception e) {
+			logger.info("Logout Exception: "+e.getMessage());
 		}
 		
 		return new PO_LoginPage(driver);

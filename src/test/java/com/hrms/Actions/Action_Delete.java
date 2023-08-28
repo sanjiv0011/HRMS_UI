@@ -27,6 +27,7 @@ public class Action_Delete {
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     	    	if(alretMsg.equals(message)) {
     	    		Assert.assertEquals(alretMsg, message,"DELETED successfully");
+    	    		logger.info("===>>> "+message);
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}

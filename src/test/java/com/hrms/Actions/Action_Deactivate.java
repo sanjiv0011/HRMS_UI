@@ -28,6 +28,7 @@ public class Action_Deactivate {
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     	    	if(alretMsg.equals(message)) {
     	    		Assert.assertEquals(message, alretMsg,"DEACTIVATED successfully");
+    	    		logger.info("===>>> "+message);
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}

@@ -52,11 +52,6 @@ public class TC_MyCalendar extends BaseClass{
 	//TO LOGOUT
 	@Test(priority = 10, dependsOnMethods = {"test_Login"})
 	public void test_Logout() throws InterruptedException {
-		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-		Thread.sleep(2000);
-		hp.clickOniconHomeImage();
-		Thread.sleep(4000);
-		// TO LOGOUT
 		hp.Logout();
 	}
 	

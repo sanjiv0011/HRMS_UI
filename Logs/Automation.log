@@ -1,183 +1,95 @@
-19:29:21.506 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:29:21.548 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:29:21.560 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Leave types created
-19:29:21.652 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:29:26.856 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:29:28.870 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered edit leave types Methods
-19:29:30.511 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
-19:29:32.571 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+19:34:11.608 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:34:12.192 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Restore button
+19:34:12.547 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:34:12.849 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+19:34:12.988 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 2
+19:34:13.033 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:34:13.551 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+19:34:15.563 [main] INFO  com.hrms.Actions.Action_Restore - ===>>> Organization Restored Successfully.
+19:34:15.564 [main] INFO  com.hrms.testCases.TC_Ogranization - Restore user call done
+19:34:15.644 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:34:20.722 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+19:34:22.726 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - De-Activate organization methods called
+19:34:23.252 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: SFCSolutions
+19:34:28.293 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
   (Session info: chrome=116.0.5845.111)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0106b58fbdb82167010a95780f98590c, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0106b58fbdb82167010a95780f98590c
-19:29:32.645 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-19:29:33.291 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Edit button
-19:29:34.895 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
-19:29:36.234 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
-19:29:36.378 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes button
-19:29:36.704 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
+Command: [00a13f209a91bc4752bdbefdc3999247, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58044}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58044/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 00a13f209a91bc4752bdbefdc3999247
+19:34:28.340 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
+19:34:28.708 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:34:29.297 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Deactivated button
+19:34:29.644 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:34:29.948 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+19:34:30.005 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:34:30.532 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+19:34:32.543 [main] INFO  com.hrms.Actions.Action_Deactivate - ===>>> Organization Deactivated Successfully.
+19:34:32.545 [main] INFO  com.hrms.testCases.TC_Ogranization - DeActivate user call done
+19:34:32.657 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:34:37.824 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+19:34:39.836 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Activate organization methods called
+19:34:40.368 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: SFCSolutions
+19:34:45.425 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
   (Session info: chrome=116.0.5845.111)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0106b58fbdb82167010a95780f98590c, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0106b58fbdb82167010a95780f98590c
-19:29:36.704 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:29:36.728 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:29:36.742 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Edit leave types method call done
-19:29:36.829 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:29:41.992 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:29:44.008 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered delete leave types Methods
-19:29:44.593 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
-19:29:46.648 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+Command: [00a13f209a91bc4752bdbefdc3999247, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58044}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58044/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 00a13f209a91bc4752bdbefdc3999247
+19:34:45.491 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
+19:34:45.904 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:34:46.503 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Activate button
+19:34:46.894 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:34:47.200 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+19:34:47.224 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:34:47.750 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+19:34:49.758 [main] INFO  com.hrms.Actions.Action_Activate - ===>>> Organization Activated Successfully.
+19:34:49.764 [main] INFO  com.hrms.testCases.TC_Ogranization - Activate user call done
+19:34:50.104 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:34:55.217 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabOrganizations button
+19:34:57.227 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Entered into edit organizatioin methods
+19:34:57.825 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: SFCSolutions
+19:35:01.947 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+19:35:02.546 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Edit button
+19:35:04.830 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org name
+19:35:05.727 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org code
+19:35:06.845 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org email
+19:35:07.931 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org phone number
+19:35:08.954 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org address
+19:35:09.934 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org area
+19:35:10.864 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org city
+19:35:11.767 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org  state
+19:35:12.590 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org postal code
+19:35:13.461 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org  country
+19:35:13.892 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Clicked on the icon drop down for the time zone
+19:35:13.892 [main] INFO  com.hrms.projectUtility.TimePicker - Enter inside method selectOptionFromDropdown
+19:35:16.150 [main] INFO  com.hrms.projectUtility.TimePicker - matched list value(UTC +05:30) Asia/Kolkata
+19:35:17.198 [main] INFO  com.hrms.pageObject.PO_OragnizationPage - Enterd org  time zone
+19:35:17.335 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes button
+19:35:17.715 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
   (Session info: chrome=116.0.5845.111)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0106b58fbdb82167010a95780f98590c, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0106b58fbdb82167010a95780f98590c
-19:29:46.760 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-19:29:47.362 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the delete button
-19:29:47.849 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-19:29:48.156 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:29:48.182 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:29:48.197 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Delete leave types method call done
-19:29:53.374 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:29:56.490 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:29:56.581 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
-19:29:56.894 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-19:29:58.005 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-19:29:58.182 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-19:29:58.510 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-19:29:59.090 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Driver shutdown
-19:31:08.252 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Base class started...
-19:31:10.574 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Chrome driver selected
-19:31:11.571 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Login page started
-19:31:12.208 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-19:31:12.942 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-19:31:13.592 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-19:31:14.200 [main] INFO  com.hrms.pageObject.PO_LoginPage - Login success...
-19:31:19.904 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:31:25.071 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:31:27.100 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered create leave types Methods
-19:31:29.214 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Click on Create leave type button
-19:31:30.577 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
-19:31:32.078 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
-19:31:32.276 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Create button
-19:31:32.605 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
-  (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8638c229762874b7d4bbbeb8b833395
-19:31:32.606 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:31:32.635 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:31:32.647 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Leave types created
-19:31:32.762 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:31:37.830 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:31:39.837 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - De-Activate leave types methods called
-19:31:40.460 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
-19:31:42.499 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
-  (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8638c229762874b7d4bbbeb8b833395
-19:31:42.526 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
-19:31:42.966 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-19:31:43.579 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Deactivated button
-19:31:44.012 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-19:31:44.315 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:31:44.341 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:31:44.351 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Deactivate Leave Types methods call done
-19:31:44.442 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:31:49.571 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:31:51.586 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Activate leave types methods called
-19:31:52.283 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
-19:31:54.319 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
-  (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8638c229762874b7d4bbbeb8b833395
-19:31:54.348 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
-19:31:54.833 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-19:31:55.436 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Activate button
-19:31:55.863 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-19:31:56.168 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:31:56.231 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:31:56.246 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Activate leave types methods call done
-19:31:56.335 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:32:01.481 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:32:03.489 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered edit leave types Methods
-19:32:05.069 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
-19:32:07.125 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
-  (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8638c229762874b7d4bbbeb8b833395
-19:32:07.241 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-19:32:07.867 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Edit button
-19:32:09.487 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered leave type
-19:32:10.797 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Enterd leave types description
-19:32:10.958 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the save changes button
-19:32:11.287 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Required Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(@class,'MuiFormHelperText-contained')]"}
-  (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8638c229762874b7d4bbbeb8b833395
-19:32:11.287 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:32:11.325 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:32:11.338 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Edit leave types method call done
-19:32:11.420 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:32:16.488 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabManageLeaveTypes button
-19:32:18.499 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Entered delete leave types Methods
-19:32:19.079 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Emergency Leave
-19:32:21.131 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
-  (Session info: chrome=116.0.5845.111)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8638c229762874b7d4bbbeb8b833395, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8638c229762874b7d4bbbeb8b833395
-19:32:21.246 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-19:32:21.846 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the delete button
-19:32:22.283 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-19:32:22.591 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert - Try
-19:32:22.662 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-19:32:22.676 [main] INFO  com.hrms.pageObject.PO_ManageLeaveTypes - Delete leave types method call done
-19:32:27.926 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:32:31.032 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-19:32:31.109 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
-19:32:31.696 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-19:32:32.814 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-19:32:32.963 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-19:32:33.288 [main] INFO  com.hrms.pageObject.PO_HomePage - Logout successful...
-19:32:34.268 [main] INFO  com.hrms.testCases.TC_ManageLeaveTypes - Driver shutdown
+Command: [00a13f209a91bc4752bdbefdc3999247, findElement {using=xpath, value=//p[contains(@class,'MuiFormHelperText-contained')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58044}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58044/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 00a13f209a91bc4752bdbefdc3999247
+19:35:17.715 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+19:35:17.749 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:35:18.279 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+19:35:20.280 [main] INFO  com.hrms.Actions.Action_Updated - ===>>> Organization Updated Successfully.
+19:35:20.284 [main] INFO  com.hrms.testCases.TC_Ogranization - Edit organization call done
+19:35:20.410 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+19:35:20.572 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
+19:35:20.878 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
+19:35:21.973 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+19:35:22.125 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:35:24.471 [main] INFO  com.hrms.pageObject.PO_HomePage - ... LOGOUT DONE ...
+19:35:24.838 [main] INFO  com.hrms.testCases.TC_Ogranization - Driver shutdown

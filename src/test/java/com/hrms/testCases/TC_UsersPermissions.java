@@ -24,7 +24,6 @@ public class TC_UsersPermissions extends BaseClass {
 		public void test_Login() throws InterruptedException {
 			lgn = new PO_LoginPage(driver);
 			hp = lgn.Login(userName, password);
-			Thread.sleep(3000);
 		}
 		
 		//TO CHECK USER PERMISSION ASSIGNMENT DROPDOWNS 

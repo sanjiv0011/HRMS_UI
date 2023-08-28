@@ -34,7 +34,6 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		Thread.sleep(5000);
 	}
 			
 	//TO CREATE LEAVE TYPES
@@ -78,11 +77,6 @@ public class TC_ManageLeaveTypes extends BaseClass {
 	//TO PERFORM THE LOGOUT
 	@Test(priority = 10, dependsOnMethods = {"test_Login"})
 	public void test_Logout() throws InterruptedException {
-		Thread.sleep(5000);
-		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-		hp.clickOniconHomeImage();
-		Thread.sleep(3000);
-		// to logout
 		hp.Logout();
 	}
 	

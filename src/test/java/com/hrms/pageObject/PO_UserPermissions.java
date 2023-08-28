@@ -774,7 +774,6 @@ public class PO_UserPermissions extends ReUseAbleElement{
 	    		Thread.sleep(1000);
 	    		
 	    		ruae.clickOnBtnSaveAndGoToHome_2_RU();
-	    		Thread.sleep(300);
 	    		logger.info("Permissions assigned to the creted users with admin all");
 	    		
 	    	}

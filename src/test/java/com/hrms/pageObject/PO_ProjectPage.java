@@ -11,9 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+import com.hrms.Actions.Action_Archive;
+import com.hrms.Actions.Action_Created;
+import com.hrms.Actions.Action_Restore;
+import com.hrms.Actions.Action_Updated;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-import com.hrms.projectUtility.Action_Archive;
-import com.hrms.projectUtility.Action_Restore;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
@@ -33,6 +35,22 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
 	}
+	
+	public Action_Archive actionArchive = new Action_Archive();
+	public Action_Restore actionRestore = new Action_Restore();
+	public Action_Created confirmationCreated = new Action_Created();
+	public Action_Updated confirmationUpdated = new Action_Updated();
+	
+	//ALERT PROJECT MESSAGES
+	String alertRestored_pro = "Project Restored Successfully.";
+	String alertArchived_pro = "Project Archived Successfully.";
+	String alertCreated_pro = "Project Created Successfully.";
+	String alertUpdated_pro = "Project Updated Successfully.";
+	String alertAleradyExist_pro = "Project already exists.";
+	String alertUserAlreadyAssigned = "User is already assigned";
+	String alertProjectAssignedToTheUser = "Project assigned successfully.";
+	
+			
 	
 	//=====START====PROJECTS PAGE OBJECTS============//
 		//CREATE PROJECT BUTTON ADDRESS
@@ -80,24 +98,6 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		@CacheLookup
 		public List <WebElement> technologyList;
 		
-		//PROJECT ALREADY EIXT MESSAGE ADDRESS
-		@FindBy(xpath = "//div[contains(text(),\"Project already exists.\")]")
-		@CacheLookup
-		WebElement msgAlreadyExist;
-		
-		//PROJECT UPDATED MESSAGE ADDRESS
-		@FindBy(xpath = "//div[contains(text(),'Project Updated Successfully.')]")
-		@CacheLookup
-		WebElement msgUpdated;
-		
-		//PROJECT CREATED MESSAGE ADDRESS
-		@FindBy(xpath = "//div[contains(text(),\"Project Created Successfully\")]")
-		@CacheLookup
-		WebElement msgCreated;
-		//=====END====PROJECTS PAGE OBJECTS============//
-		
-				
-		
 		//=====START====ACTIONS METHODS ON THE PROJECTS PAGE OBJECTS============//
 		
 		//ACTION METHOD TO CLICK ON THE CREATE PROJECT BUTTON
@@ -109,6 +109,8 @@ public class PO_ProjectPage extends ReUseAbleElement {
 
 		//ACTION METHOD TO SET PROJECT NAME
 		public void setProjectName(String projectName) throws InterruptedException {
+			textEnterProjectName.sendKeys(Keys.CONTROL,"a");
+			textEnterProjectName.sendKeys(Keys.DELETE);
 		    textEnterProjectName.sendKeys(projectName);
 		    logger.info("Entered project name");
 		    Thread.sleep(1000);
@@ -116,6 +118,8 @@ public class PO_ProjectPage extends ReUseAbleElement {
 
 		//ACTION METHOD TO SET PROJECT DESCRIPTION
 		public void setProjectDescription(String projectDescription) throws InterruptedException {
+			textEnterDescripton.sendKeys(Keys.CONTROL,"a");
+			textEnterDescripton.sendKeys(Keys.DELETE);
 		    textEnterDescripton.sendKeys(projectDescription);
 		    logger.info("Entered project description");
 		    Thread.sleep(1000);
@@ -157,6 +161,13 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		    logger.info("Project end date, month and year entered");
 		}
 		
+		//TO CLEAR THE ALREADY PRESENT TECHNOLOGY
+		public void clearAlreadyPresentTechonology() throws InterruptedException {
+			selectTechnology.sendKeys(Keys.BACK_SPACE); //IT CLEAR THE ALEADY PRESENT TECHONOLOGY
+	   		selectTechnology.sendKeys(Keys.BACK_SPACE); //IT CLEAR THE ALEADY PRESENT TECHONOLOGY
+	   		Thread.sleep(500);
+		}
+		
 		//ACTION METHOD TO CLICK ON THE TECHNOLOGY DROPDOWN AND SELECT THE GIVEN TECHNOLOGY NAME
 		public void selectTechnology(String technologyName) throws InterruptedException {
 		    selectTechnology.click();
@@ -168,25 +179,6 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		    Thread.sleep(1000);
 		}
 		
-		//ACTION METHOD TO CHECK THE STATUS IF THE PROJECT ALREADY CREATED
-		public boolean isProjectAlreadyExistMessageDisplayed() throws InterruptedException {
-			Thread.sleep(300);
-	        return msgAlreadyExist.isDisplayed();
-	    }
-
-		//ACTION METHOD TO CHECK THE STATUS IF THE PROJECT UPDATED
-	    public boolean isProjectUpdatedMessageDisplayed() throws InterruptedException {
-	    	Thread.sleep(300);
-	        return msgUpdated.isDisplayed();
-	    }
-
-	  //ACTION METHOD TO CHECK THE STATUS IF THE NEW PROJECT CREATED
-	    public boolean isProjectCreatedMessageDisplayed() throws InterruptedException {
-	    	Thread.sleep(300);
-	        return msgCreated.isDisplayed();
-	    }
-		// =====END====ACTIONS METHODS ON THE PROJECTS PAGE OBJECTS============//
-
 	    
 	  //TO CREATE PROJECTS
 	   public PO_HomePage createProject(String projectName, String projectDescription, String domainName, String clientName, String technologyName,String projectStartDate, String projectEndDate) throws InterruptedException
@@ -196,11 +188,11 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   		setProjectDescription(projectDescription);	//TO ENTER THE PROJECT DESCRIPTION
 	   		selectClient(clientName);	//TO SELECT THE CLIENT
 	   		selectDomain(domainName);	//TO SELECT THE DOMAIN
-	   		selectStartDate(projectStartDate, 1);	//SET SELECT THE PROJECT START DATE 
-	   		setSecondsDateWithoutUsingDatePicker_RU(projectEndDate); 	//SET SELECT THE PROJECT END DATE 
+	   		selectStartDate(projectStartDate, 1);	//SELECT THE PROJECT START DATE BY USING DATE PICKER
+	   		setDateWithoutUsingDatePicker_RU(projectEndDate,2); 	//SELECT THE PROJECT END DATE WITHOUT USING DATE PICKER 
 	   		selectTechnology(technologyName);	//TO SELECT THE TECHNOLOGY
 	   		ruae.clickOnCreateButton_RU();	//TO CLICK ON THE CREATE BUTTON AFTER FILLING DETAILS
-	   		//TO TRY ANOTHER WAY IN CASE TIME PICKER FAILED TO SET END TIME
+	   		confirmationCreated.created(driver, alertCreated_pro, alertAleradyExist_pro);
 		    return new PO_HomePage(driver);	//TO RETURN THE DRIVER AT HOME PAGE
 	   }
 	   
@@ -208,10 +200,9 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   // THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
 	   public PO_HomePage archiveProject(String projectName) throws InterruptedException {
 	       logger.info("Archive project method called");
-
 	       // METHODS TO ARCHIVE THE PROJECT
-	       Action_Archive.archive(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
-	       logger.info("Returned inside archive project method");
+	       //Action_Archive.archive(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
+	       actionArchive.archive(projectName, driver, alertArchived_pro);
 	       return new PO_HomePage(driver);
 	   }
 	   
@@ -221,16 +212,14 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	       logger.info("Restore project method called");
 
 	       // METHODS TO RESTORE THE PROJECT
-	       Action_Restore.restore(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
-	       logger.info("Returned inside restore project method");
+	       //Action_Restore.restore(projectName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
+	       actionRestore.restore(projectName, driver, alertRestored_pro);
 	       return new PO_HomePage(driver);
 	   }
 
 	   // TO EDIT PROJECTS
 	   public PO_HomePage editProject(String projectSearchKey,String newProjecName, String newProjecDescription, String newDomainName, String newTechnologyName, String newProjectStartDate, String newProjectEndDate) throws InterruptedException {	
 		   logger.info("Entered edit project methods");
-		   Thread.sleep(2000);
-		   
 		   //IT WILL SEARCH FIRST THE SEARCK KEY AND ONCE IT COMES AT THE TOP THEN ONLY IT WILL ABLE TO EDIT THE CORRECT PROJECT
 		   ruae.searchBox_RU(projectSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 		   ruae.clickOnActionButton_RU();    // TO CLICK ON THE ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
@@ -239,9 +228,11 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	       setProjectDescription(newProjecDescription);    // TO ENTER THE PROJECT DESCRIPTION
 	       selectDomain(newDomainName);    // TO SELECT THE DOMAIN
 	       selectStartDate(newProjectStartDate, 1);    //SELECT THE PROJECT START DATE 
-	       selectEndDate(newProjectEndDate, 2);    //SELECT THE PROJECT END DATE 
+	       setDateWithoutUsingDatePicker_RU(newProjectEndDate,2);  //SELECT THE PROJECT END DATE 
+	   	   clearAlreadyPresentTechonology();	//TO CLEAR THE ALREADY PRESENT TECHONLOG
 	       selectTechnology(newTechnologyName);    // TO SELECT THE TECHNOLOGY
 	       ruae.clickOnBtnSaveChanges_RU();// TO CLICK ON THE SAVE CHANGES BUTTON AFTER FILLING DETAILS AND IT PREENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
+	       confirmationUpdated.updated(driver, alertUpdated_pro, alertAleradyExist_pro);
 	       return new PO_HomePage(driver);    // TO RETURN THE DRIVER AT HOME PAGE
 	   }
 	   
@@ -257,23 +248,14 @@ public class PO_ProjectPage extends ReUseAbleElement {
 		   logger.info("Clicked on the assign user button");
 	   }
 	   
-	   //DROPDOWN ICON ADDRESS FOR USER SELECTION
-	   @FindBy(xpath="//button[@title='Open']//*[name()='svg']")
-	   @CacheLookup
-	   WebElement iconUserDropdown;
-	   public void clickOnUserDropdownIcon() throws InterruptedException{
-		   iconUserDropdown.click();
-		   Thread.sleep(1000);
-		   logger.info("Clicked on the dropdown icon for the user");
-	   }
 	   
 	   //USER LIST ADDRESS FOR THE PROJECT ASSIGNMENT
 	   @FindBy(xpath="//ul[@id='user-listbox']//li")
 	   @CacheLookup
 	   public List <WebElement> listUserForProjectAssignment;
 	   public void selectUserForProjectAssignment(String userName) throws InterruptedException{
-		   clickOnUserDropdownIcon(); // IT CLICK ON THE DROPDWON SELECT USER
-		   Thread.sleep(500);
+		   //clickOnUserDropdownIcon(); // IT CLICK ON THE DROPDWON SELECT USER
+		   clickOnDropdown_1_RU();
 		   //THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE
 		   Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listUserForProjectAssignment, userName);
 		   Thread.sleep(1000);
@@ -291,43 +273,24 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   }
 	   
 	 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "USER IS ALREADY ASSIGNED" AND IT WILL THE BOOLEAN VALUES
-	   @FindBy(xpath="//div[contains(text(),'User is already assigned')]")
-	   @CacheLookup
-	   WebElement msgProjectAdreadyAssigned;
-	   public boolean isProjectAlreadyAssignToUser() throws InterruptedException{
+	   public void confirmationProjectAssignToUser() throws InterruptedException{
 		   boolean flag = false;
-		   Thread.sleep(300);
-		   try {
-			   msgProjectAdreadyAssigned.isDisplayed();
-			   if(msgProjectAdreadyAssigned.isDisplayed()) {
-				   flag = true;
-			   }
-		   }catch(Exception e) {
-			   e.getMessage();
+		   String alertContent = snakeAlertMessagesDisplayedContent_RU();
+		   if(alertContent.contains(alertUserAlreadyAssigned)) {
+			   logger.info("===>>> "+alertUserAlreadyAssigned);
+			   flag = true;
+			   logger.info("Is project alerady assigned to the user: "+flag);
+			   ruae.clickOnCancelButton_RU();
+		   }else if(alertContent.equals(alertProjectAssignedToTheUser)) {
+			   logger.info("===>>> "+alertProjectAssignedToTheUser);
+			   flag = true;
+			   logger.info("Is project assigned to the user successfully: "+flag);
+		   }else {
+			   logger.info("Alert message content: "+ alertContent);
+			   ruae.clickOnCancelButton_RU();
 		   }
-		   Thread.sleep(1000);
-		   return flag;
 	   }
-	   
-	 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "PROJECT ASSIGNED SUCCESSFULLY" AND IT WILL THE BOOLEAN VALUES
-	   @FindBy(xpath="//div[contains(text(),'Project assigned successfully.')]")
-	   @CacheLookup
-	   WebElement msgPrjectAssignedSuccessfully;
-	   public boolean isProjectAssignToUserSuccessfully() throws InterruptedException{
-		   boolean flag = false;
-		   Thread.sleep(300);
-		   try {
-			   msgPrjectAssignedSuccessfully.isDisplayed();
-			   if(msgPrjectAssignedSuccessfully.isDisplayed()) {
-				   flag = true;
-			   }
-		   }catch(Exception e) {
-			   e.getMessage();
-		   }
-		   Thread.sleep(1000);
-		   return flag;
-	   }
-	   
+
 	 
 	 //===========END==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========// 
 	   
@@ -336,25 +299,14 @@ public class PO_ProjectPage extends ReUseAbleElement {
 	   public PO_HomePage assignProjectToUser(String projectSearchKey, String userName, String assignProjectStartDate, String assignProjectEndDate) throws InterruptedException
 	   {	logger.info("Entered edit project methods");
 	   		Thread.sleep(2000);
-	   		
 	   		ruae.searchBox_RU(projectSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 	   		clickOnAssignUserBtn();	//IT CLICK ON THE ASSIGN USER BUTTON
 	   		selectUserForProjectAssignment(userName); 	//IT CLICK ON THE USER SELECTION DORPDOWN ICON AND SELECT THE GIVEN USER FROM THE LIST
 	   		selectStartDate(assignProjectStartDate, 1);    //SELECT THE ASSIGN PROJECT START DATE 
-	   		selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
+	   		setDateWithoutUsingDatePicker_RU(assignProjectEndDate,2);  //SELECT THE PROJECT END DATE 
+	   		//selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
 	   		clickOnBtnAssign(); //IT CLICK ON THE ON THE ASSGIN BUTTON AFTER FILLING THE DETAILS
-	   		
-	   		//TAKES THE DECISION BASED ON THE CONFIREMATINO MESSAGES
-	   		if(isProjectAlreadyAssignToUser()) {
-	   			logger.info("Project already assigned to the given users");
-	   			Thread.sleep(3000);
-	   			ruae.clickOnCancelButton_RU();
-	   		}else if(isProjectAssignToUserSuccessfully()) {
-	   			logger.info("Project assigned to the users successfully");
-	   		}else {
-	   			logger.info("Not captured any confirmatin message");
-	   		}
-	   		Thread.sleep(2000);
+	   		confirmationProjectAssignToUser();
 	   		return new PO_HomePage(driver); // TO RETURN THE DRIVER AT HOME PAGE
 	   }
 	   

@@ -93,12 +93,14 @@ public class PO_LoginPage extends ReUseAbleElement {
 		
 		try {
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), "Dashboard"));
+			Thread.sleep(2000);
 			if(driver.getPageSource().contains("Dashboard")){
 				Assert.assertTrue(true);
-				logger.info("Login success...");
+				logger.info("... LOGIN DONE ...");
+				
 			} else{
 				Assert.assertTrue(false);
-				logger.info("Login failed!!!");
+				logger.info("!!! LOGGIN FAILED !!!");
 			}
 		}catch(Exception e) {
 			logger.info(e.getMessage());

@@ -14,20 +14,20 @@ public class Action_Restore {
 	public static final Logger logger = LogManager.getLogger(Action_Restore.class);
 	public ReUseAbleElement ruae;
 	
-	public void activate(String searchKey,WebDriver driver, String message) throws InterruptedException
+	public void restore(String searchKey,WebDriver driver, String message) throws InterruptedException
 	{
 		ruae = new ReUseAbleElement(driver);
 		ruae.searchBox_RU(searchKey);
     	if(!ruae.isSearchKeysNotFound_RU()){
-    		if(ruae.isAlreadyInActiveDisplayed_RU()) {
+    		if(ruae.isAlreadyArchivedDisplayed_RU()) {
     			ruae.clickOnActionButton_RU();
-    			ruae.clickOnActivateAction_RU();
+    			ruae.clickOnRestoreAction_RU();
     			ruae.clickOnYesButton_RU();
-    	    	
     	    	//CHECK THE ACTIVATE CONFIRMATIONS MESSAGES
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     	    	if(alretMsg.equals(message)) {
-    	    		Assert.assertEquals(message, alretMsg,"Leave types ACTIVATED successfully");
+    	    		Assert.assertEquals(message, alretMsg,"RESTORED successfully");
+    	    		logger.info("===>>> "+message);
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}

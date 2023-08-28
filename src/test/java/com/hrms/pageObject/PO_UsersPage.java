@@ -6,16 +6,19 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+import com.hrms.Actions.Action_Activate;
+import com.hrms.Actions.Action_Archive;
+import com.hrms.Actions.Action_Created;
+import com.hrms.Actions.Action_Deactivate;
+import com.hrms.Actions.Action_Restore;
+import com.hrms.Actions.Action_Updated;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-import com.hrms.projectUtility.Action_Activate;
-import com.hrms.projectUtility.Action_Archive;
-import com.hrms.projectUtility.Action_DeActivate;
-import com.hrms.projectUtility.Action_Restore;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
@@ -27,6 +30,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	public ReUseAbleElement ruae;
 	public Runtime runtime;
 	public Logger logger = LogManager.getLogger(getClass());
+	public PO_UserPermissions userpermission;
 	
 	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
 	public PO_UsersPage(WebDriver driver) {
@@ -34,8 +38,30 @@ public class PO_UsersPage extends ReUseAbleElement{
 		this.driver = driver;
 		jsExecutor  = (JavascriptExecutor)driver;
 		ruae = new ReUseAbleElement(driver);
+		userpermission = new PO_UserPermissions(driver);
 	}
 	
+	//ACTION OPTIONS CONSTRUCTOR
+	public Action_Archive actionArchive = new Action_Archive();
+	public Action_Restore actionRestore = new Action_Restore();
+	public Action_Created confirmationCreated = new Action_Created();
+	public Action_Updated confirmationUpdated = new Action_Updated();
+	public Action_Activate actionActivate = new Action_Activate();
+	public Action_Deactivate actionDeactivate = new Action_Deactivate();
+	
+	
+	//ALERT USERS MESSAGES
+	public String alertActivated_user = "User Activated Successfully.";
+	public String alertDeActivated_user = "User DeActivated Successfully.";
+	public String alertRestored_user = "User Restored Successfully.";
+	public String alertArchived_user = "User Archived Successfully.";
+	public String alertCreated_user = "User Created Successfully.";
+	public String alertUpdated_user = "User Updated Successfully.";
+	public String alertAleradyExist_user = "User already exists for given username.";
+	public String alertProjectAlreadyAssignedToUser = "Project is already assigned";
+	public String alertProjectAssignedToTheUser = "Project assigned successfully.";
+	
+		
 	//=====START====PROJECTS PAGE OBJECTS AND ITS ACTION METHODS============//
 		//CREATE USERS BUTTON ADDRESS
 		@FindBy(xpath = "//p[normalize-space()='Create User']")
@@ -83,9 +109,11 @@ public class PO_UsersPage extends ReUseAbleElement{
 		@CacheLookup
 		WebElement textUserName;
 		public void setUserName(String userName) throws InterruptedException {
+			textUserName.sendKeys(Keys.CONTROL,"a");
+			textUserName.sendKeys(Keys.DELETE);
 	        textUserName.sendKeys(userName);
 	        logger.info("Entered username");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	    }
 		
 		//TEXT FIELD USER NAME ADDRESS
@@ -93,9 +121,11 @@ public class PO_UsersPage extends ReUseAbleElement{
 		@CacheLookup
 		WebElement textPassword;
 		public void setPassword(String password) throws InterruptedException {
+			textPassword.sendKeys(Keys.CONTROL,"a");
+			textPassword.sendKeys(Keys.DELETE);
 		    textPassword.sendKeys(password);
 		    logger.info("Entered password");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 		}
 		
 		//DROPDOWN LIST FOR THE ORGANIZATIONS ADDRESS
@@ -104,9 +134,9 @@ public class PO_UsersPage extends ReUseAbleElement{
 		WebElement btnDropdownOrganization;
 		public void clickOnDropdownBtnOrganization() throws InterruptedException {
 		    btnDropdownOrganization.click();
-		    Thread.sleep(1000);
+		    Thread.sleep(500);
 		    logger.info("Clicked on the dropdown organizations");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 		}
 		
 		//LIST ORGANIZATIONS ADDRESS
@@ -118,7 +148,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE
 		    Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(orgnizationsList, organizationName);
 		    logger.info("Organization name selected");
-		    Thread.sleep(1000);
+		    Thread.sleep(500);
 	    }
 		
 		//TEXT FIELD USER FIRST NAME ADDRESS
@@ -126,9 +156,11 @@ public class PO_UsersPage extends ReUseAbleElement{
 		@CacheLookup
 		WebElement textFirstName;
 		public void setFirstName(String firstName) throws InterruptedException {
+			textFirstName.sendKeys(Keys.CONTROL,"a");
+			textFirstName.sendKeys(Keys.DELETE);
 	        textFirstName.sendKeys(firstName);
 	        logger.info("Entered first name");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	    }
 		
 		//TEXT FIELD USER LAST NAME ADDRESS
@@ -136,9 +168,11 @@ public class PO_UsersPage extends ReUseAbleElement{
 		@CacheLookup
 		WebElement textLastName;
 		public void setLastName(String lastName) throws InterruptedException {
+			textLastName.sendKeys(Keys.CONTROL,"a");
+			textLastName.sendKeys(Keys.DELETE);
 		   textLastName.sendKeys(lastName);
 		   logger.info("Entered Last name");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 		}
 		
 				
@@ -147,9 +181,11 @@ public class PO_UsersPage extends ReUseAbleElement{
 		@CacheLookup
 		WebElement textEmailAddress;
 		public void setEmailAddress(String emailAddress) throws InterruptedException {
+			textEmailAddress.sendKeys(Keys.CONTROL,"a");
+			textEmailAddress.sendKeys(Keys.DELETE);
 	        textEmailAddress.sendKeys(emailAddress);
 	        logger.info("Entered email address");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 	    }
 		
 		//DROPDOWN FIELD USER ROLE ADDRESS
@@ -159,7 +195,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 		public void clickOnDropdownUserRole() throws InterruptedException {
 		    btnDropdownUserRole.click();
 		    logger.info("Clicked on the User roles dropdown");
-	        Thread.sleep(1000);
+	        Thread.sleep(500);
 		}
 		
 		//USER ROLES LIST ADDRESS
@@ -171,7 +207,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE
 		    Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listUserRoles, userRole);
 		    logger.info("User roles selected");
-		    Thread.sleep(1000);
+		    Thread.sleep(500);
 	    }
 	//=====END====PROJECTS PAGE OBJECTS AND ITS ACTION METHODS============//
 	
@@ -189,6 +225,8 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setEmailAddress(emailAddress);
 			selectUserRole(userRole);
 			ruae.clickOnBtnSaveAndGoToHome_1_RU();
+			Thread.sleep(2000);
+			confirmationCreated.created(driver, alertCreated_user, alertAleradyExist_user);
 			return new PO_HomePage(driver);
 		}
 		
@@ -205,88 +243,68 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setEmailAddress(emailAddress);
 			selectUserRole(userRole);
 			ruae.clickOnBtnNext_1_RU();
+			userpermission.userPermissionsAdminCheckbox();
+			Thread.sleep(2000);
+			confirmationCreated.created(driver, alertCreated_user, alertAleradyExist_user);
 			return new PO_UserPermissions(driver);
 		}
 		
-			//TO ARCHIVE USER
-			// THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
-		   	public PO_HomePage archiveUser(String uname) throws InterruptedException {
-		       logger.info("Archive user method called");
-	
-		       // METHODS TO ARCHIVE THE USER
-		       Action_Archive.archive(uname, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
-		       logger.info("Returned inside archive user method");
-		       return new PO_HomePage(driver);
-		   	}
-		   
-		   //TO RESTORE USER
-		   // THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
-		   public PO_HomePage restoreUser(String uname) throws InterruptedException {
-		       logger.info("Restore user method called");
-
-		       // METHODS TO RESTORE THE USER
-		       Action_Restore.restore(uname, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
-		       logger.info("Returned inside restore user method");
-		       return new PO_HomePage(driver);
-		   }
-		   
-		   	//TO ACTIVATE USER
-			//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
-			public PO_HomePage activateUser(String uname) throws InterruptedException{
-				logger.info("Activate user methods called");
-		    	
-		    	//METHODS TO ACTIVATE THE USER
-				Action_Activate.activate(uname, searchBox_RU, inactiveLabel, btnAction_RU, actionActivateUser, btnYes, driver);
-		    	 logger.info("Return back inside activate user method");
-		    	 return new PO_HomePage(driver);
-			}
-			
-			
-			//TO DEACTIVATE USER
-			//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
-			public PO_HomePage deactivateUser(String uname) throws InterruptedException{
-				logger.info("De-Activate user methods called");
-		    	
-		    	//METHODS TO DEACTIVATE THE USER 
-				Action_DeActivate.deactivate(uname, searchBox_RU, activeLabel, btnAction_RU, actionDeactivateUser, btnYes, driver);
-		    	 logger.info("Return back inside deactivate user method");
-		    	 return new PO_HomePage(driver);
-			}
-			
-			//EDIT USERS
-			public PO_HomePage editUser(String uname,String newUName, String newOrganizationName, String NewFirstName, String newLastName, String newEmailAddress,String newUserRole) throws InterruptedException
-			{	logger.info("Entered edit user methods");
-			   	Thread.sleep(2000);
-			   	
-			    //IT WILL SEARCH FIRST THE SEARCK KEY AND ONCE IT COMES AT THE TOP THEN ONLY IT WILL ABLE TO EDIT THE CORRECT PROJECT
-			    ruae.searchBox_RU(uname); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
-			    ruae.clickOnActionButton_RU();    // TO CLICK ON THE ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
-			    ruae.clickOnEditAction_RU();	//IT WILL CLICK ON THE EDIT ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
-				//clickOnTabUserDetails();
-				Thread.sleep(1000);
-			
-				textUserName.clear(); //CLAER FIRST
-				textUserName.sendKeys(newUName);
-		        logger.info("Entered username");
-		        Thread.sleep(1000);
-		        
-		        btnDropdownOrganization.clear(); //CLAER FIRST
-		        Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(orgnizationsList, newOrganizationName);
-			    logger.info("Organization name selected");
-			    Thread.sleep(1000);
-			    
-			    textFirstName.click();
-				setFirstName(NewFirstName);
-				textLastName.clear();
-				setLastName(newLastName);
-				textEmailAddress.clear();
-				setEmailAddress(newEmailAddress);
-				btnDropdownUserRole.click();
-				selectUserRole(newUserRole);
-				ruae.clickOnBtnSaveAndGoToHome_1_RU();
-				return new PO_HomePage(driver);
-			}
 		
+		
+		//TO ARCHIVE USER
+	   	public PO_HomePage archiveUser(String uname) throws InterruptedException {
+	       logger.info("Archive user method called");
+	       // METHODS TO ARCHIVE THE USER
+	       actionArchive.archive(uname, driver, alertArchived_user );
+	       return new PO_HomePage(driver);
+	   	}
+	   
+	   //TO RESTORE USER
+	   public PO_HomePage restoreUser(String uname) throws InterruptedException {
+	       logger.info("Restore user method called");
+	       // METHODS TO RESTORE THE USER
+	       actionRestore.restore(uname, driver, alertRestored_user);
+	       return new PO_HomePage(driver);
+	   }
+	   
+	   	//TO ACTIVATE USER
+		public PO_HomePage activateUser(String uname) throws InterruptedException{
+			logger.info("Activate user methods called");
+	    	//METHODS TO ACTIVATE THE USER
+			actionActivate.activate(uname, driver,alertActivated_user );
+	    	return new PO_HomePage(driver);
+		}
+		
+		
+		//TO DEACTIVATE USER
+		public PO_HomePage deactivateUser(String uname) throws InterruptedException{
+			logger.info("De-Activate user methods called");
+	    	//METHODS TO DEACTIVATE THE USER 
+			actionDeactivate.deactivate(uname, driver, alertDeActivated_user);
+	    	 return new PO_HomePage(driver);
+		}
+			
+		//EDIT USERS
+		public PO_HomePage editUser(String uname,String newUName, String newOrganizationName, String NewFirstName, String newLastName, String newEmailAddress,String newUserRole) throws InterruptedException
+		{	logger.info("Entered edit user methods");
+		  
+		    //IT WILL SEARCH FIRST THE SEARCK KEY AND ONCE IT COMES AT THE TOP THEN ONLY IT WILL ABLE TO EDIT THE CORRECT PROJECT
+		    ruae.searchBox_RU(uname); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
+		    ruae.clickOnActionButton_RU();    // TO CLICK ON THE ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
+		    ruae.clickOnEditAction_RU();	//IT WILL CLICK ON THE EDIT ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
+			//clickOnTabUserDetails();
+			Thread.sleep(1000);
+			setUserName(newUName);
+			selectOrganization(newOrganizationName);
+			setFirstName(NewFirstName);
+			setLastName(newLastName);
+			setEmailAddress(newEmailAddress);
+			selectUserRole(newUserRole);
+			ruae.clickOnBtnSaveAndGoToHome_1_RU();
+			confirmationUpdated.updated(driver, alertUpdated_user, alertAleradyExist_user);
+			return new PO_HomePage(driver);
+		}
+	
 	//===========START==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========//
 		   //ASSIGN USER TO THE PROJECT  ADDRESS
 		   @FindBy(xpath="(//p[contains(text(),'Assign Project')])[1]")
@@ -297,23 +315,25 @@ public class PO_UsersPage extends ReUseAbleElement{
 			   Thread.sleep(1000);
 			   logger.info("Clicked on the assign project button");
 		   }
+
 		   
-		   //DROPDOWN ICON ADDRESS FOR PROJECTS SELECTION
-		   @FindBy(xpath="//button[@title='Open']//*[name()='svg']")
-		   @CacheLookup
-		   WebElement iconProjectDropdown;
-		   public void clickOnProjectDropdownIcon() throws InterruptedException{
-			   iconProjectDropdown.click();
-			   Thread.sleep(1000);
-			   logger.info("Clicked on the dropdown icon for the project selection");
-		   }
+//		   //DROPDOWN ICON ADDRESS FOR PROJECTS SELECTION
+//		   @FindBy(xpath="//button[@title='Open']//*[name()='svg']")
+//		   @CacheLookup
+//		   WebElement iconProjectDropdown;
+//		   public void clickOnProjectDropdownIcon() throws InterruptedException{
+//			   iconProjectDropdown.click();
+//			   Thread.sleep(1000);
+//			   logger.info("Clicked on the dropdown icon for the project selection");
+//		   }
+		   
 		   
 		   //PROJECT LIST ADDRESS TO ASSIGN THE PROJECT TO THE USER
 		   @FindBy(xpath="//ul[@id='project-listbox']//li")
 		   @CacheLookup
 		   public List <WebElement> listProjectToAssingUser;
 		   public void selectUserForProjectAssignment(String projectName) throws InterruptedException{
-			   clickOnProjectDropdownIcon(); // IT CLICK ON THE DROPDWON SELECT PROJECT
+			   ruae.clickOnDropdown_1_RU(); // IT CLICK ON THE DROPDWON SELECT PROJECT
 			   Thread.sleep(500);
 			   //THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE
 			   Generic_Method_ToSelect_Boostrape_Dropdown.selectOptionFromDropdown(listProjectToAssingUser, projectName);
@@ -330,45 +350,21 @@ public class PO_UsersPage extends ReUseAbleElement{
 			   Thread.sleep(1000);
 			   logger.info("Click on the button assign");
 		   }
-		   
-			//START DATE ICON ADDRESS
-			@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[1]")
-			@CacheLookup
-			WebElement iconDateStart;
-			//ACTION METHOD TO CLICK ON THE PROJECT START DATE ICON
-			public void clickOnStartDateIcon() throws InterruptedException {
-				iconDateStart.click();
-			    logger.info("Clicked on the start date icon");
-			    Thread.sleep(1000);
-			}
-			
-			//END DATE ICON ADDRESS
-			@FindBy(xpath = "(//button[contains(@aria-label,'Choose date')])[2]")
-			@CacheLookup
-			WebElement iconDateEnd;
-			//ACTION METHOD TO CLICK ON THE PROJECT END DATE ICON
-			public void clickEndDateIcon() throws InterruptedException {
-				iconDateEnd.click();
-			    logger.info("Clicked on the end date icon");
-			    Thread.sleep(1000);
-			}
 			
 			//ACTION METHOD TO SELECT THE PROJECT START DATE
 			public void selectStartDate(String projectStartDate, int x) throws InterruptedException {
-				
 				//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
 			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectStartDate, 1);
 			    logger.info("Project start date, month and year entered");
-			    Thread.sleep(2000);
+			    Thread.sleep(1000);
 			}
 
 			//ACTION METHOD TO SELECT PROJECT END DATE
 			public void selectEndDate(String projectEndDate, int x) throws InterruptedException {
-
 				//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
 			    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, projectEndDate, 2);
 			    logger.info("Project end date, month and year entered");
-			    Thread.sleep(2000);
+			    Thread.sleep(1000);
 			}
 			
 			
@@ -376,67 +372,56 @@ public class PO_UsersPage extends ReUseAbleElement{
 		   @FindBy(xpath="//div[contains(text(),'Project is already assigned')]")
 		   @CacheLookup
 		   WebElement msgProjectAdreadyAssigned;
-		   public boolean isProjectAlreadyAssignToUser() throws InterruptedException{
+		   public void confirmationProjecAssignToUser() throws InterruptedException{
 			   boolean flag = false;
-			   Thread.sleep(300);
-			   try {
-				   msgProjectAdreadyAssigned.isDisplayed();
-				   if(msgProjectAdreadyAssigned.isDisplayed()) {
-					   flag = true;
-				   }
-			   }catch(Exception e) {
-				   e.getMessage();
+			   String alertContent = snakeAlertMessagesDisplayedContent_RU();
+			   if(alertContent.contains(alertProjectAlreadyAssignedToUser)) {
+				   logger.info("===>>> "+alertProjectAlreadyAssignedToUser);
+				   flag = true;
+				   logger.info("Is project alerady assigned to the user: "+flag);
+				   ruae.clickOnCancelButton_RU();
+			   }else if(alertContent.equals(alertProjectAssignedToTheUser)) {
+				   logger.info("===>>> "+alertProjectAssignedToTheUser);
+				   flag = true;
+				   logger.info("Is project assigned to the user successfully: "+flag);
+			   }else {
+				   logger.info("Alert message content: "+ alertContent);
+				   ruae.clickOnCancelButton_RU();
 			   }
-			   Thread.sleep(1000);
-			   return flag;
 		   }
 		   
-		 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "PROJECT ASSIGNED SUCCESSFULLY" AND IT WILL THE BOOLEAN VALUES
-		   @FindBy(xpath="//div[contains(text(),'Project assigned successfully.')]")
-		   @CacheLookup
-		   WebElement msgPrjectAssignedSuccessfully;
-		   public boolean isProjectAssignToUserSuccessfully() throws InterruptedException{
-			   boolean flag = false;
-			   Thread.sleep(300);
-			   try {
-				   msgPrjectAssignedSuccessfully.isDisplayed();
-				   if(msgPrjectAssignedSuccessfully.isDisplayed()) {
-					   flag = true;
-				   }
-			   }catch(Exception e) {
-				   e.getMessage();
-			   }
-			   Thread.sleep(1000);
-			   return flag;
-		   }
+//		 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "PROJECT ASSIGNED SUCCESSFULLY" AND IT WILL THE BOOLEAN VALUES
+//		   @FindBy(xpath="//div[contains(text(),'Project assigned successfully.')]")
+//		   @CacheLookup
+//		   WebElement msgPrjectAssignedSuccessfully;
+//		   public boolean isProjectAssignToUserSuccessfully() throws InterruptedException{
+//			   boolean flag = false;
+//			   Thread.sleep(300);
+//			   try {
+//				   msgPrjectAssignedSuccessfully.isDisplayed();
+//				   if(msgPrjectAssignedSuccessfully.isDisplayed()) {
+//					   flag = true;
+//				   }
+//			   }catch(Exception e) {
+//				   e.getMessage();
+//			   }
+//			   Thread.sleep(1000);
+//			   return flag;
+//		   }
 		   
 		 
 	//===========END==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========// 
 		  //ASSIGN PROJECTS TO THE USER
 		   public PO_HomePage assignUserToProject(String userSearchKey, String projectName, String assignProjectStartDate, String assignProjectEndDate) throws InterruptedException
-		   {	logger.info("Entered edit project methods");
-		   		Thread.sleep(2000);
-		   		
+		   {	logger.info("Entered assign User To Project methods");
 		   		ruae.searchBox_RU(userSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 		   		clickOnAssignProjectBtn();	//IT CLICK ON THE ASSIGN USER BUTTON
 		   		selectUserForProjectAssignment(projectName); 	//IT CLICK ON THE USER SELECTION DORPDOWN ICON AND SELECT THE GIVEN USER FROM THE LIST
-		   		
 		   		selectStartDate(assignProjectStartDate, 1);    //SELECT THE ASSIGN PROJECT START DATE 
-		   		selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
-		   		
+		   		//selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
+		   		setDateWithoutUsingDatePicker_RU(assignProjectEndDate,2);  //SELECT THE PROJECT END DATE 
 		   		clickOnBtnAssign(); //IT CLICK ON THE ON THE ASSGIN BUTTON AFTER FILLING THE DETAILS
-		   		
-		   		//TAKES THE DECISION BASED ON THE CONFIREMATINO MESSAGES
-		   		if(isProjectAlreadyAssignToUser()) {
-		   			logger.info("Project already assigned to the given users");
-		   			Thread.sleep(3000);
-		   			ruae.clickOnCancelButton_RU();
-		   		}else if(isProjectAssignToUserSuccessfully()) {
-		   			logger.info("Project assigned to the users successfully");
-		   		}else {
-		   			logger.info("Not captured any confirmatin message");
-		   		}
-		   		Thread.sleep(3000);
+		   		confirmationProjecAssignToUser();
 		   		return new PO_HomePage(driver); // TO RETURN THE DRIVER AT HOME PAGE
 		   }   		
 }

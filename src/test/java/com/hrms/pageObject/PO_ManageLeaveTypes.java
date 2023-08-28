@@ -19,6 +19,8 @@ import org.testng.Assert;
 import com.hrms.Actions.Action_Activate;
 import com.hrms.Actions.Action_Deactivate;
 import com.hrms.Actions.Action_Delete;
+import com.hrms.Actions.Action_Created;
+import com.hrms.Actions.Action_Updated;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 
 
@@ -31,9 +33,12 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 	public ReUseAbleElement ruae;
 	public WebDriverWait wait;
 	public Actions action;
+	
 	public Action_Activate actionActivate = new Action_Activate();
 	public Action_Deactivate actionDeactivate = new Action_Deactivate();
 	public Action_Delete actionDelete = new Action_Delete();
+	public Action_Created confirmationCreated = new Action_Created();
+	public Action_Updated confirmationUpdated = new Action_Updated();
 	
 	 public PO_ManageLeaveTypes(WebDriver driver) {
 	        super(driver);
@@ -73,14 +78,18 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 	}
 	
 	//TO SET THE LEAVE TYPE NAME
-	public void setLeaveTypeName(String leaveType) throws InterruptedException{
+	public void setLeaveTypeName(String leaveType) throws InterruptedException {
+		textEnterLeaveTypeName.sendKeys(Keys.CONTROL,"a");
+		textEnterLeaveTypeName.sendKeys(Keys.DELETE);
 		textEnterLeaveTypeName.sendKeys(leaveType);
 		Thread.sleep(1000);
 		logger.info("Entered leave type");
 	}
 	
 	//TO SET THE LEAVE TYPE DESCRIPTION
-	public void setLeaveTypeDescription(String leaveDescription) throws InterruptedException{
+	public void setLeaveTypeDescription(String leaveDescription) throws InterruptedException {
+		textEnterLeaveTypeDescription.sendKeys(Keys.CONTROL,"a");
+		textEnterLeaveTypeDescription.sendKeys(Keys.DELETE);
 		textEnterLeaveTypeDescription.sendKeys(leaveDescription);
 		Thread.sleep(1000);
 		logger.info("Enterd leave types description");
@@ -95,21 +104,8 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 		setLeaveTypeName(leaveType);
 		setLeaveTypeDescription(leaveDescription);
 		ruae.clickOnCreateButton_RU();
-		
-		//CHECK THE CREATE CONFIRMATIONS MESSAGES
-    	if(!isRequiredMessageDisplayed_RU()){
-    		String alretMsg = snakeAlertMessagesDisplayedContent_RU();
-    		if(alertCreated_lt.equals(alretMsg)) {
-        		Assert.assertEquals(alertCreated_lt, alretMsg, "Leave types CREATED successfully");
-        	}else if(alertAleradyExist_lt.equals(alretMsg)){
-        		logger.info("Leave leave already exist");
-        		Assert.assertTrue(alertAleradyExist_lt.equals(alretMsg));
-        	}else {
-        		logger.info("Alert message content: "+alretMsg);
-        	}
-    	}else {
-    		ruae.clickOnCancelButton_RU();
-    	}
+		confirmationCreated.created(driver, alertCreated_lt,alertAleradyExist_lt);
+		logger.info("Create leave types methods call done");
 		return new PO_HomePage(driver);
 	}
 	
@@ -152,18 +148,7 @@ public class PO_ManageLeaveTypes extends ReUseAbleElement{
 			setLeaveTypeDescription(leaveDescription);
 			clickOnBtnSaveChanges_RU();
 		}
-
-		//CHECK THE EDIT CONFIRMATIONS MESSAGES
-		if(!isRequiredMessageDisplayed_RU()) {
-			String alretMsg = snakeAlertMessagesDisplayedContent_RU();
-			if(alertUpdated_lt.equals(alretMsg)) {
-	    		Assert.assertEquals(alertUpdated_lt, alretMsg, "Leave types EDITED successfully");
-		   	}else {
-		    		logger.info("Alert message content: "+alretMsg);
-		    	}	
-		}else {
-			ruae.clickOnCancelButton_RU();
-		}
+		confirmationUpdated.updated(driver, alertUpdated_lt,alertAleradyExist_lt);
 		logger.info("Edit leave types method call done");
 		return new PO_HomePage(driver);
 	}

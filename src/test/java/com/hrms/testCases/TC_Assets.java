@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
-import com.hrms.pageObject.PO_Asserts_CreateAssetsTypes;
+import com.hrms.pageObject.PO_Asserts_AssetsTypes;
 import com.hrms.pageObject.PO_AssetsPage;
 import com.hrms.pageObject.PO_ClientPage;
 import com.hrms.pageObject.PO_HomePage;
@@ -46,26 +46,19 @@ public class TC_Assets extends BaseClass {
 	public void test_Login() throws InterruptedException{
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 		
 	//TO CREATE ASSETS
 	@Test(priority = 2, dependsOnMethods = "test_Login", dataProvider = fileNameOnly)
 	public void test_CreateAssets(String companyName, String assetType, String serialNumber, String modelNumber, String usedBy, String supportPerson, String warranty, String warrantyExpiry, String manufacturerDate1, String purchaseDate1, String invoiceNumber, String invoiceURL, String status, String condition, String replacementStatus ) throws InterruptedException
-	{	// to create new organization
+	{
 		aca = callMeBeforePerformAnyAction();
 		hp = aca.createAssets(companyName, assetType, serialNumber, modelNumber, usedBy, supportPerson, warranty, warrantyExpiry, manufacturerDate1, purchaseDate1, invoiceNumber, invoiceURL, status, condition, replacementStatus);
-		logger.info("Assets created");
 	}
 	
 	//TO LOGOUT
-	//@Test(priority = 10, dependsOnMethods = "test_Login")
+	@Test(priority = 10, dependsOnMethods = "test_Login")
 	public void test_Logout() throws InterruptedException {
-		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-		Thread.sleep(2000);
-		hp.clickOniconHomeImage();
-		Thread.sleep(5000);
-		// TO LOGOUT
 		hp.Logout();
 	}
 	

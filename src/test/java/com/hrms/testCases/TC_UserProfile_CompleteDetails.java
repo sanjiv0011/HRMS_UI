@@ -34,37 +34,37 @@ public class TC_UserProfile_CompleteDetails extends BaseClass{
 	public Faker faker= new Faker();
 	public DataProviders dp =  new DataProviders();
 
-////VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
-//	//VARIABLES FOR PERSONAL DETAILS
-//	public String phoneNumber = "+91 "+"1234567890";
-//    public String dateOfBirth = "20 July 2021";
-//    public String gender = "Male";
-//    public String marri = "Married";
-//    public String bio = "xysdfshnsdfj";
-//    
-//	//VARIABLE FOR ADDRESS DETAILS
-//	public String addressLine1 = faker.address().buildingNumber();
-//	public String addressLine2 = faker.address().fullAddress();
-//	public String city = faker.address().cityName();
-//	public String state = faker.address().state();
-//	public String country = "India";
-//	public String postalCode = "123456";
-//	  
-//	//VARIABLES FOR OTHERES DETAILS
-//	public String emergencyContactName = faker.name().fullName();
-//    public String emergencyContactNumber = "+91 "+"1234567890";
-//    public String socialSecuritynumber = "123456789";
-//    
-//    //VARIABLES FOR BANK DETAILS
-//  	public String bankName = "Bank of baroda";
-//    public String bankNumber = "123546789987420";
-//    public String accountName = "My name bank name";
-//    public String isfcCode = "COSB0000001";
-//    
-//    //VARIABLES FOR RESET PASSWORD
-//  	public String oldPassword = "Qwer4321!";
-//    public String newPassword = "Qwer4321!";
-//    public String  buttonNextOrGoToHome = "next"; //or "next" , "saveAndGoToHome"
+//VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
+	//VARIABLES FOR PERSONAL DETAILS
+	public String phoneNumber = "+91 "+"1234567890";
+    public String dateOfBirth = "20 July 2021";
+    public String gender = "Male";
+    public String marri = "Married";
+    public String bio = "xysdfshnsdfj";
+    
+	//VARIABLE FOR ADDRESS DETAILS
+	public String addressLine1 = faker.address().buildingNumber();
+	public String addressLine2 = faker.address().fullAddress();
+	public String city = faker.address().cityName();
+	public String state = faker.address().state();
+	public String country = "India";
+	public String postalCode = "123456";
+	  
+	//VARIABLES FOR OTHERES DETAILS
+	public String emergencyContactName = faker.name().fullName();
+    public String emergencyContactNumber = "+91 "+"1234567890";
+    public String socialSecuritynumber = "123456789";
+    
+    //VARIABLES FOR BANK DETAILS
+  	public String bankName = "Bank of baroda";
+    public String bankNumber = "123546789987420";
+    public String accountName = "My name bank name";
+    public String isfcCode = "COSB0000001";
+    
+    //VARIABLES FOR RESET PASSWORD
+  	public String oldPassword = "Qwer4321!";
+    public String newPassword = "Qwer4321!";
+    public String  buttonNextOrGoToHome = "next"; //or "next" , "saveAndGoToHome"
     
   
 	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//
@@ -129,7 +129,6 @@ public class TC_UserProfile_CompleteDetails extends BaseClass{
 	public void test_Login() throws InterruptedException{
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 	
 	//TO FILL UP PERSONAL DETAILS

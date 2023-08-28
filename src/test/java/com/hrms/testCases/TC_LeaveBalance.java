@@ -32,11 +32,11 @@ public class TC_LeaveBalance extends BaseClass {
 	public PO_LeaveBalance lb;
 	
 	//INPUT VALUES
-	String leaveBalanceStartDate = "1 August 2023";
-	String leaveBalanceEndDate = "31 July 2028";
-	String leaveTypeName = "Emergency Leave";
-	String leaveBalance =  "20";
-	String leaveTypeNameForSearch = "Emergency"; //BEACUSE IT NOT ABLE TO SEARCH TWO WORD KEY
+	String leaveBalanceStartDate = "01 August 2023";
+	String leaveBalanceEndDate = "31 August 2023";
+	String leaveTypeName = "Casual Leave";
+	String leaveBalance =  "25";
+	String leaveTypeNameForSearch = "Casual"; //BEACUSE IT NOT ABLE TO SEARCH TWO WORD KEY
 	
 		//TO PERFORM THE LOGIN
 		@Test(priority = 1)
@@ -47,7 +47,7 @@ public class TC_LeaveBalance extends BaseClass {
 		}
 		
 		//TO CREATE LEAVE BALANCE
-		@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+		//@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
 		public void test_CreateLeaveBalance(String leaveBalanceStartDate, String leaveBalanceEndDate, String leaveTypeName, String  leaveBalance) throws InterruptedException, SQLException
 		{
 			lb = callMeBeforePerformAnyAction();
@@ -100,7 +100,6 @@ public class TC_LeaveBalance extends BaseClass {
 		public void test_ArchiveLeaveBalance() throws InterruptedException {
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.archiveLeaveBalance(leaveTypeNameForSearch);
-			Thread.sleep(2000);
 		}
 	
 	
@@ -109,24 +108,17 @@ public class TC_LeaveBalance extends BaseClass {
 		public void test_RestoreLeaveBalance() throws InterruptedException {
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.restoreLeaveBalance(leaveTypeNameForSearch);
-
 		}
 		
-		//@Test(priority = 5 , dependsOnMethods = {"test_Login"} )//TO EDIT THE LEAVE BALANCE
+		@Test(priority = 5 , dependsOnMethods = {"test_Login"} )//TO EDIT THE LEAVE BALANCE
 		public void test_EditLeaveBalance() throws InterruptedException {
 			lb = callMeBeforePerformAnyAction();
 			hp = lb.editLeaveBalance(leaveBalanceStartDate, leaveBalanceEndDate, leaveTypeNameForSearch, leaveBalance);
-	
 		}
 		
 		//TO LOGOUT
 		@Test(priority = 10, dependsOnMethods = {"test_Login"})
 		public void test_Logout() throws InterruptedException {
-			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-			Thread.sleep(2000);
-			hp.clickOniconHomeImage();
-			Thread.sleep(5000);
-			// TO LOGOUT
 			hp.Logout();
 		}
 		
@@ -135,12 +127,10 @@ public class TC_LeaveBalance extends BaseClass {
 			//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 			hp.clickOniconHomeImage();
 			Thread.sleep(3000);
-			
 			//TO ACCESS ASSETS TAB
 			hp.clickOntabLeaveBalances();
 			Thread.sleep(2000);
-			
-			//TO ACCESS USERS PAGE OBJECTS
+			//TO ACCESS LEAVE BALANCE PAGE OBJECTS
 			return new PO_LeaveBalance(driver);
 		}
 

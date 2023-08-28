@@ -31,7 +31,7 @@
 			
 			<!--<class name="com.hrms.testCases.TC_UserProfile_CompleteDetails"/>-->
 			  
-			<!--<class name="com.hrms.testCases.TC_Ogranization"/>-->
+			<class name="com.hrms.testCases.TC_Ogranization"/>
 			
 				<!--<class name="com.hrms.testCases.TC_DailyUpdates"/>-->
 				
@@ -39,19 +39,19 @@
 			
 				<!--<class name="com.hrms.testCases.TC_Leave"/>-->
 			  
-			<!--  <class name="com.hrms.testCases.TC_Cleint"/>-->
+				<!--<class name="com.hrms.testCases.TC_Cleint"/>-->
 			  
-			<!--<class name="com.hrms.testCases.TC_Users"/>-->
+				<!--<class name="com.hrms.testCases.TC_Users"/>-->
 			 
 			 <!--<class name="com.hrms.testCases.TC_UsersPermissions"/>-->
 			  
-			  <!--<class name="com.hrms.testCases.TC_Projects"/>-->  
+			  <!--<class name="com.hrms.testCases.TC_Projects"/>-->
 			  
 			<!--<class name="com.hrms.testCases.TC_JobTitles"/>-->
 			 
-			 <class name="com.hrms.testCases.TC_ManageLeaveTypes"/>
+			 <!--<class name="com.hrms.testCases.TC_ManageLeaveTypes"/>-->
 			 
-			<!--<class name="com.hrms.testCases.TC_LeaveBalance"/>-->
+				<!--<class name="com.hrms.testCases.TC_LeaveBalance"/>-->
 			
 				<!--<class name="com.hrms.testCases.TC_AssetsTypes"/>-->
 			

@@ -50,15 +50,13 @@ public class TC_Projects extends BaseClass{
 	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		Thread.sleep(3000);
 	}
 	
 	//TO CREATE THE  PROJECT 
-	@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+	//@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
 	public void test_CreateProject(String projectName, String projectDescription, String domainName, String clientName, String technologyName, String projectStartDate, String projectEndDate) throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.createProject(projectName, projectDescription, domainName, clientName, technologyName, projectStartDate, projectEndDate);
-		logger.info("Project created");		
 	}
 	
 	//ARCHIVE PROJECT
@@ -66,7 +64,6 @@ public class TC_Projects extends BaseClass{
 	public void test_ArchiveProject()throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.archiveProject(projectName);
-		logger.info("Archive project call done");	
 	}
 	
 	//RESTORE PROJECT
@@ -74,7 +71,6 @@ public class TC_Projects extends BaseClass{
 	public void test_RestoreProject()throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.restoreProject(projectName);
-		logger.info("Restore project call done");
 	}
 		
 	
@@ -83,11 +79,10 @@ public class TC_Projects extends BaseClass{
 	public void test_EditProject()throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.editProject(projectSearchKey, newProjecName, newProjecDescription, newDomainName, newTechnologyName, newProjectStartDate, newProjectEndDate );
-		Thread.sleep(2000);
 	}
 	
 	//ASSIGN PROJECT TO THE USERS
-	//@Test(priority = 6 , dependsOnMethods = {"test_Login"})
+	@Test(priority = 6 , dependsOnMethods = {"test_Login"})
 	public void test_AssignProject()throws InterruptedException {
 		pp = callMeBeforePerformAnyAction();
 		hp = pp.assignProjectToUser(projectSearchKey, userNameToAssignProject, assignProjectStartDate, assignProjectEndDate);
@@ -98,10 +93,6 @@ public class TC_Projects extends BaseClass{
 	//TO PERFORM THE LOGOUT
 	@Test(priority = 10, dependsOnMethods = {"test_Login"})
 	public void test_Logout() throws InterruptedException {
-		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-		hp.clickOniconHomeImage();
-		Thread.sleep(3000);
-		// TO LOGOUT
 		hp.Logout();
 	}
 	

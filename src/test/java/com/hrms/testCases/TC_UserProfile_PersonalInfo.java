@@ -55,7 +55,6 @@ public class TC_UserProfile_PersonalInfo extends BaseClass {
 	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 		
 	//TO FILL THE USER PERSONAL DETAILS ONLY

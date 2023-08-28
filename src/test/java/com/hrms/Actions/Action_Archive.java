@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-import com.hrms.pageObject.PO_ManageLeaveTypes;
-
 
 public class Action_Archive {
 	
@@ -19,15 +17,15 @@ public class Action_Archive {
 		ruae = new ReUseAbleElement(driver);
 		ruae.searchBox_RU(searchKey);
     	if(!ruae.isSearchKeysNotFound_RU()){
-    		if(ruae.isAlreadyInActiveDisplayed_RU()) {
+    		if(!ruae.isAlreadyArchivedDisplayed_RU()) {
     			ruae.clickOnActionButton_RU();
-    			ruae.clickOnActivateAction_RU();
+    			ruae.clickOnArchiveAction_RU();
     			ruae.clickOnYesButton_RU();
-    	    	
-    	    	//CHECK THE ACTIVATE CONFIRMATIONS MESSAGES
+    	    	//CHECK THE ARCHIVED CONFIRMATIONS MESSAGES
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     	    	if(alretMsg.equals(message)) {
-    	    		Assert.assertEquals(message, alretMsg,"ACTIVATED successfully");
+    	    		Assert.assertEquals(message, alretMsg,"ARCHIVED successfully");
+    	    		logger.info("===>>> "+message);
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}

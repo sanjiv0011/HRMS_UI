@@ -28,6 +28,7 @@ public class Action_Activate {
     	    	String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
     	    	if(alretMsg.equals(message)) {
     	    		Assert.assertEquals(alretMsg, message,"ACTIVATED successfully");
+    	    		logger.info("===>>> "+message);
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}

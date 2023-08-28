@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-25T19:31:07 IST" name="Suite" finished-at="2023-08-25T19:32:34 IST" duration-ms="86281">
+  <suite started-at="2023-08-28T19:33:05 IST" name="Suite" finished-at="2023-08-28T19:35:24 IST" duration-ms="139324">
     <groups>
     </groups>
-    <test started-at="2023-08-25T19:31:07 IST" name="HRMS" finished-at="2023-08-25T19:32:34 IST" duration-ms="86281">
-      <class name="com.hrms.testCases.TC_ManageLeaveTypes">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:31:08 IST" name="setup" finished-at="2023-08-25T19:31:11 IST" duration-ms="3565" status="PASS">
+    <test started-at="2023-08-28T19:33:05 IST" name="HRMS" finished-at="2023-08-28T19:35:24 IST" duration-ms="139324">
+      <class name="com.hrms.testCases.TC_Ogranization">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:33:05 IST" name="setup" finished-at="2023-08-28T19:33:09 IST" duration-ms="3734" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,51 +18,157 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="test_Login()[pri:1, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:31:11 IST" name="test_Login" finished-at="2023-08-25T19:31:19 IST" duration-ms="7381" status="PASS">
+        <test-method signature="test_Login()[pri:1, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:33:09 IST" name="test_Login" finished-at="2023-08-28T19:33:14 IST" duration-ms="4497" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Login -->
-        <test-method signature="test_CreateLeaveType(java.lang.String,java.lang.String)[pri:2, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:31:19 IST" name="test_CreateLeaveType" data-provider="TC_ManageLeaveTypes" finished-at="2023-08-25T19:31:32 IST" depends-on-methods="com.hrms.testCases.TC_ManageLeaveTypes.test_Login" duration-ms="12830" status="PASS">
+        <test-method signature="test_CreateOrganization(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:33:15 IST" name="test_CreateOrganization" data-provider="TC_Ogranization" finished-at="2023-08-28T19:33:41 IST" depends-on-methods="com.hrms.testCases.TC_Ogranization.test_Login" duration-ms="25955" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Emergency Leave]]>
+                <![CDATA[SFCSolutions]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Leave with pay FDSF DFF SD dfsf ]]>
+                <![CDATA[SFCS]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sfc@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[+911234567890]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[132 new street]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[main street]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[new city]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[State]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[(UTC +05:30) Asia/Kolkata]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_CreateLeaveType -->
-        <test-method signature="test_DeActivateLeaveTypes()[pri:3, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:31:32 IST" name="test_DeActivateLeaveTypes" finished-at="2023-08-25T19:31:44 IST" duration-ms="11702" status="PASS">
+        </test-method> <!-- test_CreateOrganization -->
+        <test-method signature="test_ArchiveOrganization()[pri:3, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:33:41 IST" name="test_ArchiveOrganization" finished-at="2023-08-28T19:33:58 IST" depends-on-methods="com.hrms.testCases.TC_Ogranization.test_Login" duration-ms="17248" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_DeActivateLeaveTypes -->
-        <test-method signature="test_ActivateLeaveTypes()[pri:4, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:31:44 IST" name="test_ActivateLeaveTypes" finished-at="2023-08-25T19:31:56 IST" duration-ms="11889" status="PASS">
+        </test-method> <!-- test_ArchiveOrganization -->
+        <test-method signature="test_RestoreOrganization()[pri:4, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:33:58 IST" name="test_RestoreOrganization" finished-at="2023-08-28T19:34:15 IST" depends-on-methods="com.hrms.testCases.TC_Ogranization.test_Login" duration-ms="17242" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_ActivateLeaveTypes -->
-        <test-method signature="test_EditLeaveTypes()[pri:5, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:31:56 IST" name="test_EditLeaveTypes" finished-at="2023-08-25T19:32:11 IST" duration-ms="15088" status="PASS">
+        </test-method> <!-- test_RestoreOrganization -->
+        <test-method signature="test_DeActivateOrganization()[pri:5, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:34:15 IST" name="test_DeActivateOrganization" finished-at="2023-08-28T19:34:32 IST" duration-ms="16979" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_EditLeaveTypes -->
-        <test-method signature="test_DeleteLeaveTypes()[pri:6, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:32:11 IST" name="test_DeleteLeaveTypes" finished-at="2023-08-25T19:32:22 IST" duration-ms="11335" status="PASS">
+        </test-method> <!-- test_DeActivateOrganization -->
+        <test-method signature="test_ActivateOrganization()[pri:6, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:34:32 IST" name="test_ActivateOrganization" finished-at="2023-08-28T19:34:49 IST" duration-ms="17216" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_DeleteLeaveTypes -->
-        <test-method signature="test_Logout()[pri:10, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:32:22 IST" name="test_Logout" finished-at="2023-08-25T19:32:33 IST" depends-on-methods="com.hrms.testCases.TC_ManageLeaveTypes.test_Login" duration-ms="10611" status="PASS">
+        </test-method> <!-- test_ActivateOrganization -->
+        <test-method signature="test_EditOrganization(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:7, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:34:50 IST" name="test_EditOrganization" data-provider="TC_Ogranization" finished-at="2023-08-28T19:35:20 IST" depends-on-methods="com.hrms.testCases.TC_Ogranization.test_Login" duration-ms="30244" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SFCSolutions]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SFCS]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sfc@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[+911234567890]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[132 new street]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[main street]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[new city]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[State]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[(UTC +05:30) Asia/Kolkata]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_EditOrganization -->
+        <test-method signature="test_Logout()[pri:10, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:35:20 IST" name="test_Logout" finished-at="2023-08-28T19:35:24 IST" depends-on-methods="com.hrms.testCases.TC_Ogranization.test_Login" duration-ms="4184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Logout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.hrms.testCases.TC_ManageLeaveTypes@56de6d6b]" started-at="2023-08-25T19:32:33 IST" name="teardown" finished-at="2023-08-25T19:32:34 IST" duration-ms="965" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.hrms.testCases.TC_Ogranization@47187f50]" started-at="2023-08-28T19:35:24 IST" name="teardown" finished-at="2023-08-28T19:35:24 IST" duration-ms="354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.hrms.testCases.TC_ManageLeaveTypes -->
+      </class> <!-- com.hrms.testCases.TC_Ogranization -->
     </test> <!-- HRMS -->
   </suite> <!-- Suite -->
 </testng-results>

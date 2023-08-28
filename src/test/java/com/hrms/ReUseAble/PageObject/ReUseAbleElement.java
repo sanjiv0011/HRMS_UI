@@ -24,8 +24,8 @@ public class ReUseAbleElement {
 	//CONSTRUCTOR INITIALIZATIONS
 	public WebDriver driver=null;
 	public static final Logger logger = LogManager.getLogger(ReUseAbleElement.class);
-	public static WebDriverWait wait = null;
-	static Actions action;
+	public static WebDriverWait wait,waitAlert = null;
+	protected static Actions action;
 	
 	//CREATE PAGE FACTORY METHODS WITH DRIVERS
 	public ReUseAbleElement(WebDriver driver)
@@ -33,6 +33,7 @@ public class ReUseAbleElement {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+		waitAlert = new WebDriverWait(driver, Duration.ofSeconds(2), Duration.ofMillis(100));
 		action = new Actions(driver);
 	}
 	
@@ -47,7 +48,7 @@ public class ReUseAbleElement {
 		{	Thread.sleep(200);
 			searchBox_RU.sendKeys(SearchKey,Keys.ENTER);
 			logger.info("Searched the search keys in the search box: "+SearchKey);
-			Thread.sleep(1000);
+			Thread.sleep(4000);
 		}
 	
 		//SEARCH KEY NOT FOUND
@@ -160,35 +161,35 @@ public class ReUseAbleElement {
   	        Thread.sleep(300);
   	    }
 		
-  	    //MESSAGE RESTORED
-		@FindBy(xpath = "//div[contains(text(),'Leave Balance Restored Successfully.')]")
-		@CacheLookup
-		public WebElement msgArchived;
-		 // Action method to get the message after archiving
-	    public boolean isArchivedSuccessfullyMessage_RU() throws InterruptedException {
-	    	boolean flag = false;
-	        if (msgArchived.isDisplayed()) {
-	            flag = true;
-	            logger.info("Confirmation message is Archived successfully: "+flag);
-	        }
-	        Thread.sleep(300);
-	        return flag;
-	    }
-		
-	    //MESSAGE ARCHIVED
- 		@FindBy(xpath = "//div[contains(text(),'Leave Balance Archived Successfully.')]")
- 		@CacheLookup
- 		public WebElement msgRestored;
-	    // Action method to get the message after restoring
-	    public boolean isRestoredSuccessfullyMessage_RU() throws InterruptedException {
-	    	boolean flag = false;
-	        if (msgRestored.isDisplayed()) {
-	            flag = true;
-	            logger.info("Confirmation message is Restored successfully: "+flag);
-	        }
-	        Thread.sleep(300);
-	        return flag;
-	    }
+//  	    //MESSAGE RESTORED
+//		@FindBy(xpath = "//div[contains(text(),'Leave Balance Restored Successfully.')]")
+//		@CacheLookup
+//		public WebElement msgArchived;
+//		 // Action method to get the message after archiving
+//	    public boolean isArchivedSuccessfullyMessage_RU() throws InterruptedException {
+//	    	boolean flag = false;
+//	        if (msgArchived.isDisplayed()) {
+//	            flag = true;
+//	            logger.info("Confirmation message is Archived successfully: "+flag);
+//	        }
+//	        Thread.sleep(300);
+//	        return flag;
+//	    }
+//		
+//	    //MESSAGE ARCHIVED
+// 		@FindBy(xpath = "//div[contains(text(),'Leave Balance Archived Successfully.')]")
+// 		@CacheLookup
+// 		public WebElement msgRestored;
+//	    // Action method to get the message after restoring
+//	    public boolean isRestoredSuccessfullyMessage_RU() throws InterruptedException {
+//	    	boolean flag = false;
+//	        if (msgRestored.isDisplayed()) {
+//	            flag = true;
+//	            logger.info("Confirmation message is Restored successfully: "+flag);
+//	        }
+//	        Thread.sleep(300);
+//	        return flag;
+//	    }
 		
 	    //TO CHECK ALLREADY ARCHIVED
 	    @FindBy(xpath="//span[text()='Archived']")
@@ -196,9 +197,13 @@ public class ReUseAbleElement {
 	    public WebElement archivedLabel;
 	    public boolean isAlreadyArchivedDisplayed_RU() throws InterruptedException {
 	        boolean flag = false;
-	        if (archivedLabel.isDisplayed()) {
-	            flag = true;
-	            logger.info("Confirmation message is already archived: "+flag);
+	        try {
+	        	if (archivedLabel.isDisplayed()) {
+		            flag = true;
+		            logger.info("Confirmation message is already archived: "+flag);
+		        }
+	        }catch(Exception e) {
+	        	logger.info("Archived Exception: "+e.getMessage());
 	        }
 	        Thread.sleep(300);
 	        return flag;
@@ -223,12 +228,23 @@ public class ReUseAbleElement {
 	  
 	    
 	    //TO CLICK ON THE USER PROFILE ICON FOR ICON UPLOAD
-	    @FindBy(xpath = "(//label//div[contains(@class,\"MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault\")])[1]")
+	    // PROFILE ICON 1
+	    @FindBy(xpath = "(//div[contains(@class,'MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault')])[1]")
 		@CacheLookup
 		public WebElement iconUserProfileImage_1_RU;
 		public void clickOnUserProfileIcon_1_RU() throws InterruptedException{
 			iconUserProfileImage_1_RU.click();
-		   logger.info("Clicked on the icon to upload the user profile image");
+		   logger.info("Clicked on the icon to upload the user profile image 1");
+		   Thread.sleep(1000);
+		}
+		
+		// PROFILE ICON 2
+		@FindBy(xpath = "(//div[contains(@class,'MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault')])[2]")
+		@CacheLookup
+		public WebElement iconUserProfileImage_2_RU;
+		public void clickOnUserProfileIcon_2_RU() throws InterruptedException{
+			iconUserProfileImage_2_RU.click();
+		   logger.info("Clicked on the icon to upload the user profile image 2");
 		   Thread.sleep(1000);
 		}
 		
@@ -270,7 +286,6 @@ public class ReUseAbleElement {
 		public void clickOnCreateButton_RU() throws InterruptedException{
 			btnCreate_RU.click();
 		   logger.info("Clicked on the Create button");
-		   Thread.sleep(300);
 		}
 
 		//BUTTON CANCEL
@@ -278,9 +293,18 @@ public class ReUseAbleElement {
 		@CacheLookup
 		public WebElement btnCancel_RU;
 		public void clickOnCancelButton_RU() throws InterruptedException {
-			btnCancel_RU.click();
-		   logger.info("Clicked on the Cancle button");
-		   Thread.sleep(300);
+			try {
+				if(btnCancel_RU.isDisplayed()) {
+						btnCancel_RU.click();
+				}else if(iconUserProfileImage_1_RU.isDisplayed()){
+					clickOnUserProfileIcon_1_RU();
+				}else {
+					logger.info("Cancel button and HomeIcon button both not found");
+				}
+					
+			}catch(Exception e) {
+				logger.info("Cancel button Exception: "+e.getMessage());
+			}
 		}
 	    
 		// Yes button before confirm the action
@@ -547,16 +571,30 @@ public class ReUseAbleElement {
 
 	  	  //==========END==========TIME SELECTION PAGE OBJECTS AND ITS ACTION METHODS=====USE THIS METHODS IF AND ONLY IF TIME PICKRE FAILED TO PICK THE TIME======//
   		
-	  		//TO SELECT DATE IF IT IS SECONDS ONE DATE AND DATE FAILED TO PICK THE DATE
-	  		String endDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[2]";
-	  		public void setSecondsDateWithoutUsingDatePicker_RU(String leaveEndDate) throws InterruptedException {
-	  			WebElement endDate = driver.findElement(By.xpath(endDateHolder_RU));
-	  			endDate.sendKeys(Keys.CONTROL,"a");
-	  			endDate.sendKeys(Keys.DELETE);
+	  		
+	  		//TO SELECT THE DATE WITHOUT USING DATE PICKER METHODS
+	  		public void setDateWithoutUsingDatePicker_RU(String leaveEndDate, int y) throws InterruptedException {
+	  			//TO SELECT DATE FIRST DATE WITHOUT USING DATE PICKER 
+		  		String firstDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[1]";
+		  		//TO SELECT DATE SECONDS DATE WITHOUT USING DATE PICKER 
+		  		String SecondsDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[2]";
+		  		String thirdDateHolder_RU = "(//input[contains(@placeholder,'MM/DD/YYYY')])[3]";
+		  		WebElement dateHolder = null;
+	  			if(y == 1) {
+	  				dateHolder = driver.findElement(By.xpath(firstDateHolder_RU));
+	  			}else if(y == 2){
+	  				dateHolder = driver.findElement(By.xpath(SecondsDateHolder_RU));
+	  			}else if(y == 3) {
+	  				dateHolder = driver.findElement(By.xpath(thirdDateHolder_RU));
+	  			}
+	  			
+	  			dateHolder.sendKeys(Keys.CONTROL,"a");
+	  			dateHolder.sendKeys(Keys.DELETE);
 	  			String[] date = leaveEndDate.split("[\\s\\-\\.]");
-	  			String dt = date[2];
+	  			String dt = date[0];
 	  			String mt = date[1];
-	  			String yr = date[0];
+	  			String yr = date[2];
+	  			System.out.println("Input date: "+dt+" month: "+mt+" year: "+yr);
 	  			int x = 0;
 	  			String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 	  			for(String mon : months)
@@ -566,12 +604,12 @@ public class ReUseAbleElement {
 	  				}
 	  			}
 	  			String xAsString = String.valueOf(x);
-	  			endDate.sendKeys(xAsString);
-	  			Thread.sleep(200);
-	  			endDate.sendKeys(dt);
-	  			Thread.sleep(200);
-	  			endDate.sendKeys(yr);
-	  			Thread.sleep(200);
+	  			dateHolder.sendKeys(xAsString);
+	  			Thread.sleep(300);
+	  			dateHolder.sendKeys(dt);
+	  			Thread.sleep(300);
+	  			dateHolder.sendKeys(yr);
+	  			Thread.sleep(300);
 	  			logger.info("Entered second one date");	
 	  		}
   
@@ -580,15 +618,38 @@ public class ReUseAbleElement {
 	  	//ALARTS ADDRESS AND ACTIONS METHODS
 	  	public String alertAddress_RU = "//div[@role='alert']";
 	  	String alertMessageContent_RU;
-	  	public String snakeAlertMessagesDisplayedContent_RU() {
-	  		try {
-	  			logger.info("Alert - Try");
-	  			WebElement alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
-	  			logger.info("Alert message is displayed: "+alertSnakeMessage.isDisplayed());
-	  			alertMessageContent_RU = alertSnakeMessage.getText();
-	  		}catch(Exception e) {
-	  			logger.info("Alert exception: "+e.getMessage());
-	  		}
+	  	public String snakeAlertMessagesDisplayedContent_RU() throws InterruptedException {
+	  			//logger.info("Alert - Try");
+	  			WebElement alertSnakeMessage = null;
+	  			int t = 1;
+	  			String exception = null;
+	  			boolean flag = false;
+	  			while(t <= 200)
+	  			{
+	  				logger.info("Checking alert after every 100 miliseconds durations: "+t);
+	  				try {
+	  					alertSnakeMessage = driver.findElement(By.xpath(alertAddress_RU));
+	  					flag = alertSnakeMessage.isDisplayed();
+		  					if(flag) {
+		  						logger.info("Alert message is displayed: "+flag);
+		  			  			alertMessageContent_RU = alertSnakeMessage.getText();
+		  					}else {
+		  						Thread.sleep(100);
+		  						t++;
+		  					}
+	  				}catch(Exception e) {
+	  					exception = e.getMessage();
+	  					t++;
+	  				}
+	  				
+	  				if(flag) {
+	  					Thread.sleep(500);
+	  					break;
+	  				}
+	  			}
+	  			
+	  		logger.info("Alert not cought exception: "+exception);
+	  		Thread.sleep(2000);
 	  		return alertMessageContent_RU;
 	  	}
 	  	
@@ -601,7 +662,8 @@ public class ReUseAbleElement {
 	  			WebElement requiredMessage = driver.findElement(By.xpath(requiredMessage_RU));
 	  			if(requiredMessage.isDisplayed()) {
 	  				flag = true;
-	  				logger.info("Required message is present"+requiredMessage.isDisplayed());
+	  				Thread.sleep(500);
+	  				logger.info("Required message is present: "+requiredMessage.isDisplayed());
 	  			}	
 	  		}catch(Exception e) {
 	  			logger.info("Required Exception: "+e.getMessage());

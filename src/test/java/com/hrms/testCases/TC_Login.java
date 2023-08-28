@@ -27,8 +27,7 @@ public class TC_Login extends BaseClass {
 	
 	//TO LOGIN BY USING DATA PROVIDER METHODS
 	//@Test(priority = 1 , dataProvider = fileNameOnly )
-	public void test_Login(String userName , String password ) throws InterruptedException
-	{
+	public void test_Login(String userName , String password ) throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		lgn.Login(userName, password);
 	}

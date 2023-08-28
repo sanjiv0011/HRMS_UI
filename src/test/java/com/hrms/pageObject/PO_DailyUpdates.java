@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.hrms.Actions.Action_Created;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
@@ -44,12 +45,23 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 		action = new Actions(driver);
 	}
 	
+	//ALERT CONSTRUCTOR
+	public Action_Created confirmationCreated = new Action_Created();
+	
+	//DAILY UPDATES ALERT MESSAGES 
+	String alertCreated_du = "Your update has been sent successfully.";
+	
 	//=====START====DAILY UPDATES PAGE OBJECT AND ITS ACTION METHODS============//
 		//PROJECT LIST ADDRESS
 		@FindBy(xpath = "//ul[@id='myProjectObj-listbox']//li")
 		@CacheLookup
 		public List <WebElement> listProject;
 		
+		//DESCRIPTION ADDRESS
+		@FindBy(xpath = "//div[contains(@data-placeholder,'Enter The Description')]")
+		@CacheLookup
+		WebElement textDescription;
+				
 		//ACTION METHOD TO CLICK ON THE PROJECT LIST DROPDOWN AND SELECT THE GIVEN PROJECT NAME
 		public void selectProject(String projectName) throws InterruptedException {
 			//TO CLICK ON THE DROPDOWN ICON 
@@ -60,75 +72,29 @@ public class PO_DailyUpdates extends ReUseAbleElement{
 		    Thread.sleep(1000);
 		}
 		
-		//DESCRIPTION ADDRESS
-		@FindBy(xpath = "//div[contains(@data-placeholder,'Enter The Description')]")
-		@CacheLookup
-		WebElement textDescription;
-		public void setDescription(String description) {
+		//ACTION METHODS TO SET DESCRIPTION
+		public void setDescription(String description) throws InterruptedException {
+			textDescription.sendKeys(Keys.CONTROL,"a");
+			textDescription.sendKeys(Keys.DELETE);
 			textDescription.sendKeys(description);
+			logger.info("Project name selected");
+			Thread.sleep(500);
 		}
-		
-		//DESCRIPTION ADDRESS
-		@FindBy(xpath = "//div[contains(text(),'Your update has been sent successfully.')]")
-		@CacheLookup
-		WebElement msgSuccessFullDailyUpdates;
-		public boolean isSuccessFullDailyUpdatesMSGDisplayed( ) {
-			boolean flag = false;
-			try {
-				wait.until(ExpectedConditions.elementToBeClickable(msgSuccessFullDailyUpdates));
-				String text = msgSuccessFullDailyUpdates.getText();
-				if(text != null) {
-					flag = true;
-					logger.info("msgSuccessFullDailyUpdates is Displayed: "+msgSuccessFullDailyUpdates.isDisplayed());
-				}
-			}catch(Exception e) {
-				logger.info("Message from isSuccessFullDailyUpdatesMSGDisplayed methods: "+e.getCause());
-			}
-			
-			return flag;
-		}
-		
 		
 		
 		//TO CREATE DAILY UPDATES
 		public PO_HomePage createDailyUpdates(WebDriver driver, String dailyUpdateDate, String hoursStart, String mintuesStart, String AMPMStart,String hoursEnd, String mintuesEnd, String AMPMEnd, String projectName, String description ) throws InterruptedException
 		{	
-			//THIS MEHTOD IS CALLED FROM THE MY_SUPPORT PACKAGE AND CORRESPONDING ADDRESSES IS PRESENT UNDER THE RE_USEABLE_PAGEOBJECT PACKAGE
-		    DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, dailyUpdateDate, 1);
-		    
-		    //TO SELECT THE START TIME IT IS CALLING FORM THE MY SUPPORT PACKAGE HAVNG CLASS TIME PICKER
+			TimePicker.selectTime(driver, hoursEnd, mintuesEnd, AMPMEnd,2);
+			DatePicker.DatePicker_GenericMethod_WithoutDropDown(driver, dailyUpdateDate, 1);
 		    TimePicker.selectTime(driver,hoursStart, mintuesStart, AMPMStart,1);
-		    
-		    //TO SELECT THE END TIME IT IS CALLING FORM THE MY SUPPORT PACKAGE HAVNG CLASS TIME PICKER
-		    TimePicker.selectTime(driver, hoursEnd, mintuesEnd, AMPMEnd, 2);
-		    
 		    //TO SELECT THE PROJECT
 		    selectProject(projectName);
 		    //TO SET THE DESCRIPTION
 		    setDescription(description);
-		    ruae.clickOnCreateButton_RU();
 		    
-		    //TO TRY ANOTHER WAY IN CASE TIME PICKER FAILED TO SET END TIME
-		   try {
-			   if(isDisplayedEndTimeRequired_RU()) {
-				   setStartTimeWithoutUsingTimePicker_RU(driver,hoursEnd,mintuesEnd,AMPMEnd);
-			   }else {
-				   logger.info("End time not selected");
-			   }
-		   }
-		   catch(Exception e) {
-			  logger.info(e.getCause());
-		   }
-		   
-		   //AFTER FILLING TIME WITHOUT SELECTING FURTHER CLICK ON THE CREATE BUTTON
-		   ruae.clickOnCreateButton_RU();
-		   
-		   if(isSuccessFullDailyUpdatesMSGDisplayed()) {
-		    	logger.info("Daily updates created successfully");
-		    }else {
-		    	logger.info("Do not caught the daily updates message");
-		    }
-		  
+		    ruae.clickOnCreateButton_RU();
+		    confirmationCreated.created(driver, alertCreated_du, "");
 		    return new PO_HomePage(driver);
 		}
 		

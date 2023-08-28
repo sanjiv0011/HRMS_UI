@@ -40,7 +40,6 @@ public class TC_Leave extends BaseClass{
 	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		Thread.sleep(3000);
 	}
 	
 	//TO APPLY LEAVE
@@ -54,10 +53,6 @@ public class TC_Leave extends BaseClass{
 	//TO PERFORM THE LOGOUT
 	@Test(priority = 10, dependsOnMethods = {"test_Login"})
 	public void test_Logout() throws InterruptedException {
-		//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-		hp.clickOniconHomeImage();
-		Thread.sleep(5000);
-		// TO LOGOUT
 		hp.Logout();
 	}
 	

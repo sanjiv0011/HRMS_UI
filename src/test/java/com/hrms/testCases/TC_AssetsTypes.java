@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
-import com.hrms.pageObject.PO_Asserts_CreateAssetsTypes;
+import com.hrms.pageObject.PO_Asserts_AssetsTypes;
 import com.hrms.pageObject.PO_HomePage;
 import com.hrms.pageObject.PO_LoginPage;
 
@@ -19,9 +19,9 @@ public class TC_AssetsTypes extends BaseClass {
 	public Faker faker = new Faker();
 	public PO_LoginPage lgn;
 	public PO_HomePage hp;
-	public PO_Asserts_CreateAssetsTypes acat;
+	public PO_Asserts_AssetsTypes acat;
 	
-	String assetTypeName = "WaterBottels";
+	String assetTypeName = "TabelFan";
 	String assetTypeCode = "WTBL";
 	String assetTypeDescription = faker.address().fullAddress();
 	String assetTypeSearchKey = assetTypeName;
@@ -32,11 +32,10 @@ public class TC_AssetsTypes extends BaseClass {
 	
 	//TO PERFORM THE LOGIN
 	@Test(priority = 1)
-	public void test_Login() throws InterruptedException
-	{	//to perform login
+	public void test_Login() throws InterruptedException {
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		Thread.sleep(5000);
+
 	}
 		
 	//TO CREATE ASSESTS TYPES	
@@ -50,7 +49,7 @@ public class TC_AssetsTypes extends BaseClass {
 	}
 	
 	//ARCHIVE ASSESTS TYPES
-	//@Test(priority = 3 , dependsOnMethods = "test_Login")
+	@Test(priority = 3 , dependsOnMethods = "test_Login")
 	public void test_ArchiveAssetsTypes()throws InterruptedException
 	{
 		acat = callMeBeforePerformAnyAction();
@@ -60,7 +59,7 @@ public class TC_AssetsTypes extends BaseClass {
 	}
 	
 	//RESTORE ASSESTS TYPES
-	//@Test(priority = 4, dependsOnMethods = "test_Login")
+	@Test(priority = 4, dependsOnMethods = "test_Login")
 	public void test_RestoreAssetsTypes()throws InterruptedException
 	{
 		acat = callMeBeforePerformAnyAction();
@@ -71,7 +70,7 @@ public class TC_AssetsTypes extends BaseClass {
 		
 	
 	//EDIT ASSESTS TYPES
-	//@Test(priority = 5 , dependsOnMethods = "test_Login")
+	@Test(priority = 5 , dependsOnMethods = "test_Login")
 	public void test_EditAssetsTypes()throws InterruptedException
 	{
 		acat = callMeBeforePerformAnyAction();
@@ -81,15 +80,12 @@ public class TC_AssetsTypes extends BaseClass {
 	
 	//TO PERFORM THE LOGOUT
 	@Test(priority = 10, dependsOnMethods = "test_Login")
-	public void test_Logout() throws InterruptedException
-	{	//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
-		hp.clickOniconHomeImage();
-		Thread.sleep(3000);
+	public void test_Logout() throws InterruptedException {
 		hp.Logout();// to logout
 	}
 		
 	//CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
-	public PO_Asserts_CreateAssetsTypes callMeBeforePerformAnyAction() throws InterruptedException
+	public PO_Asserts_AssetsTypes callMeBeforePerformAnyAction() throws InterruptedException
 	{	//TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE
 		hp.clickOniconHomeImage();
 		Thread.sleep(3000);
@@ -99,7 +95,7 @@ public class TC_AssetsTypes extends BaseClass {
 		Thread.sleep(2000);
 		
 		//TO ACCESS ASSETS TYPES PAGE OBJECTS
-		return new PO_Asserts_CreateAssetsTypes(driver);	
+		return new PO_Asserts_AssetsTypes(driver);	
 	}
 
 	//=========DATA PROVIDER CONCEPT========WHILE USING THIS PROVIDES THE EXCEL FIEL VARIABLE AS AN AGRUMENT IN THE TEST_METHODS======//

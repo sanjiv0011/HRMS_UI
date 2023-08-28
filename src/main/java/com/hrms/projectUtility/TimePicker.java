@@ -51,7 +51,7 @@ public class TimePicker {
 	//============START======= ACTION METHODS TO SELECT THE TIME FROM==========WAY-2=========//
 	//IT BYPASS THE WAY-1 PROBLEMS
     public static void selectTime(WebDriver driver, String ValueHours, String ValueMinutes, String AMPM, int x ) throws InterruptedException
-    {  	
+    {  	Thread.sleep(1000);
     	action = new Actions(driver);
     	wait = new WebDriverWait (driver, Duration.ofSeconds(10));
     	logger.info("User given hours: "+ValueHours+", minutes: "+ValueMinutes+", AP-PM: " + AMPM+", and selected time picker: "+ x);

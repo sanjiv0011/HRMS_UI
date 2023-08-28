@@ -43,9 +43,9 @@ public class DatePicker{
 					
 			    // my date setting
 		        String myDate[] = yourDate.split("[\\s\\-\\.]");
-		        String year = myDate[0];
+		        String year = myDate[2];
 		        String month = myDate[1];
-		        String date = myDate[2];
+		        String date = myDate[0];
 		        logger.info("User given Date: "+date+" Month: "+month+" year: " + year);
 		        
 		        //========START=========TO SELECT DATE PICKER ICON 1,2,3=============//
@@ -53,27 +53,27 @@ public class DatePicker{
 		        {
 		        	WebElement datePlaceholder1 = driver.findElement(By.xpath(textDatePlaceHolder_1_RU));
 		        	datePlaceholder1.sendKeys(Keys.CONTROL,"a");
-		        	Thread.sleep(300);
+		        	Thread.sleep(500);
 		        	datePlaceholder1.sendKeys(Keys.DELETE);
-		        	Thread.sleep(300);
+		        	Thread.sleep(500);
 		        	driver.findElement(By.xpath(iconDate_1_RU)).click();
 		        	Thread.sleep(1000);
 		        	logger.info("Clicked on the date picker icon: "+ x);
 		        }else if(x == 2){
 		        	WebElement datePlaceholder2 = driver.findElement(By.xpath(textDatePlaceHolder_2_RU));
 		        	datePlaceholder2.sendKeys(Keys.CONTROL,"a");
-		        	Thread.sleep(300);
+		        	Thread.sleep(500);
 		        	datePlaceholder2.sendKeys(Keys.DELETE);
-		        	Thread.sleep(300);
+		        	Thread.sleep(500);
 		        	driver.findElement(By.xpath(iconDate_2_RU)).click();
 		        	Thread.sleep(1000);
 		        	logger.info("Clicked on the date picker icon: "+ x);
 		        }else if(x == 3) {
 		        	WebElement datePlaceholder3 = driver.findElement(By.xpath(textDatePlaceHolder_3_RU));
 		        	datePlaceholder3.sendKeys(Keys.CONTROL,"a");
-		        	Thread.sleep(300);
+		        	Thread.sleep(500);
 		        	datePlaceholder3.sendKeys(Keys.DELETE);
-		        	Thread.sleep(300);
+		        	Thread.sleep(500);
 		        	driver.findElement(By.xpath(iconDate_3_RU)).click();
 		        	Thread.sleep(1000);
 		        	logger.info("Clicked on the date picker icon: "+ x);
@@ -85,7 +85,7 @@ public class DatePicker{
 		        Thread.sleep(1000);
 		        driver.findElement(By.xpath(toggleBtnYearAndDate)).click();
 		        logger.info("Clicked on the toggle button for date and year selection");
-		        Thread.sleep(1000);
+		        Thread.sleep(2000);
 
 		        //TO MATCH AND PICK THE YEAR
 		        List<WebElement> yearGrid = driver.findElements(By.xpath(selectYear));
@@ -96,7 +96,7 @@ public class DatePicker{
 		                Thread.sleep(500);
 		                logger.info("Selected year: " + yr);
 		                yearElement.click();
-		                Thread.sleep(500);
+		                Thread.sleep(1000);
 		                flag = true;
 		                break;
 		            }
@@ -127,12 +127,12 @@ public class DatePicker{
 		        while (displayedMonth > inputMonth) {
 		            displayedMonth = displayedMonth - 1;
 		            driver.findElement(By.xpath(arrowPreviousMonth)).click();
-		            Thread.sleep(1000);
+		            Thread.sleep(2000);
 		        }
 		        while (displayedMonth < inputMonth) {
 		            displayedMonth = displayedMonth + 1;
 		            driver.findElement(By.xpath(arrowNextMonth)).click();
-		            Thread.sleep(1000);
+		            Thread.sleep(2000);
 		            
 		        }
 		        if (displayedMonth == inputMonth) {
@@ -161,8 +161,8 @@ public class DatePicker{
 		        if (flag2 != true) {
 		        	logger.info("Date not selected");
 		        }
-		    }
-		
+		    	Thread.sleep(1000);
+			}
 }
 			
 /*	

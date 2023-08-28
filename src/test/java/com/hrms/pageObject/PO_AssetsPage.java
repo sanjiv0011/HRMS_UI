@@ -16,6 +16,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.hrms.Actions.Action_Archive;
+import com.hrms.Actions.Action_Created;
+import com.hrms.Actions.Action_Restore;
+import com.hrms.Actions.Action_Updated;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
@@ -41,6 +45,18 @@ public class PO_AssetsPage extends ReUseAbleElement {
 			action = new Actions(driver);
 	    }
 	    
+	    public Action_Archive actionArchive = new Action_Archive();
+		public Action_Restore actionRestore = new Action_Restore();
+		public Action_Created confirmationCreated = new Action_Created();
+		public Action_Updated confirmationUpdated = new Action_Updated();
+		
+		String alertRestored_asset = "Asset Restored Successfully.";
+		String alertArchived_asset = "Asset Archived Successfully.";
+		String alertCreated_asset = "Asset Created Successfully.";
+		String alertUpdated_asset = "Asset Updated Successfully.";
+		String alertAleradyExist_asset = "Asset already exists.";
+		String alertError_asset = "There was an error adding the Asset.";
+		
 	    //CRETAE ASSETS BUTTON AT ASSETS PAGE
 	    @FindBy(xpath = "(//p[text()='Create Asset'])[1]")
 	    @CacheLookup
@@ -239,9 +255,6 @@ public class PO_AssetsPage extends ReUseAbleElement {
 	    public PO_HomePage createAssets(String companyName, String assetType,String serialNumber,String modelNumber, String usedBy,	String supportPerson, String warranty, String warrantyExpiry, String manufacturerDate1, String purchaseDate1, String invoiceNumber, String invoiceURL, String status, String condition, String replacementStatus) throws InterruptedException
 	    {
 	    	clickOnBtnCreateAssetsAtAssetaPage();
-	    	enterPurchaseDate(purchaseDate1,3);
-	    	enterManufacturerDate(manufacturerDate1,2);
-	    	enterWarrantyExpiryDate(warrantyExpiry,1);
 	    	selectAssetCompanyName(companyName);
 	    	selectAssetType(assetType);
 	    	enterSerialNumber(serialNumber);
@@ -249,13 +262,24 @@ public class PO_AssetsPage extends ReUseAbleElement {
 	    	enterUsedBy(usedBy);
 	    	enterSupportPerson(supportPerson);
 	    	enterWarranty(warranty);
+	    	
+	    	//WAY 1
+//	    	enterWarrantyExpiryDate(warrantyExpiry,1);
+//	    	enterManufacturerDate(manufacturerDate1,2);
+//	    	enterPurchaseDate(purchaseDate1,3);
+	    	
+	    	//WAY 2
+	    	setDateWithoutUsingDatePicker_RU(warrantyExpiry,1);
+	    	setDateWithoutUsingDatePicker_RU(manufacturerDate1,2);
+	    	setDateWithoutUsingDatePicker_RU(purchaseDate1,3);
+	    	
 	    	enterInvoiceNumber(invoiceNumber);
 	    	enterInvoiceURL(invoiceURL);
 	    	selectStatus(status);
 	    	selectCondition(condition);
 	    	selectReplacementStatus(replacementStatus);
 	    	clickOnBtnCreateAssetsAtCreateAssetsPage();
-	    	
+			confirmationCreated.created(driver, alertCreated_asset,alertAleradyExist_asset);
 		    return new PO_HomePage(driver);
 	    }
 }

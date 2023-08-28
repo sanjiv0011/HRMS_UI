@@ -57,7 +57,6 @@ public class TC_UsersProfile_BankDetails extends BaseClass{
 	public void test_Login() throws InterruptedException{
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 	
 	//TO FILL UP BANK DETAILS

@@ -16,12 +16,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+import com.hrms.Actions.Action_Activate;
+import com.hrms.Actions.Action_Archive;
+import com.hrms.Actions.Action_Created;
+import com.hrms.Actions.Action_Deactivate;
+import com.hrms.Actions.Action_Restore;
+import com.hrms.Actions.Action_Updated;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
-import com.hrms.projectUtility.Action_Activate;
-import com.hrms.projectUtility.Action_Archive;
-import com.hrms.projectUtility.Action_DeActivate;
-import com.hrms.projectUtility.Action_Restore;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
 public class PO_OragnizationPage extends ReUseAbleElement{
@@ -32,7 +33,6 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	public ReUseAbleElement ruae;
 	public Logger logger = LogManager.getLogger(getClass());
 	public WebDriverWait wait;
-
 	
 	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
 	public PO_OragnizationPage(WebDriver driver){	
@@ -42,8 +42,24 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		ruae = new ReUseAbleElement(driver);
 		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
-	
 
+	public Action_Activate actionActivate = new Action_Activate();
+	public Action_Deactivate actionDeactivate = new Action_Deactivate();
+	public Action_Archive actionArchive = new Action_Archive();
+	public Action_Restore actionRestore = new Action_Restore();
+	public Action_Created confirmationCreated = new Action_Created();
+	public Action_Updated confirmationUpdated = new Action_Updated();
+	
+	//ALERT MESSAGES
+	String alertRestored_org = "Organization Restored Successfully.";
+	String alertArchived_org = "Organization Archived Successfully.";
+	String alertCreated_org = "Organization Created Successfully.";
+	String alertUpdated_org = "Organization Updated Successfully.";
+	String alertDeactivated_org = "Organization Deactivated Successfully.";
+	String alertActivated_org = "Organization Activated Successfully.";
+	String alertAleradyExist_org = "LeaOrganizationve already exists.";
+		
+	
 	//=====START====Organization page and Create organization page object============//
 	@FindBy(xpath = "//button//p[text()='Create Organization']")
 	@CacheLookup
@@ -107,68 +123,98 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	}
 	
 	public void setOrgName(String orgName) throws InterruptedException{
+		textEnterName.sendKeys(Keys.CONTROL,"a");
+		textEnterName.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterName.sendKeys(orgName);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org name");
 	}
 	
 	public void setOrgCode(String orgCode) throws InterruptedException{
+		textEnterCode.sendKeys(Keys.CONTROL,"a");
+		textEnterCode.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterCode.sendKeys(orgCode);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org code");
 	}
 	
 	public void setOrgEmail(String orgEmail) throws InterruptedException{
+		textEnterEmail.sendKeys(Keys.CONTROL,"a");
+		textEnterEmail.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterEmail.sendKeys(orgEmail);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org email");
 	}
 	
 	public void setOrgPhoneNumber(String orgPhoneNumber) throws InterruptedException{
+		textEnterPhoneNumber.sendKeys(Keys.CONTROL,"a");
+		textEnterPhoneNumber.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterPhoneNumber.sendKeys(orgPhoneNumber);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org phone number");
 	}
 	
 	public void setOrgAddress(String orgAddress) throws InterruptedException{
+		textEnterAddress.sendKeys(Keys.CONTROL,"a");
+		textEnterAddress.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterAddress.sendKeys(orgAddress);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org address");
 	}
 	
 	public void setOrgArea(String orgArea) throws InterruptedException{
+		textEnterArea.sendKeys(Keys.CONTROL,"a");
+		textEnterArea.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterArea.sendKeys(orgArea);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org area");
 	}
 	
 	public void setOrgCity(String orgCity) throws InterruptedException{
+		textEnterCity.sendKeys(Keys.CONTROL,"a");
+		textEnterCity.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterCity.sendKeys(orgCity);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org city");
 	}
 	
 	public void setOrgState(String orgState) throws InterruptedException{
+		textEnterState.sendKeys(Keys.CONTROL,"a");
+		textEnterState.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterState.sendKeys(orgState);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org  state");
 	}
 	
 	public void setOrgPostalCode(String orgPostalCode) throws InterruptedException{
+		textEnterPostalCode.sendKeys(Keys.CONTROL,"a");
+		textEnterPostalCode.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterPostalCode.sendKeys(orgPostalCode);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org postal code");
 	}
 	
 	public void setOrgCountry(String orgCountry) throws InterruptedException{
+		textEnterCountry.sendKeys(Keys.CONTROL,"a");
+		textEnterCountry.sendKeys(Keys.DELETE);
+		Thread.sleep(200);
 		textEnterCountry.sendKeys(orgCountry);
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Enterd org  country");
 	}
 	
 	public void clickOnIconDropdownTimeZone() throws InterruptedException{
 		iconDropdownTimeZone.click();
-		Thread.sleep(1000);
+		Thread.sleep(300);
 		logger.info("Clicked on the icon drop down for the time zone");
 	}
 	
@@ -199,51 +245,52 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		setOrgCountry(orgCountry);
 		selectOrgTimeZone(orgTimeZone);
 		ruae.clickOnCreateButton_RU();
+		confirmationCreated.created(driver, alertCreated_org, alertAleradyExist_org);
 		return new PO_HomePage(driver);
 	}
 	
 	//TO ARCHIVE ORGANIZATION
-	// THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
    	public PO_HomePage archiveOrganization(String orgName) throws InterruptedException {
        logger.info("Archive organization method called");
+       actionArchive.archive(orgName, driver, alertArchived_org);
        // METHODS TO ARCHIVE THE ORGANIZATION
-       Action_Archive.archive(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
-       logger.info("Returned inside archive organization method");
-       isOrganizationArchiveSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGESS
+//       Action_Archive.archive(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionArchive, btnYes, driver);
+//       logger.info("Returned inside archive organization method");
+//       isOrganizationArchiveSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGESS
        return new PO_HomePage(driver);
    	}
    
    //TO RESTORE ORGANIZATION
-   // THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
    public PO_HomePage restoreOrganization(String orgName) throws InterruptedException {
-       logger.info("Restore organization method called");
-       // METHODS TO RESTORE THE ORGANIZATION
-       Action_Restore.restore(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
-       logger.info("Returned inside restore organization method");
-       isOrganizationRestoreSuccessMessageDisplayed(); //TO VARIFIRY CONFIRMATION MESSAGESS
+        logger.info("Restore organization method called");
+   		actionRestore.restore(orgName, driver,alertRestored_org );
+//       // METHODS TO RESTORE THE ORGANIZATION
+//       Action_Restore.restore(orgName, searchBox_RU, archivedLabel, btnAction_RU, actionRestore, btnYes, driver);
+//       logger.info("Returned inside restore organization method");
+//       isOrganizationRestoreSuccessMessageDisplayed(); //TO VARIFIRY CONFIRMATION MESSAGESS
        return new PO_HomePage(driver);
    }
    
    	//TO ACTIVATE ORGANIZATION
-	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
 	public PO_HomePage activateOrganization(String orgName) throws InterruptedException {
 		logger.info("Activate organization methods called");
+		actionActivate.activate(orgName, driver, alertActivated_org);
     	//METHODS TO ACTIVATE THE ORGANIZATION
-		Action_Activate.activate(orgName, searchBox_RU, inactiveLabel, btnAction_RU, actionActivate, btnYes, driver);
-    	 logger.info("Return back inside activate organization method");
-    	 isOrganizationActivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
+//		Action_Activate.activate(orgName, searchBox_RU, inactiveLabel, btnAction_RU, actionActivate, btnYes, driver);
+//    	 logger.info("Return back inside activate organization method");
+//    	 isOrganizationActivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
     	 return new PO_HomePage(driver);
 	}
 	
 	
 	//TO DEACTIVATE ORGANIZATION
-	//THIS ALL DATA COMES FROM THE RE_USEABLE_ELEMENT CLASS WHICH PRESENCE UNDER THE RE_USERABLE_PACKAGE PAGE OBJECTS
 	public PO_HomePage deactivateOrganization(String orgName) throws InterruptedException {
 		logger.info("De-Activate organization methods called");
-    	//METHODS TO DEACTIVATE THE ORGANIZATION 
-		Action_DeActivate.deactivate(orgName, searchBox_RU, activeLabel, btnAction_RU, actionDeactivate, btnYes, driver);
-    	 logger.info("Return back inside deactivate organization method");
-    	 isOrganizationDeactivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
+		actionDeactivate.deactivate(orgName, driver, alertDeactivated_org);
+//    	//METHODS TO DEACTIVATE THE ORGANIZATION 
+//		Action_DeActivate.deactivate(orgName, searchBox_RU, activeLabel, btnAction_RU, actionDeactivate, btnYes, driver);
+//    	 logger.info("Return back inside deactivate organization method");
+//    	 isOrganizationDeactivateSuccessMessageDisplayed();	//TO VARIFIRY CONFIRMATION MESSAGES
     	 return new PO_HomePage(driver);
 	}
 	
@@ -257,51 +304,21 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	    ruae.clickOnEditAction_RU();	//IT WILL CLICK ON THE EDIT ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
 		Thread.sleep(1000);
 		
-		//setOrgName(orgName);	// I AM NOT CHAGNING ORGANIZATION NAMES
-		
-		//TO CLEAR AND SET NEW TEXT
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterCode);
+		setOrgName(orgName);	// I AM NOT CHAGNING ORGANIZATION NAMES
 		setOrgCode(newOrgCode);	
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterEmail);
 		setOrgEmail(newOrgEmail);
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterPhoneNumber);
 		setOrgPhoneNumber(newOrgPhoneNumber);
-
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterAddress);
 		setOrgAddress(newOrgAddress);
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterArea);
 		setOrgArea(newOrgArea);
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterCity);
 		setOrgCity(newOrgCity);
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterState);
 		setOrgState(newOrgState);
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterPostalCode);
 		setOrgPostalCode(newOrgPostalCode);
-		
-		callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(textEnterCountry);
-		setOrgCountry(newOrgCountry);
-		
+		setOrgCountry(newOrgCountry);		
 		selectOrgTimeZone(newOrgTimeZone);
-
 		ruae.clickOnBtnSaveChanges_RU(); //RU REPRESENT RE USEABLE ELEMENT
+		confirmationUpdated.updated(driver, alertUpdated_org,alertAleradyExist_org);
 		return new PO_HomePage(driver);
 	}
-	
-	//CALL THIS METHODS ALWAYS IN THE EDIT METHODS CALL JUST BEFORE SETTING NEW TEXT BY PASSING ELEMENT ADDRESS
-	public void callMeAlwaysDuringEditMethodJustBeforeSettingNewTextByPassingElementAdress(WebElement elementAddress)
-	{	//THIS METHOD WILL CLEAR THE ALREADY WRITTEN TEXT AND WAIT TILL IT IS NOT CLEARED AND JUST AFTER THIS METHOD CALL SET THE ACTION METHODS
-		elementAddress.sendKeys(Keys.CONTROL + "a");
-		elementAddress.sendKeys(Keys.DELETE);
-		wait.until(ExpectedConditions.textToBePresentInElementValue(elementAddress, ""));
-		logger.info("Text field cleared: "+elementAddress.getText());
-	}
-	
 	
 	
 	//============START========CONFIRMATION MESSAGES FORM ORGANIZATIONS PAGE OBJECTS AND ITS ACTION METHODS============//

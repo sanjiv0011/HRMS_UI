@@ -55,7 +55,6 @@ public class TC_UsersProfile_OthersDetails extends BaseClass{
 	public void test_Login() throws InterruptedException{
 		lgn = new PO_LoginPage(driver);
 		hp = lgn.Login(userName, password);
-		logger.info("Login Done");
 	}
 	
 	//TO FILL OTHERS DETAILS
