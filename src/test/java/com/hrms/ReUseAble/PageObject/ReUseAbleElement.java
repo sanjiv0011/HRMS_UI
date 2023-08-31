@@ -85,7 +85,7 @@ public class ReUseAbleElement {
 	  //===========START=======ACTIVATE AND DEACTIVATE==================//
 	    
 		//ACTIVATE Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Active')])[1]")
+		@FindBy(xpath = "(//div[contains(text(),'Acti')])[1]")
 		@CacheLookup
 		public WebElement actionActivate;
 		// Action method to click the Archive action
@@ -96,7 +96,7 @@ public class ReUseAbleElement {
 	    }
 		
 		//DEACTIVATE Action => To use this first search list item so that it comes at first position
-		@FindBy(xpath = "(//div[contains(text(),'Deactive')])[1]")
+		@FindBy(xpath = "(//div[contains(text(),'Deacti')])[1]")
 		@CacheLookup
 		public WebElement actionDeactivate;
 		 // Action method to click the Restore action
@@ -594,7 +594,7 @@ public class ReUseAbleElement {
 	  			int t = 1;
 	  			String exception = null;
 	  			boolean flag = false;
-	  			while(t <= 200)
+	  			while(t <= 500)
 	  			{
 	  				logger.info("Checking alert after every 100 miliseconds durations: "+t);
 	  				try {

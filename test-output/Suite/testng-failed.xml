@@ -9,15 +9,12 @@
     <classes>
       <class name="com.hrms.testCases.TC_Users">
         <methods>
-          <include name="test_ArchiveUser"/>
           <include name="setup"/>
           <include name="teardown"/>
           <include name="test_Login"/>
           <include name="test_DeActivateUser"/>
-          <include name="test_RestoreUser"/>
           <include name="test_ActivateUser"/>
           <include name="test_EditUser"/>
-          <include name="test_CreateUser" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.hrms.testCases.TC_Users -->
     </classes>

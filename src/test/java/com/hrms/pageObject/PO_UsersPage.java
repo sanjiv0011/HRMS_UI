@@ -280,7 +280,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	       boolean flag = actionArchive.archive(uname, driver, alertArchived_user );
 	       String searchString_DB_ColumnName = "user_name";
 		   if(flag) {
-	    	   String querry = "select * from public.client order by updated_at desc limit 1";
+	    	   String querry = "select * from public.users order by updated_at desc limit 1";
 	    	   db_actionArchive.test_DB_Archive(uname,querry,searchString_DB_ColumnName);
 	       }
 		    logger.info("archiveUser call DONE");
@@ -295,7 +295,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	       //DATABASE TESTING
 	       String searchString_DB_ColumnName = "user_name";
 	       if(flag) {
-	        	String querry = "select * from public.client order by updated_at desc limit 1";
+	        	String querry = "select * from public.users order by updated_at desc limit 1";
 	        	db_actionRestore.test_DB_Restore(uname,querry,searchString_DB_ColumnName);
 	       }
 	   	   logger.info("restoreUser call DONE");
@@ -310,7 +310,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			//DATABASE TESTING
 	        String searchString_DB_ColumnName = "user_name";
 	        if(flag) {
-	        	String querry = "select * from public.client order by updated_at desc limit 1";
+	        	String querry = "select * from public.users order by updated_at desc limit 1";
 	        	db_actionActivate.test_DB_Activate(uname,querry,searchString_DB_ColumnName);
 	        }
 	   	    logger.info("activateUser call DONE");
@@ -326,7 +326,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			//DATABASE TESTING
 	        String searchString_DB_ColumnName = "user_name";
 	        if(flag) {
-	        	String querry = "select * from public.client order by updated_at desc limit 1";
+	        	String querry = "select * from public.users order by updated_at desc limit 1";
 	        	db_actionDeactivate.test_DB_Deactivate(uname,querry,searchString_DB_ColumnName);
 	        }
 	   	    logger.info("deactivateUser call DONE");

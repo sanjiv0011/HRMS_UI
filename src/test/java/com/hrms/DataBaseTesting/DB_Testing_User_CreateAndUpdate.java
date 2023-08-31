@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -45,14 +46,17 @@ public class DB_Testing_User_CreateAndUpdate {
 						String db_firstName = resultsetUser.getString("first_name");
 						String db_lastName = resultsetUser.getString("last_name");
 						String db_emailAddress = resultsetUser.getString("email_address");
+						
+						//USER ROLES IN DB IS A JSON OBJECT THAT'S WHY WE HAVE TO CONVERT IT
 						String db_userRole = resultsetUser.getString("userRoles");
 						
+						   
+						Assert.assertEquals(db_userRole, "{"+userRole+"}", "To match user role");
 						//CROSS VERIFICATIONS(IT WILL MATCH USER INPUT DATA WITH DATABASE ENTRY)
 						Assert.assertEquals(db_userNameToCreate, userNameToCreate, "To match userNameToCreate");
 						Assert.assertEquals(db_firstName, firstName, "To match firstName");
 						Assert.assertEquals(db_lastName, lastName, "To match lastName");
 						Assert.assertEquals(db_emailAddress, emailAddress, "To match emailAddress");
-						Assert.assertEquals(db_userRole, userRole, "To match userRole");
 						logger.info("===>>> test_DB_createUser: DataBase Data Cross Verification matched");
 						
 						break;
