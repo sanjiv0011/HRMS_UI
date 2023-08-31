@@ -12,8 +12,8 @@ public class Action_Archive {
 	public static final Logger logger = LogManager.getLogger(Action_Archive.class);
 	public ReUseAbleElement ruae;
 	
-	public void archive(String searchKey,WebDriver driver, String message) throws InterruptedException
-	{
+	public boolean archive(String searchKey,WebDriver driver, String message) throws InterruptedException
+	{	boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		ruae.searchBox_RU(searchKey);
     	if(!ruae.isSearchKeysNotFound_RU()){
@@ -26,11 +26,13 @@ public class Action_Archive {
     	    	if(alretMsg.equals(message)) {
     	    		Assert.assertEquals(message, alretMsg,"ARCHIVED successfully");
     	    		logger.info("===>>> "+message);
+    	    		flag = true;
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}
     		}
     	}
+    	return flag;
 	}
 	
 }

@@ -73,38 +73,38 @@ public class TC_Ogranization extends BaseClass{
 	
 	
 	//ARCHIVE ORGANIZATION
-	//@Test(priority = 3 , dependsOnMethods = {"test_Login"})
-	public void test_ArchiveOrganization()throws InterruptedException {
+	@Test(priority = 3 , dependsOnMethods = {"test_Login"})
+	public void test_ArchiveOrganization()throws InterruptedException, SQLException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.archiveOrganization(orgName);
 	}
 	
 	//RESTORE ORGANIZATION
-	//@Test(priority = 4, dependsOnMethods = {"test_Login"})
-	public void test_RestoreOrganization()throws InterruptedException {
+	@Test(priority = 4, dependsOnMethods = {"test_Login"})
+	public void test_RestoreOrganization()throws InterruptedException, SQLException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.restoreOrganization(orgName);
 		logger.info("Restore user call done");
 	}
 	
 	//DEACTIVATE ORGANIZATION
-	//@Test(priority = 5)
-	public void test_DeActivateOrganization()throws InterruptedException {
+	@Test(priority = 5)
+	public void test_DeActivateOrganization()throws InterruptedException, SQLException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.deactivateOrganization(orgName);
 	}
 	
 	//ACTIVATE ORGANIZATION
-	//@Test(priority = 6)
-	public void test_ActivateOrganization()throws InterruptedException {
+	@Test(priority = 6)
+	public void test_ActivateOrganization()throws InterruptedException, SQLException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.activateOrganization(orgName);
 	}
 		
 	
 	//EDIT ORGANIZATION
-	//@Test(priority = 7, dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
-	public void test_EditOrganization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode, String orgCountry, String orgTimeZone)throws InterruptedException {
+	@Test(priority = 7, dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+	public void test_EditOrganization(String orgName, String orgCode, String orgEmail, String orgPhoneNumber, String orgAddress, String orgArea, String orgCity, String orgState, String orgPostalCode, String orgCountry, String orgTimeZone)throws InterruptedException, SQLException {
 		op = callMeBeforePerformAnyAction();
 		hp = op.editOragnization(orgName, orgCode, orgEmail, orgPhoneNumber, orgAddress, orgArea, orgCity, orgState, orgPostalCode, orgCountry, orgTimeZone );
 	}

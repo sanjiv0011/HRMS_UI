@@ -1,5 +1,6 @@
 package com.hrms.pageObject;
 
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.List;
 
@@ -19,6 +20,11 @@ import com.hrms.Actions.Action_Archive;
 import com.hrms.Actions.Action_Created;
 import com.hrms.Actions.Action_Restore;
 import com.hrms.Actions.Action_Updated;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Activate;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Archive;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Deactivate;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Restore;
+import com.hrms.DataBaseTesting.DB_Testing_Leave_CreateAndUpdate;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
@@ -57,7 +63,14 @@ public class PO_LeavePage extends ReUseAbleElement {
 	String alertUpdated_leave = "Leave Updated Successfully.";
 	String alertAleradyExist_leave = "Leave already exists.";
 	
+	//CONSTRUCTOR DECLARATION AND INITIALIAZATION FOR DATA BASE ACTIONS
+	public DB_Testing_Action_Archive  db_actionArchive = new DB_Testing_Action_Archive();
+	public DB_Testing_Action_Restore  db_actionRestore = new DB_Testing_Action_Restore();
+	public DB_Testing_Action_Activate  db_actionActivate = new DB_Testing_Action_Activate();
+	public DB_Testing_Action_Deactivate  db_actionDeactivate = new DB_Testing_Action_Deactivate();
+	public DB_Testing_Leave_CreateAndUpdate db_leaveCreateUpdate = new DB_Testing_Leave_CreateAndUpdate();
 	
+		
 	//=====START====LEAVE PAGE OBJECTS AND ITS ACTION METHODS============//
 	//APLLY LEAVE BUTTON ADDRESS
 	@FindBy(xpath = "(//p[text()='Apply Leave'])[1]")
@@ -147,8 +160,8 @@ public class PO_LeavePage extends ReUseAbleElement {
     }
 
 	
-	//TO APPLY LEAVE
-	public PO_HomePage applyLeave(String leaveTypeName,String leaveDuration,String leaveStartDate,String leaveEndDate, String reason) throws InterruptedException
+	//TO CREATE(APPLY LEAVE)
+	public PO_HomePage applyLeave(String leaveTypeName,String leaveDuration,String leaveStartDate,String leaveEndDate, String reason, String orgName) throws InterruptedException, SQLException
 	{	logger.info("Entered into apply leave methods");
 		clickOnBtnApplyLeave();
 		selectLeaveTypes(leaveTypeName);
@@ -168,9 +181,13 @@ public class PO_LeavePage extends ReUseAbleElement {
 		selectEndDate(leaveEndDate, 2);
 		setLeaveReason(reason);
 		clickOnBtnApplyLeaveFinal();
-		confirmationCreated.created(driver, alertCreated_leave, alertAleradyExist_leave);
+		boolean flag = confirmationCreated.created(driver, alertCreated_leave, alertAleradyExist_leave);
 		
-		Thread.sleep(200);
+		//DATABASE TESTING
+		if(flag) {
+			db_leaveCreateUpdate.test_DB_CreateLeave(leaveTypeName, leaveDuration, leaveStartDate, leaveEndDate, reason, orgName);
+		}
+		logger.info("createOragnization call DONE");
 		clickOnCancelButton_RU();
 		
 		return new PO_HomePage(driver);

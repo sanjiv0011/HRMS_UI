@@ -14,8 +14,9 @@ public class Action_Activate {
 	public static final Logger logger = LogManager.getLogger(Action_Activate.class);
 	public ReUseAbleElement ruae;
 	
-	public void activate(String searchKey,WebDriver driver, String message) throws InterruptedException
+	public boolean activate(String searchKey,WebDriver driver, String message) throws InterruptedException
 	{
+		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		ruae.searchBox_RU(searchKey);
     	if(!ruae.isSearchKeysNotFound_RU()){
@@ -29,11 +30,13 @@ public class Action_Activate {
     	    	if(alretMsg.equals(message)) {
     	    		Assert.assertEquals(alretMsg, message,"ACTIVATED successfully");
     	    		logger.info("===>>> "+message);
+    	    		flag = true;
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}
     		}
     	}
+    	return flag;
 	}
 	
 }

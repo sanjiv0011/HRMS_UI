@@ -14,8 +14,9 @@ public class Action_Restore {
 	public static final Logger logger = LogManager.getLogger(Action_Restore.class);
 	public ReUseAbleElement ruae;
 	
-	public void restore(String searchKey,WebDriver driver, String message) throws InterruptedException
+	public boolean restore(String searchKey,WebDriver driver, String message) throws InterruptedException
 	{
+		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		ruae.searchBox_RU(searchKey);
     	if(!ruae.isSearchKeysNotFound_RU()){
@@ -28,11 +29,13 @@ public class Action_Restore {
     	    	if(alretMsg.equals(message)) {
     	    		Assert.assertEquals(message, alretMsg,"RESTORED successfully");
     	    		logger.info("===>>> "+message);
+    	    		flag = true;
     	    	}else {
     	    		logger.info("Alert message content: "+alretMsg);
     	    	}
     		}
     	}
+    	return flag;
 	}
 	
 }

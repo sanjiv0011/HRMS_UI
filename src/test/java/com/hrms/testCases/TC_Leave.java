@@ -1,6 +1,7 @@
 package com.hrms.testCases;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -26,13 +27,14 @@ public class TC_Leave extends BaseClass{
 	public Faker faker = new Faker();
 
 	
-//  //VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
-//	//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
-//	String leaveTypeName = "Sick Leave"; // SELECT WHICH IS PRESENT IN THE DROPDOWN ONLY
-//	String leaveDuration = "Full day"; 	// OR "Second half", "Full day"
-//	String leaveStartDate = "18 August 2023"; //APPLY ONLY THIS GIVEN FORMATE
-//	String leaveEndDate = "30 August 2023"; //APPLY ONLY THIS GIVEN FORMATE
-//	String reason = faker.lorem().paragraph(1);
+	//VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
+	//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
+	String leaveTypeName = "Sick Leave"; // SELECT WHICH IS PRESENT IN THE DROPDOWN ONLY
+	String leaveDuration = "Full day"; 	// OR "Second half", "Full day"
+	String leaveStartDate = "18 August 2023"; //APPLY ONLY THIS GIVEN FORMATE
+	String leaveEndDate = "30 August 2023"; //APPLY ONLY THIS GIVEN FORMATE
+	String reason = faker.lorem().paragraph(1);
+	String orgName = "Westwood";
 			
 			
 	//TO PERFORM THE LOGIN
@@ -44,9 +46,9 @@ public class TC_Leave extends BaseClass{
 	
 	//TO APPLY LEAVE
 	@Test(priority =2 , dependsOnMethods = {"test_Login"} , dataProvider = fileNameOnly)
-	public void test_ApplyLeave(String leaveTypeName, String leaveDuration, String leaveStartDate, String leaveEndDate, String reason) throws InterruptedException {
+	public void test_ApplyLeave(String leaveTypeName, String leaveDuration, String leaveStartDate, String leaveEndDate, String reason,String orgName) throws InterruptedException, SQLException {
 		lp = callMeBeforePerformAnyAction();
-		hp = lp.applyLeave(leaveTypeName, leaveDuration, leaveStartDate, leaveEndDate, reason);
+		hp = lp.applyLeave(leaveTypeName, leaveDuration, leaveStartDate, leaveEndDate, reason, orgName);
 		logger.info("Leave applied");		
 	}
 	

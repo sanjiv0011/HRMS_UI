@@ -14,14 +14,16 @@ public class Action_Updated {
 	public static final Logger logger = LogManager.getLogger(Action_Updated.class);
 	public ReUseAbleElement ruae;
 	
-	public void updated(WebDriver driver, String messageUpdate, String messageAlreadyExist) throws InterruptedException
+	public boolean updated(WebDriver driver, String messageUpdate, String messageAlreadyExist) throws InterruptedException
 	{
+		boolean flag = false;
 		ruae = new ReUseAbleElement(driver);
 		if(!ruae.isRequiredMessageDisplayed_RU()) {
 			String alretMsg = ruae.snakeAlertMessagesDisplayedContent_RU();
 			if(alretMsg.equals(messageUpdate)) {
 	    		Assert.assertEquals(messageUpdate, alretMsg, "UPDATED successfully");
 	    		logger.info("===>>> "+messageUpdate);
+	    		flag = true;
 		   	}else if(alretMsg.equals(messageAlreadyExist)){
         		Assert.assertEquals(alretMsg,messageAlreadyExist,"Already Exist");
         		logger.info("===>>> "+messageAlreadyExist);
@@ -34,6 +36,7 @@ public class Action_Updated {
 		else {
 			ruae.clickOnCancelButton_RU();
 		}
+		return flag;
 	}
 	
 }

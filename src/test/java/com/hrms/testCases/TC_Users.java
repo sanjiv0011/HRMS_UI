@@ -1,6 +1,7 @@
 package com.hrms.testCases;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -26,9 +27,8 @@ public class TC_Users extends BaseClass{
 		public PO_UserPermissions userPermissions;
 		public Faker faker = new Faker();
 
-		//VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
 		//VARIABLE DECLARATIONS AND ITS INITIALIZATIONS
-		String uname = "mariasoma";
+		String uname = "vladimir";
 		String passwordToCreate = faker.internet().password(8, 10, true, true, true);
 		String organizationName = "Westwood";
 		String firstName = faker.name().firstName();
@@ -38,7 +38,7 @@ public class TC_Users extends BaseClass{
 		
 		
 		String newUName = "jhondove";
-		String newOrganizationName = faker.company().name();
+		String newOrganizationName = organizationName;
 		String NewFirstName = faker.company().name();
 		String newLastName = faker.name().firstName();
 		String newEmailAddress = faker.name().lastName();
@@ -58,44 +58,44 @@ public class TC_Users extends BaseClass{
 		}
 		
 		//TO CREATE USER
-		//@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
-		public void test_CreateUser(String uname, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException {
+		@Test(priority =2 , dependsOnMethods = {"test_Login"}, dataProvider = fileNameOnly)
+		public void test_CreateUser(String uname, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.createUser(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);	
 		}
 			
 		//ARCHIVE USER
-		//@Test(priority = 3 , dependsOnMethods = {"test_Login"})
-		public void test_ArchiveUser()throws InterruptedException {
+		@Test(priority = 3 , dependsOnMethods = {"test_Login"})
+		public void test_ArchiveUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.archiveUser(uname);
 		}
 		
 		//RESTORE USER
-		//@Test(priority = 4, dependsOnMethods = {"test_Login"})
-		public void test_RestoreUser()throws InterruptedException {
+		@Test(priority = 4, dependsOnMethods = {"test_Login"})
+		public void test_RestoreUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.restoreUser(uname);
 		}
 		
 		//ACTIVATE USER
-		//@Test(priority = 5)
-		public void test_ActivateUser()throws InterruptedException {
+		@Test(priority = 6)
+		public void test_ActivateUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.activateUser(uname);
 		}
 		
 		//DEACTIVATE USER
-		//@Test(priority = 6)
-		public void test_DeActivateUser()throws InterruptedException {
+		@Test(priority = 5)
+		public void test_DeActivateUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.deactivateUser(uname);
 		}
 				
 			
 		//EDIT USER
-		//@Test(priority = 7, dependsOnMethods = {"test_Login"})
-		public void test_EditUser()throws InterruptedException {
+		@Test(priority = 7, dependsOnMethods = {"test_Login"})
+		public void test_EditUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.editUser(uname, newUName, newOrganizationName, NewFirstName, newLastName, newEmailAddress, newUserRole );
 		}
@@ -109,8 +109,8 @@ public class TC_Users extends BaseClass{
 			
 		
 		//TO CREATE USER WITH PERMISSIONS
-		@Test(priority = 9 , dependsOnMethods = {"test_Login"})
-		public void test_CreateUserWithUserPermissions() throws InterruptedException {
+		//@Test(priority = 9 , dependsOnMethods = {"test_Login"})
+		public void test_CreateUserWithUserPermissions() throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			userPermissions = up.createUser_ReturnType_PO_UserPermissions(uname, passwordToCreate, organizationName, firstName, lastName, emailAddress, userRole);
 		}

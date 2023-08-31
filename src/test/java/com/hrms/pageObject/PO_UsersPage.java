@@ -1,6 +1,7 @@
 package com.hrms.pageObject;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -18,6 +19,11 @@ import com.hrms.Actions.Action_Created;
 import com.hrms.Actions.Action_Deactivate;
 import com.hrms.Actions.Action_Restore;
 import com.hrms.Actions.Action_Updated;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Activate;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Archive;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Deactivate;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Restore;
+import com.hrms.DataBaseTesting.DB_Testing_User_CreateAndUpdate;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
@@ -61,7 +67,13 @@ public class PO_UsersPage extends ReUseAbleElement{
 	public String alertProjectAlreadyAssignedToUser = "Project is already assigned";
 	public String alertProjectAssignedToTheUser = "Project assigned successfully.";
 	
-		
+	//CONSTRUCTOR DECLARATION AND INITIALIAZATION FOR DATA BASE ACTIONS
+	public DB_Testing_Action_Archive  db_actionArchive = new DB_Testing_Action_Archive();
+	public DB_Testing_Action_Restore  db_actionRestore = new DB_Testing_Action_Restore();
+	public DB_Testing_Action_Activate  db_actionActivate = new DB_Testing_Action_Activate();
+	public DB_Testing_Action_Deactivate  db_actionDeactivate = new DB_Testing_Action_Deactivate();
+	public DB_Testing_User_CreateAndUpdate db_clientCreateUpdate = new DB_Testing_User_CreateAndUpdate();
+			
 	//=====START====PROJECTS PAGE OBJECTS AND ITS ACTION METHODS============//
 		//CREATE USERS BUTTON ADDRESS
 		@FindBy(xpath = "//p[normalize-space()='Create User']")
@@ -213,7 +225,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 	
 	
 		//CREATE USERS WITH RETURN TYPE(PO_HomePage)
-		public PO_HomePage createUser(String userNameToCreate, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException
+		public PO_HomePage createUser(String userNameToCreate, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException, SQLException
 		{
 			clickOnBtnCreateUser(); 
 			clickOnTabUserDetails();
@@ -226,12 +238,17 @@ public class PO_UsersPage extends ReUseAbleElement{
 			selectUserRole(userRole);
 			ruae.clickOnBtnSaveAndGoToHome_1_RU();
 			Thread.sleep(2000);
-			confirmationCreated.created(driver, alertCreated_user, alertAleradyExist_user);
+			boolean flag  = confirmationCreated.created(driver, alertCreated_user, alertAleradyExist_user);
+			//DATABASE TESTING
+			if(flag) {
+				db_clientCreateUpdate.test_DB_createUser(userNameToCreate,organizationName,firstName,lastName,emailAddress,userRole);
+			}
+			logger.info("createUser call DONE");
 			return new PO_HomePage(driver);
 		}
 		
 		//CREATE USERS WITH RETURN TYPE(PO_UserPermissions)
-		public PO_UserPermissions createUser_ReturnType_PO_UserPermissions(String userNameToCreate, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException
+		public PO_UserPermissions createUser_ReturnType_PO_UserPermissions(String userNameToCreate, String passwordToCreate, String organizationName, String firstName, String lastName, String emailAddress, String userRole) throws InterruptedException, SQLException
 		{
 			clickOnBtnCreateUser(); 
 			clickOnTabUserDetails();
@@ -245,47 +262,79 @@ public class PO_UsersPage extends ReUseAbleElement{
 			ruae.clickOnBtnNext_1_RU();
 			userpermission.userPermissionsAdminCheckbox();
 			Thread.sleep(2000);
-			confirmationCreated.created(driver, alertCreated_user, alertAleradyExist_user);
+			boolean flag  = confirmationCreated.created(driver, alertCreated_user, alertAleradyExist_user);
+			//DATABASE TESTING
+			if(flag) {
+				db_clientCreateUpdate.test_DB_createUser(userNameToCreate,organizationName,firstName,lastName,emailAddress,userRole);
+			}
+			logger.info("createUser_ReturnType_PO_UserPermissions call DONE");
 			return new PO_UserPermissions(driver);
 		}
 		
 		
 		
 		//TO ARCHIVE USER
-	   	public PO_HomePage archiveUser(String uname) throws InterruptedException {
+	   	public PO_HomePage archiveUser(String uname) throws InterruptedException, SQLException {
 	       logger.info("Archive user method called");
 	       // METHODS TO ARCHIVE THE USER
-	       actionArchive.archive(uname, driver, alertArchived_user );
+	       boolean flag = actionArchive.archive(uname, driver, alertArchived_user );
+	       String searchString_DB_ColumnName = "user_name";
+		   if(flag) {
+	    	   String querry = "select * from public.client order by updated_at desc limit 1";
+	    	   db_actionArchive.test_DB_Archive(uname,querry,searchString_DB_ColumnName);
+	       }
+		    logger.info("archiveUser call DONE");
 	       return new PO_HomePage(driver);
 	   	}
 	   
 	   //TO RESTORE USER
-	   public PO_HomePage restoreUser(String uname) throws InterruptedException {
+	   public PO_HomePage restoreUser(String uname) throws InterruptedException, SQLException {
 	       logger.info("Restore user method called");
 	       // METHODS TO RESTORE THE USER
-	       actionRestore.restore(uname, driver, alertRestored_user);
+	       boolean flag = actionRestore.restore(uname, driver, alertRestored_user);
+	       //DATABASE TESTING
+	       String searchString_DB_ColumnName = "user_name";
+	       if(flag) {
+	        	String querry = "select * from public.client order by updated_at desc limit 1";
+	        	db_actionRestore.test_DB_Restore(uname,querry,searchString_DB_ColumnName);
+	       }
+	   	   logger.info("restoreUser call DONE");
 	       return new PO_HomePage(driver);
 	   }
 	   
 	   	//TO ACTIVATE USER
-		public PO_HomePage activateUser(String uname) throws InterruptedException{
+		public PO_HomePage activateUser(String uname) throws InterruptedException, SQLException{
 			logger.info("Activate user methods called");
 	    	//METHODS TO ACTIVATE THE USER
-			actionActivate.activate(uname, driver,alertActivated_user );
+			boolean flag = actionActivate.activate(uname, driver,alertActivated_user );
+			//DATABASE TESTING
+	        String searchString_DB_ColumnName = "user_name";
+	        if(flag) {
+	        	String querry = "select * from public.client order by updated_at desc limit 1";
+	        	db_actionActivate.test_DB_Activate(uname,querry,searchString_DB_ColumnName);
+	        }
+	   	    logger.info("activateUser call DONE");
 	    	return new PO_HomePage(driver);
 		}
 		
 		
 		//TO DEACTIVATE USER
-		public PO_HomePage deactivateUser(String uname) throws InterruptedException{
+		public PO_HomePage deactivateUser(String uname) throws InterruptedException, SQLException{
 			logger.info("De-Activate user methods called");
 	    	//METHODS TO DEACTIVATE THE USER 
-			actionDeactivate.deactivate(uname, driver, alertDeActivated_user);
-	    	 return new PO_HomePage(driver);
+			boolean flag = actionDeactivate.deactivate(uname, driver, alertDeActivated_user);
+			//DATABASE TESTING
+	        String searchString_DB_ColumnName = "user_name";
+	        if(flag) {
+	        	String querry = "select * from public.client order by updated_at desc limit 1";
+	        	db_actionDeactivate.test_DB_Deactivate(uname,querry,searchString_DB_ColumnName);
+	        }
+	   	    logger.info("deactivateUser call DONE");
+	    	return new PO_HomePage(driver);
 		}
 			
 		//EDIT USERS
-		public PO_HomePage editUser(String uname,String newUName, String newOrganizationName, String NewFirstName, String newLastName, String newEmailAddress,String newUserRole) throws InterruptedException
+		public PO_HomePage editUser(String uname,String newUName, String newOrganizationName, String NewFirstName, String newLastName, String newEmailAddress,String newUserRole) throws InterruptedException, SQLException
 		{	logger.info("Entered edit user methods");
 		  
 		    //IT WILL SEARCH FIRST THE SEARCK KEY AND ONCE IT COMES AT THE TOP THEN ONLY IT WILL ABLE TO EDIT THE CORRECT PROJECT
@@ -301,7 +350,12 @@ public class PO_UsersPage extends ReUseAbleElement{
 			setEmailAddress(newEmailAddress);
 			selectUserRole(newUserRole);
 			ruae.clickOnBtnSaveAndGoToHome_1_RU();
-			confirmationUpdated.updated(driver, alertUpdated_user, alertAleradyExist_user);
+			boolean flag = confirmationUpdated.updated(driver, alertUpdated_user, alertAleradyExist_user);
+			//DATABASE TESTING
+			if(flag) {
+				db_clientCreateUpdate.test_DB_createUser(newUName,newOrganizationName,NewFirstName,newLastName,newEmailAddress,newUserRole);
+			}
+			logger.info("editUser call DONE");
 			return new PO_HomePage(driver);
 		}
 	
@@ -316,18 +370,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 			   logger.info("Clicked on the assign project button");
 		   }
 
-		   
-//		   //DROPDOWN ICON ADDRESS FOR PROJECTS SELECTION
-//		   @FindBy(xpath="//button[@title='Open']//*[name()='svg']")
-//		   @CacheLookup
-//		   WebElement iconProjectDropdown;
-//		   public void clickOnProjectDropdownIcon() throws InterruptedException{
-//			   iconProjectDropdown.click();
-//			   Thread.sleep(1000);
-//			   logger.info("Clicked on the dropdown icon for the project selection");
-//		   }
-		   
-		   
+	   
 		   //PROJECT LIST ADDRESS TO ASSIGN THE PROJECT TO THE USER
 		   @FindBy(xpath="//ul[@id='project-listbox']//li")
 		   @CacheLookup
@@ -389,26 +432,7 @@ public class PO_UsersPage extends ReUseAbleElement{
 				   ruae.clickOnCancelButton_RU();
 			   }
 		   }
-		   
-//		 //CONFIRMATION MESSAGE AFTER PROJECT ASSIGNMETN "PROJECT ASSIGNED SUCCESSFULLY" AND IT WILL THE BOOLEAN VALUES
-//		   @FindBy(xpath="//div[contains(text(),'Project assigned successfully.')]")
-//		   @CacheLookup
-//		   WebElement msgPrjectAssignedSuccessfully;
-//		   public boolean isProjectAssignToUserSuccessfully() throws InterruptedException{
-//			   boolean flag = false;
-//			   Thread.sleep(300);
-//			   try {
-//				   msgPrjectAssignedSuccessfully.isDisplayed();
-//				   if(msgPrjectAssignedSuccessfully.isDisplayed()) {
-//					   flag = true;
-//				   }
-//			   }catch(Exception e) {
-//				   e.getMessage();
-//			   }
-//			   Thread.sleep(1000);
-//			   return flag;
-//		   }
-		   
+		   	   
 		 
 	//===========END==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========// 
 		  //ASSIGN PROJECTS TO THE USER

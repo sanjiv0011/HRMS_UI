@@ -1,6 +1,7 @@
 package com.hrms.testCases;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -9,9 +10,7 @@ import com.github.javafaker.Faker;
 import com.hrms.dataProviders.from_readDataFromExcelFile.DataProviders;
 import com.hrms.pageObject.PO_ClientPage;
 import com.hrms.pageObject.PO_HomePage;
-import com.hrms.pageObject.PO_JobTitles;
 import com.hrms.pageObject.PO_LoginPage;
-import com.hrms.pageObject.PO_OragnizationPage;
 
 public class TC_Cleint extends BaseClass {
 	public TC_Cleint() {
@@ -23,7 +22,7 @@ public class TC_Cleint extends BaseClass {
 	public PO_HomePage hp;
 	public PO_ClientPage cp;
 
-  //VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
+	//VARIABLES DECLARATIONS AND INITIALIZATIONS(WHILE USING THIS COMMENT THE DATAPROVIDER METHODS)
 	String cleintName = "Xenon";
 	String clientDescription = faker.company().profession();
 	String clientSearchKey = cleintName;
@@ -40,7 +39,7 @@ public class TC_Cleint extends BaseClass {
 	
 	//TO CREATE CLIENT
 	@Test(priority =2 , dependsOnMethods = {"test_Login"} , dataProvider = fileNameOnly)
-	public void test_CreateCleint(String cleintName, String clientDescriptions ) throws InterruptedException {
+	public void test_CreateCleint(String cleintName, String clientDescriptions ) throws InterruptedException, SQLException {
 		cp = callMeBeforePerformAnyAction();
 		hp = cp.createClient(cleintName, clientDescriptions);
 		
@@ -48,14 +47,14 @@ public class TC_Cleint extends BaseClass {
 	
 	//ARCHIVE CLINET
 	@Test(priority = 3 , dependsOnMethods = {"test_Login"})
-	public void test_ArchiveClient()throws InterruptedException {
+	public void test_ArchiveClient()throws InterruptedException, SQLException {
 		cp = callMeBeforePerformAnyAction();
 		hp = cp.archiveClient(cleintName);
 	}
 	
 	//RESTORE CLINET
 	@Test(priority = 4, dependsOnMethods = {"test_Login"})
-	public void test_RestoreClient()throws InterruptedException {
+	public void test_RestoreClient()throws InterruptedException, SQLException {
 		cp = callMeBeforePerformAnyAction();
 		hp = cp.restoreClient(cleintName);
 	}
@@ -63,7 +62,7 @@ public class TC_Cleint extends BaseClass {
 	
 	//EDIT CLINET
 	@Test(priority = 5 , dependsOnMethods = {"test_Login"})
-	public void test_EditClient()throws InterruptedException {
+	public void test_EditClient()throws InterruptedException, SQLException {
 		cp = callMeBeforePerformAnyAction();
 		hp = cp.editClient(cleintName,clientDescription, cleintName);
 	}

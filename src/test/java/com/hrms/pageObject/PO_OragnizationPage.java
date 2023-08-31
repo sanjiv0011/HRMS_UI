@@ -22,7 +22,11 @@ import com.hrms.Actions.Action_Created;
 import com.hrms.Actions.Action_Deactivate;
 import com.hrms.Actions.Action_Restore;
 import com.hrms.Actions.Action_Updated;
-import com.hrms.DataBaseTesting.DB_TC_Organization;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Activate;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Archive;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Deactivate;
+import com.hrms.DataBaseTesting.DB_Testing_Action_Restore;
+import com.hrms.DataBaseTesting.DB_Testing_Organization_CreateAndUpdate;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
@@ -35,9 +39,6 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	public Logger logger = LogManager.getLogger(getClass());
 	public WebDriverWait wait;
 	
-	//FOR DATABASE TESTING
-	public DB_TC_Organization db_o = new DB_TC_Organization();
-	
 	//APPLY PAGE FACTORY CONCEPT THRUGH INHERITANCE(RE USE ABLE ELEMENT CLASS)
 	public PO_OragnizationPage(WebDriver driver){	
 		super(driver);
@@ -47,6 +48,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 	}
 
+	//CONSTRUCTOR DECLARATION AND INITIALIZATON FOR ACTIONS
 	public Action_Activate actionActivate = new Action_Activate();
 	public Action_Deactivate actionDeactivate = new Action_Deactivate();
 	public Action_Archive actionArchive = new Action_Archive();
@@ -62,6 +64,15 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	String alertDeactivated_org = "Organization Deactivated Successfully.";
 	String alertActivated_org = "Organization Activated Successfully.";
 	String alertAleradyExist_org = "LeaOrganizationve already exists.";
+	
+	//CONSTRUCTOR DECLARATION AND INITIALIAZATION FOR DATA BASE ACTIONS
+	public DB_Testing_Action_Archive  db_actionArchive = new DB_Testing_Action_Archive();
+	public DB_Testing_Action_Restore  db_actionRestore = new DB_Testing_Action_Restore();
+	public DB_Testing_Action_Activate  db_actionActivate = new DB_Testing_Action_Activate();
+	public DB_Testing_Action_Deactivate  db_actionDeactivate = new DB_Testing_Action_Deactivate();
+	public DB_Testing_Organization_CreateAndUpdate db_orgCreateUpdate = new DB_Testing_Organization_CreateAndUpdate();
+	
+	
 		
 	
 	//=====START====Organization page and Create organization page object============//
@@ -249,48 +260,80 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		setOrgCountry(orgCountry);
 		selectOrgTimeZone(orgTimeZone);
 		ruae.clickOnCreateButton_RU();
+		//FOR CONFIRMATION
 		boolean flag = confirmationCreated.created(driver, alertCreated_org, alertAleradyExist_org);
-		
+
 		//DATABASE TESTING
 		if(flag) {
-			db_o.test_DB_TC_Organization(orgName, orgCode, orgEmail, orgPhoneNumber, orgAddress, orgArea, orgCity, orgState, orgPostalCode, orgCountry, orgTimeZone);
-			logger.info("===>>> DataBase data matched with Entry input data");
+			db_orgCreateUpdate.test_DB_CreateOrganization(orgName, orgCode, orgEmail, orgPhoneNumber, orgAddress, orgArea, orgCity, orgState, orgPostalCode, orgCountry, orgTimeZone);
 		}
-		
-		return new PO_HomePage(driver);
+		logger.info("createOragnization call DONE");
+		return new PO_HomePage(driver); 
 	}
 	
 	//TO ARCHIVE ORGANIZATION
-   	public PO_HomePage archiveOrganization(String orgName) throws InterruptedException {
+   	public PO_HomePage archiveOrganization(String orgName) throws InterruptedException, SQLException {
        logger.info("Archive organization method called");
-       actionArchive.archive(orgName, driver, alertArchived_org);
+       //TO ARCHIVE
+       boolean flag = actionArchive.archive(orgName, driver, alertArchived_org);
+       String searchString_DB_ColumnName = "name";
+       //DATABASE TESTING
+       if(flag) {
+    	   String querry = "select * from public.organizations order by updated_at desc limit 1";
+    	   db_actionArchive.test_DB_Archive(orgName,querry,searchString_DB_ColumnName);
+       }
+       logger.info("archiveOrganization call DONE");
        return new PO_HomePage(driver);
    	}
    
    //TO RESTORE ORGANIZATION
-   public PO_HomePage restoreOrganization(String orgName) throws InterruptedException {
+   public PO_HomePage restoreOrganization(String orgName) throws InterruptedException, SQLException {
         logger.info("Restore organization method called");
-   		actionRestore.restore(orgName, driver,alertRestored_org );
+        //TO RESTORE
+        boolean flag = actionRestore.restore(orgName, driver,alertRestored_org );
+        String searchString_DB_ColumnName = "name";
+   		//DATABASE TESTING
+        if(flag) {
+        	String querry = "select * from public.organizations order by updated_at desc limit 1";
+        	db_actionRestore.test_DB_Restore(orgName,querry,searchString_DB_ColumnName);
+        }
+   		logger.info("restoreOrganization call DONE");
    		return new PO_HomePage(driver);
    }
    
    	//TO ACTIVATE ORGANIZATION
-	public PO_HomePage activateOrganization(String orgName) throws InterruptedException {
+	public PO_HomePage activateOrganization(String orgName) throws InterruptedException, SQLException {
 		logger.info("Activate organization methods called");
-		actionActivate.activate(orgName, driver, alertActivated_org);
+		//TO  ACTIVATE
+		boolean flag = actionActivate.activate(orgName, driver, alertActivated_org);
+		String searchString_DB_ColumnName = "name";
+		//DATABASE TESTING
+        if(flag) {
+        	String querry = "select * from public.organizations order by updated_at desc limit 1";
+        	db_actionActivate.test_DB_Activate(orgName,querry,searchString_DB_ColumnName);
+        }
+		logger.info("activateOrganization call DONE");
     	return new PO_HomePage(driver);
 	}
 	
 	
 	//TO DEACTIVATE ORGANIZATION
-	public PO_HomePage deactivateOrganization(String orgName) throws InterruptedException {
+	public PO_HomePage deactivateOrganization(String orgName) throws InterruptedException, SQLException {
 		logger.info("De-Activate organization methods called");
-		actionDeactivate.deactivate(orgName, driver, alertDeactivated_org);
+		//TO DEACTIVATE
+		boolean flag = actionDeactivate.deactivate(orgName, driver, alertDeactivated_org);
+		String searchString_DB_ColumnName = "name";
+		//DATABASE TESTING
+        if(flag) {
+        	String querry = "select * from public.organizations order by updated_at desc limit 1";
+        	db_actionDeactivate.test_DB_Deactivate(orgName,querry,searchString_DB_ColumnName);
+        }
+		logger.info("deactivateOrganization call DONE");
 		return new PO_HomePage(driver);
 	}
 	
 	//TO EDIT ORGANIZATION
-	public PO_HomePage editOragnization(String orgName, String newOrgCode, String newOrgEmail,String newOrgPhoneNumber, String newOrgAddress, String newOrgArea, String newOrgCity, String newOrgState, String newOrgPostalCode,String newOrgCountry, String newOrgTimeZone ) throws InterruptedException
+	public PO_HomePage editOragnization(String orgName, String newOrgCode, String newOrgEmail,String newOrgPhoneNumber, String newOrgAddress, String newOrgArea, String newOrgCity, String newOrgState, String newOrgPostalCode,String newOrgCountry, String newOrgTimeZone ) throws InterruptedException, SQLException
 	{ 	logger.info("Entered into edit organizatioin methods");
 	
 		//IT WILL SEARCH FIRST THE SEARCK KEY AND ONCE IT COMES AT THE TOP THEN ONLY IT WILL ABLE TO EDIT THE CORRECT PROJECT
@@ -299,7 +342,7 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 	    ruae.clickOnEditAction_RU();	//IT WILL CLICK ON THE EDIT ACTION BUTTON AND IT IS PRESENT AT RE_USEABLE_ELEMENT PACKAGE PAGE OBJECT
 		Thread.sleep(1000);
 		
-		setOrgName(orgName);	// I AM NOT CHAGNING ORGANIZATION NAMES
+		setOrgName(orgName);	
 		setOrgCode(newOrgCode);	
 		setOrgEmail(newOrgEmail);
 		setOrgPhoneNumber(newOrgPhoneNumber);
@@ -311,7 +354,14 @@ public class PO_OragnizationPage extends ReUseAbleElement{
 		setOrgCountry(newOrgCountry);		
 		selectOrgTimeZone(newOrgTimeZone);
 		ruae.clickOnBtnSaveChanges_RU(); //RU REPRESENT RE USEABLE ELEMENT
-		confirmationUpdated.updated(driver, alertUpdated_org,alertAleradyExist_org);
+		boolean flag = confirmationUpdated.updated(driver, alertUpdated_org,alertAleradyExist_org);
+		
+		//DATABASE TESTING
+        if(flag) {
+        	db_orgCreateUpdate.test_DB_CreateOrganization(orgName, newOrgCode, newOrgEmail, newOrgPhoneNumber, newOrgAddress, newOrgArea, newOrgCity, newOrgState, newOrgPostalCode, newOrgCountry, newOrgTimeZone);
+        }
+		logger.info("editOragnization call DONE");
+		
 		return new PO_HomePage(driver);
 	}	
 }
