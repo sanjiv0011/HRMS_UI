@@ -1,353 +1,113 @@
-15:11:45.265 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 186
-15:11:45.280 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 187
-15:11:45.289 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 188
-15:11:45.299 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 189
-15:11:45.307 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 190
-15:11:45.315 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 191
-15:11:51.931 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 192
-15:11:51.940 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 193
-15:11:51.950 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 194
-15:11:51.958 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 195
-15:11:52.037 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 196
-15:11:52.180 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 197
-15:11:52.352 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 198
-15:11:52.376 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-15:11:52.900 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role='alert']"}
+15:33:58.483 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Archived Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Archived']"}
   (Session info: chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [92df0619ddb5f485139c8539a34012e9, findElement {using=xpath, value=//div[@role='alert']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59424}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59424/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 92df0619ddb5f485139c8539a34012e9
-15:11:54.911 [main] INFO  com.hrms.Actions.Action_Restore - ===>>> User Restored Successfully.
-15:11:56.916 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-15:11:57.002 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-15:11:57.005 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-15:11:57.005 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - Archived status from data base: false
-15:11:57.005 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - ===>>> DataBase Restored and UI Archived status matched
-15:11:57.005 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - Select querry runs and  filter data at the top of the list
-15:11:57.006 [main] INFO  com.hrms.pageObject.PO_UsersPage - restoreUser call DONE
-15:11:57.117 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:12:02.323 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
-15:12:04.335 [main] INFO  com.hrms.pageObject.PO_UsersPage - De-Activate user methods called
-15:12:04.833 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
-15:12:09.892 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+Command: [50b7ed4c2cc4e02d0e08990aa1bd53c6, findElement {using=xpath, value=//span[text()='Archived']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50b7ed4c2cc4e02d0e08990aa1bd53c6
+15:33:58.870 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+15:33:59.471 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Archive button
+15:33:59.858 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+15:34:00.168 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+15:34:00.296 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 2
+15:34:00.333 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+15:34:00.863 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+15:34:02.864 [main] INFO  com.hrms.Actions.Action_Archive - ===>>> User Archived Successfully.
+15:34:04.885 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+15:34:05.301 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+15:34:05.321 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+15:34:05.322 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Archive - Archived status from data base: true
+15:34:05.322 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Archive - ===>>> DataBase Archived and UI Archived status matched
+15:34:05.322 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Archive - Select querry runs and  filter data at the top of the list
+15:34:05.322 [main] INFO  com.hrms.pageObject.PO_UsersPage - archiveUser call DONE
+15:34:05.432 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+15:34:10.583 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+15:34:12.607 [main] INFO  com.hrms.pageObject.PO_UsersPage - Restore user method called
+15:34:13.094 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
+15:34:18.130 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
   (Session info: chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [92df0619ddb5f485139c8539a34012e9, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59424}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59424/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 92df0619ddb5f485139c8539a34012e9
-15:12:09.940 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
-15:12:10.398 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-15:12:15.399 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
-15:18:57.068 [main] INFO  com.hrms.testCases.TC_Users - Base class started...
-15:18:59.343 [main] INFO  com.hrms.testCases.TC_Users - Chrome driver selected
-15:19:00.266 [main] INFO  com.hrms.testCases.TC_Users - Login page started
-15:19:00.979 [main] INFO  com.hrms.pageObject.PO_LoginPage - Enteterd userName
-15:19:01.690 [main] INFO  com.hrms.pageObject.PO_LoginPage - Entered password
-15:19:02.353 [main] INFO  com.hrms.pageObject.PO_LoginPage - clicke on login submit button
-15:19:04.985 [main] INFO  com.hrms.pageObject.PO_LoginPage - ... LOGIN DONE ...
-15:19:05.092 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:19:10.250 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
-15:19:12.322 [main] INFO  com.hrms.pageObject.PO_UsersPage - Archive user method called
-15:19:12.865 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
-15:19:17.912 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
+Command: [50b7ed4c2cc4e02d0e08990aa1bd53c6, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50b7ed4c2cc4e02d0e08990aa1bd53c6
+15:34:18.154 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Confirmation message is already archived: true
+15:34:18.537 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+15:34:19.132 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Restore button
+15:34:19.525 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+15:34:19.829 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+15:34:19.857 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+15:34:20.370 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+15:34:22.373 [main] INFO  com.hrms.Actions.Action_Restore - ===>>> User Restored Successfully.
+15:34:24.385 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+15:34:24.475 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+15:34:24.480 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+15:34:24.480 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - Archived status from data base: false
+15:34:24.480 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - ===>>> DataBase Restored and UI Archived status matched
+15:34:24.480 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - Select querry runs and  filter data at the top of the list
+15:34:24.480 [main] INFO  com.hrms.pageObject.PO_UsersPage - restoreUser call DONE
+15:34:24.570 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+15:34:29.652 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+15:34:31.661 [main] INFO  com.hrms.pageObject.PO_UsersPage - De-Activate user methods called
+15:34:32.180 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
+15:34:37.208 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
   (Session info: chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
-15:19:17.929 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Archived Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Archived']"}
+Command: [50b7ed4c2cc4e02d0e08990aa1bd53c6, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50b7ed4c2cc4e02d0e08990aa1bd53c6
+15:34:37.236 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
+15:34:37.620 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+15:34:38.215 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Deactivated button
+15:34:38.611 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+15:34:38.927 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+15:34:38.956 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+15:34:39.499 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+15:34:41.511 [main] INFO  com.hrms.Actions.Action_Deactivate - Alert message content: User Deactivated Successfully.
+15:34:41.512 [main] INFO  com.hrms.pageObject.PO_UsersPage - deactivateUser call DONE
+15:34:41.590 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+15:34:46.670 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+15:34:48.676 [main] INFO  com.hrms.pageObject.PO_UsersPage - Activate user methods called
+15:34:49.175 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
+15:34:54.229 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
   (Session info: chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, findElement {using=xpath, value=//span[text()='Archived']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
-15:19:18.299 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-15:19:18.900 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Archive button
-15:19:19.282 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-15:19:19.582 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
-15:19:19.645 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-15:19:20.161 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
-15:19:22.174 [main] INFO  com.hrms.Actions.Action_Archive - ===>>> User Archived Successfully.
-15:19:24.185 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-15:19:24.369 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-15:19:24.383 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-15:19:24.384 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Archive - Archived status from data base: true
-15:19:24.384 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Archive - ===>>> DataBase Archived and UI Archived status matched
-15:19:24.384 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Archive - Select querry runs and  filter data at the top of the list
-15:19:24.384 [main] INFO  com.hrms.pageObject.PO_UsersPage - archiveUser call DONE
-15:19:24.473 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:19:29.675 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
-15:19:31.696 [main] INFO  com.hrms.pageObject.PO_UsersPage - Restore user method called
-15:19:32.247 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
-15:19:37.300 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
-15:19:37.350 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Confirmation message is already archived: true
-15:19:37.772 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-15:19:38.392 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Restore button
-15:19:38.803 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-15:19:39.112 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
-15:19:39.168 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-15:19:39.694 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
-15:19:41.703 [main] INFO  com.hrms.Actions.Action_Restore - ===>>> User Restored Successfully.
-15:19:43.717 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
-15:19:43.804 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
-15:19:43.807 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
-15:19:43.807 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - Archived status from data base: false
-15:19:43.807 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - ===>>> DataBase Restored and UI Archived status matched
-15:19:43.807 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Restore - Select querry runs and  filter data at the top of the list
-15:19:43.807 [main] INFO  com.hrms.pageObject.PO_UsersPage - restoreUser call DONE
-15:19:43.888 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:19:49.047 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
-15:19:51.066 [main] INFO  com.hrms.pageObject.PO_UsersPage - De-Activate user methods called
-15:19:51.616 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: vladimir
-15:19:56.649 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Searched key not found exception: no such element: Unable to locate element: {"method":"xpath","selector":"//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
-15:19:56.676 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
-15:19:57.130 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
-15:19:57.757 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Deactivated button
-15:19:58.126 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-15:19:58.428 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
-15:19:58.457 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 2
-15:19:58.471 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 3
-15:19:58.484 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 4
-15:19:58.496 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 5
-15:19:58.510 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 6
-15:19:58.521 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 7
-15:19:58.530 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 8
-15:19:58.541 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 9
-15:19:58.554 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 10
-15:19:58.565 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 11
-15:19:58.576 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 12
-15:19:58.586 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 13
-15:19:58.595 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 14
-15:19:58.608 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 15
-15:19:58.619 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 16
-15:19:58.628 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 17
-15:19:58.639 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 18
-15:19:58.650 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 19
-15:19:58.661 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 20
-15:19:58.673 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 21
-15:19:58.684 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 22
-15:19:58.693 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 23
-15:19:58.704 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 24
-15:19:58.713 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 25
-15:19:58.725 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 26
-15:19:58.735 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 27
-15:19:58.744 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 28
-15:19:58.753 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 29
-15:19:58.762 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 30
-15:19:58.773 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 31
-15:19:58.785 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 32
-15:19:58.794 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 33
-15:19:58.803 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 34
-15:19:58.812 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 35
-15:19:58.823 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 36
-15:19:58.836 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 37
-15:19:58.845 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 38
-15:19:58.856 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 39
-15:19:58.865 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 40
-15:19:58.875 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 41
-15:19:58.885 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 42
-15:19:58.893 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 43
-15:19:58.904 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 44
-15:19:58.914 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 45
-15:19:58.924 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 46
-15:19:58.935 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 47
-15:19:58.943 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 48
-15:19:58.953 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 49
-15:19:58.963 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 50
-15:19:58.975 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 51
-15:19:58.985 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 52
-15:19:58.993 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 53
-15:19:59.003 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 54
-15:19:59.011 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 55
-15:19:59.023 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 56
-15:19:59.033 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 57
-15:19:59.043 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 58
-15:19:59.053 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 59
-15:19:59.062 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 60
-15:19:59.072 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 61
-15:19:59.082 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 62
-15:19:59.092 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 63
-15:19:59.103 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 64
-15:19:59.112 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 65
-15:19:59.123 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 66
-15:19:59.134 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 67
-15:19:59.146 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 68
-15:19:59.157 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 69
-15:19:59.167 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 70
-15:19:59.175 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 71
-15:19:59.185 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 72
-15:19:59.193 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 73
-15:19:59.204 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 74
-15:19:59.213 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 75
-15:19:59.224 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 76
-15:19:59.234 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 77
-15:19:59.244 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 78
-15:19:59.256 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 79
-15:19:59.268 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 80
-15:19:59.277 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 81
-15:19:59.287 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 82
-15:19:59.295 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 83
-15:19:59.306 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 84
-15:19:59.315 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 85
-15:19:59.325 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 86
-15:19:59.335 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 87
-15:19:59.344 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 88
-15:19:59.353 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 89
-15:19:59.362 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 90
-15:19:59.372 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 91
-15:19:59.385 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 92
-15:19:59.395 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 93
-15:19:59.406 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 94
-15:19:59.415 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 95
-15:19:59.425 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 96
-15:19:59.437 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 97
-15:19:59.447 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 98
-15:19:59.458 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 99
-15:19:59.469 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 100
-15:19:59.480 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 101
-15:19:59.493 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 102
-15:19:59.504 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 103
-15:19:59.513 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 104
-15:19:59.541 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 105
-15:19:59.558 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 106
-15:19:59.569 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 107
-15:19:59.578 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 108
-15:19:59.589 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 109
-15:19:59.597 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 110
-15:19:59.609 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 111
-15:19:59.620 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 112
-15:19:59.630 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 113
-15:19:59.643 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 114
-15:19:59.655 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 115
-15:19:59.667 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 116
-15:19:59.677 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 117
-15:19:59.688 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 118
-15:19:59.696 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 119
-15:19:59.707 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 120
-15:19:59.716 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 121
-15:19:59.726 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 122
-15:19:59.736 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 123
-15:19:59.744 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 124
-15:19:59.754 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 125
-15:19:59.763 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 126
-15:19:59.774 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 127
-15:19:59.787 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 128
-15:19:59.796 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 129
-15:19:59.806 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 130
-15:19:59.815 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 131
-15:19:59.824 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 132
-15:19:59.834 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 133
-15:19:59.844 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 134
-15:19:59.858 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 135
-15:19:59.868 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 136
-15:19:59.876 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 137
-15:19:59.886 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 138
-15:19:59.895 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 139
-15:19:59.906 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 140
-15:19:59.914 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 141
-15:19:59.924 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 142
-15:19:59.934 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 143
-15:19:59.942 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 144
-15:19:59.951 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 145
-15:19:59.960 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 146
-15:19:59.970 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 147
-15:19:59.977 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 148
-15:19:59.986 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 149
-15:19:59.994 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 150
-15:20:00.003 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 151
-15:20:00.013 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 152
-15:20:00.026 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 153
-15:20:00.037 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 154
-15:20:00.045 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 155
-15:20:00.053 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 156
-15:20:00.061 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 157
-15:20:00.071 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 158
-15:20:00.083 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 159
-15:20:00.093 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 160
-15:20:00.102 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 161
-15:20:00.110 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 162
-15:20:00.119 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 163
-15:20:00.128 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 164
-15:20:00.140 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 165
-15:20:00.149 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 166
-15:20:00.158 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 167
-15:20:00.168 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 168
-15:20:00.176 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 169
-15:20:00.185 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 170
-15:20:00.194 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 171
-15:20:00.203 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 172
-15:20:00.211 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 173
-15:20:00.220 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 174
-15:20:00.228 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 175
-15:20:00.238 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 176
-15:20:00.246 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 177
-15:20:00.258 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 178
-15:20:00.268 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 179
-15:20:00.276 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 180
-15:20:00.287 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 181
-15:20:00.295 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 182
-15:20:00.304 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 183
-15:20:00.313 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 184
-15:20:00.325 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 185
-15:20:00.336 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 186
-15:20:00.344 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 187
-15:20:00.354 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 188
-15:20:00.363 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 189
-15:20:00.375 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 190
-15:20:00.386 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 191
-15:20:00.394 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 192
-15:20:00.403 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 193
-15:20:00.412 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 194
-15:20:00.423 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 195
-15:20:00.435 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 196
-15:20:00.443 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 197
-15:20:00.453 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 198
-15:20:00.461 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 199
-15:20:00.471 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 200
-15:20:00.479 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@role='alert']"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, findElement {using=xpath, value=//div[@role='alert']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
-15:20:02.777 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:20:06.057 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:20:09.357 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
-15:20:09.434 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
-15:20:09.748 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
-15:20:10.846 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
-15:20:10.993 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
-15:20:13.352 [main] INFO  com.hrms.pageObject.PO_HomePage - ... LOGOUT DONE ...
-15:20:13.759 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown
+Command: [50b7ed4c2cc4e02d0e08990aa1bd53c6, findElement {using=xpath, value=//h4[contains(@class,'MuiTypography-root MuiTypography-h4')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50b7ed4c2cc4e02d0e08990aa1bd53c6
+15:34:54.277 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - InActive label present: true
+15:34:54.638 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Three dot Action button
+15:34:55.238 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Action_Activate button
+15:34:55.632 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+15:34:55.948 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 1
+15:34:56.076 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Checking alert after every 100 miliseconds durations: 2
+15:34:56.097 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+15:34:56.624 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Alert not cought exception: null
+15:34:58.639 [main] INFO  com.hrms.Actions.Action_Activate - ===>>> User Activated Successfully.
+15:35:00.650 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Entered inside dataBaseCollectionAndQuerry methods
+15:35:01.119 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection is successfull...
+15:35:01.123 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Connection closed successfully...
+15:35:01.123 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Activate - Active status from data base: true
+15:35:01.123 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Activate - ===>>> DataBase Activate and UI Activate status matched
+15:35:01.124 [main] INFO  com.hrms.DataBaseTesting.DB_Testing_Action_Activate - Select querry runs and  filter data at the top of the list
+15:35:01.124 [main] INFO  com.hrms.pageObject.PO_UsersPage - activateUser call DONE
+15:35:01.192 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+15:35:06.394 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on tabUsers button
+15:35:08.407 [main] INFO  com.hrms.pageObject.PO_UsersPage - Entered edit user methods
+15:35:14.051 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on iconHomeImage button
+15:35:14.301 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the dropdown icon of the already logged in user
+15:35:14.607 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on system manager button
+15:35:15.678 [main] INFO  com.hrms.pageObject.PO_HomePage - Clicked on dropdownLogout button
+15:35:15.790 [main] INFO  com.hrms.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+15:35:18.146 [main] INFO  com.hrms.pageObject.PO_HomePage - ... LOGOUT DONE ...
+15:35:18.620 [main] INFO  com.hrms.testCases.TC_Users - Driver shutdown

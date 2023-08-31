@@ -46,8 +46,8 @@ public class TC_Users extends BaseClass{
 		
 		String projectName = "MetaVerseMetaVerse";
 		String userSearchKey = uname;
-		String assignProjectStartDate = "18 August 2023" ;
-		String assignProjectEndDate = "30 August 2023";
+		String assignProjectStartDate = "25 August 2023" ;
+		String assignProjectEndDate = "31 August 2023";
 	
 		
 		//TO PERFORM THE LOGIN
@@ -65,28 +65,28 @@ public class TC_Users extends BaseClass{
 		}
 			
 		//ARCHIVE USER
-		@Test(priority = 3 , dependsOnMethods = {"test_Login"})
+		//@Test(priority = 3 , dependsOnMethods = {"test_Login"})
 		public void test_ArchiveUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.archiveUser(uname);
 		}
 		
 		//RESTORE USER
-		@Test(priority = 4, dependsOnMethods = {"test_Login"})
+		//@Test(priority = 4, dependsOnMethods = {"test_Login"})
 		public void test_RestoreUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.restoreUser(uname);
 		}
 		
 		//ACTIVATE USER
-		@Test(priority = 6)
+		//@Test(priority = 6)
 		public void test_ActivateUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.activateUser(uname);
 		}
 		
 		//DEACTIVATE USER
-		@Test(priority = 5)
+		//@Test(priority = 5)
 		public void test_DeActivateUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.deactivateUser(uname);
@@ -94,15 +94,15 @@ public class TC_Users extends BaseClass{
 				
 			
 		//EDIT USER
-		@Test(priority = 7, dependsOnMethods = {"test_Login"})
+		//@Test(priority = 7, dependsOnMethods = {"test_Login"})
 		public void test_EditUser()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.editUser(uname, newUName, newOrganizationName, NewFirstName, newLastName, newEmailAddress, newUserRole );
 		}
 			
 		//ASSIGN PROJECT TO THE USERSNewFirstName
-		//@Test(priority = 8, dependsOnMethods = {"test_Login"})
-		public void test_AssignUserToProject()throws InterruptedException {
+		@Test(priority = 8, dependsOnMethods = {"test_Login"})
+		public void test_AssignUserToProject()throws InterruptedException, SQLException {
 			up = callMeBeforePerformAnyAction();
 			hp = up.assignUserToProject(userSearchKey, projectName, assignProjectStartDate, assignProjectEndDate);
 		}

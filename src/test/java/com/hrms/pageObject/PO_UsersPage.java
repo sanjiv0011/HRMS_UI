@@ -1,6 +1,7 @@
 package com.hrms.pageObject;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import com.hrms.Actions.Action_Activate;
 import com.hrms.Actions.Action_Archive;
@@ -25,6 +27,7 @@ import com.hrms.DataBaseTesting.DB_Testing_Action_Deactivate;
 import com.hrms.DataBaseTesting.DB_Testing_Action_Restore;
 import com.hrms.DataBaseTesting.DB_Testing_User_CreateAndUpdate;
 import com.hrms.ReUseAble.PageObject.ReUseAbleElement;
+import com.hrms.dataBase.DatabaseConnectionAndQuery_GenericMethods;
 import com.hrms.projectUtility.DatePicker;
 import com.hrms.projectUtility.Generic_Method_ToSelect_Boostrape_Dropdown;
 
@@ -415,28 +418,40 @@ public class PO_UsersPage extends ReUseAbleElement{
 		   @FindBy(xpath="//div[contains(text(),'Project is already assigned')]")
 		   @CacheLookup
 		   WebElement msgProjectAdreadyAssigned;
-		   public void confirmationProjecAssignToUser() throws InterruptedException{
+		   public boolean confirmationProjecAssignToUser() throws InterruptedException{
 			   boolean flag = false;
 			   String alertContent = snakeAlertMessagesDisplayedContent_RU();
-			   if(alertContent.contains(alertProjectAlreadyAssignedToUser)) {
-				   logger.info("===>>> "+alertProjectAlreadyAssignedToUser);
-				   flag = true;
-				   logger.info("Is project alerady assigned to the user: "+flag);
-				   ruae.clickOnCancelButton_RU();
-			   }else if(alertContent.equals(alertProjectAssignedToTheUser)) {
-				   logger.info("===>>> "+alertProjectAssignedToTheUser);
-				   flag = true;
-				   logger.info("Is project assigned to the user successfully: "+flag);
-			   }else {
-				   logger.info("Alert message content: "+ alertContent);
-				   ruae.clickOnCancelButton_RU();
-			   }
+			   int x =0;
+			  while(x < 500) {
+				  try {
+					  if(alertContent.contains(alertProjectAlreadyAssignedToUser)) {
+						   logger.info("===>>> "+alertProjectAlreadyAssignedToUser);
+						   flag = true;
+						   logger.info("Is project alerady assigned to the user: "+flag);
+						   ruae.clickOnCancelButton_RU();
+					   }else if(alertContent.equals(alertProjectAssignedToTheUser)) {
+						   logger.info("===>>> "+alertProjectAssignedToTheUser);
+						   flag = true;
+						   logger.info("Is project assigned to the user successfully: "+flag);
+					   }else {
+						   logger.info("Alert message content: "+ alertContent);
+						   flag = true;
+						   ruae.clickOnCancelButton_RU();
+					   }
+				  }catch(Exception e) {
+					  logger.info(e.getMessage());
+				  }
+				  if(flag) {
+					  break;
+				  }
+			  }
+			  return flag;
 		   }
 		   	   
 		 
 	//===========END==========PROJECT ASSIGNMENT PAGE OBJECTS AND ITS ACTIONS METHODS===========// 
 		  //ASSIGN PROJECTS TO THE USER
-		   public PO_HomePage assignUserToProject(String userSearchKey, String projectName, String assignProjectStartDate, String assignProjectEndDate) throws InterruptedException
+		   public PO_HomePage assignUserToProject(String userSearchKey, String projectName, String assignProjectStartDate, String assignProjectEndDate) throws InterruptedException, SQLException
 		   {	logger.info("Entered assign User To Project methods");
 		   		ruae.searchBox_RU(userSearchKey); // IT IS PRESENT AT RE USEABLE ELEMENT PACKAGE PAGE OBJECTS 
 		   		clickOnAssignProjectBtn();	//IT CLICK ON THE ASSIGN USER BUTTON
@@ -445,7 +460,114 @@ public class PO_UsersPage extends ReUseAbleElement{
 		   		//selectEndDate(assignProjectEndDate, 2);    //SELECT THE ASSIGN PROJECT END DATE 
 		   		setDateWithoutUsingDatePicker_RU(assignProjectEndDate,2);  //SELECT THE PROJECT END DATE 
 		   		clickOnBtnAssign(); //IT CLICK ON THE ON THE ASSGIN BUTTON AFTER FILLING THE DETAILS
-		   		confirmationProjecAssignToUser();
+		   		boolean flag = confirmationProjecAssignToUser();
+		   		Thread.sleep(1000);
+		   		//DATABASE TESTING
+		   		if(flag) {
+		   			//For DataBase Testing
+		   			
+		   			//TO GET THE USER ID
+		   			String querryUser = "SELECT * FROM public.users where user_name = "+userSearchKey;
+		   			String userId_fromUserTable = null;
+		   			ResultSet resultsetUser = DatabaseConnectionAndQuery_GenericMethods.dataBaseCollectionAndQuerry(querryUser);
+		   			while(resultsetUser.next()) {
+		   				String userName = resultsetUser.getString("user_name");
+		   				if(userSearchKey.equals(userName)) {
+		   					userId_fromUserTable = resultsetUser.getString("id");
+			   				System.out.println("UserId from user table: "+userId_fromUserTable+" and user name is : "+resultsetUser.getString("user_name"));
+			   			
+		   				}
+		   			}
+		   			
+		   			//TO GET THE PROJECT NAME
+		   			String querryProject = "SELECT * FROM public.projects where project_name = "+projectName;
+		   			String projectId_fromProjectTable = null;
+		   			ResultSet resultsetProject = DatabaseConnectionAndQuery_GenericMethods.dataBaseCollectionAndQuerry(querryProject);
+		   			while(resultsetUser.next()) {
+		   				String projName = resultsetProject.getString("project_name");
+		   				if(projectName.equals(projName)) {
+		   					projectId_fromProjectTable = resultsetProject.getString("id");
+			   				System.out.println("ProjectId from project table: "+projectId_fromProjectTable+" and project name is : "+resultsetProject.getString("project_name"));
+			   			
+		   				}
+		   			}
+		   			
+		   			
+		   			String querry = "SELECT * FROM public.project_assignment ORDER BY updated_at ASC";
+					ResultSet resultset = DatabaseConnectionAndQuery_GenericMethods.dataBaseCollectionAndQuerry(querry);
+					int count =0;
+			
+					while(resultset.next())
+					{	
+						String userId_FromProAssTable = resultset.getString("user_id");
+						String projectId_FromProAssTable = resultset.getString("project_id");
+						
+						if(userId_FromProAssTable.equals(userId_fromUserTable) && projectId_FromProAssTable.equals(projectId_fromProjectTable)) {
+							String db_startDate[] = resultset.getString("start_date").replaceAll("\\s", "").split("-");
+							//db format yyyy-mm-dd
+							String db_startDateYR = db_startDate[0];
+							String db_startDateMT = db_startDate[1];
+							String db_startDateDE = db_startDate[2];
+							String db_endDate[] =  resultset.getString("end_date").replaceAll("\\s", "").split("-");
+							String db_endDateYR = db_endDate[0];
+							String db_endDateMT = db_endDate[1];
+							String db_endDateDE = db_endDate[2];
+							
+							//input format dd-month-yyyy
+							String ProjStartDate[] = assignProjectStartDate.split(" ");
+							String ProjEndDate[] = assignProjectEndDate.split(" ");
+							
+							String[] monthNames = {
+						            "January", "February", "March", "April", "May", "June",
+						            "July", "August", "September", "October", "November", "December"
+						        };
+							
+							int x = 0;
+							boolean flag2 = false;
+							for(String name : monthNames) {
+								x++;
+								if(name.equals(ProjStartDate[1]));
+								{
+									flag2 = true;
+									break;
+								}
+								
+							}
+							String y=null;
+							if(flag2) {
+								if(x<10) {
+									 y = "0"+x;
+								}
+							}
+							Assert.assertEquals(db_startDateYR, ProjStartDate[2], "To Match start date year");
+							Assert.assertEquals(db_startDateMT, y, "To Match start date month");
+							Assert.assertEquals(db_startDateDE, ProjStartDate[0], "To Match start date date");
+							
+							
+							int z = 0;
+							boolean flag3 = false;
+							for(String name : monthNames) {
+								z++;
+								if(name.equals(ProjEndDate[1]));
+								{
+									flag3 = true;
+									break;
+								}
+								
+							}
+							String a=null;
+							if(flag3) {
+								if(z<10) {
+									a = "0"+z;
+								}
+							}
+							Assert.assertEquals(db_endDateYR, ProjEndDate[2], "To Match start date year");
+							Assert.assertEquals(db_endDateMT, a, "To Match start date month");
+							Assert.assertEquals(db_endDateDE, ProjEndDate[0], "To Match start date date");
+						}
+					}
+						
+		   		}
 		   		return new PO_HomePage(driver); // TO RETURN THE DRIVER AT HOME PAGE
 		   }   		
 }

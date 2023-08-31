@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods, 3 failed,   4 passed</span>
+                    <span class="method-stats">7 methods, 1 failed,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,16 +101,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
                     <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.hrms.testCases.TC_Users" class="method navigator-link" hash-for-method="test_ActivateUser">test_ActivateUser</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.hrms.testCases.TC_Users" class="method navigator-link" hash-for-method="test_DeActivateUser">test_DeActivateUser</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.hrms.testCases.TC_Users" class="method navigator-link" hash-for-method="test_EditUser">test_EditUser</a> <!-- method navigator-link -->
@@ -127,7 +117,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.hrms.testCases.TC_Users" class="method navigator-link" hash-for-method="test_ActivateUser">test_ActivateUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.hrms.testCases.TC_Users" class="method navigator-link" hash-for-method="test_ArchiveUser">test_ArchiveUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.hrms.testCases.TC_Users" class="method navigator-link" hash-for-method="test_DeActivateUser">test_DeActivateUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -165,67 +165,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_ActivateUser">
-                  </a> <!-- test_ActivateUser -->
-                  <span class="method-name">test_ActivateUser</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: No node with given id found
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, clickElement {id=61C0D0C1B71486AAB993C21EBDBD337A_element_880}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (80a8fae6169cdb4bbf6f7197dfdb72bc)] -&gt; xpath: //span[normalize-space()=&quot;Users&quot;]]
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
-	at com.hrms.pageObject.PO_HomePage.clickOntabUsers(PO_HomePage.java:146)
-	at com.hrms.testCases.TC_Users.callMeBeforePerformAnyAction(TC_Users.java:131)
-	at com.hrms.testCases.TC_Users.test_ActivateUser(TC_Users.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_DeActivateUser">
-                  </a> <!-- test_DeActivateUser -->
-                  <span class="method-name">test_DeActivateUser</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.equals(Object)&quot; because &quot;alretMsg&quot; is null
-	at com.hrms.Actions.Action_Deactivate.deactivate(Action_Deactivate.java:30)
-	at com.hrms.pageObject.PO_UsersPage.deactivateUser(PO_UsersPage.java:325)
-	at com.hrms.testCases.TC_Users.test_DeActivateUser(TC_Users.java:92)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="test_EditUser">
                   </a> <!-- test_EditUser -->
                   <span class="method-name">test_EditUser</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: No node with given id found
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@placeholder=&apos;Search…&apos;]&quot;}
   (Session info: chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [80a8fae6169cdb4bbf6f7197dfdb72bc, clickElement {id=61C0D0C1B71486AAB993C21EBDBD337A_element_880}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59658/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (80a8fae6169cdb4bbf6f7197dfdb72bc)] -&gt; xpath: //span[normalize-space()=&quot;Users&quot;]]
-Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
+Command: [50b7ed4c2cc4e02d0e08990aa1bd53c6, findElement {using=xpath, value=//input[@placeholder=&apos;Search…&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\JKL-MA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50b7ed4c2cc4e02d0e08990aa1bd53c6
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -233,15 +184,18 @@ Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
-	at com.hrms.pageObject.PO_HomePage.clickOntabUsers(PO_HomePage.java:146)
-	at com.hrms.testCases.TC_Users.callMeBeforePerformAnyAction(TC_Users.java:131)
-	at com.hrms.testCases.TC_Users.test_EditUser(TC_Users.java:99)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy35.sendKeys(Unknown Source)
+	at com.hrms.ReUseAble.PageObject.ReUseAbleElement.searchBox_RU(ReUseAbleElement.java:49)
+	at com.hrms.pageObject.PO_UsersPage.editUser(PO_UsersPage.java:341)
+	at com.hrms.testCases.TC_Users.test_EditUser(TC_Users.java:100)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 35 stack frames
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -255,9 +209,23 @@ Session ID: 80a8fae6169cdb4bbf6f7197dfdb72bc
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="test_ActivateUser">
+                  </a> <!-- test_ActivateUser -->
+                  <span class="method-name">test_ActivateUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="test_ArchiveUser">
                   </a> <!-- test_ArchiveUser -->
                   <span class="method-name">test_ArchiveUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_DeActivateUser">
+                  </a> <!-- test_DeActivateUser -->
+                  <span class="method-name">test_DeActivateUser</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -341,33 +309,33 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_RestoreUser')
+data.setCell(0, 1, 'test_ArchiveUser')
 data.setCell(0, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(0, 3, 19419);
+data.setCell(0, 3, 19700);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_ArchiveUser')
+data.setCell(1, 1, 'test_ActivateUser')
 data.setCell(1, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(1, 3, 19372);
+data.setCell(1, 3, 19605);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'test_DeActivateUser')
+data.setCell(2, 1, 'test_RestoreUser')
 data.setCell(2, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(2, 3, 18683);
+data.setCell(2, 3, 19152);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'test_Login')
+data.setCell(3, 1, 'test_DeActivateUser')
 data.setCell(3, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(3, 3, 4391);
+data.setCell(3, 3, 17031);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'test_Logout')
+data.setCell(4, 1, 'test_EditUser')
 data.setCell(4, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(4, 3, 4060);
+data.setCell(4, 3, 7522);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'test_ActivateUser')
+data.setCell(5, 1, 'test_Logout')
 data.setCell(5, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(5, 3, 3106);
+data.setCell(5, 3, 4451);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'test_EditUser')
+data.setCell(6, 1, 'test_Login')
 data.setCell(6, 2, 'com.hrms.testCases.TC_Users')
-data.setCell(6, 3, 3093);
+data.setCell(6, 3, 4408);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -405,41 +373,37 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test_Login</span>
-                <span class="method-start">3553 ms</span>
+                <span class="method-start">44626 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test_ArchiveUser</span>
-                <span class="method-start">7963 ms</span>
+                <span class="method-start">49058 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test_RestoreUser</span>
-                <span class="method-start">27339 ms</span>
+                <span class="method-start">68763 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">test_DeActivateUser</span>
-                <span class="method-start">46761 ms</span>
+                <span class="method-start">87917 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">test_ActivateUser</span>
-                <span class="method-start">65653 ms</span>
+                <span class="method-start">104953 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">test_EditUser</span>
-                <span class="method-start">68948 ms</span>
+                <span class="method-start">124561 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test_Logout</span>
-                <span class="method-start">72245 ms</span>
+                <span class="method-start">137133 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">76312 ms</span>
+                <span class="method-start">141594 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
